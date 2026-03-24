@@ -1,0 +1,109 @@
+---
+import LPLayout from '../../layouts/LPLayout.astro'
+---
+
+<LPLayout title="Amazonに出店したけど利益が出ない…ECモンスターAIコンサル - EC モンスター" description="Amazon運営で結果が出ない人に向けたAIコンサルティングサービス。月額5,000円〜。">
+
+  <!-- Hero -->
+  <section class="bg-navy text-white py-20 text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <p class="text-lg text-slate mb-4">Amazonに出店したけど利益が出ない…</p>
+      <h1 class="text-3xl md:text-4xl font-bold mb-8">ECモンスター<span class="text-primary">AIコンサル</span><br />Amazon編</h1>
+      <a href="#apply" class="inline-block bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-full transition-colors text-lg">無料で体験する</a>
+    </div>
+  </section>
+
+  <!-- Pain Points -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        {['Amazonに出店したものの売上が伸びない', '高額コンサル費用に対して結果が出ていない', 'コンサル費・広告費・送料で利益が圧迫', '改善方法が不明確'].map((p) => (
+          <div class="bg-red-50 rounded-xl p-4 text-center border border-red-100">
+            <p class="font-medium text-dark">{p}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructor -->
+  <section class="py-16 bg-slate-light">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center mb-8 text-dark">江藤正親の実績</h2>
+      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+        {[
+          { num: '3年連続', label: '楽天総合3位' },
+          { num: '1,000店+', label: '指導実績' },
+          { num: '80%+', label: '月商100万突破' },
+          { num: '200店+', label: '年商1億超え' },
+        ].map((s) => (
+          <div class="text-center bg-white rounded-xl p-4 shadow-sm">
+            <div class="text-xl font-bold text-primary">{s.num}</div>
+            <div class="text-xs text-slate mt-1">{s.label}</div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies -->
+  <section class="py-16">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center mb-8 text-dark">実事例</h2>
+      <div class="space-y-6">
+        {[
+          { name: '丸岡さん', platform: '雑貨 / Amazon', problem: '月額30万円のコンサルで限定的な回答のみ', result: 'Amazon Vine施策などの具体的なアドバイスを受取' },
+          { name: '田中さん', platform: '食品 / Amazon', problem: '月商15〜20万円で停滞', result: '3ヶ月で月商100万円超え（5倍増）' },
+          { name: '松井さん', platform: 'アパレル / Amazon', problem: '「できる人」への依存体質', result: '社員の質問力向上、育成の自走化実現' },
+        ].map((c) => (
+          <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-primary">
+            <h3 class="font-bold text-dark mb-2">{c.name}（{c.platform}）</h3>
+            <p class="text-sm text-slate mb-1"><span class="font-medium">課題：</span>{c.problem}</p>
+            <p class="text-sm text-primary"><span class="font-medium text-dark">成果：</span>{c.result}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Pricing -->
+  <section class="py-16 bg-slate-light">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-2xl font-bold text-center mb-8 text-dark">料金プラン</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        <div class="bg-white rounded-2xl shadow-lg p-6 border">
+          <h3 class="text-lg font-bold text-dark mb-4">単体プラン</h3>
+          <div class="text-3xl font-bold text-primary mb-2">月額 4,000円</div>
+          <p class="text-sm text-slate mb-4">（税別）年額：40,000円</p>
+        </div>
+        <div class="bg-white rounded-2xl shadow-lg p-6 border-2 border-primary relative">
+          <span class="absolute -top-3 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">おすすめ</span>
+          <h3 class="text-lg font-bold text-dark mb-4">コンプリートプラン</h3>
+          <div class="text-3xl font-bold text-primary mb-2">月額 5,000円</div>
+          <p class="text-sm text-slate mb-4">（税別）年額：50,000円</p>
+        </div>
+      </div>
+      <div class="mt-8 text-center">
+        <p class="text-dark font-bold">24時間以内のお申し込みで初期費用30,000円が<span class="text-primary">無料</span></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Apply Form -->
+  <section id="apply" class="py-16 bg-navy text-white">
+    <div class="max-w-md mx-auto px-4 text-center">
+      <h2 class="text-2xl font-bold mb-6">お申し込み</h2>
+      <p class="text-slate text-sm mb-8">※Gmailアドレスのみ対応</p>
+      <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
+        <input type="hidden" name="access_key" value="ed53efba-9f1e-4bf3-aa00-7d68b21d8464" />
+        <input type="hidden" name="redirect" value="https://ecmonster.jp/ai-consulting-aa/thanks/" />
+        <input type="hidden" name="subject" value="AIコンサルAmazon編 申込" />
+        <input type="email" name="email" required placeholder="Gmailアドレスを入力" class="w-full px-4 py-3 rounded-lg text-dark focus:outline-none focus:ring-2 focus:ring-primary" />
+        <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-full transition-colors text-lg">
+          無料で体験する
+        </button>
+      </form>
+    </div>
+  </section>
+
+</LPLayout>

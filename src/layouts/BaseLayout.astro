@@ -1,0 +1,155 @@
+---
+import '../styles/global.css'
+
+interface Props {
+  title: string
+  description?: string
+  ogImage?: string
+}
+
+const {
+  title,
+  description = '【ECモンスター】EC運営に特化したAIコンサルとECモール攻略方法を解説した動画セミナー',
+  ogImage = '/images/og-default.png',
+} = Astro.props
+
+const siteUrl = 'https://ecmonster.jp'
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString()
+---
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+
+  <!-- OGP -->
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:image" content={`${siteUrl}${ogImage}`} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EC モンスター" />
+  <meta property="og:locale" content="ja_JP" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53F0YCGQDS"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-53F0YCGQDS');
+  </script>
+
+  <!-- Google Ads -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=AW-1003850219"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('config', 'AW-1003850219');
+  </script>
+
+  <slot name="head" />
+</head>
+<body class="bg-white">
+  <!-- Header -->
+  <header id="site-header" class="fixed top-0 left-0 right-0 z-50 bg-navy text-white transition-shadow duration-300">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="/" class="flex items-center">
+          <span class="text-xl font-bold text-primary">EC MONSTER</span>
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          <a href="/" class="text-sm hover:text-primary transition-colors">トップ</a>
+          <a href="/ai/" class="text-sm hover:text-primary transition-colors">AIコンサル</a>
+          <a href="/movie/" class="text-sm hover:text-primary transition-colors">楽天市場動画</a>
+          <a href="/contact/" class="text-sm hover:text-primary transition-colors">お問い合わせ</a>
+        </nav>
+
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-btn" class="md:hidden text-white" aria-label="メニュー">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation -->
+    <div id="mobile-menu" class="hidden md:hidden bg-navy-light">
+      <div class="px-4 py-3 space-y-2">
+        <a href="/" class="block py-2 text-sm hover:text-primary transition-colors">トップ</a>
+        <a href="/ai/" class="block py-2 text-sm hover:text-primary transition-colors">AIコンサル</a>
+        <a href="/movie/" class="block py-2 text-sm hover:text-primary transition-colors">楽天市場動画</a>
+        <a href="/contact/" class="block py-2 text-sm hover:text-primary transition-colors">お問い合わせ</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main class="pt-16">
+    <slot />
+  </main>
+
+  <!-- Footer -->
+  <footer class="bg-navy text-white py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        <div>
+          <span class="text-xl font-bold text-primary">EC MONSTER</span>
+          <p class="mt-2 text-sm text-slate">EC モンスター</p>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold mb-3">ナビゲーション</h3>
+          <ul class="space-y-2 text-sm text-slate">
+            <li><a href="/" class="hover:text-primary transition-colors">トップ</a></li>
+            <li><a href="/ai/" class="hover:text-primary transition-colors">AIコンサル</a></li>
+            <li><a href="/movie/" class="hover:text-primary transition-colors">楽天市場動画</a></li>
+            <li><a href="/contact/" class="hover:text-primary transition-colors">お問い合わせ</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="text-sm font-semibold mb-3">法的情報</h3>
+          <ul class="space-y-2 text-sm text-slate">
+            <li><a href="/privacy-policy/" class="hover:text-primary transition-colors">個人情報保護ポリシー</a></li>
+            <li><a href="/legal-notice/" class="hover:text-primary transition-colors">特定商取引法に基づく表示</a></li>
+            <li><a href="/company/" class="hover:text-primary transition-colors">会社概要</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-8 pt-8 border-t border-navy-mid text-center text-sm text-slate">
+        &copy; EC モンスター All Rights Reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Mobile menu script -->
+  <script is:inline>
+    const menuBtn = document.getElementById('mobile-menu-btn');
+    const mobileMenu = document.getElementById('mobile-menu');
+    if (menuBtn && mobileMenu) {
+      menuBtn.addEventListener('click', () => {
+        mobileMenu.classList.toggle('hidden');
+      });
+    }
+    const header = document.getElementById('site-header');
+    if (header) {
+      window.addEventListener('scroll', () => {
+        header.classList.toggle('shadow-lg', window.scrollY > 10);
+      });
+    }
+  </script>
+</body>
+</html>

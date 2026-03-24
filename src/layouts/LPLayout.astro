@@ -1,0 +1,69 @@
+---
+import '../styles/global.css'
+
+interface Props {
+  title: string
+  description?: string
+}
+
+const {
+  title,
+  description = '【ECモンスター】EC運営に特化したAIコンサル',
+} = Astro.props
+
+const siteUrl = 'https://ecmonster.jp'
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString()
+---
+
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+  <title>{title}</title>
+  <meta name="description" content={description} />
+  <link rel="canonical" href={canonicalUrl} />
+  <meta property="og:title" content={title} />
+  <meta property="og:description" content={description} />
+  <meta property="og:url" content={canonicalUrl} />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="EC モンスター" />
+  <meta property="og:locale" content="ja_JP" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700;900&family=Inter:wght@400;500;700&display=swap" rel="stylesheet" />
+
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-53F0YCGQDS"></script>
+  <script is:inline>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-53F0YCGQDS');
+    gtag('config', 'AW-1003850219');
+  </script>
+
+  <slot name="head" />
+</head>
+<body class="bg-white">
+  <main>
+    <slot />
+  </main>
+
+  <!-- LP Footer -->
+  <footer class="bg-navy text-white py-8">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <div class="flex flex-wrap justify-center gap-4 text-sm text-slate mb-4">
+        <a href="/" class="hover:text-primary transition-colors">トップ</a>
+        <a href="/echeroes/" class="hover:text-primary transition-colors">運営会社</a>
+        <a href="/company/" class="hover:text-primary transition-colors">会社概要</a>
+        <a href="/privacy-policy/" class="hover:text-primary transition-colors">個人情報保護ポリシー</a>
+        <a href="/legal-notice/" class="hover:text-primary transition-colors">特定商取引法</a>
+        <a href="/contact/" class="hover:text-primary transition-colors">お問い合わせ</a>
+      </div>
+      <p class="text-sm text-slate">&copy; EC モンスター All Rights Reserved.</p>
+    </div>
+  </footer>
+</body>
+</html>

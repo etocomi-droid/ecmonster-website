@@ -1,0 +1,244 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const guideSections = [
+  {
+    num: 1,
+    title: '楽天市場とは？',
+    articles: [
+      { title: '楽天市場の概要と規模', href: '/guide-rakuten/1/rakuten-overview/' },
+      { title: '他ECサイトとの違い', href: '/guide-rakuten/1/ec-differences/' },
+      { title: '楽天市場を選ぶメリット', href: '/guide-rakuten/1/rakuten-merits/' },
+    ],
+  },
+  {
+    num: 2,
+    title: '出店の準備',
+    articles: [
+      { title: '楽天市場出店の準備：必要な書類と情報', href: '/guide-rakuten/2/preparation/' },
+      { title: '楽天市場出店までのスケジュール感', href: '/guide-rakuten/2/schedule/' },
+      { title: '出店プランの選び方', href: '/guide-rakuten/2/plan-selection/' },
+    ],
+  },
+  {
+    num: 3,
+    title: '初期設定',
+    articles: [
+      { title: 'ショップ開設の流れ', href: '/guide-rakuten/3/shop-opening/' },
+      { title: 'ショップページのデザインとカスタマイズ', href: '/guide-rakuten/3/design-customize/' },
+      { title: '商品登録の基本ルール', href: '/guide-rakuten/3/product-registration/' },
+    ],
+  },
+  {
+    num: 4,
+    title: '効果的な商品ページの作り方',
+    articles: [
+      { title: '商品タイトルと説明文の最適化', href: '/guide-rakuten/4/title-optimization/' },
+      { title: '画像の重要性とポイント', href: '/guide-rakuten/4/image-importance/' },
+      { title: '検索上位に表示されるためのSEO対策', href: '/guide-rakuten/4/seo/' },
+    ],
+  },
+  {
+    num: 5,
+    title: '集客・販売促進のコツ',
+    articles: [
+      { title: '楽天スーパーセールやキャンペーン活用法', href: '/guide-rakuten/5/super-sale/' },
+      { title: 'クーポンとポイント戦略', href: '/guide-rakuten/5/coupon-points/' },
+      { title: '楽天アフィリエイトの活用', href: '/guide-rakuten/5/affiliate/' },
+    ],
+  },
+  {
+    num: 6,
+    title: '運営・管理のポイント',
+    articles: [
+      { title: '売上管理と分析ツールの使い方', href: '/guide-rakuten/6/analytics/' },
+      { title: '顧客対応とレビュー管理の重要性', href: '/guide-rakuten/6/review-management/' },
+      { title: 'トラブル時の対応方法', href: '/guide-rakuten/6/trouble-shooting/' },
+    ],
+  },
+  {
+    num: 7,
+    title: '成功するためのヒント',
+    articles: [
+      { title: '成功事例から学ぶ成長戦略', href: '/guide-rakuten/7/success-cases/' },
+      { title: '差別化とブランディングの工夫', href: '/guide-rakuten/7/branding/' },
+      { title: '長期的な売上向上のための施策', href: '/guide-rakuten/7/long-term-growth/' },
+    ],
+  },
+  {
+    num: 8,
+    title: '出店後によくある課題と解決法',
+    articles: [
+      { title: '在庫管理の失敗を防ぐ', href: '/guide-rakuten/8/inventory/' },
+      { title: '広告費用対効果の改善', href: '/guide-rakuten/8/ad-roi/' },
+      { title: '販売データを活用した戦略見直し', href: '/guide-rakuten/8/data-strategy/' },
+    ],
+  },
+  {
+    num: 9,
+    title: '出店における注意点',
+    articles: [
+      { title: '楽天規約の重要ポイント', href: '/guide-rakuten/9/regulations/' },
+      { title: '禁止事項やペナルティについて', href: '/guide-rakuten/9/penalties/' },
+      { title: '契約更新・解約の際の留意点', href: '/guide-rakuten/9/contract/' },
+    ],
+  },
+  {
+    num: 10,
+    title: 'まとめと次のステップ',
+    articles: [
+      { title: '出店を成功させるための最重要ポイント', href: '/guide-rakuten/10/key-points/' },
+      { title: '出店後のステップアップ計画', href: '/guide-rakuten/10/step-up/' },
+      { title: '他のECチャネルとの連携方法', href: '/guide-rakuten/10/multi-channel/' },
+    ],
+  },
+]
+---
+
+<BaseLayout title="ECモンスター楽天市場動画セミナー - 楽天市場で成功する方法" description="本気でECで成功したい人への道しるべを解説した動画です。年商億突破店舗を200社以上指導してきた実績から、成功への最短ルートを提示します。">
+
+  <!-- Hero -->
+  <section class="bg-navy text-white py-20 md:py-28">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
+        楽天市場で<span class="text-primary">成功する方法</span>を<br />動画で解説
+      </h1>
+      <p class="text-lg text-slate max-w-2xl mx-auto mb-8">
+        本気でECで成功したい人への道しるべを解説した動画です！
+      </p>
+      <a href="https://lms.ecmonster.jp/p/rakuten2" class="inline-block bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-full transition-colors text-lg">
+        楽天市場で成功する方法を見る（2話無料公開）
+      </a>
+    </div>
+  </section>
+
+  <!-- Features -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {[
+          { icon: '🗺️', title: '成功への最短ルート', desc: '必要な項目だけに絞った内容で、成功への最短ルートを提示します。' },
+          { icon: '🔓', title: '非公開ロジック公開', desc: 'ほとんどの人が知らないロジックを惜しげもなく公開しています。' },
+          { icon: '📊', title: '200社以上の指導実績', desc: '業界最古参、年商億突破店舗を200社以上指導してきた実績。' },
+          { icon: '🤝', title: 'コミュニティ参加', desc: '視聴後は同業者コミュニティへの参加やマッチング紹介もあります。' },
+        ].map((f) => (
+          <div class="bg-white rounded-xl shadow-md p-6 border">
+            <div class="text-3xl mb-3">{f.icon}</div>
+            <h3 class="text-lg font-bold text-dark mb-2">{f.title}</h3>
+            <p class="text-slate text-sm">{f.desc}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Instructor -->
+  <section class="py-20 bg-slate-light">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-dark">講師紹介</h2>
+      <div class="bg-white rounded-2xl shadow-lg p-8">
+        <h3 class="text-2xl font-bold text-dark mb-4">江藤 正親（えとう まさちか）</h3>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
+          {[
+            { num: '1999年〜', label: 'EC事業開始' },
+            { num: '4,500万', label: '月商達成' },
+            { num: '1,000社+', label: '支援実績' },
+            { num: '200社+', label: '年商1億超え' },
+          ].map((s) => (
+            <div class="text-center p-4 bg-slate-light rounded-xl">
+              <div class="text-xl font-bold text-primary">{s.num}</div>
+              <div class="text-xs text-slate mt-1">{s.label}</div>
+            </div>
+          ))}
+        </div>
+        <ul class="space-y-2 text-slate text-sm">
+          <li>・明治大学卒業</li>
+          <li>・独立系ECコンサルタントとしては日本最古</li>
+          <li>・立ち上げたショップが楽天市場3年連続総合3位受賞</li>
+          <li>・著書3冊、17名のEC関連本著者を輩出</li>
+          <li>・全国47都道府県での講演活動</li>
+          <li>・JECCICA（一般社団法人ジャパンEコマースコンサルタント協会）理事</li>
+          <li>・JASEC（一般社団法人日本イーコマース学会）理事</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Guide Sections -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-dark">楽天市場出店ガイド</h2>
+      <div class="space-y-6">
+        {guideSections.map((section) => (
+          <div class="bg-white rounded-xl shadow-md border overflow-hidden">
+            <div class="bg-navy text-white px-6 py-4">
+              <h3 class="text-lg font-bold">{section.num}. {section.title}</h3>
+            </div>
+            <ul class="divide-y">
+              {section.articles.map((article) => (
+                <li>
+                  <a href={article.href} class="block px-6 py-3 hover:bg-red-50 transition-colors text-dark hover:text-primary">
+                    {article.title}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Blog Notes -->
+  <section class="py-20 bg-slate-light">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8 text-dark">コンサルタントの思考</h2>
+      <p class="text-center text-slate mb-12">業者営業トークに騙されない本質的思考ノート</p>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { num: 1, title: '地方創生の嘘', href: '/blog/1-chihou-sousei/' },
+          { num: 2, title: 'リピート、ファンの嘘', href: '/blog/2-repeat-fan/' },
+          { num: 3, title: 'AIの嘘', href: '/blog/3-ai-uso/' },
+        ].map((post) => (
+          <a href={post.href} class="block bg-white rounded-xl shadow-md p-6 border hover:shadow-lg hover:border-primary transition-all">
+            <span class="text-sm text-primary font-bold">Note {post.num}</span>
+            <h3 class="text-lg font-bold text-dark mt-2">{post.title}</h3>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonials -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-dark">視聴者の声</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          { name: 'T.S.様', category: '雑貨', quote: '何から始めたらいいか分からなく途方にくれてたんです。でもこの動画を見たら、まず何をすべきか、そしてやることいっぱいあるのがわかりました。' },
+          { name: 'T.K.様', category: 'アクセサリー', quote: '最初嘘だろうと思ってたんですけど、これ、本当に狙い方教えてくれてますね。' },
+          { name: 'S.K.様', category: '菓子', quote: 'どこまでも具体的に、どこまでも親切です。梱包作業場所環境のアドバイスまであるとは驚きました。' },
+          { name: 'K.D.様', category: '家具', quote: '実行後、売上が伸びて実店舗を軽くしのぐ結果を達成。セール前半戦・後半戦の具体的攻略法を学習できました。' },
+        ].map((t) => (
+          <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-gold">
+            <p class="text-slate mb-4 italic">「{t.quote}」</p>
+            <p class="text-sm font-medium text-dark">{t.name}（{t.category}）</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-20 bg-navy text-white text-center">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold mb-6">楽天市場で成功する方法を今すぐ学ぶ</h2>
+      <p class="text-slate mb-8">2話無料公開中</p>
+      <a href="https://lms.ecmonster.jp/p/rakuten2" class="inline-block bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-full transition-colors text-lg">
+        無料で視聴する
+      </a>
+      <p class="mt-8 text-slate text-sm">ECモンスターAmazon編 — Coming Soon</p>
+    </div>
+  </section>
+
+</BaseLayout>

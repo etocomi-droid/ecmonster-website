@@ -1,0 +1,42 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout title="専用Googleアカウントの作り方 - EC モンスター" description="ECモンスターAIコンサル専用Googleアカウントのセットアップ手順をご案内します。">
+
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <h1 class="text-3xl font-bold text-center mb-12 text-dark">専用Googleアカウントの作り方</h1>
+
+      <div class="space-y-8">
+        {[
+          { step: 1, title: '招待メール確認', desc: '登録したGmailに届いた招待メールで「理解しました」をクリックします。' },
+          { step: 2, title: 'パスワード設定', desc: '新しいアカウント用のパスワードを設定します。' },
+          { step: 3, title: 'OKボタンをクリック', desc: '確認ダイアログで「OK」を選択します。' },
+          { step: 4, title: '同期有効化', desc: '「同期をオンにする」をクリックしてアカウント同期を開始します。' },
+          { step: 5, title: 'NotebookLM画面確認', desc: 'ECモンスターAIコンサル新規アカウントアクセス時に表示されるNotebookLM画面で「OK」をクリックします。' },
+          { step: 6, title: 'アクセス完了', desc: '「ECモンスターAIコンサルへようこそ！」画面が表示され、セットアップ完了です。' },
+        ].map((s) => (
+          <div class="flex gap-6 items-start bg-white rounded-xl shadow-md p-6 border">
+            <div class="flex-shrink-0 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg">
+              {s.step}
+            </div>
+            <div>
+              <h3 class="text-lg font-bold text-dark mb-2">{s.title}</h3>
+              <p class="text-slate">{s.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div class="mt-12 bg-slate-light rounded-2xl p-8">
+        <h2 class="text-xl font-bold text-dark mb-4">アカウント切り替え方法</h2>
+        <p class="text-slate">
+          アイコンクリック後、使用するアカウントを選択します。
+          ECモンスターAIコンサルは専用アカウントでのみ動作します。
+        </p>
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>

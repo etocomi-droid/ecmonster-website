@@ -1,0 +1,50 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+---
+
+<BaseLayout title="お問い合わせ - EC モンスター" description="ECモンスターへのお問い合わせはこちらから。ご質問等ございましたらお気軽にお問い合わせください。">
+
+  <section class="py-20">
+    <div class="max-w-2xl mx-auto px-4">
+      <h1 class="text-3xl font-bold text-center mb-6 text-dark">お問い合わせ</h1>
+      <p class="text-slate text-center mb-12">
+        ご質問等ございましたらお気軽にお問い合わせください。<br />
+        お問い合わせは、当社営業時間に順次対応させていただきます。<br />
+        内容によっては返信に時間を要する場合がございます。あらかじめご了承ください。
+      </p>
+
+      <form action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
+        <input type="hidden" name="access_key" value="ed53efba-9f1e-4bf3-aa00-7d68b21d8464" />
+        <input type="hidden" name="redirect" value="https://ecmonster.jp/contact/thanks/" />
+        <input type="hidden" name="subject" value="ECモンスター お問い合わせ" />
+
+        <div>
+          <label for="name" class="block text-sm font-medium text-dark mb-2">お名前 <span class="text-primary">*</span></label>
+          <input type="text" id="name" name="name" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" />
+        </div>
+
+        <div>
+          <label for="email" class="block text-sm font-medium text-dark mb-2">メールアドレス <span class="text-primary">*</span></label>
+          <input type="email" id="email" name="email" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" />
+        </div>
+
+        <div>
+          <label for="phone" class="block text-sm font-medium text-dark mb-2">電話番号</label>
+          <input type="tel" id="phone" name="phone" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary" />
+        </div>
+
+        <div>
+          <label for="message" class="block text-sm font-medium text-dark mb-2">お問い合わせ内容 <span class="text-primary">*</span></label>
+          <textarea id="message" name="message" rows="6" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"></textarea>
+        </div>
+
+        <div class="text-center">
+          <button type="submit" class="bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-full transition-colors text-lg">
+            送信する
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+
+</BaseLayout>

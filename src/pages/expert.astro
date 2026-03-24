@@ -1,0 +1,102 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout title="楽天市場編エキスパート - EC モンスター" description="月商1,000万円を突破するノウハウを習得したことを証明する称号。ECモンスターの3段階カリキュラムを修了し、検定試験に合格した者のみに授与されます。">
+
+  <!-- Hero -->
+  <section class="bg-navy text-white py-20">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h1 class="text-3xl md:text-4xl font-bold mb-6">楽天市場編<span class="text-primary">エキスパート</span></h1>
+      <p class="text-lg text-slate">
+        月商1,000万円を突破するノウハウを習得したことを証明する称号
+      </p>
+    </div>
+  </section>
+
+  <!-- 3 Steps -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-dark">3つのステップ</h2>
+      <div class="space-y-8">
+        {[
+          {
+            step: 'STEP 1',
+            title: '月商100万円への道',
+            items: ['商品登録', '市場分析', 'SKUプロジェクト', 'レビュー戦略'],
+          },
+          {
+            step: 'STEP 2',
+            title: '月商500万円への道',
+            items: ['送料戦略', '梱包コスト', '価格設定', '在庫管理'],
+          },
+          {
+            step: 'STEP 3',
+            title: '月商1,000万円への道',
+            items: ['広告運用（RPP・TDA）', 'キーワード戦略', '分析ツール活用'],
+          },
+        ].map((s) => (
+          <div class="bg-white rounded-2xl shadow-lg p-8 border">
+            <div class="flex items-center gap-4 mb-4">
+              <span class="bg-primary text-white text-sm font-bold px-4 py-1 rounded-full">{s.step}</span>
+              <h3 class="text-xl font-bold text-dark">{s.title}</h3>
+            </div>
+            <div class="flex flex-wrap gap-3">
+              {s.items.map((item) => (
+                <span class="bg-slate-light text-dark text-sm px-4 py-2 rounded-lg">{item}</span>
+              ))}
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Exam -->
+  <section class="py-20 bg-slate-light">
+    <div class="max-w-4xl mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8 text-dark">検定試験</h2>
+      <p class="text-slate text-lg mb-4">全50問において<span class="font-bold text-primary">80%以上</span>の正解率を達成する必要があります。</p>
+    </div>
+  </section>
+
+  <!-- Benefits -->
+  <section class="py-20">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-dark">合格者特典</h2>
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+        {[
+          { icon: '📜', title: '公式認定証の発行' },
+          { icon: '🏷️', title: 'エキスパートロゴの提供' },
+          { icon: '💼', title: '業務委託案件の紹介' },
+        ].map((b) => (
+          <div class="bg-white rounded-xl shadow-md p-6 text-center border">
+            <div class="text-3xl mb-3">{b.icon}</div>
+            <h3 class="font-bold text-dark">{b.title}</h3>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Target -->
+  <section class="py-20 bg-slate-light">
+    <div class="max-w-4xl mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-12 text-dark">こんな方におすすめ</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+        {[
+          '店舗運営者として成長したい方',
+          'キャリアアップを目指している方',
+          '独立志向のフリーランスの方',
+          'EC事業の経営者の方',
+        ].map((t) => (
+          <div class="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm border">
+            <span class="text-primary font-bold text-xl">✓</span>
+            <span class="text-dark">{t}</span>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+</BaseLayout>
