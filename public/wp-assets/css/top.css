@@ -224,3 +224,80 @@
     margin-top: 15px;
   }
 }
+/* ECコンサルカンパニー サービスバナー */
+.eccc-services {
+  padding: 30px 0;
+  background: #f5f5f5;
+}
+.eccc-banner-grid {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.eccc-banner-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.eccc-banner-col a,
+.eccc-banner-row a,
+.eccc-banner-full a {
+  display: block;
+}
+.eccc-banner-col img,
+.eccc-banner-row img,
+.eccc-banner-full img {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: opacity 0.3s;
+}
+.eccc-banner-col a:hover img,
+.eccc-banner-row a:hover img,
+.eccc-banner-full a:hover img {
+  opacity: 0.8;
+}
+.eccc-banner-row {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 15px;
+}
+.eccc-banner-row a {
+  flex: 1;
+}
+.eccc-banner-full {
+  margin-bottom: 15px;
+}
+.eccc-banner-links {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+}
+.eccc-banner-links a {
+  display: inline-block;
+  padding: 12px 20px;
+  background: #EC6C1F;
+  color: #fff;
+  font-weight: bold;
+  font-size: 14px;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background 0.3s;
+}
+.eccc-banner-links a:hover {
+  background: #d45a10;
+}
+@media screen and (max-width: 768px) {
+  .eccc-banner-grid {
+    flex-direction: column;
+  }
+  .eccc-banner-row {
+    flex-direction: column;
+  }
+  .eccc-banner-links {
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+}
