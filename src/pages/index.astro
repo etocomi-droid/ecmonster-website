@@ -4,9 +4,14 @@ import BaseLayout from '../layouts/BaseLayout.astro'
 
 <BaseLayout title="【ECモンスター】EC運営に特化したAIコンサルとECモール攻略方法を解説した動画セミナー">
 
-  <!-- Hero Section -->
-  <section class="relative bg-navy text-white py-20 md:py-32">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <!-- Hero with gradient overlay -->
+  <section class="relative bg-navy text-white py-28 md:py-40 overflow-hidden">
+    <div class="absolute inset-0 bg-grid-pattern"></div>
+    <div class="absolute inset-0 gradient-overlay-red"></div>
+    <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div class="inline-block px-4 py-1 bg-primary/10 border border-primary/30 rounded-full mb-6">
+        <span class="text-primary text-xs font-bold tracking-widest uppercase">EC Monster</span>
+      </div>
       <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
         EC運営に特化した<br class="hidden md:block" />
         <span class="text-primary">AIコンサル</span>と<br class="hidden md:block" />
@@ -16,19 +21,45 @@ import BaseLayout from '../layouts/BaseLayout.astro'
         モール出店・自社EC運営者のための、成功への最短ルートを提供します
       </p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/ai/" class="bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-full transition-colors text-lg">
+        <a href="/ai/" class="bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-full transition-colors text-lg shadow-lg shadow-primary/20">
           AIコンサルを無料体験
         </a>
-        <a href="/movie/" class="border-2 border-white hover:border-primary hover:text-primary text-white font-bold px-8 py-4 rounded-full transition-colors text-lg">
+        <a href="/movie/" class="border-2 border-white/30 hover:border-primary hover:text-primary text-white font-bold px-8 py-4 rounded-full transition-colors text-lg">
           講座の詳細を見る
         </a>
       </div>
     </div>
   </section>
 
+  <!-- Achievement Stats Bar -->
+  <section class="relative -mt-12 z-10">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="bg-white rounded-2xl shadow-xl p-8 md:p-10 animate-on-scroll">
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
+          <div>
+            <div class="text-4xl md:text-5xl font-black text-dark mb-1">25<span class="text-primary text-2xl">年</span></div>
+            <p class="text-sm text-slate">EC業界での経験</p>
+          </div>
+          <div>
+            <div class="text-4xl md:text-5xl font-black text-dark mb-1">1,000<span class="text-primary text-2xl">社+</span></div>
+            <p class="text-sm text-slate">支援実績</p>
+          </div>
+          <div>
+            <div class="text-4xl md:text-5xl font-black text-dark mb-1">200<span class="text-primary text-2xl">社+</span></div>
+            <p class="text-sm text-slate">年商1億超に導いた企業</p>
+          </div>
+          <div>
+            <div class="text-4xl md:text-5xl font-black text-dark mb-1">7<span class="text-primary text-2xl">日間</span></div>
+            <p class="text-sm text-slate">無料トライアル</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- About Section -->
-  <section class="py-20 bg-slate-light">
-    <div class="max-w-4xl mx-auto px-4 text-center">
+  <section class="py-24 bg-slate-light">
+    <div class="max-w-4xl mx-auto px-4 text-center animate-on-scroll">
       <h2 class="text-3xl font-bold mb-6 text-dark">ECモンスターとは</h2>
       <p class="text-lg text-slate leading-relaxed">
         「ECモンスター」はEC運営者を支援する総合ブランドです。<br />
@@ -39,67 +70,62 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   </section>
 
   <!-- Services Section -->
-  <section class="py-20">
+  <section class="py-24 bg-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center mb-16 text-dark">サービス</h2>
+      <h2 class="text-3xl font-bold text-center mb-4 text-dark animate-on-scroll">サービス</h2>
+      <p class="text-center text-slate mb-16 animate-on-scroll animate-delay-100">あなたのEC成長を加速する2つのサービス</p>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
         <!-- AI Consulting -->
-        <div class="bg-white rounded-2xl shadow-lg p-8 border hover:shadow-xl transition-shadow">
-          <div class="text-4xl mb-4">🤖</div>
+        <div class="bg-white rounded-2xl shadow-lg p-8 border border-slate-light hover:shadow-xl transition-shadow card-hover animate-on-scroll animate-delay-100">
+          <div class="w-14 h-14 bg-primary/10 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          </div>
           <h3 class="text-2xl font-bold mb-4 text-dark">ECモンスターAIコンサル</h3>
           <p class="text-slate mb-6">
-            EC運営に特化したチャットボット型AI。成功者たちのノウハウを学んだAIがあなたの質問に即答します！
+            EC運営に特化したチャットボット型AI。成功者たちのノウハウを学んだAIがあなたの質問に即答します。
           </p>
           <ul class="space-y-3 mb-8">
-            <li class="flex items-start gap-3">
-              <span class="text-primary font-bold">✓</span>
-              <span>高額コンサル不要</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-primary font-bold">✓</span>
-              <span>即時に行動指針を提示</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-primary font-bold">✓</span>
-              <span>月額5,000円〜</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-primary font-bold">✓</span>
-              <span>7日間無料トライアル</span>
-            </li>
+            {[
+              '高額コンサル不要',
+              '即時に行動指針を提示',
+              '月額5,000円〜',
+              '7日間無料トライアル',
+            ].map(item => (
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-primary flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-sm">{item}</span>
+              </li>
+            ))}
           </ul>
-          <a href="/ai/" class="inline-block bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3 rounded-full transition-colors">
+          <a href="/ai/" class="inline-block bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3 rounded-full transition-colors shadow-sm">
             AIコンサルを無料体験
           </a>
         </div>
 
         <!-- Video Course -->
-        <div class="bg-white rounded-2xl shadow-lg p-8 border hover:shadow-xl transition-shadow">
-          <div class="text-4xl mb-4">🎬</div>
+        <div class="bg-white rounded-2xl shadow-lg p-8 border border-slate-light hover:shadow-xl transition-shadow card-hover animate-on-scroll animate-delay-200">
+          <div class="w-14 h-14 bg-gold/10 rounded-2xl flex items-center justify-center mb-6">
+            <svg class="w-7 h-7 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 10l4.553-2.276A1 1 0 0121 8.618v6.764a1 1 0 01-1.447.894L15 14M5 18h8a2 2 0 002-2V8a2 2 0 00-2-2H5a2 2 0 00-2 2v8a2 2 0 002 2z"/></svg>
+          </div>
           <h3 class="text-2xl font-bold mb-4 text-dark">動画講座 楽天市場編</h3>
           <p class="text-slate mb-6">
-            本気でECで成功したい人への道しるべを解説した動画です！
+            本気でECで成功したい人への道しるべを解説した動画です。
           </p>
           <ul class="space-y-3 mb-8">
-            <li class="flex items-start gap-3">
-              <span class="text-primary font-bold">✓</span>
-              <span>1億までのロードマップ</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-primary font-bold">✓</span>
-              <span>即実践可能マル秘テク</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-primary font-bold">✓</span>
-              <span>登録特典付き</span>
-            </li>
-            <li class="flex items-start gap-3">
-              <span class="text-primary font-bold">✓</span>
-              <span>2話無料視聴</span>
-            </li>
+            {[
+              '1億までのロードマップ',
+              '即実践可能マル秘テク',
+              '登録特典付き',
+              '2話無料視聴',
+            ].map(item => (
+              <li class="flex items-center gap-3">
+                <svg class="w-5 h-5 text-gold flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+                <span class="text-sm">{item}</span>
+              </li>
+            ))}
           </ul>
-          <a href="/movie/" class="inline-block bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3 rounded-full transition-colors">
+          <a href="/movie/" class="inline-block bg-dark hover:bg-navy text-white font-bold px-6 py-3 rounded-full transition-colors shadow-sm">
             講座の詳細を見る
           </a>
         </div>
@@ -107,79 +133,197 @@ import BaseLayout from '../layouts/BaseLayout.astro'
     </div>
   </section>
 
+  <!-- Service Flow -->
+  <section class="py-24 bg-navy text-white bg-grid-pattern">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-4 animate-on-scroll">利用フロー</h2>
+      <p class="text-center text-slate mb-16 animate-on-scroll animate-delay-100">3ステップで今日からEC改善を始められます</p>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 animate-on-scroll animate-delay-200">
+        {[
+          { step: '01', title: '無料体験', desc: '7日間無料でAIコンサルをお試し。質問し放題。', icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 10V3L4 14h7v7l9-11h-7z"/>' },
+          { step: '02', title: 'AIと相談', desc: '売上分析、商品ページ改善、広告最適化をAIが提案。', icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>' },
+          { step: '03', title: '施策を実行', desc: 'AIの提案に基づき施策を実行。改善サイクルを回す。', icon: '<path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/>' },
+        ].map((item, i) => (
+          <div class="relative">
+            <div class="bg-navy-light rounded-2xl p-8 text-center border border-navy-mid hover:border-primary/30 transition-colors h-full">
+              <div class="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6">
+                <svg class="w-8 h-8 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24" set:html={item.icon}></svg>
+              </div>
+              <div class="text-primary text-sm font-bold tracking-widest mb-3">STEP {item.step}</div>
+              <h3 class="text-xl font-bold mb-3">{item.title}</h3>
+              <p class="text-sm text-slate">{item.desc}</p>
+            </div>
+            {i < 2 && (
+              <div class="hidden md:flex absolute top-1/2 -right-3 transform -translate-y-1/2 z-10">
+                <svg class="w-6 h-6 text-primary/50" fill="currentColor" viewBox="0 0 24 24"><path d="M10 6l6 6-6 6V6z"/></svg>
+              </div>
+            )}
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <!-- Sales Growth Chart (SVG) -->
+  <section class="py-24 bg-white">
+    <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-center mb-4 text-dark animate-on-scroll">EC売上改善の実績</h2>
+      <p class="text-center text-slate mb-12 animate-on-scroll animate-delay-100">コンサルティング開始前後の月商変化（代表事例3社）</p>
+
+      <div class="bg-slate-light rounded-2xl p-6 md:p-10 animate-on-scroll animate-delay-200">
+        <svg viewBox="0 0 700 320" class="w-full" role="img" aria-label="売上改善の棒グラフ">
+          <!-- Grid -->
+          <line x1="80" y1="40" x2="620" y2="40" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4"/>
+          <line x1="80" y1="100" x2="620" y2="100" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4"/>
+          <line x1="80" y1="160" x2="620" y2="160" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4"/>
+          <line x1="80" y1="220" x2="620" y2="220" stroke="#E5E7EB" stroke-width="1" stroke-dasharray="4"/>
+          <line x1="80" y1="280" x2="620" y2="280" stroke="#D1D5DB" stroke-width="1"/>
+
+          <!-- Y-axis -->
+          <text x="70" y="45" text-anchor="end" class="text-[11px]" fill="#6B7280">1,000万</text>
+          <text x="70" y="105" text-anchor="end" class="text-[11px]" fill="#6B7280">750万</text>
+          <text x="70" y="165" text-anchor="end" class="text-[11px]" fill="#6B7280">500万</text>
+          <text x="70" y="225" text-anchor="end" class="text-[11px]" fill="#6B7280">250万</text>
+          <text x="70" y="285" text-anchor="end" class="text-[11px]" fill="#6B7280">0万</text>
+
+          <!-- Case A: Fashion 100万 → 800万 -->
+          <rect x="120" y="256" width="50" height="24" rx="4" fill="#1A1A2E" opacity="0.3"/>
+          <rect x="180" y="88" width="50" height="192" rx="4" fill="#E63946"/>
+          <text x="155" y="310" text-anchor="middle" class="text-[11px]" fill="#333" font-weight="600">A社</text>
+          <text x="155" y="300" text-anchor="middle" class="text-[10px]" fill="#6B7280">アパレル</text>
+          <text x="145" y="250" text-anchor="middle" class="text-[10px]" fill="#6B7280">100万</text>
+          <text x="205" y="82" text-anchor="middle" class="text-[10px]" fill="#E63946" font-weight="700">800万</text>
+
+          <!-- Case B: Food 50万 → 600万 -->
+          <rect x="310" y="268" width="50" height="12" rx="4" fill="#1A1A2E" opacity="0.3"/>
+          <rect x="370" y="136" width="50" height="144" rx="4" fill="#E63946"/>
+          <text x="345" y="310" text-anchor="middle" class="text-[11px]" fill="#333" font-weight="600">B社</text>
+          <text x="345" y="300" text-anchor="middle" class="text-[10px]" fill="#6B7280">食品</text>
+          <text x="335" y="264" text-anchor="middle" class="text-[10px]" fill="#6B7280">50万</text>
+          <text x="395" y="130" text-anchor="middle" class="text-[10px]" fill="#E63946" font-weight="700">600万</text>
+
+          <!-- Case C: Hobby 30万 → 500万 -->
+          <rect x="500" y="273" width="50" height="7" rx="4" fill="#1A1A2E" opacity="0.3"/>
+          <rect x="560" y="160" width="50" height="120" rx="4" fill="#E63946"/>
+          <text x="535" y="310" text-anchor="middle" class="text-[11px]" fill="#333" font-weight="600">C社</text>
+          <text x="535" y="300" text-anchor="middle" class="text-[10px]" fill="#6B7280">ホビー</text>
+          <text x="525" y="268" text-anchor="middle" class="text-[10px]" fill="#6B7280">30万</text>
+          <text x="585" y="154" text-anchor="middle" class="text-[10px]" fill="#E63946" font-weight="700">500万</text>
+
+          <!-- Legend -->
+          <rect x="230" y="8" width="14" height="14" rx="3" fill="#1A1A2E" opacity="0.3"/>
+          <text x="250" y="19" class="text-[11px]" fill="#666">Before</text>
+          <rect x="320" y="8" width="14" height="14" rx="3" fill="#E63946"/>
+          <text x="340" y="19" class="text-[11px]" fill="#666">After（コンサル後）</text>
+        </svg>
+      </div>
+    </div>
+  </section>
+
   <!-- Comparison Table -->
-  <section class="py-20 bg-slate-light">
+  <section class="py-24 bg-slate-light">
     <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-dark">どちらが自分に合っている？</h2>
-      <div class="overflow-x-auto">
-        <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
+      <h2 class="text-3xl font-bold text-center mb-4 text-dark animate-on-scroll">どちらが自分に合っている？</h2>
+      <p class="text-center text-slate mb-12 animate-on-scroll animate-delay-100">2つのサービスを比較して最適な選択を</p>
+      <div class="overflow-x-auto animate-on-scroll animate-delay-200">
+        <table class="w-full bg-white rounded-2xl shadow-lg overflow-hidden">
           <thead>
-            <tr class="bg-navy text-white">
-              <th class="px-6 py-4 text-left">項目</th>
-              <th class="px-6 py-4 text-center">AIコンサル</th>
-              <th class="px-6 py-4 text-center">動画講座</th>
+            <tr>
+              <th class="px-6 py-5 text-left bg-slate-light text-dark text-sm font-bold">項目</th>
+              <th class="px-6 py-5 text-center bg-primary text-white text-sm font-bold">
+                <span class="inline-block px-2 py-0.5 bg-white/20 rounded-full text-[10px] mb-1">人気</span><br>
+                AIコンサル
+              </th>
+              <th class="px-6 py-5 text-center bg-dark text-white text-sm font-bold">動画講座</th>
             </tr>
           </thead>
           <tbody>
-            <tr class="border-b">
-              <td class="px-6 py-4 font-medium">学び方</td>
-              <td class="px-6 py-4 text-center">質問に即回答</td>
-              <td class="px-6 py-4 text-center">動画で体系的に学習</td>
-            </tr>
-            <tr class="border-b bg-gray-50">
-              <td class="px-6 py-4 font-medium">コスト</td>
-              <td class="px-6 py-4 text-center">月額制（5,000円〜）</td>
-              <td class="px-6 py-4 text-center">買い切り</td>
-            </tr>
-            <tr class="border-b">
-              <td class="px-6 py-4 font-medium">向いている人</td>
-              <td class="px-6 py-4 text-center">すぐ課題解決したい</td>
-              <td class="px-6 py-4 text-center">じっくり学びたい</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4 font-medium">ゴール</td>
-              <td class="px-6 py-4 text-center">行動指針が明確に</td>
-              <td class="px-6 py-4 text-center">ノウハウの習得</td>
-            </tr>
+            {[
+              { item: '学び方', ai: '質問に即回答', video: '動画で体系的に学習' },
+              { item: 'コスト', ai: '月額5,000円〜', video: '買い切り' },
+              { item: '向いている人', ai: 'すぐ課題解決したい', video: 'じっくり学びたい' },
+              { item: 'ゴール', ai: '行動指針が明確に', video: 'ノウハウの習得' },
+              { item: 'サポート', ai: '24時間AI対応', video: 'コンテンツ視聴' },
+              { item: '無料体験', ai: '7日間無料', video: '2話無料' },
+            ].map((row, i) => (
+              <tr class={i % 2 === 0 ? 'bg-white' : 'bg-slate-light/50'}>
+                <td class="px-6 py-4 font-medium text-sm">{row.item}</td>
+                <td class="px-6 py-4 text-center text-sm comparison-highlight">{row.ai}</td>
+                <td class="px-6 py-4 text-center text-sm text-slate">{row.video}</td>
+              </tr>
+            ))}
           </tbody>
         </table>
       </div>
     </div>
   </section>
 
+  <!-- Representative Profile -->
+  <section class="py-24 bg-white">
+    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+      <h2 class="text-3xl font-bold text-dark text-center mb-12 animate-on-scroll">代表紹介</h2>
+      <div class="bg-slate-light rounded-2xl p-8 md:p-10 animate-on-scroll animate-delay-100">
+        <div class="flex flex-col md:flex-row gap-8">
+          <div class="flex-shrink-0 flex flex-col items-center">
+            <div class="w-32 h-32 rounded-full bg-navy flex items-center justify-center text-primary text-3xl font-bold shadow-lg">ME</div>
+            <p class="mt-3 text-sm text-slate">代表取締役</p>
+          </div>
+          <div class="flex-1">
+            <h3 class="text-2xl font-bold text-dark mb-1">江藤 正親</h3>
+            <p class="text-sm text-primary font-medium mb-4">ECコンサルタント / 著者 / 講演者</p>
+            <div class="space-y-3 text-sm leading-relaxed">
+              <p>明治大学卒。1999年からネットショップ運営に携わり、自社ショップを1年半で<strong>月商4,500万円</strong>に成長させ、<strong>楽天総合3位を3年連続受賞</strong>。</p>
+              <p>独立系ECコンサルタントとして<strong>1,000社以上を支援</strong>し、<strong>200社以上を年商1億円超</strong>に導く。この膨大な知見をAIに組み込んだのがECモンスターAIコンサルです。</p>
+            </div>
+            <div class="mt-6 pt-4 border-t border-white">
+              <p class="text-xs text-slate mb-2">メディア掲載実績</p>
+              <div class="flex flex-wrap gap-2">
+                {['日本経済新聞', 'NHK', 'テレビ東京', 'J-WAVE', '東洋経済'].map(media => (
+                  <span class="bg-white text-dark text-xs px-3 py-1 rounded-full font-medium shadow-sm">{media}</span>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
   <!-- Testimonials -->
-  <section class="py-20">
+  <section class="py-24 bg-navy text-white bg-dot-pattern">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-      <h2 class="text-3xl font-bold text-center mb-16 text-dark">利用者の声</h2>
+      <h2 class="text-3xl font-bold text-center mb-4 animate-on-scroll">利用者の声</h2>
+      <p class="text-center text-slate mb-16 animate-on-scroll animate-delay-100">実際にサービスを利用したお客様の感想</p>
 
       <!-- AI Consulting Testimonials -->
-      <h3 class="text-xl font-bold mb-8 text-navy-mid">AIコンサル利用者の声</h3>
+      <h3 class="text-lg font-bold mb-6 text-primary animate-on-scroll">AIコンサル利用者の声</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-16">
         {[
           { platform: '楽天市場', category: '無添加スイーツ店', quote: '質問のたびに"なるほど"が返ってくるから、何を直すべきかが明確になった。' },
           { platform: 'Amazon', category: '副業革小物ブランド', quote: '"どうやるか"じゃなく"なぜやるか"をAIが教えてくれるから自分で戦略が組めるようになった。' },
           { platform: 'Amazon', category: 'アクセサリー', quote: 'AIの指摘で、自分がいかに感情で広告を打っていたかに気づきました。' },
           { platform: '自社EC（Shopify）', category: '家具工房', quote: '社員に「こういう理由でここを直す」と説明できるようになった。それだけでも価値があった。' },
-        ].map((t) => (
-          <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-primary">
-            <p class="text-slate mb-4 italic">「{t.quote}」</p>
-            <p class="text-sm font-medium text-dark">{t.platform} / {t.category}</p>
+        ].map((t, i) => (
+          <div class={`bg-navy-light rounded-xl p-6 border-l-4 border-primary animate-on-scroll animate-delay-${(i % 2 + 1) * 100}`}>
+            <p class="text-slate-light mb-4 italic text-sm">「{t.quote}」</p>
+            <p class="text-xs font-medium text-slate">{t.platform} / {t.category}</p>
           </div>
         ))}
       </div>
 
       <!-- Video Course Testimonials -->
-      <h3 class="text-xl font-bold mb-8 text-navy-mid">動画講座視聴者の声</h3>
+      <h3 class="text-lg font-bold mb-6 text-gold animate-on-scroll">動画講座視聴者の声</h3>
       <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
         {[
           { platform: '楽天市場', category: 'アパレル', quote: '地道な努力ですが確実に成果が出ているのが分かります。' },
           { platform: '楽天市場', category: 'スポーツ', quote: '繰り返し見ています。とてもわかり易いです。' },
           { platform: '楽天市場', category: '眼鏡', quote: '明確に方向性が示されていると思いました。' },
           { platform: '楽天市場', category: '菓子', quote: 'いろんな作業をいかに効率よくやるかが大切を学びました。' },
-        ].map((t) => (
-          <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-gold">
-            <p class="text-slate mb-4 italic">「{t.quote}」</p>
-            <p class="text-sm font-medium text-dark">{t.platform} / {t.category}</p>
+        ].map((t, i) => (
+          <div class={`bg-navy-light rounded-xl p-6 border-l-4 border-gold animate-on-scroll animate-delay-${(i % 2 + 1) * 100}`}>
+            <p class="text-slate-light mb-4 italic text-sm">「{t.quote}」</p>
+            <p class="text-xs font-medium text-slate">{t.platform} / {t.category}</p>
           </div>
         ))}
       </div>
@@ -187,15 +331,15 @@ import BaseLayout from '../layouts/BaseLayout.astro'
   </section>
 
   <!-- CTA Section -->
-  <section class="py-20 bg-navy text-white text-center">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold mb-6">ECの成功を、今日から始めよう</h2>
+  <section class="py-24 bg-white text-center">
+    <div class="max-w-4xl mx-auto px-4 animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl font-bold mb-6 text-dark">ECの成功を、今日から始めよう</h2>
       <p class="text-slate mb-10 text-lg">まずは無料で体験してみてください</p>
       <div class="flex flex-col sm:flex-row gap-4 justify-center">
-        <a href="/ai/" class="bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-full transition-colors text-lg">
+        <a href="/ai/" class="bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-full transition-colors text-lg shadow-lg shadow-primary/20">
           AIコンサルを無料体験
         </a>
-        <a href="/movie/" class="border-2 border-white hover:border-primary hover:text-primary font-bold px-8 py-4 rounded-full transition-colors text-lg">
+        <a href="/movie/" class="border-2 border-dark hover:bg-dark hover:text-white text-dark font-bold px-8 py-4 rounded-full transition-colors text-lg">
           動画講座を見る（2話無料）
         </a>
       </div>
