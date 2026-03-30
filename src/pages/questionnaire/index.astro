@@ -16,47 +16,43 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
             <img src="/wp-assets/img/questionnaire/img_01.png" alt="">
             <div class="form-wrap">
                 
-<div class="wpcf7 no-js" id="wpcf7-f148-o1" lang="ja" dir="ltr" data-wpcf7-id="148">
-<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-<form action="/questionnaire/#wpcf7-f148-o1" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
-<div style="display: none;">
-<input type="hidden" name="_wpcf7" value="148" />
-<input type="hidden" name="_wpcf7_version" value="6.0" />
-<input type="hidden" name="_wpcf7_locale" value="ja" />
-<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f148-o1" />
-<input type="hidden" name="_wpcf7_container_post" value="0" />
-<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
-</div>
+<form action="https://api.web3forms.com/submit" method="POST" id="questionnaire-form" class="wpcf7-form" aria-label="アンケートフォーム">
+<input type="hidden" name="access_key" value="ed53efba-9f1e-4bf3-aa00-7d68b21d8464" />
+<input type="hidden" name="redirect" value="/questionnaire/questionnaire-thanks/" />
+<input type="hidden" name="subject" value="ecmonster.jp AIコンサルアンケート" />
+<input type="checkbox" name="botcheck" class="hidden" style="display:none" />
 <div class="item">
 	<p>■ECモンスターAIコンサルを使って良かった点を教えてください<span class="red">（必須）</span>
 	</p>
-	<p><span class="wpcf7-form-control-wrap" data-name="good-point"><textarea cols="40" rows="3" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="good-point"></textarea></span>
+	<p><textarea cols="40" rows="3" maxlength="2000" class="wpcf7-form-control wpcf7-textarea" aria-required="true" name="good-point" required></textarea>
 	</p>
 </div>
 <div class="item">
 	<p>■ECモンスターAIコンサルを使う中での、お悩み事や疑問があれば教えてください<span class="red">（必須）</span>
 	</p>
-	<p><span class="wpcf7-form-control-wrap" data-name="questions"><textarea cols="40" rows="3" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="questions"></textarea></span>
+	<p><textarea cols="40" rows="3" maxlength="2000" class="wpcf7-form-control wpcf7-textarea" aria-required="true" name="questions" required></textarea>
 	</p>
 </div>
 <div class="item">
 	<p>■「もっとこんな質問にも答えられるようにしてほしい！」などのご要望があれば、教えてください
 	</p>
-	<p><span class="wpcf7-form-control-wrap" data-name="request"><textarea cols="40" rows="3" maxlength="2000" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" name="request"></textarea></span>
+	<p><textarea cols="40" rows="3" maxlength="2000" class="wpcf7-form-control wpcf7-textarea" name="request"></textarea>
 	</p>
 </div>
 <div class="item">
-	<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="送信" />
+	<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="送信" id="questionnaire-submit-btn" />
 	</p>
 </div>
-<p><script is:inline>
- document.addEventListener('wpcf7mailsent', function(event) {
- location = '/questionnaire/questionnaire-thanks/';
- }, false );
-</script>
-</p><div class="wpcf7-response-output" aria-hidden="true"></div>
 </form>
-</div>
+<script is:inline>
+document.getElementById('questionnaire-form').addEventListener('submit', function(e) {
+  var btn = document.getElementById('questionnaire-submit-btn');
+  if (btn.disabled) { e.preventDefault(); return; }
+  btn.disabled = true;
+  btn.value = '送信中...';
+  setTimeout(function() { btn.disabled = false; btn.value = '送信'; }, 5000);
+});
+</script>
             </div>
         </section>
     </div>

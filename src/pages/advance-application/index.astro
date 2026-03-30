@@ -25,41 +25,37 @@ import BaseLayout from '../../layouts/BaseLayout.astro'
                 お願いいたします。</p>
             <div class="form-wrap">
                 
-<div class="wpcf7 no-js" id="wpcf7-f141-o1" lang="ja" dir="ltr" data-wpcf7-id="141">
-<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
-<form action="/advance-application/#wpcf7-f141-o1" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
-<div style="display: none;">
-<input type="hidden" name="_wpcf7" value="141" />
-<input type="hidden" name="_wpcf7_version" value="6.0" />
-<input type="hidden" name="_wpcf7_locale" value="ja" />
-<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f141-o1" />
-<input type="hidden" name="_wpcf7_container_post" value="0" />
-<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
-</div>
+<form action="https://api.web3forms.com/submit" method="POST" id="aa-form" class="wpcf7-form" aria-label="先行予約申込フォーム">
+<input type="hidden" name="access_key" value="ed53efba-9f1e-4bf3-aa00-7d68b21d8464" />
+<input type="hidden" name="redirect" value="/advance-application/aa-thanks/" />
+<input type="hidden" name="subject" value="ecmonster.jp コミュニティ先行予約申込" />
+<input type="checkbox" name="botcheck" class="hidden" style="display:none" />
 <div class="l_box-wrap">
 	<div class="item col">
-		<p><label><br />
-<span class="wpcf7-form-control-wrap" data-name="your-name"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text wpcf7-validates-as-required" autocomplete="name" aria-required="true" aria-invalid="false" placeholder="名前*" value="" type="text" name="your-name" /></span></label>
+		<p><label>
+<input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text" autocomplete="name" aria-required="true" placeholder="名前*" type="text" name="your-name" required /></label>
 		</p>
 	</div>
 	<div class="item col">
-		<p><label><br />
-<span class="wpcf7-form-control-wrap" data-name="your-email"><input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-validates-as-required wpcf7-text wpcf7-validates-as-email" autocomplete="email" aria-required="true" aria-invalid="false" placeholder="メール*" value="" type="email" name="your-email" /></span> </label>
+		<p><label>
+<input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text" autocomplete="email" aria-required="true" placeholder="メール*" type="email" name="your-email" required /></label>
 		</p>
 	</div>
 	<div class="item">
-		<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="送信する" />
+		<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="送信する" id="aa-submit-btn" />
 		</p>
 	</div>
 </div>
-<p><script is:inline>
- document.addEventListener('wpcf7mailsent', function(event) {
- location = '/advance-application/aa-thanks/';
- }, false );
-</script>
-</p><div class="wpcf7-response-output" aria-hidden="true"></div>
 </form>
-</div>
+<script is:inline>
+document.getElementById('aa-form').addEventListener('submit', function(e) {
+  var btn = document.getElementById('aa-submit-btn');
+  if (btn.disabled) { e.preventDefault(); return; }
+  btn.disabled = true;
+  btn.value = '送信中...';
+  setTimeout(function() { btn.disabled = false; btn.value = '送信する'; }, 5000);
+});
+</script>
             </div>
         </section>
     </div>
