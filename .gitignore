@@ -2,3 +2,7 @@ node_modules/
 dist/
 .astro/
 .env
+
+# Large video files (exceed GitHub 100MB limit)
+public/wp-assets/img/ai-lp/*.mp4
+public/wp-assets/img/movie/*.mp4
