@@ -232,6 +232,7 @@
 .eccc-banners {
   display: flex;
   flex-wrap: wrap;
+  align-items: flex-start;
 }
 .eccc-banners a {
   display: block;
