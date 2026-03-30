@@ -1,29 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="楽天市場を選ぶメリット"
-  section="1. 楽天市場とは？"
-  sectionHref="/movie/"
-  prevArticle={{ title: '他ECサイトとの違い', href: '/guide-rakuten/1/ec-differences/' }}
-  nextArticle={{ title: '楽天市場出店の準備', href: '/guide-rakuten/2/preparation/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<p>楽天市場への出店には多くのメリットがあります。</p>
-
-<h2>圧倒的な集客力</h2>
-<p>楽天市場は日本有数のECプラットフォームとして、膨大な数の会員を持っています。スーパーSALEなどの大型イベント時には特に多くの集客が見込めます。</p>
-
-<h2>楽天ポイントの活用</h2>
-<p>楽天ポイントは楽天経済圏の強力なツールです。顧客のポイント利用により、リピート購入の促進が期待できます。</p>
-
-<h2>充実したサポート体制</h2>
-<p>楽天市場は出店者向けに様々なサポートツールや教育プログラムを提供しています。出店後のフォロー体制も整っています。</p>
-
-<h2>信頼性</h2>
-<p>楽天市場というブランドの信頼性により、新規店舗でも顧客からの信頼を得やすい環境です。</p>
-
-
-</GuideLayout>
+</BaseLayout>

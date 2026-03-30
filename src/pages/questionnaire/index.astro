@@ -2,45 +2,65 @@
 import BaseLayout from '../../layouts/BaseLayout.astro'
 ---
 
-<BaseLayout title="AIコンサルアンケート - EC モンスター">
+<BaseLayout
+  title="AIコンサルアンケート - EC モンスター"
+  bodyClass="wp-singular page-template-default page page-id-149 page-parent wp-theme-ecmonster page-questionnaire"
+>
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/questionnaire.css" />
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
-  <section class="py-20">
-    <div class="max-w-2xl mx-auto px-4">
-      <h1 class="text-3xl font-bold text-center mb-12 text-dark">AIコンサルアンケート</h1>
-
-      <form action="https://api.web3forms.com/submit" method="POST" class="space-y-8">
-        <input type="hidden" name="access_key" value="ed53efba-9f1e-4bf3-aa00-7d68b21d8464" />
-        <input type="hidden" name="redirect" value="https://ecmonster.jp/questionnaire/questionnaire-thanks/" />
-        <input type="hidden" name="subject" value="AIコンサルアンケート回答" />
-
-        <div>
-          <label for="q1" class="block text-sm font-medium text-dark mb-2">
-            ECモンスターAIコンサルを使って良かった点を教えてください <span class="text-primary">*</span>
-          </label>
-          <textarea id="q1" name="良かった点" rows="4" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"></textarea>
-        </div>
-
-        <div>
-          <label for="q2" class="block text-sm font-medium text-dark mb-2">
-            ECモンスターAIコンサルを使う中での、お悩み事や疑問があれば教えてください <span class="text-primary">*</span>
-          </label>
-          <textarea id="q2" name="お悩み・疑問" rows="4" required class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"></textarea>
-        </div>
-
-        <div>
-          <label for="q3" class="block text-sm font-medium text-dark mb-2">
-            「もっとこんな質問にも答えられるようにしてほしい！」などのご要望があれば教えてください
-          </label>
-          <textarea id="q3" name="ご要望" rows="4" class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary"></textarea>
-        </div>
-
-        <div class="text-center">
-          <button type="submit" class="bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-full transition-colors text-lg">
-            送信する
-          </button>
-        </div>
-      </form>
+<div class="page-wrap questionnaire-wrap">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">アンケートに<br class="sp">ご協力ください。</h1>
+            <img src="/wp-assets/img/questionnaire/img_01.png" alt="">
+            <div class="form-wrap">
+                
+<div class="wpcf7 no-js" id="wpcf7-f148-o1" lang="ja" dir="ltr" data-wpcf7-id="148">
+<div class="screen-reader-response"><p role="status" aria-live="polite" aria-atomic="true"></p> <ul></ul></div>
+<form action="/questionnaire/#wpcf7-f148-o1" method="post" class="wpcf7-form init" aria-label="コンタクトフォーム" novalidate="novalidate" data-status="init">
+<div style="display: none;">
+<input type="hidden" name="_wpcf7" value="148" />
+<input type="hidden" name="_wpcf7_version" value="6.0" />
+<input type="hidden" name="_wpcf7_locale" value="ja" />
+<input type="hidden" name="_wpcf7_unit_tag" value="wpcf7-f148-o1" />
+<input type="hidden" name="_wpcf7_container_post" value="0" />
+<input type="hidden" name="_wpcf7_posted_data_hash" value="" />
+</div>
+<div class="item">
+	<p>■ECモンスターAIコンサルを使って良かった点を教えてください<span class="red">（必須）</span>
+	</p>
+	<p><span class="wpcf7-form-control-wrap" data-name="good-point"><textarea cols="40" rows="3" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="good-point"></textarea></span>
+	</p>
+</div>
+<div class="item">
+	<p>■ECモンスターAIコンサルを使う中での、お悩み事や疑問があれば教えてください<span class="red">（必須）</span>
+	</p>
+	<p><span class="wpcf7-form-control-wrap" data-name="questions"><textarea cols="40" rows="3" maxlength="2000" class="wpcf7-form-control wpcf7-textarea wpcf7-validates-as-required" aria-required="true" aria-invalid="false" name="questions"></textarea></span>
+	</p>
+</div>
+<div class="item">
+	<p>■「もっとこんな質問にも答えられるようにしてほしい！」などのご要望があれば、教えてください
+	</p>
+	<p><span class="wpcf7-form-control-wrap" data-name="request"><textarea cols="40" rows="3" maxlength="2000" class="wpcf7-form-control wpcf7-textarea" aria-invalid="false" name="request"></textarea></span>
+	</p>
+</div>
+<div class="item">
+	<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="送信" />
+	</p>
+</div>
+<p><script is:inline>
+ document.addEventListener('wpcf7mailsent', function(event) {
+ location = '/questionnaire/questionnaire-thanks/';
+ }, false );
+</script>
+</p><div class="wpcf7-response-output" aria-hidden="true"></div>
+</form>
+</div>
+            </div>
+        </section>
     </div>
-  </section>
+</div>
+<!--page-wrap -->
 
 </BaseLayout>

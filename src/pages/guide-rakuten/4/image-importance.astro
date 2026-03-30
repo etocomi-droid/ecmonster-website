@@ -1,26 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="画像の重要性とポイント"
-  section="4. 効果的な商品ページ"
-  sectionHref="/movie/"
-  prevArticle={{ title: '商品タイトルの最適化', href: '/guide-rakuten/4/title-optimization/' }}
-  nextArticle={{ title: 'SEO対策', href: '/guide-rakuten/4/seo/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>なぜ画像が重要か</h2>
-<p>ECサイトでは実物を手に取れないため、画像が購買決定に大きく影響します。</p>
-
-<h2>画像作成のポイント</h2>
-<ul>
-  <li><strong>メイン画像</strong>：白背景で商品を大きく見せる</li>
-  <li><strong>サブ画像</strong>：使用シーン、サイズ感、ディテール</li>
-  <li><strong>テキスト入り画像</strong>：特徴やメリットを視覚的に伝える</li>
-  <li><strong>高解像度</strong>：ズームしても鮮明な画質</li>
-</ul>
-
-
-</GuideLayout>
+</BaseLayout>

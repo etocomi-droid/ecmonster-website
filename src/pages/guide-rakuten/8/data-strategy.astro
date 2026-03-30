@@ -1,26 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="販売データを活用した戦略見直し"
-  section="8. 課題と解決法"
-  sectionHref="/movie/"
-  prevArticle={{ title: '広告費用対効果', href: '/guide-rakuten/8/ad-roi/' }}
-  nextArticle={{ title: '楽天規約の重要ポイント', href: '/guide-rakuten/9/regulations/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>データ分析の重要性</h2>
-<p>感覚ではなくデータに基づいた意思決定が、持続的な成長の鍵です。</p>
-<h2>活用すべきデータ</h2>
-<ul>
-  <li><strong>売上データ</strong>：商品別、時間帯別、季節別の分析</li>
-  <li><strong>アクセスデータ</strong>：流入元、検索キーワード</li>
-  <li><strong>顧客データ</strong>：リピート率、購入頻度</li>
-  <li><strong>競合データ</strong>：価格動向、レビュー分析</li>
-</ul>
-<p>これらのデータを組み合わせて、次の施策を立案しましょう。</p>
-
-
-</GuideLayout>
+</BaseLayout>

@@ -2,41 +2,38 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
-<BaseLayout title="専用Googleアカウントの作り方 - EC モンスター" description="ECモンスターAIコンサル専用Googleアカウントのセットアップ手順をご案内します。">
+<BaseLayout
+  title="専用Googleアカウントの作り方 - EC モンスター"
+  bodyClass="wp-singular page-template-default page page-id-155 wp-theme-ecmonster page-gwsaccount"
+>
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/gwsaccount.css" />
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
-  <section class="py-20">
-    <div class="max-w-4xl mx-auto px-4">
-      <h1 class="text-3xl font-bold text-center mb-12 text-dark">専用Googleアカウントの作り方</h1>
-
-      <div class="space-y-8">
-        {[
-          { step: 1, title: '招待メール確認', desc: '登録したGmailに届いた招待メールで「理解しました」をクリックします。' },
-          { step: 2, title: 'パスワード設定', desc: '新しいアカウント用のパスワードを設定します。' },
-          { step: 3, title: 'OKボタンをクリック', desc: '確認ダイアログで「OK」を選択します。' },
-          { step: 4, title: '同期有効化', desc: '「同期をオンにする」をクリックしてアカウント同期を開始します。' },
-          { step: 5, title: 'NotebookLM画面確認', desc: 'ECモンスターAIコンサル新規アカウントアクセス時に表示されるNotebookLM画面で「OK」をクリックします。' },
-          { step: 6, title: 'アクセス完了', desc: '「ECモンスターAIコンサルへようこそ！」画面が表示され、セットアップ完了です。' },
-        ].map((s) => (
-          <div class="flex gap-6 items-start bg-white rounded-xl shadow-md p-6 border">
-            <div class="flex-shrink-0 w-12 h-12 bg-primary text-white rounded-full flex items-center justify-center font-bold text-lg">
-              {s.step}
-            </div>
-            <div>
-              <h3 class="text-lg font-bold text-dark mb-2">{s.title}</h3>
-              <p class="text-slate">{s.desc}</p>
-            </div>
-          </div>
-        ))}
-      </div>
-
-      <div class="mt-12 bg-slate-light rounded-2xl p-8">
-        <h2 class="text-xl font-bold text-dark mb-4">アカウント切り替え方法</h2>
-        <p class="text-slate">
-          アイコンクリック後、使用するアカウントを選択します。
-          ECモンスターAIコンサルは専用アカウントでのみ動作します。
-        </p>
-      </div>
+<div class="page-wrap gwsaccount-wrap">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">専用Googleアカウントの作り方</h1>
+            <p>Google Chrome ブラウザ(推奨)を例に<br class="sp">ご説明します。<br>
+                ご登録いただいたGmailに以下のような<br class="sp">招待メールが届いています。<br>
+                理解しました　をクリックしてください。</p>
+            <img src="/wp-assets/img/gwsaccount/img_01.png" alt="">
+            <p>パスワードを設定してください。</p>
+            <img src="/wp-assets/img/gwsaccount/img_02.png" alt="">
+            <p>OKをクリックしてください。</p>
+            <img src="/wp-assets/img/gwsaccount/img_03.png" alt="">
+            <p>同期をオンにするをクリックしてください。</p>
+            <img src="/wp-assets/img/gwsaccount/img_04.png" alt="">
+            <p>新しいアカウントでECモンスターAIコンサルに<br class="sp">アクセスします。<br>
+                NotebookLMの画面が出たら<br class="sp">OKをクリックしてください。</p>
+            <img src="/wp-assets/img/gwsaccount/img_05.png" alt="">
+            <p>ECモンスターAIコンサルへようこそ！</p>
+            <img src="/wp-assets/img/gwsaccount/img_06.png" alt="">
+            <p>アカウントを切り替えるには　<br class="sp">①アイコンをクリック　②アカウントを選択です。<br>
+                ECモンスターAIコンサルは<br class="sp">この新しいアカウントでのみ動作します。</p>
+            <img src="/wp-assets/img/gwsaccount/img_07.png" alt="">
+        </section>
     </div>
-  </section>
+</div>
+<!--page-wrap -->
 
 </BaseLayout>

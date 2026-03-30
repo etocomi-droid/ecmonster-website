@@ -1,0 +1,15 @@
+.page-wrap {
+  color: #231815;
+}
+.page-wrap .page-ttl {
+  font-size: 32px;
+  margin: 25px 0 -25px;
+}
+
+.gwsaccount-wrap {
+  margin-bottom: 80px;
+  text-align: center;
+}
+.gwsaccount-wrap p {
+  margin: 35px 0 8px;
+}

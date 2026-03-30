@@ -1,0 +1,75 @@
+.questionnaire-wrap .page-ttl, .questionnaire-wrap .txt-thanks {
+  font-size: 32px;
+  color: #000;
+  margin-bottom: 40px;
+}
+.questionnaire-wrap .form-wrap {
+  margin-top: 30px;
+}
+.questionnaire-wrap .form-wrap .item {
+  width: 100%;
+  margin-bottom: 30px;
+}
+.questionnaire-wrap .form-wrap .red {
+  color: #e60012;
+}
+.questionnaire-wrap .form-wrap textarea {
+  padding: 10px;
+  width: 100%;
+}
+.questionnaire-wrap .form-wrap input[type=submit], .questionnaire-wrap .form-wrap .btn {
+  display: block;
+  font-size: 32px;
+  font-weight: bold;
+  color: #fff;
+  line-height: 1.3;
+  padding: 35px 25px 35px 20px;
+  text-align: center;
+  background: url("../img/common/icn_arrow.png") no-repeat right 15px center #CE6D20;
+  max-width: 550px;
+  margin: 80px auto 0;
+  border: none;
+  width: 100%;
+  cursor: pointer;
+}
+.questionnaire-wrap .form-wrap input[type=submit]:hover, .questionnaire-wrap .form-wrap .btn:hover {
+  opacity: 0.8;
+}
+.questionnaire-wrap .form-wrap input[type=submit] {
+  letter-spacing: 50px;
+  padding-left: 60px;
+}
+.questionnaire-wrap .wpcf7-spinner {
+  display: block !important;
+  margin: 24px auto !important;
+}
+.questionnaire-wrap .txt-thanks {
+  margin-top: 60px;
+  text-align: center;
+  font-weight: bold;
+}
+@media (max-width: 767px) {
+  .questionnaire-wrap .page-ttl, .questionnaire-wrap .txt-thanks {
+    font-size: 30px;
+    line-height: 1.3;
+  }
+  .questionnaire-wrap .form-wrap {
+    margin-top: 20px;
+  }
+  .questionnaire-wrap .form-wrap .item {
+    margin-bottom: 10px;
+  }
+  .questionnaire-wrap .form-wrap input[type=submit], .questionnaire-wrap .form-wrap .btn {
+    font-size: 20px;
+    padding: 20px 15px 20px 15px;
+    background-position: right 10px center;
+    background-size: 8px auto;
+    margin-top: 30px;
+  }
+  .questionnaire-wrap .form-wrap input[type=submit] {
+    padding-left: 45px;
+  }
+  .questionnaire-wrap .txt-thanks {
+    margin-top: 30px;
+  }
+}

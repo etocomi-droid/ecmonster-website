@@ -1,35 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="出店後のステップアップ計画"
-  section="10. まとめ"
-  sectionHref="/movie/"
-  prevArticle={{ title: '最重要ポイント', href: '/guide-rakuten/10/key-points/' }}
-  nextArticle={{ title: 'マルチチャネル連携', href: '/guide-rakuten/10/multi-channel/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>フェーズ別の成長計画</h2>
-<h3>Phase 1：月商100万円まで</h3>
-<ul>
-  <li>商品ページの基本最適化</li>
-  <li>レビュー獲得施策</li>
-  <li>楽天イベントへの参加</li>
-</ul>
-<h3>Phase 2：月商500万円まで</h3>
-<ul>
-  <li>広告運用の本格化</li>
-  <li>商品ラインナップの拡充</li>
-  <li>リピーター施策の強化</li>
-</ul>
-<h3>Phase 3：月商1,000万円以上</h3>
-<ul>
-  <li>ブランディングの確立</li>
-  <li>業務効率化・自動化</li>
-  <li>チーム体制の構築</li>
-</ul>
-
-
-</GuideLayout>
+</BaseLayout>

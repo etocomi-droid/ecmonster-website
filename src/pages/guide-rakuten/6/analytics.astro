@@ -1,26 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="売上管理と分析ツールの使い方"
-  section="6. 運営・管理"
-  sectionHref="/movie/"
-  prevArticle={{ title: '楽天アフィリエイト', href: '/guide-rakuten/5/affiliate/' }}
-  nextArticle={{ title: 'レビュー管理', href: '/guide-rakuten/6/review-management/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>RMS分析ツール</h2>
-<p>楽天が提供するRMS（楽天市場出店者管理システム）には、売上分析に役立つ様々なツールが搭載されています。</p>
-<h2>重要な指標</h2>
-<ul>
-  <li><strong>アクセス数</strong>：ページビュー数の推移</li>
-  <li><strong>転換率</strong>：訪問者のうち購入に至った割合</li>
-  <li><strong>客単価</strong>：1回の購入あたりの平均金額</li>
-  <li><strong>リピート率</strong>：再購入した顧客の割合</li>
-</ul>
-<p>これらの指標を定期的にチェックし、改善施策に活かしましょう。</p>
-
-
-</GuideLayout>
+</BaseLayout>

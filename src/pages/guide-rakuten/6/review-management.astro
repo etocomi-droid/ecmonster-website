@@ -1,27 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="顧客対応とレビュー管理の重要性"
-  section="6. 運営・管理"
-  sectionHref="/movie/"
-  prevArticle={{ title: '売上管理と分析', href: '/guide-rakuten/6/analytics/' }}
-  nextArticle={{ title: 'トラブル対応', href: '/guide-rakuten/6/trouble-shooting/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>レビューの重要性</h2>
-<p>楽天市場では、レビューが購買決定に大きな影響を与えます。また検索順位にも影響するため、積極的にレビューを集めることが重要です。</p>
-<h2>良いレビューを集めるコツ</h2>
-<ul>
-  <li>期待を上回る商品品質</li>
-  <li>丁寧な梱包と迅速な発送</li>
-  <li>レビュー依頼メールの送信</li>
-  <li>レビュー特典の提供</li>
-</ul>
-<h2>ネガティブレビューへの対応</h2>
-<p>誠実に対応し、改善策を示すことで、逆に信頼を獲得できる場合もあります。</p>
-
-
-</GuideLayout>
+</BaseLayout>

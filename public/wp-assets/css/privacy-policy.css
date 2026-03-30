@@ -1,0 +1,7 @@
+.privacy-wrap .ttl {
+  font-weight: bold;
+  margin-top: 40px;
+}
+.privacy-wrap .ttl:first-of-type {
+  margin-top: 0;
+}

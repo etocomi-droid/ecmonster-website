@@ -1,0 +1,290 @@
+/*ai*/
+.ai-wrap .sub-ttl {
+  font-weight: bold;
+  text-align: center;
+}
+.ai-wrap .btn {
+  background-color: #CC6C20;
+}
+.ai-wrap img {
+  margin: 0 auto;
+}
+@media (min-width: 768px) {
+  .ai-wrap {
+    font-size: 32px;
+  }
+  .ai-wrap .sec-ttl {
+    font-size: 48px;
+  }
+  .ai-wrap .l_inner {
+    max-width: 720px;
+  }
+  .ai-wrap .btn {
+    padding-top: 36px;
+    padding-bottom: 36px;
+    margin: 50px auto 60px;
+  }
+}
+@media (max-width: 767px) {
+  .ai-wrap .sec-ttl {
+    margin-bottom: 5px;
+  }
+  .ai-wrap .btn {
+    max-width: 78.8%;
+    margin: 20px auto 33px;
+    padding-top: 18px;
+    padding-bottom: 18px;
+  }
+}
+.ai-wrap .mv .key-v {
+  background: url("../img/ai/img_08.png") repeat-x 0 0;
+}
+.ai-wrap .mv .btn {
+  margin: 80px auto 55px;
+}
+@media (max-width: 767px) {
+  .ai-wrap .mv {
+    background-size: auto 100%;
+  }
+  .ai-wrap .mv .btn {
+    margin: 30px auto 20px;
+  }
+}
+.ai-wrap .about {
+  font-weight: bold;
+  text-align: center;
+  color: #000;
+}
+.ai-wrap .about .red {
+  color: #e30012;
+}
+.ai-wrap .about .image {
+  margin: 25px auto 55px;
+}
+@media (max-width: 767px) {
+  .ai-wrap .about .image {
+    margin: 12px auto 25px;
+    width: 65%;
+  }
+}
+.ai-wrap .worries {
+  font-weight: bold;
+}
+.ai-wrap .worries .l_inner {
+  max-width: 735px;
+  color: #000;
+}
+.ai-wrap .worries .list {
+  margin: 25px auto 15px;
+  padding-bottom: 55px;
+  background: url("../img/ai/img_03.png") no-repeat center bottom;
+}
+.ai-wrap .worries .list li {
+  background: url("../img/ai/img_04.png") no-repeat 0 2px;
+  padding: 0 0 0 40px;
+  margin-bottom: 8px;
+  min-height: 36px;
+  line-height: 1.3;
+}
+.ai-wrap .worries .answer-wrap {
+  margin-bottom: 40px;
+}
+.ai-wrap .worries .answer-wrap .image {
+  margin: 20px auto 40px;
+}
+.ai-wrap .worries .answer-wrap .answer {
+  font-size: 45px;
+  text-align: center;
+  line-height: 1.3;
+}
+.ai-wrap .worries .answer-wrap .ttl {
+  margin-top: 30px;
+  font-weight: bold;
+}
+.ai-wrap .worries .answer-wrap .detail li {
+  text-indent: -1em;
+  margin-left: 1em;
+}
+.ai-wrap .worries .answer-wrap .txt {
+  font-weight: normal;
+}
+.ai-wrap .worries .answer-wrap .orange {
+  color: #ff6b0c;
+}
+.ai-wrap .worries .answer-wrap .green {
+  color: #008098;
+}
+.ai-wrap .worries .answer-wrap .yellow {
+  color: #cbb600;
+}
+.ai-wrap .worries .answer-wrap .purple {
+  color: #ab0868;
+}
+@media (min-width: 768px) {
+  .ai-wrap .worries .answer-wrap .l_box-wrap {
+    justify-content: space-between;
+  }
+  .ai-wrap .worries .answer-wrap .graph {
+    width: 43.66%;
+  }
+  .ai-wrap .worries .answer-wrap .txt {
+    font-size: 16px;
+    line-height: 1.5;
+    width: 46%;
+  }
+}
+@media (max-width: 767px) {
+  .ai-wrap .worries .list {
+    margin: 5px auto 5px;
+    padding-bottom: 22px;
+    background-size: 40px auto;
+  }
+  .ai-wrap .worries .list li {
+    background-size: 17px auto;
+    background-position: 0 1px;
+    padding-left: 20px;
+    margin-bottom: 2px;
+    min-height: 18px;
+  }
+  .ai-wrap .worries .answer-wrap {
+    margin-bottom: 0;
+  }
+  .ai-wrap .worries .answer-wrap .image {
+    margin: 12px auto 25px;
+  }
+  .ai-wrap .worries .answer-wrap .answer {
+    font-size: 23px;
+  }
+  .ai-wrap .worries .answer-wrap .graph img {
+    width: 46%;
+  }
+  .ai-wrap .worries .answer-wrap .txt {
+    text-align: center;
+    margin-top: 20px;
+  }
+  .ai-wrap .worries .answer-wrap .txt .ttl, .ai-wrap .worries .answer-wrap .txt .detail {
+    display: inline-block;
+    text-align: left;
+  }
+  .ai-wrap .worries .answer-wrap .txt .ttl {
+    margin-top: 0;
+  }
+  .ai-wrap .worries .answer-wrap .txt .detail li {
+    padding-left: 1em;
+  }
+}
+.ai-wrap .voice {
+  background: #E7E2DF;
+  padding: 60px 0 20px;
+}
+.ai-wrap .voice .box-wrap {
+  margin-top: 30px;
+  justify-content: space-between;
+}
+.ai-wrap .voice .box-wrap .txt {
+  line-height: 1.5;
+  width: 80%;
+}
+.ai-wrap .voice .box-wrap .image {
+  width: 17.7%;
+}
+.ai-wrap .voice .box-wrap .ttl {
+  font-weight: bold;
+}
+@media (max-width: 767px) {
+  .ai-wrap .voice {
+    margin-top: 10px;
+    padding: 35px 0 15px;
+  }
+  .ai-wrap .voice .box-wrap {
+    margin-top: 20px;
+  }
+}
+.ai-wrap .present {
+  background: #231816;
+}
+.ai-wrap .faq {
+  margin: 60px 0 80px;
+}
+.ai-wrap .faq .q {
+  color: #000;
+  margin: 40px 0 12px;
+  background: url("../img/ai/img_09.png") no-repeat 0 0;
+  min-height: 41px;
+  padding-left: 50px;
+  font-weight: bold;
+  line-height: 1.3;
+}
+.ai-wrap .faq .a {
+  background: url("../img/ai/img_10.png") no-repeat 0 0;
+  min-height: 36px;
+  padding: 5px 0 0 50px;
+  font-size: 16px;
+}
+@media (max-width: 767px) {
+  .ai-wrap .faq {
+    margin: 18px 0 35px;
+  }
+  .ai-wrap .faq .q {
+    margin: 18px 0 8px;
+    background-size: 18px auto;
+    min-height: 21px;
+    padding-left: 25px;
+  }
+  .ai-wrap .faq .a {
+    background-size: 18px auto;
+    min-height: 18px;
+    padding: 0 0 0 25px;
+  }
+}
+.ai-wrap .comparison {
+  font-weight: bold;
+  color: #000;
+}
+.ai-wrap .comparison table {
+  margin: 15px 0 130px;
+}
+.ai-wrap .comparison tr.ttl td {
+  padding-top: 7px;
+}
+.ai-wrap .comparison tr:not(.ttl) th:first-child, .ai-wrap .comparison tr:not(.ttl) td:first-child {
+  background: #D9DADA;
+}
+.ai-wrap .comparison tr:not(.ttl) th:last-child, .ai-wrap .comparison tr:not(.ttl) td:last-child {
+  background: #F8D7C5;
+}
+.ai-wrap .comparison tr:not(.ttl) td {
+  padding: 3px 10px;
+}
+.ai-wrap .comparison tr {
+  display: flex;
+}
+.ai-wrap .comparison tr td, .ai-wrap .comparison tr th {
+  width: calc(50% - 25px);
+}
+.ai-wrap .comparison tr td:first-child, .ai-wrap .comparison tr th:first-child {
+  margin-right: 50px;
+}
+.ai-wrap .comparison td {
+  font-size: 16px;
+}
+.ai-wrap .comparison .btn {
+  margin-top: 15px;
+}
+@media (max-width: 767px) {
+  .ai-wrap .comparison table {
+    margin: 7px 0 40px;
+  }
+  .ai-wrap .comparison tr.ttl td {
+    padding-top: 7px;
+  }
+  .ai-wrap .comparison tr:not(.ttl) td {
+    padding: 3px 10px;
+  }
+  .ai-wrap .comparison tr td, .ai-wrap .comparison tr th {
+    width: calc(50% - 7px);
+  }
+  .ai-wrap .comparison tr td:first-child, .ai-wrap .comparison tr th:first-child {
+    margin-right: 14px;
+  }
+}

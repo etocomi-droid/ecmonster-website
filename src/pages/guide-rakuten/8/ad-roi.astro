@@ -1,29 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="広告費用対効果の改善"
-  section="8. 課題と解決法"
-  sectionHref="/movie/"
-  prevArticle={{ title: '在庫管理', href: '/guide-rakuten/8/inventory/' }}
-  nextArticle={{ title: 'データ活用戦略', href: '/guide-rakuten/8/data-strategy/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>楽天市場の主な広告</h2>
-<ul>
-  <li><strong>RPP広告</strong>：検索連動型広告</li>
-  <li><strong>TDA</strong>：ターゲティングディスプレイ広告</li>
-  <li><strong>CPA広告</strong>：成果報酬型広告</li>
-</ul>
-<h2>ROI改善のポイント</h2>
-<ul>
-  <li>ROAS（広告費用対効果）を定期的に計測</li>
-  <li>効果の低いキーワードを除外</li>
-  <li>商品ページの転換率を先に改善</li>
-  <li>イベント時に広告予算を集中投下</li>
-</ul>
-
-
-</GuideLayout>
+</BaseLayout>

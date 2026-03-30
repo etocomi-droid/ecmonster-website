@@ -2,186 +2,163 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
-<BaseLayout title="ECモンスターAIコンサル - EC運営に特化したAI相談サービス" description="EC運営に特化したチャットボット型AI。成功者たちのノウハウを学んだAIがあなたの質問に即答します。月額5,000円〜、7日間無料トライアル。">
+<BaseLayout
+  title="ECモンスターAIコンサル - EC モンスター"
+  bodyClass="wp-singular page-template-default page page-id-165 wp-theme-ecmonster page-ai"
+>
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/ai.css" />
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
-  <!-- Hero -->
-  <section class="bg-navy text-white py-20 md:py-28">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h1 class="text-3xl md:text-5xl font-bold mb-6 leading-tight">
-        ECモンスター<span class="text-primary">AIコンサル</span>
-      </h1>
-      <p class="text-lg text-slate max-w-2xl mx-auto mb-8">
-        EC運営に特化したチャットボット型AI。成功者たちのノウハウを学んだAIがあなたの質問に即答します！
-      </p>
-      <a href="#pricing" class="inline-block bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-full transition-colors text-lg">
-        無料で体験する
-      </a>
-    </div>
-  </section>
-
-  <!-- Pain Points -->
-  <section class="py-20">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-dark">こんなお悩みありませんか？</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {[
-          '広告費をかけても成果が出ない',
-          '何から始めるべきか不明確',
-          'ノウハウを再現できない',
-        ].map((pain) => (
-          <div class="bg-red-50 rounded-xl p-6 text-center border border-red-100">
-            <p class="text-lg font-medium text-dark">{pain}</p>
-          </div>
-        ))}
-      </div>
-      <div class="mt-8 text-center">
-        <p class="text-lg text-slate">AIがあなたの状況に合わせて整理し、行動指針を明確にします</p>
-      </div>
-    </div>
-  </section>
-
-  <!-- Satisfaction Stats -->
-  <section class="py-20 bg-slate-light">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <div class="text-6xl font-bold text-primary mb-4">97.3%</div>
-      <p class="text-xl text-dark font-medium">が「行動指針が明確になった」と回答</p>
-    </div>
-  </section>
-
-  <!-- Testimonials -->
-  <section class="py-20">
-    <div class="max-w-7xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-dark">利用者の声</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {[
-          { platform: '楽天市場', category: '無添加スイーツ店', quote: '質問のたびに「なるほど」が返ってくるから、何を直すべきかが明確になった。' },
-          { platform: 'Amazon', category: '副業革小物ブランド', quote: '「どうやるか」じゃなく「なぜやるか」をAIが教えてくれるから自分で戦略が組めるようになった。' },
-          { platform: 'Amazon', category: 'アクセサリー', quote: 'AIの指摘で、自分がいかに感情で広告を打っていたかに気づきました。' },
-          { platform: '自社EC（Shopify）', category: '家具工房', quote: '社員に「こういう理由でここを直す」と説明できるようになった。それだけでも価値があった。' },
-        ].map((t) => (
-          <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-primary">
-            <p class="text-slate mb-4 italic">「{t.quote}」</p>
-            <p class="text-sm font-medium text-dark">{t.platform} / {t.category}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- FAQ -->
-  <section class="py-20 bg-slate-light">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-dark">よくある質問</h2>
-      <div class="space-y-4">
-        {[
-          { q: '初心者でも使いこなせますか？', a: 'チャット形式なので、自然な会話で質問できます。専門知識は不要です。' },
-          { q: '回答できない質問がある場合は？', a: '事務局に送ると、人間のコンサルタントが対応します。' },
-          { q: 'デザインの指示は可能ですか？', a: 'デザイン制作の指示はできません。改善の考え方と優先順位を提供します。' },
-        ].map((faq) => (
-          <details class="bg-white rounded-xl shadow-sm border p-6 group">
-            <summary class="font-medium text-dark cursor-pointer list-none flex justify-between items-center">
-              {faq.q}
-              <span class="text-primary ml-4 group-open:rotate-180 transition-transform">▼</span>
-            </summary>
-            <p class="mt-4 text-slate">{faq.a}</p>
-          </details>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Comparison -->
-  <section class="py-20">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-dark">通常コンサルとの比較</h2>
-      <div class="overflow-x-auto">
-        <table class="w-full bg-white rounded-xl shadow-lg overflow-hidden">
-          <thead>
-            <tr class="bg-navy text-white">
-              <th class="px-6 py-4 text-left">項目</th>
-              <th class="px-6 py-4 text-center">通常コンサル</th>
-              <th class="px-6 py-4 text-center bg-primary">AIコンサル</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr class="border-b">
-              <td class="px-6 py-4 font-medium">コスト</td>
-              <td class="px-6 py-4 text-center">月数万〜数十万円</td>
-              <td class="px-6 py-4 text-center font-bold text-primary">月5,000円〜</td>
-            </tr>
-            <tr class="border-b bg-gray-50">
-              <td class="px-6 py-4 font-medium">返答スピード</td>
-              <td class="px-6 py-4 text-center">数日後</td>
-              <td class="px-6 py-4 text-center font-bold text-primary">即時</td>
-            </tr>
-            <tr>
-              <td class="px-6 py-4 font-medium">内容</td>
-              <td class="px-6 py-4 text-center">人による属人的回答</td>
-              <td class="px-6 py-4 text-center font-bold text-primary">ECノウハウベースの一貫回答</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section id="pricing" class="py-20 bg-navy text-white">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-4">料金プラン</h2>
-      <p class="text-center text-slate mb-12">いつでも解約可能・縛りなし</p>
-
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Single Plan -->
-        <div class="bg-navy-light rounded-2xl p-8 border border-navy-mid">
-          <h3 class="text-xl font-bold mb-2">単体プラン</h3>
-          <p class="text-slate text-sm mb-6">楽天市場編・Amazon編・自社EC編・DtoC編から1つ選択</p>
-          <div class="text-4xl font-bold text-primary mb-2">月額 3,000円〜</div>
-          <p class="text-slate text-sm mb-6">（税別）年額払い：24,000円〜</p>
-          <ul class="space-y-2 text-sm text-slate mb-8">
-            <li>✓ 24時間AIチャット相談</li>
-            <li>✓ 選択したプラットフォームに特化</li>
-            <li>✓ いつでも解約可能</li>
-          </ul>
+<main class="main-contents ai-wrap">
+    <section class="mv">
+        <h1 class="key-v"><img src="/wp-assets/img/ai/img_01.png" alt="ECモンスター【ECの怪物になれ！】ゼロからECで勝ち上がる方法を動画で解説。">
+        </h1>
+        <div class="l_inner">
+            <a href="https://lms.ecmonster.jp/p/ai-consul" class="btn btn-cta" target="_blank">無料で体験する</a>
         </div>
-
-        <!-- Complete Plan -->
-        <div class="bg-navy-light rounded-2xl p-8 border-2 border-primary relative">
-          <span class="absolute -top-3 left-6 bg-primary text-white text-sm font-bold px-4 py-1 rounded-full">おすすめ</span>
-          <h3 class="text-xl font-bold mb-2">コンプリートプラン</h3>
-          <p class="text-slate text-sm mb-6">全プラットフォーム使い放題</p>
-          <div class="text-4xl font-bold text-primary mb-2">月額 5,000円〜</div>
-          <p class="text-slate text-sm mb-6">（税別）年額払い：48,000円〜</p>
-          <ul class="space-y-2 text-sm text-slate mb-8">
-            <li>✓ 楽天・Amazon・自社EC・DtoC全対応</li>
-            <li>✓ 24時間AIチャット相談</li>
-            <li>✓ いつでも解約可能</li>
-          </ul>
+    </section>
+    <section class="about" id="about">
+        <div class="l_inner">
+            <h2 class="sec-ttl">ECモンスターAIコンサルとは</h2>
+            <p><span class="red">EC運営に特化</span>したチャットボット型AI。<br>
+                <span class="red">成功者たちのノウハウを学んだAI</span>が<br>
+                あなたの質問に<span class="red">即答</span>します！<br>
+                コンサル1回分の費用1年間使えると<br>
+                <span class="red">圧倒的なコストパフォーマンス</span>が評判です！
+            </p>
+            <div class="image">
+                <img src="/wp-assets/img/ai/img_02.jpg" alt="">
+            </div>
         </div>
-      </div>
-
-      <!-- Special Offer -->
-      <div class="mt-12 bg-primary/10 border border-primary rounded-2xl p-8 text-center">
-        <h3 class="text-2xl font-bold mb-4">24時間以内のお申し込みで</h3>
-        <p class="text-xl mb-4">初期費用 <span class="line-through text-slate">30,000円</span> → <span class="text-primary font-bold text-3xl">無料</span></p>
-        <p class="text-slate mb-2">さらに3大特典プレゼント：</p>
-        <ul class="text-sm text-slate space-y-1 mb-8">
-          <li>1. AIコンサルスタートガイド</li>
-          <li>2. 失敗しないECスタートガイド</li>
-          <li>3. 商品開発→ファン獲得完全攻略ガイド</li>
-        </ul>
-      </div>
-
-      <!-- Apply Form Note -->
-      <div class="mt-12 text-center">
-        <p class="text-slate mb-6">お申し込みは各プラットフォーム専用ページから</p>
-        <div class="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="/ai-consulting-ao/" class="bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3 rounded-full transition-colors">自社EC向け</a>
-          <a href="/ai-consulting-aa/" class="bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3 rounded-full transition-colors">Amazon向け</a>
-          <a href="/ai-consulting-ar/" class="bg-primary hover:bg-primary-dark text-white font-bold px-6 py-3 rounded-full transition-colors">楽天市場向け</a>
+    </section>
+    <section class="worries">
+        <div class="l_inner">
+            <h2 class="sec-ttl">こんな悩みありませんか？</h2>
+            <ul class="list">
+                <li>広告費はかけているのに成果が出ない</li>
+                <li>何から手をつけていいかわからない</li>
+                <li>ノウハウ記事やセミナーを見ても再現できない</li>
+            </ul>
+            <div class="answer-wrap">
+                <p class="answer">これをAIが<br>
+                    “あなたの状況に即して”<br>
+                    整理してくれます</p>
+                <div class="image">
+                    <img src="/wp-assets/img/ai/img_05.jpg" alt="">
+                </div>
+                <p class="sub-ttl">97.3%が行動指針が明確になったと回答</p>
+                <div class="l_box-wrap">
+                    <div class="graph"><img src="/wp-assets/img/ai/img_06.png" alt=""></div>
+                    <div class="txt">
+                        <p class="ttl">アンケート：ECモンスターAIコンサルを<br class="sp">
+                            試してみてどう感じましたか</p>
+                        <ul class="detail">
+                            <li><span class="orange">■</span>行動指針が明確になった<br>
+                                ・やるべきことがわかった</li>
+                            <li><span class="green">■</span>人間相手と違って<br>
+                                なんでも気軽に聞けるところが気楽でよい</li>
+                            <li><span class="yellow">■</span>使い方がよくわからなかった<br>
+                                ・質問の仕方が難しい</li>
+                            <li><span class="purple">■</span>その他</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
+    </section>
+    <section class="voice">
+        <div class="l_inner">
+            <h2 class="sec-ttl">利用者の声</h2>
+            <div class="box-wrap">
+                <div class="txt">
+                    <p class="ttl">楽天市場／無添加スイーツ店</p>
+                    <p>
+                        質問のたびに“なるほど”が返ってくるから、何を直すべきかが明確になった。
+                    </p>
+                </div>
+                <div class="image"><img alt="ECモンスターAIコンサル利用者/無添加スイーツ店" src="/wp-assets/img/ai/img_11.jpg"></div>
+            </div>
+            <div class="box-wrap">
+                <div class="image"><img alt="ECモンスターAIコンサル利用者/革小物ブランド" src="/wp-assets/img/ai/img_12.jpg"></div>
+                <div class="txt">
+                    <p class="ttl">Amazon／副業革小物ブランド</p>
+                    <p>
+                        どうやるか”じゃなく“なぜやるか”をAIが教えてくれるから自分で戦略が組めるようになった。
+                    </p>
+                </div>
+            </div>
+            <div class="box-wrap">
+                <div class="txt">
+                    <p class="ttl">Amazon／アクセサリー</p>
+                    <p>
+                        AIの指摘で、自分がいかに感情で広告を打っていたかに気づきました。
+                    </p>
+                </div>
+                <div class="image"><img alt="ECモンスターAIコンサル利用者/アクセサリー" src="/wp-assets/img/ai/img_13.jpg"></div>
+            </div>
+            <div class="box-wrap">
+                <div class="image"><img alt="ECモンスターAIコンサル利用者/家具工房" src="/wp-assets/img/ai/img_14.jpg"></div>
+                <div class="txt">
+                    <p class="ttl">自社EC（Shopify）／家具工房</p>
+                    <p>
+                        社員に『こういう理由でここを直す』と説明できるようになった。それだけでも価値があった。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="present">
+        <img src="/wp-assets/img/ai/img_07.png" alt="">
     </div>
-  </section>
+    <section class="faq">
+        <div class="l_inner">
+            <h2 class="sec-ttl">よくある質問</h2>
+            <p class="q">初心者でも使いこなせますか？</p>
+            <p class="a">はい。チャット形式なので、自然に会話する感覚で質問できます。</p>
+            <p class="q">AIが答えられない質問は？</p>
+            <p class="a">回答不能な場合は、質問とAIの返答をコピーして事務局に送ってください。<br>
+                人間のECコンサルタントが個別に回答いたします。</p>
+            <p class="q">具体的なデザイン指示やページ構成まで提案してくれますか？</p>
+            <p class="a">いいえ。デザイン制作は行いませんが、改善の考え方や優先順位を明示することで判断の軸を提供します。</p>
+        </div>
+    </section>
+    <section class="comparison">
+        <div class="l_inner">
+            <h2 class="sec-ttl">コンサル比較</h2>
+            <table>
+                <tr>
+                    <th>通常コンサル</th>
+                    <th>AIコンサル</th>
+                </tr>
+                <tr class="ttl">
+                    <td>コスト</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>月数万円～数十万円</td>
+                    <td>月5,000円～</td>
+                </tr>
+                <tr class="ttl">
+                    <td>返答スピード</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>数日後</td>
+                    <td>即時</td>
+                </tr>
+                <tr class="ttl">
+                    <td>得られる内容</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>人による属人的回答</td>
+                    <td>膨大なECノウハウベースの一貫回答</td>
+                </tr>
+            </table>
+            <p class="sub-ttl">ECモンスターAIコンサルの全貌はこちら</p>
+        </div>
+        <a href="https://lms.ecmonster.jp/p/ai-consul" class="btn btn-cta" target="_blank">無料で体験する</a>
+    </section>
+</main>
 
 </BaseLayout>

@@ -1,24 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="楽天規約の重要ポイント"
-  section="9. 注意点"
-  sectionHref="/movie/"
-  prevArticle={{ title: 'データ活用戦略', href: '/guide-rakuten/8/data-strategy/' }}
-  nextArticle={{ title: '禁止事項とペナルティ', href: '/guide-rakuten/9/penalties/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>知っておくべき規約</h2>
-<ul>
-  <li><strong>商品画像ガイドライン</strong>：メイン画像は白背景推奨</li>
-  <li><strong>禁止表現</strong>：「最安値」「No.1」等の根拠のない表現</li>
-  <li><strong>配送ルール</strong>：あす楽対応の条件</li>
-  <li><strong>レビュー管理</strong>：不正レビューの禁止</li>
-</ul>
-<p>規約違反はペナルティにつながるため、定期的に最新のガイドラインを確認しましょう。</p>
-
-
-</GuideLayout>
+</BaseLayout>

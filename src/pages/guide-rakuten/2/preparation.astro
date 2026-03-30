@@ -1,33 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="楽天市場出店の準備：必要な書類と情報"
-  section="2. 出店の準備"
-  sectionHref="/movie/"
-  prevArticle={{ title: '楽天市場を選ぶメリット', href: '/guide-rakuten/1/rakuten-merits/' }}
-  nextArticle={{ title: '出店までのスケジュール感', href: '/guide-rakuten/2/schedule/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>必要な書類</h2>
-<ul>
-  <li>会社情報（法人の場合は登記簿謄本）</li>
-  <li>代表者の本人確認書類</li>
-  <li>銀行口座情報</li>
-  <li>商品に関する許認可証（必要な場合）</li>
-</ul>
-
-<h2>準備すべき情報</h2>
-<ul>
-  <li>店舗名・コンセプト</li>
-  <li>取り扱い商品のカテゴリ</li>
-  <li>配送方法と送料の設定</li>
-  <li>決済方法の選択</li>
-</ul>
-
-<p>事前にこれらを整理しておくことで、出店審査をスムーズに進めることができます。</p>
-
-
-</GuideLayout>
+</BaseLayout>

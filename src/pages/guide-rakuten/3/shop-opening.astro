@@ -1,27 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="ショップ開設の流れ"
-  section="3. 初期設定"
-  sectionHref="/movie/"
-  prevArticle={{ title: '出店プランの選び方', href: '/guide-rakuten/2/plan-selection/' }}
-  nextArticle={{ title: 'デザインとカスタマイズ', href: '/guide-rakuten/3/design-customize/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>開設手順</h2>
-<ol>
-  <li><strong>RMS（楽天管理画面）へログイン</strong></li>
-  <li><strong>基本情報の設定</strong>：店舗名、住所、連絡先等</li>
-  <li><strong>決済方法の設定</strong>：クレジットカード、コンビニ払い等</li>
-  <li><strong>配送方法の設定</strong>：送料、配送業者の選択</li>
-  <li><strong>店舗デザインの設定</strong></li>
-  <li><strong>商品登録</strong></li>
-  <li><strong>テスト注文</strong></li>
-  <li><strong>開店</strong></li>
-</ol>
-
-
-</GuideLayout>
+</BaseLayout>

@@ -1,24 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="トラブル時の対応方法"
-  section="6. 運営・管理"
-  sectionHref="/movie/"
-  prevArticle={{ title: 'レビュー管理', href: '/guide-rakuten/6/review-management/' }}
-  nextArticle={{ title: '成功事例', href: '/guide-rakuten/7/success-cases/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>よくあるトラブル</h2>
-<ul>
-  <li><strong>配送遅延</strong>：顧客への迅速な連絡と代替案の提示</li>
-  <li><strong>商品不良</strong>：返品・交換の迅速な対応</li>
-  <li><strong>注文ミス</strong>：顧客ファーストの対応</li>
-</ul>
-<h2>対応の基本姿勢</h2>
-<p>トラブル発生時は、迅速・誠実・顧客ファーストの対応が基本です。対応が早ければ早いほど、顧客の信頼を維持できます。</p>
-
-
-</GuideLayout>
+</BaseLayout>

@@ -1,27 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="商品登録の基本ルール"
-  section="3. 初期設定"
-  sectionHref="/movie/"
-  prevArticle={{ title: 'デザインとカスタマイズ', href: '/guide-rakuten/3/design-customize/' }}
-  nextArticle={{ title: '商品タイトルの最適化', href: '/guide-rakuten/4/title-optimization/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>商品登録の基本</h2>
-<ul>
-  <li><strong>商品名</strong>：検索されやすいキーワードを含める</li>
-  <li><strong>価格設定</strong>：競合調査を踏まえた適切な価格</li>
-  <li><strong>画像</strong>：高品質な商品画像を複数登録</li>
-  <li><strong>説明文</strong>：商品の特徴やメリットを詳しく記載</li>
-  <li><strong>SKU管理</strong>：サイズ・カラーバリエーションの整理</li>
-</ul>
-
-<h2>注意事項</h2>
-<p>楽天のガイドラインに沿った表記を心がけ、誤解を招く表現は避けましょう。</p>
-
-
-</GuideLayout>
+</BaseLayout>

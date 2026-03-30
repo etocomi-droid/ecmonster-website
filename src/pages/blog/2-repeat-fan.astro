@@ -2,37 +2,23 @@
 import BaseLayout from '../../layouts/BaseLayout.astro'
 ---
 
-<BaseLayout title="2.リピート、ファンの嘘 - EC モンスター" description="コンサルタントの思考ノート。リピート施策やファン育成の有効性についての本質的考察。">
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
+>
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
-  <section class="py-20">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="mb-8">
-        <a href="/movie/" class="text-primary hover:underline text-sm">← 楽天市場動画セミナーに戻る</a>
-      </div>
-      <span class="text-sm text-primary font-bold">コンサルタントの思考 Note 2</span>
-      <h1 class="text-3xl font-bold mt-2 mb-8 text-dark">リピート、ファンの嘘</h1>
-
-      <article class="prose prose-lg max-w-none text-slate space-y-6">
-        <p>リピート顧客とファンについて考察します。多くのプレゼンテーションやセミナーが「SaaS事業のポジショニングトークに過ぎない」のが現実です。</p>
-
-        <h2 class="text-xl font-bold mt-8 mb-4 text-dark">CRM戦略への懸念</h2>
-        <p>リピート施策やファン育成は広告費用削減の手段として位置づけられていますが、その根拠として「再現性の欠如」が大きな問題です。</p>
-
-        <h2 class="text-xl font-bold mt-8 mb-4 text-dark">再現性の問題</h2>
-        <p>商材が同じでも規模、対象、集客の条件、プラットフォーム、デザインなど全ての条件が揃うことがほぼありません。データ量の不足により信憑性に欠け、ABテストの結果は時間経過で逆転する可能性があります。</p>
-
-        <h2 class="text-xl font-bold mt-8 mb-4 text-dark">リピート販売モデルの実態</h2>
-        <p>単品通販やサブスクリプションモデルにおいて、継続率は極めて低いのが現実です。3ヶ月での離脱が大半で、継続層はわずか10%未満と推測されます。</p>
-
-        <h2 class="text-xl font-bold mt-8 mb-4 text-dark">結論</h2>
-        <p>リピート施策単体では利益創出が難しく、むしろ別の要因が成功を左右するのです。</p>
-      </article>
-
-      <div class="mt-12 flex justify-between">
-        <a href="/blog/1-chihou-sousei/" class="text-primary hover:underline">← 前の記事：地方創生の嘘</a>
-        <a href="/blog/3-ai-uso/" class="text-primary hover:underline">次の記事：AIの嘘 →</a>
-      </div>
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
     </div>
-  </section>
+</div>
+<!--page-wrap -->
 
 </BaseLayout>

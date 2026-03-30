@@ -1,0 +1,10 @@
+.legal-wrap .info {
+  max-width: 480px;
+  margin: auto;
+}
+.legal-wrap dt {
+  font-weight: bold;
+}
+.legal-wrap dd {
+  margin-bottom: 30px;
+}

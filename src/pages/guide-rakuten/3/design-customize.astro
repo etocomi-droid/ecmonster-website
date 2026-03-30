@@ -1,26 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="ショップページのデザインとカスタマイズ"
-  section="3. 初期設定"
-  sectionHref="/movie/"
-  prevArticle={{ title: 'ショップ開設の流れ', href: '/guide-rakuten/3/shop-opening/' }}
-  nextArticle={{ title: '商品登録の基本ルール', href: '/guide-rakuten/3/product-registration/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>デザインの重要性</h2>
-<p>ショップページのデザインは、ユーザーの購買意欲に大きく影響します。信頼感のあるデザインを心がけましょう。</p>
-
-<h2>カスタマイズのポイント</h2>
-<ul>
-  <li><strong>ヘッダー</strong>：店舗のブランドイメージを伝える</li>
-  <li><strong>商品カテゴリ</strong>：わかりやすいナビゲーション</li>
-  <li><strong>バナー</strong>：キャンペーンやおすすめ商品の訴求</li>
-  <li><strong>スマホ対応</strong>：モバイルファーストのデザイン</li>
-</ul>
-
-
-</GuideLayout>
+</BaseLayout>

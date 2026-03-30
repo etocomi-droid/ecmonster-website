@@ -2,101 +2,144 @@
 import BaseLayout from '../layouts/BaseLayout.astro'
 ---
 
-<BaseLayout title="楽天市場編エキスパート - EC モンスター" description="月商1,000万円を突破するノウハウを習得したことを証明する称号。ECモンスターの3段階カリキュラムを修了し、検定試験に合格した者のみに授与されます。">
+<BaseLayout
+  title="ECモンスター楽天市場編エキスパート"
+  description="楽天市場で月商1000万円を突破するだけの知識やスキル・ノウハウを習得し、認定試験合格した方にエキスパートの称号が贈られます。そのメリットや特典をご紹介します。"
+  bodyClass="wp-singular page-template-default page page-id-66 wp-theme-ecmonster page-expert"
+>
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/expert.css" />
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
-  <!-- Hero -->
-  <section class="bg-navy text-white py-20">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h1 class="text-3xl md:text-4xl font-bold mb-6">楽天市場編<span class="text-primary">エキスパート</span></h1>
-      <p class="text-lg text-slate">
-        月商1,000万円を突破するノウハウを習得したことを証明する称号
-      </p>
+<div class="expert-wrap">
+    <div class="mv">
+        <div class="l_inner">
+            <h1 class="mv-ttl">
+                <img src="/wp-assets/img/expert/img_01.png" alt="楽天市場で月商1,000万円を達成るするための究極ノウハウを完全マスター">
+            </h1>
+        </div>
     </div>
-  </section>
-
-  <!-- 3 Steps -->
-  <section class="py-20">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-dark">3つのステップ</h2>
-      <div class="space-y-8">
-        {[
-          {
-            step: 'STEP 1',
-            title: '月商100万円への道',
-            items: ['商品登録', '市場分析', 'SKUプロジェクト', 'レビュー戦略'],
-          },
-          {
-            step: 'STEP 2',
-            title: '月商500万円への道',
-            items: ['送料戦略', '梱包コスト', '価格設定', '在庫管理'],
-          },
-          {
-            step: 'STEP 3',
-            title: '月商1,000万円への道',
-            items: ['広告運用（RPP・TDA）', 'キーワード戦略', '分析ツール活用'],
-          },
-        ].map((s) => (
-          <div class="bg-white rounded-2xl shadow-lg p-8 border">
-            <div class="flex items-center gap-4 mb-4">
-              <span class="bg-primary text-white text-sm font-bold px-4 py-1 rounded-full">{s.step}</span>
-              <h3 class="text-xl font-bold text-dark">{s.title}</h3>
+    <section class="about">
+        <div class="l_inner">
+            <h2 class="sec-ttl">楽天市場編エキスパートとは？</h2>
+            <p class="lead">楽天市場で成功するために必要なすべての知識とスキルを体系的に学び、月商1,000万円」を突破するノウハウを習得したことを証明する称号です。<br>
+                この称号は、ECモンスターが誇る3段階のカリキュラムを修了し、厳しい検定試験に合格した方だけに授与されます。</p>
+            <img src="/wp-assets/img/expert/img_02.jpg" alt="ECモンスター楽天市場編エキスパートとは">
+        </div>
+    </section>
+    <section class="step">
+        <div class="l_inner">
+            <h2 class="sec-ttl">エキスパートへの道<br>
+                3つのステップ</h2>
+            <div class="l_box-wrap">
+                <div class="txt">
+                    <h3 class="sub-ttl">STEP 1. 月商100万円の道</h3>
+                    <p>●楽天市場の市場規模<br>
+                        ●【基本】商品登録【必須】<br>
+                        ●勝てる市場の見つけ方<br>
+                        ●三大IO<br>
+                        ●SKUプロジェクト<br>
+                        ●レビューの集め方</p>
+                </div>
+                <div class="image">
+                    <img src="/wp-assets/img/expert/img_03.png" alt="楽天市場月商100万円への道">
+                </div>
             </div>
-            <div class="flex flex-wrap gap-3">
-              {s.items.map((item) => (
-                <span class="bg-slate-light text-dark text-sm px-4 py-2 rounded-lg">{item}</span>
-              ))}
+            <div class="l_box-wrap">
+                <div class="txt">
+                    <h3 class="sub-ttl">STEP 2. 月商500万円の道</h3>
+                    <p>●避けて通れない送料無料<br>
+                        ●梱包・発送のコスト<br>
+                        ●ダイナミックプライシング戦略<br>
+                        ●不良在庫の取り扱い<br>
+                        ●どうするコピー商品<br>
+                        ●売れる時間帯</p>
+                </div>
+                <div class="image">
+                    <img src="/wp-assets/img/expert/img_04.png" alt="楽天市場月商500万円への道">
+                </div>
             </div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+            <div class="l_box-wrap">
+                <div class="txt">
+                    <h3 class="sub-ttl">STEP3. 月商1,000万円の道</h3>
+                    <p>●楽天RPP・クーポンアドバンス・TDA広告<br>
+                        ●効果的な時間帯<br>
+                        ●プロダクト・ライフサイクル<br>
+                        ●トータルで数字を見る<br>
+                        ●キーワードCPCの基本<br>
+                        ●攻めの広告運用・守りの広告運用<br>
+                        ●分析ツール<br>
+                        ●RPP広告の改善</p>
+                </div>
+                <div class="image">
+                    <img src="/wp-assets/img/expert/img_05.png" alt="楽天市場月商1.000万円への道">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="proof">
+        <div class="l_inner">
+            <h2 class="sec-ttl">検定試験：知識の証明</h2>
+            <div class="l_box-wrap">
+                <div class="txt">
+                    <p>楽天市場編エキスパートの称号を得るには、全50問の検定テストにおいて**80%以上の正解率**を達成する必要があります。 <br>
+                        合格者には、以下の特典が付与されます。</p>
+                    <h3 class="sub-ttl">楽天市場編エキスパート認定証 </h3>
+                    <p>あなたのスキルを証明する公式認定証を発行。</p>
+                    <h3 class="sub-ttl">公式ロゴの提供 </h3>
+                    <p>名刺やHPに掲載可能なエキスパートロゴをプレゼント。 </p>
+                    <h3 class="sub-ttl">業務委託先としてのご紹介 </h3>
+                    <p>ECモンスターが信頼をもって案件を紹介します。</p>
+                </div>
+                <div class="image">
+                    <img src="/wp-assets/img/expert/img_06.png" alt="エキスパート認定証">
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="merit">
+        <div class="l_inner">
+            <h2 class="sec-ttl">エキスパートの活用メリット</h2>
+            <h3 class="sub-ttl">転職活動での強力な武器に </h3>
+            <p>「楽天市場編エキスパート」はEC業界での価値を高める資格です。</p>
+            <h3 class="sub-ttl">営業活動の説得力アップ </h3>
+            <p>実績を裏付ける資格として、商談の場で信頼性を強化します。 </p>
 
-  <!-- Exam -->
-  <section class="py-20 bg-slate-light">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-      <h2 class="text-3xl font-bold mb-8 text-dark">検定試験</h2>
-      <p class="text-slate text-lg mb-4">全50問において<span class="font-bold text-primary">80%以上</span>の正解率を達成する必要があります。</p>
-    </div>
-  </section>
+            <h3 class="sub-ttl">独立・フリーランスのキャリア支援 </h3>
+            <p> ECモンスターからの業務委託案件紹介により、自信をもって次のステップへ。</p>
+            <div class="image">
+                <img src="/wp-assets/img/expert/img_07.jpg" alt="エキスパートのメリット">
+            </div>
+        </div>
 
-  <!-- Benefits -->
-  <section class="py-20">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-dark">合格者特典</h2>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        {[
-          { icon: '📜', title: '公式認定証の発行' },
-          { icon: '🏷️', title: 'エキスパートロゴの提供' },
-          { icon: '💼', title: '業務委託案件の紹介' },
-        ].map((b) => (
-          <div class="bg-white rounded-xl shadow-md p-6 text-center border">
-            <div class="text-3xl mb-3">{b.icon}</div>
-            <h3 class="font-bold text-dark">{b.title}</h3>
-          </div>
-        ))}
-      </div>
+    </section>
+    <section class="recommend">
+        <div class="l_inner">
+            <h2 class="sec-ttl">こんな方におすすめ！</h2>
+            <ul class="list">
+                <li>楽天市場での売上に伸び悩んでいる店舗運営者</li>
+                <li>EC業界でのキャリアアップを目指す方</li>
+                <li>独立してフリーランスで活躍したい方</li>
+                <li>自店舗の売上を飛躍的に伸ばしたい経営者 </li>
+            </ul>
+        </div>
+    </section>
+    <section class="invitation">
+        <div class="l_inner">
+            <img src="/wp-assets/img/expert/img_08.jpg" alt="">
+            <h2 class="sec-ttl">さあ、あなたも<br>
+                楽天市場編エキスパートを<br>
+                目指しませんか？</h2>
+            <p class="txt">今こそ、楽天市場で<br>
+                成功を掴む第一歩を<br>
+                踏み出しましょう！ </p>
+        </div>
+    </section>
+    <div class="btn-wrap">
+        <div class="l_inner">
+            <a href="/ecmonsterexpert/experttest.html" class="btn">楽天市場エキスパート認定試験</a>
+        </div>
     </div>
-  </section>
-
-  <!-- Target -->
-  <section class="py-20 bg-slate-light">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-3xl font-bold text-center mb-12 text-dark">こんな方におすすめ</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {[
-          '店舗運営者として成長したい方',
-          'キャリアアップを目指している方',
-          '独立志向のフリーランスの方',
-          'EC事業の経営者の方',
-        ].map((t) => (
-          <div class="flex items-center gap-3 bg-white rounded-xl p-4 shadow-sm border">
-            <span class="text-primary font-bold text-xl">✓</span>
-            <span class="text-dark">{t}</span>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
+</div>
+<!--expert-wrap -->
 
 </BaseLayout>

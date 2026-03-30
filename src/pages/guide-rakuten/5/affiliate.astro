@@ -1,26 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="楽天アフィリエイトの活用"
-  section="5. 集客・販売促進"
-  sectionHref="/movie/"
-  prevArticle={{ title: 'クーポンとポイント戦略', href: '/guide-rakuten/5/coupon-points/' }}
-  nextArticle={{ title: '売上管理と分析', href: '/guide-rakuten/6/analytics/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>楽天アフィリエイトとは</h2>
-<p>外部のブロガーやSNSユーザーが商品を紹介し、成果に応じて報酬を支払う仕組みです。</p>
-<h2>活用のメリット</h2>
-<ul>
-  <li>成果報酬型なのでリスクが低い</li>
-  <li>外部からの集客が増える</li>
-  <li>口コミ効果が期待できる</li>
-</ul>
-<h2>効果を高めるコツ</h2>
-<p>アフィリエイト報酬率を適切に設定し、魅力的な商品ページを用意することが重要です。</p>
-
-
-</GuideLayout>
+</BaseLayout>

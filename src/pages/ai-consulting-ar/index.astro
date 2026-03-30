@@ -1,109 +1,575 @@
 ---
-import LPLayout from '../../layouts/LPLayout.astro'
+import BaseLayout from '../../layouts/BaseLayout.astro'
 ---
 
-<LPLayout title="楽天市場運営で結果が出ない…ECモンスターAIコンサル - EC モンスター" description="楽天市場での売上停滞に悩む事業者向けのAIコンサルティングサービス。月額3,000円〜。">
+<BaseLayout
+  title="楽天市場運営で頑張っているけど結果がついてこない人に向けた情報です"
+  description="楽天市場に出店した。商品に自信はある。でもなぜか売れない。何が悪いのかわからない。どうすれば良いのかアドバイスが欲しい。そんな方へ。"
+  bodyClass="wp-singular page-template-default page page-id-169 wp-theme-ecmonster page-ai-consulting-ar"
+>
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/ai-lp.css" />
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
-  <!-- Hero -->
-  <section class="bg-navy text-white py-20 text-center">
-    <div class="max-w-4xl mx-auto px-4">
-      <p class="text-lg text-slate mb-4">楽天市場運営で結果が出ない…</p>
-      <h1 class="text-3xl md:text-4xl font-bold mb-8">ECモンスター<span class="text-primary">AIコンサル</span><br />楽天市場編</h1>
-      <a href="#apply" class="inline-block bg-primary hover:bg-primary-dark text-white font-bold px-8 py-4 rounded-full transition-colors text-lg">無料で体験する</a>
-    </div>
-  </section>
-
-  <!-- Pain Points -->
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-4">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {['楽天市場で売上が伸び悩んでいる', '高額コンサルの効果が感じられない', '広告費ばかりかかって利益が出ない', '何を改善すべきかわからない'].map((p) => (
-          <div class="bg-red-50 rounded-xl p-4 text-center border border-red-100">
-            <p class="font-medium text-dark">{p}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Instructor Stats -->
-  <section class="py-16 bg-slate-light">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-center mb-8 text-dark">25年のEC支援実績</h2>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        {[
-          { num: '3年連続', label: '楽天総合3位' },
-          { num: '1,000店+', label: '指導実績' },
-          { num: '80%+', label: '月商100万突破' },
-          { num: '200店+', label: '年商1億超え' },
-        ].map((s) => (
-          <div class="text-center bg-white rounded-xl p-4 shadow-sm">
-            <div class="text-xl font-bold text-primary">{s.num}</div>
-            <div class="text-xs text-slate mt-1">{s.label}</div>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Case Studies -->
-  <section class="py-16">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-center mb-8 text-dark">実事例</h2>
-      <div class="space-y-6">
-        {[
-          { name: '利用者A', platform: '楽天市場', problem: '月商7万円で伸び悩み', result: '月商98万円超えを達成' },
-          { name: '利用者B', platform: '楽天市場', problem: 'チームの自走ができない', result: 'チームの自走化を達成' },
-          { name: '利用者C', platform: '楽天市場', problem: '広告運用が感覚的だった', result: 'データに基づいた広告運用に転換' },
-        ].map((c) => (
-          <div class="bg-white rounded-xl shadow-md p-6 border-l-4 border-primary">
-            <h3 class="font-bold text-dark mb-2">{c.name}（{c.platform}）</h3>
-            <p class="text-sm text-slate mb-1"><span class="font-medium">課題：</span>{c.problem}</p>
-            <p class="text-sm text-primary"><span class="font-medium text-dark">成果：</span>{c.result}</p>
-          </div>
-        ))}
-      </div>
-    </div>
-  </section>
-
-  <!-- Pricing -->
-  <section class="py-16 bg-slate-light">
-    <div class="max-w-4xl mx-auto px-4">
-      <h2 class="text-2xl font-bold text-center mb-8 text-dark">料金プラン</h2>
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <div class="bg-white rounded-2xl shadow-lg p-6 border">
-          <h3 class="text-lg font-bold text-dark mb-4">単体プラン</h3>
-          <div class="text-3xl font-bold text-primary mb-2">月額 3,000円</div>
-          <p class="text-sm text-slate mb-4">（税別）年額：24,000円</p>
+<main class="main-contents ai-lp change-red no-trial">
+    <section class="no-trial-mv">
+        <div class="l_inner">
+            <h1 class="mv-ttl">
+                <img src="/wp-assets/img/ai-lp/img_16.png" alt="楽天市場出店したけど利益が出ない…。">
+            </h1>
         </div>
-        <div class="bg-white rounded-2xl shadow-lg p-6 border-2 border-primary relative">
-          <span class="absolute -top-3 left-4 bg-primary text-white text-xs font-bold px-3 py-1 rounded-full">おすすめ</span>
-          <h3 class="text-lg font-bold text-dark mb-4">コンプリートプラン</h3>
-          <div class="text-3xl font-bold text-primary mb-2">月額 5,000円</div>
-          <p class="text-sm text-slate mb-4">（税別）年額：48,000円</p>
+    </section>
+    <section class="no-trial-worries">
+        <div class="l_inner">
+            <div class="box01">
+                <h2 class="sec-ttl">こんなお悩みありませんか？</h2>
+                <div class="l_box-wrap">
+                    <div class="txt">
+                        <ul class="list">
+                            <li>楽天市場に出店したけれど、思うように売れない…</li>
+                            <li>高額なコンサルを依頼したのに、結果が出ない…</li>
+                            <li>コンサル費や広告費、送料が利益を食いつぶしている…</li>
+                            <li>何を改善すればいいのか、正直わからない…</li>
+                        </ul>
+                    </div>
+                    <div class="image">
+                        <img src="/wp-assets/img/ai-lp/img_18.jpg" alt="こんなお悩みありませんか？">
+                    </div>
+                </div>
+            </div>
+            <div class="box02">
+                <h2 class="sec-ttl">このままだと…</h2>
+                <div class="l_box-wrap">
+                    <div class="txt">
+                        <p> せっかくの楽天出店も、<span class="fnt-l fnt-b">撤退</span>せざるを得ないかもしれません。<br>
+                            <span class="fnt-l fnt-b">赤字</span>が続き、モチベーションもダウン…<br>
+                            「自分にはネット販売は向いていない」と<br>
+                            <span class="fnt-l fnt-b">諦めてしまう</span>前に――
+                        </p>
+                    </div>
+                    <div class="image">
+                        <img src="/wp-assets/img/ai-lp/img_19.jpg" alt="このままだと…">
+                    </div>
+                </div>
+            </div>
+            <div class="box03">
+                <h2 class="sec-ttl">解決方法はー成功者に聞くこと</h2>
+                <div class="box-wrap">
+                    <div class="image">
+                        <img src="/wp-assets/img/ai-lp/img_20.jpg" alt="解決方法は成功者に聞くこと">
+                    </div>
+                    <div class="txt">
+                        <p class="fnt-l"><strong>実際に楽天市場で結果を<br>
+                                出しているプロから直接学び、<br>
+                                勝ちパターンを真似することで、<br>
+                                無駄な遠回りをせずに<br>
+                                売上アップの道が見えてきます。</strong></p>
+                        <p class="fnt-l"><strong>あなたの店舗も、<br>
+                                今から変われます。</strong></p>
+                    </div>
+                </div>
+            </div>
         </div>
-      </div>
-      <div class="mt-8 text-center">
-        <p class="text-dark font-bold">24時間以内のお申し込みで初期費用30,000円が<span class="text-primary">無料</span></p>
-      </div>
+    </section>
+    <section class="achievements">
+        <div class="l_inner">
+            <h2 class="sec-ttl">ECコンサルタント・江藤の実績</h2>
+            <div class="box01">
+                <p>こんにちは。ECモンスターの江藤です。</p>
+                <p>私は楽天市場やAmazonをはじめとする<br>
+                    ECモール・自社EC支援で、 <br>
+                    これまで1,000社以上のショップに関わり、 <br>
+                    年商1億円超え200社以上、<br>
+                    80％以上が月商100万円超えを<br>
+                    実現してきました。</p>
+                <p>過去に自ら運営していた楽天ショップでは、 <br>
+                    【3年連続・楽天総合3位】を記録。</p>
+                <p>さらに、その成功ノウハウをもとに、 <br>
+                    月額15万円で提供している<br>
+                    ECコンサルティングでは、 <br>
+                    多くの店舗のV字回復を支援しています。</p>
+            </div>
+            <div class="l_box-wrap box02">
+                <div class="txt">
+                    <p class="name"><strong><span class="fnt-b">江藤正親（えとうまさちか）</span></strong></p>
+                    <p><strong>独立系ECコンサルタントとしては<span class="fnt-l fnt-b">日本最古</span><br>
+                            億単位の売上を目指す支援のスペシャリスト<br>
+                            1999年よりネットショップ運営に携わる<br>
+                            <span class="fnt-l fnt-b"><span class="red">3年連続楽天市場総合3位受賞</span><br>
+                                指導ショップ1,000店以上<br>
+                                <span class="red">80%以上</span></span>が月商<span class="fnt-l fnt-b"><span class="red">100万円突破</span><br>
+                                1億円超え</span>が<span class="fnt-l fnt-b">200店舗以上<br>
+                                <span class="red">最高10億円</span></span><br>
+                            一般社団法人ジャパンEコマースコンサルタント協会理事<br>
+                            一般社団法人日本イーコマース学会理事</strong>
+                    </p>
+                </div>
+                <div class="image">
+                    <div class="item">
+                        <img src="/wp-assets/img/ai-lp/img_34.jpg" alt="江藤正親">
+                    </div>
+                    <div class="item">
+                        <p>■著書</p>
+                        <img src="/wp-assets/img/movie/img_07.png" alt="江藤正親執筆本" class="book">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="box03">
+            <img src="/wp-assets/img/ai-lp/img_21.png" alt="楽天市場3年連続総合3位受賞">
+            <p class="box-ttl"><strong>JECCICA（ジェシカ）　日本イーコマース学会の理事を努めています</strong></p>
+            <div class="l_box-wrap">
+                <div class="txt">
+                    <p class="ttl">JECCICA　ジャパンEコマースコンサルタント協会</p>
+                    <p>Eコマースを支える人材育成のため、ECコンサルタントを養成し、コンサルティング業だけでなく、EC運営に必要なノウハウを体系的に学べる資格を授与している団体です。<br>
+                        各分野のプロフェッショナル達による、実践講座やセミナー、パネルディスカッションなどのコンテンツを提供しています。
+                    </p>
+                </div>
+                <div class="image"><img src="/wp-assets/img/movie/img_08.jpg" alt="一般社団法人ジャパンEコマースコンサルタント協会">
+                </div>
+            </div>
+            <div class="l_box-wrap">
+                <div class="txt">
+                    <p class="ttl">JASEC　一般社団法人 日本イーコマース学会</p>
+                    <p>今まで困難だった大学との連携によるEC商品の開発・人材確保・学術検証・先端技術導入などを容易にすることで、すべてのEC事業者の発展に貢献しています。</p>
+                </div>
+                <div class="image">
+                    <img src="/wp-assets/img/movie/img_09.jpg" alt="一般社団法人日本イーコマース学会">
+                </div>
+            </div>
+        </div>
+        </div>
+    </section>
+    <section class="guidance">
+        <div class="l_inner">
+            <h2 class="sec-ttl">勝ちたい人だけが受ける<br>プロの指導</h2>
+        </div>
+        <img src="/wp-assets/img/ai-lp/img_22.jpg" alt="ECコンサルコース">
+        <div class="l_inner">
+            <div class="txt txt01">
+                <p class="guidance-ttl"><strong>ECコンサル3ヶ月コースとは</strong></p>
+                <p>月商100万円未満の人が月商1,000万円を目指すための基礎を作るコースです。<br>
+                    <span class="fnt-m red fnt-b">本気で楽天市場で勝ちたい。</span><br>
+                    そう思ったなら、一切の遠回りをせず<span class="fnt-m red fnt-b">“正しいやり方”を身につけるべき</span>です。</span>
+                </p>そのために存在するのが、<br>
+                ECモンスター代表・江藤によるリアルコンサルティングです。<br>
+                あなたのショップの売れない理由を明確にし、<br>
+                勝てる打ち手を「言語化」→「戦略化」→「実行計画化」まで落とし込む伴走型プログラムです。</p>
+            </div>
+            <div class="step box-wrap">
+                <div class="num">
+                    <img src="/wp-assets/img/ai-lp/img_23.png" alt="01">
+                </div>
+                <div class="txt">
+                    <h3 class="step-ttl">お悩みのヒアリング</h3>
+                    <p>まずは現状を徹底的に把握。<br>
+                        売上が伸び悩む理由・改善できる余地・競合との差・広告の最適化余地など、あなた自身も気付けていない課題を対話を通して発掘していきます。</p>
+                    <p>ここで90%以上のショップが見落としていた問題が見つかります。</p>
+                </div>
+            </div>
+            <div class="step box-wrap">
+                <div class="num">
+                    <img src="/wp-assets/img/ai-lp/img_24.png" alt="02">
+                </div>
+                <div class="txt">
+                    <h3 class="step-ttl">ボトルネックの明確化（課題抽出）</h3>
+                    <p>ヒアリング＋データ分析の結果から、成果を止めている要因を特定します。<br>
+                        改善すべき順番・優先順位を明確にし、“手当たり次第に動く”運営から 最短で売上につなげる運営 へ。</p>
+                </div>
+            </div>
+            <div class="step box-wrap">
+                <div class="num">
+                    <img src="/wp-assets/img/ai-lp/img_25.png" alt="03">
+                </div>
+                <div class="txt">
+                    <h3 class="step-ttl">解決策の設計（戦略プランニング）</h3>
+                    <p>売れる仕組みは「勘」ではなく「設計」で作れます。<br>
+                        3つの角度から勝てる戦略を組み立てます。</p>
+                    <p><span class="fnt-b">● コンセプト・ターゲットの再定義</span><br>
+                        誰に、どんな価値を届け、なぜ選ばれるのか を明確に。<br>
+                        選ばれる理由を一言で伝え、商品とブランドの強みを尖らせます。</p>
+                    <p><span class="fnt-b">● プロダクト設計・商品構成の最適化</span><br>
+                        ラインナップ・価格・利益率・セット設計・レビュー対策を強化。<br>
+                        “売る”ではなく 売れる状態を作る 商品設計へ。</p>
+                    <p><span class="fnt-b">● 露出・認知獲得の戦略設計</span><br>
+                        広告・SEO・SNS・レビュー・リストなど集客導線を最適化。<br>
+                        ムダな広告費を削り、費用対効果の高い集客設計を実行します。</p>
+                </div>
+            </div>
+            <div class="step box-wrap">
+                <div class="num">
+                    <img src="/wp-assets/img/ai-lp/img_26.png" alt="04">
+                </div>
+                <div class="txt">
+                    <h3 class="step-ttl">成果を出すロードマップ作成</h3>
+                    <p>いつ・何を・どの順番でやるかを可視化。<br>
+                        行動優先度とKPIを設定し、毎週・毎月の進捗管理で確実に前進。<br>
+                        迷わず売上UPに向けて動ける環境を提供します。</p>
+                    <p class="center fnt-l">
+                        <strong>必要なのは才能ではなく戦略です。<br>
+                            あなたの店舗に合わせて<br>
+                            勝てる未来を設計します。</strong>
+                    </p>
+                    <p><span class="red fnt-m fnt-b">「この通りに動けば、売上は伸びます」</span><br>
+                        それを“実現させる指導”をするのが、江藤のコンサルです。</p>
+                    <p>25年・1,000社の支援で積み上げた、<br>
+                        <span class="red fnt-m fnt-b">「再現性ある勝ちパターン」</span>を、あなたの店舗に合わせて落とし込みます。
+                    </p>
+                </div>
+            </div>
+            <p class="center fnt-l ls">
+                <strong>ECコンサル3ヶ月コース/月額15万円（税別）</strong>
+            </p>
+            <a href="https://lms.ecmonster.jp/p/ec-consulting-cart" class="btn-blue">ECコンサル3ヶ月コース 詳細</a>
+        </div>
+    </section>
+    <div class="good-news">
+        <img src="/wp-assets/img/ai-lp/img_28.png" alt="それでも月額15万円は予算オーバーという方に朗報です！">
     </div>
-  </section>
+    <section class="about">
+        <div class="l_inner">
+            <h2 class="sec-ttl">楽天市場運営対応<br>ECモンスターAIコンサルとは</h2>
+            <div class="txt">
+                <p>ECモンスターの江藤です。</p>
+                <p>ネットショップ運営に悩む方を、私は25年間、たくさん<br>見てきました。</p>
+                <p>なぜ売上が伸びないのか？<br>
+                    それは「過去の失敗」や「間違った方法」が、<br>
+                    無意識にあなたの手足を縛っているから。</p>
+                <p>私はずっと、それを打破したいと思っていました。<br>
+                    自分が指導した200社以上の成功経験を、<br>
+                    AIという形で、誰もが手に入れられるものにできないか。</p>
+                <p>その思いから生まれたのが、<br>
+                    「ECモンスターAIコンサル」です。</p>
+            </div>
+        </div>
+        <div class="image">
+            <div class="movie">
+                <video poster="/wp-assets/img/ai-lp/img_04.jpg" controls playsinline preload="none">
+                    <source src="/wp-assets/img/ai-lp/movie2.mp4" type="video/mp4">
+                </video>
+            </div>
+        </div>
+    </section>
+    <section class="case">
+        <div class="l_inner">
+            <h2 class="sec-ttl">実際に成果を出した人たち</h2>
+        </div>
+        <div class="box">
+            <div class="box-ttl-wrap">
+                <div class="l_inner">
+                    <div class="num"><img src="/wp-assets/img/ai-lp/img_35.png" alt="ケース：1"></div>
+                    <h3 class="ttl">月10万円のコンサルに悩んだEC店長<br>
+                        佐藤さんの話（日用品/楽天市場）</h3>
+                </div>
+            </div>
+            <div class="txt">
+                <div class="l_inner">
+                    <p>「これで、ほんとに成果出るのか…？」</p>
+                    <p>店長・佐藤大樹さん（37歳）は、その月のコンサル料10万円の請求書を手に、ため息をついていた。</p>
+                    <p>楽天市場で日用品を販売して3年。<br>
+                        最初の2年は完全に独学で運営し、なんとか月商70万円までは伸ばした。<br>
+                        だが、そこから先が伸びない。アクセスは増えず、リピートも伸びず、試しては失敗、試しては落ち込む毎日だった。</p>
+                    <p>そんなとき、ある有名なコンサル会社の広告が目に入った。<br>
+                        「楽天市場攻略専門・月10万円で売上アップを徹底支援」とある。</p>
+                    <p>「よし、もう一人で悩むのはやめよう。プロに頼ってみよう」</p>
+                    <p>そう思って契約した。</p>
 
-  <!-- Apply Form -->
-  <section id="apply" class="py-16 bg-navy text-white">
-    <div class="max-w-md mx-auto px-4 text-center">
-      <h2 class="text-2xl font-bold mb-6">お申し込み</h2>
-      <p class="text-slate text-sm mb-8">※Gmailアドレスのみ対応</p>
-      <form action="https://api.web3forms.com/submit" method="POST" class="space-y-4">
-        <input type="hidden" name="access_key" value="ed53efba-9f1e-4bf3-aa00-7d68b21d8464" />
-        <input type="hidden" name="redirect" value="https://ecmonster.jp/ai-consulting-ar/thanks/" />
-        <input type="hidden" name="subject" value="AIコンサル楽天市場編 申込" />
-        <input type="email" name="email" required placeholder="Gmailアドレスを入力" class="w-full px-4 py-3 rounded-lg text-dark focus:outline-none focus:ring-2 focus:ring-primary" />
-        <button type="submit" class="w-full bg-primary hover:bg-primary-dark text-white font-bold py-4 rounded-full transition-colors text-lg">
-          無料で体験する
-        </button>
-      </form>
-    </div>
-  </section>
+                    <p class="blue">■ 想像していた未来と、現実のギャップ</p>
+                    <p>最初の面談は丁寧だった。<br>
+                        「まずは商品ページの訴求を変えましょう」「広告運用の手直しを」など、方針はクリアに示された。</p>
+                    <p>だが——、それからが問題だった。</p>
+                    <div class="hide-txt">
+                        <p>・打ち合わせは月に1回、30分だけ<br>
+                            ・質問はメールのみ。返事は平均2〜3日後<br>
+                            ・実務的な「これどうすれば？」には答えがあいまい</p>
+                        <p>商品名を変えたいと相談しても、「方向性としては〜」と抽象的な返事ばかり。<br>
+                            改善案の具体例は出てこず、気づけば実務は結局、佐藤さんが一人で抱える形に戻っていた。</p>
+                        <p>そして半年後、売上は……大きく変わっていなかった。</p>
+                        <p>「この10万円、何に払ってるんだろう？」</p>
+                        <p>正直、心が折れかけていた。</p>
+                        <p class="blue">■ そんなとき出会ったのが「ECモンスターAIコンサル」だった</p>
+                        <p>ネットで「EC 悩み 売上 停滞」と検索していたとき、偶然見つけたのがこのサービスだった。</p>
+                        <p>「AIで、EC特化のAIコンサル？」「しかも、月5,000円…？」</p>
+                        <p>最初は半信半疑だったがダメ元で登録してみた。</p>
+                        <p>初日の夜、こう打ち込んだ。</p>
+                        <p>「この商品名、なんか弱い気がするんですが、もっと売れる言い方ありますか？」</p>
+                        <p>30秒後、3つの改善案が表示された。<br>
+                            しかも、ターゲット別に見出しやSEOを意識した構成まで書いてある。</p>
+                        <p>「えっ、早すぎない？　しかも的確…」</p>
+                        <p>その瞬間、これまで感じていたコンサルとの“温度差”を一気に感じた。</p>
+                        <p class="blue">■ 一気に変わった「日々の業務」</p>
+                        <p>それからというもの、佐藤さんは毎日、AIに相談するようになった。</p>
+                        <p>・朝：「今日は何を優先すべきか？」→“TOP5の行動”が返ってくる<br>
+                            ・昼：「この広告文、わかりにくくない？」→“言い換え3案”を提案<br>
+                            ・夜：「キャンペーン施策、今週はどこを強化？」→“戦略×予算内の施策”を即提案</p>
+                        <p>AIは何度聞いても嫌な顔をせず、具体的に、しかも速く答えてくれる。<br>
+                            相談のハードルが下がり、迷う時間が減った。</p>
+                        <p>気づけば、1日あたりの施策実行数は3倍に増えていた。<br>
+                            同じ労力で、より本質的な施策に集中できるようになった。</p>
+                        <p class="blue">■ 売上も、人の動きも変わっていった</p>
+                        <p>導入後2ヶ月。<br>
+                            月商は98万円に。3ヶ月目で初の100万円を超えた。</p>
+                        <p>だが、それ以上に嬉しかったのは、スタッフの表情が変わったこと。</p>
+                        <p>「AIに聞いてみますね！」<br>
+                            「これ、AIで確認済みなので、先にやっておきました」</p>
+                        <p>そう言って動いてくれるスタッフが増えていた。</p>
+                        <p>社内に“指示待ち”が減り、“考えて動く文化”が芽生え始めたのだ。</p>
+                        <p class="blue">■ 佐藤さんの声</p>
+                        <p>「まさかAIに、こんなに助けられるとは思いませんでした。<br>
+                            月10万円のコンサルはもう解約しましたが、まったく後悔はありません。<br>
+                            いまでは、このAIが“第二の右腕”みたいな存在です」</p>
+                    </div>
+                    <p class="readmore"><span class="open">続きを読む</span><span class="close">閉じる</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-ttl-wrap">
+                <div class="l_inner">
+                    <div class="num"><img src="/wp-assets/img/ai-lp/img_36.png" alt="ケース：2"></div>
+                    <h3 class="ttl fnt-m ls">「やることが多すぎて、すべてが中途半端だった」<br>
+                        高橋さんの話（アクセサリー/楽天市場）</h3>
+                </div>
+            </div>
+            <div class="txt">
+                <div class="l_inner">
+                    <p>「1日が終わるたびに、自己嫌悪になるんです……」</p>
+                    <p>高橋麻美さん（32歳）は、昼は事務職として働きながら、副業で楽天ショップを運営している。</p>
+                    <p>子どもが寝た後、夜21時からパソコンに向かい、梱包やページ更新、メール対応をこなす日々。<br>
+                        商品はこだわって作っているのに、なぜか売れない。</p>
+                    <p>「やることが多すぎて、全部が中途半端」<br>
+                        「“今日何やるべきか”すら、よく分からない……」</p>
+                    <p>気づけば、いつのまにか「続けるのがつらい」になっていた。</p>
+                    <p class="blue">■ 売上は7万円止まり。何かを変えなければ…</p>
+                    <p>1年前に開店したときは、目標月商30万円を掲げていた。<br>
+                        だが、現実は甘くない。広告は怖くて打てず、レビューは増えず、メルマガも書けない。</p>
+                    <p>夜になると、Googleで「楽天市場 売上 伸びない」と検索していた。</p>
+                    <p>ある日、ある記事に目が留まった。</p>
+                    <p>「ECに特化したAIコンサルが、24時間あなたの相談に乗ります」</p>
+                    <div class="hide-txt">
+                        <p>「月額5,000円～。今なら初期費用無料」</p>
+                        <p>「え、AIがコンサル？意味わかんない（笑）……でも安いし試してみてもいいかも」</p>
+                        <p>そう思って、申し込んだ。</p>
+                        <p class="blue">■「今日やることTOP5」が、最初の転機だった</p>
+                        <p>AIコンサルを始めたその夜。<br>
+                            高橋さんは、自分のショップの状況と、さらにこう入力した。</p>
+                        <p>「今日、なにを優先してやればいいですか？」</p>
+                        <p>数秒で返ってきたのは、こうだった：</p>
+                        <p>・商品ページの見直し（タイトルと1枚目画像）<br>
+                            ・レビュー依頼メールの送信<br>
+                            ・アクセス数のチェックとキーワード分析<br>
+                            ・メルマガ文案の叩き台作成（初稿サンプルつき）</p>
+                        <p>しかも、それぞれの項目に「やり方」まで添えられていた。</p>
+                        <p>「……これ、完全に“今の私”に合ってる……」</p>
+                        <p>久々に、やることが明確になった感覚だった。<br>
+                            しかも、全部“手が届く”内容ばかりだった。</p>
+                        <p class="blue">■ 翌日から「行動のリズム」が整いはじめた</p>
+                        <p>AIとのやりとりは、LINE感覚。<br>
+                            「このタイトル、どう思う？」と送れば、即アドバイスが返ってくる。</p>
+                        <p>「キャッチコピー考えて」と言えば、3案が数秒で表示される。</p>
+                        <p>しかも、何度聞いてもAIは怒らない。<br>
+                            「なんか違うかも」と打てば、「では、こちらはどうですか？」と答えてくれる。</p>
+                        <p>「誰にも遠慮せず、何度でも聞けるって……<br>
+                            こんなにストレスフリーなんだ」</p>
+                        <p>それから高橋さんは、毎日AIに「今日やること」を聞くようになった。</p>
+                        <p class="blue">■ そして、売上は3倍に</p>
+                        <p>最初の1ヶ月で、売上は7万円 → 22万5千円に。<br>
+                            2ヶ月目で、ついに月商30万円を突破した。</p>
+                        <p>高橋さんは今、こう語る。</p>
+                        <p>「以前の私は、悩むことに時間を使ってました。<br>
+                            今は“動くこと”に集中できています。<br>
+                            本当に、今までで一番“進んでる感覚”があります。」</p>
+                    </div>
+                    <p class="readmore"><span class="open">続きを読む</span><span class="close">閉じる</span></p>
+                </div>
+            </div>
+        </div>
+        <div class="box">
+            <div class="box-ttl-wrap">
+                <div class="l_inner">
+                    <div class="num"><img src="/wp-assets/img/ai-lp/img_37.png" alt="ケース：3"></div>
+                    <h3 class="ttl">「誰かが教えないと、誰も動けない」──<br>
+                        停滞する楽天ECチームの現場で起きた変化</h3>
+                </div>
+            </div>
+            <div class="txt">
+                <div class="l_inner">
+                    <p>株式会社エムツー（仮称）の田島部長（42歳）は、頭を抱えていた。<br>
+                        社内のECチームは5人構成。うち2人が新卒、1人は中途入社2年目。<br>
+                        売上は前年から横ばいだが、現場の空気は“重かった”。</p>
+                    <p>なぜか？</p>
+                    <p>「誰かが教えないと、誰も動けない」<br>
+                        ──そんな状態に、なってしまっていたからだ。</p>
+                    <p class="blue">■ なぜ、育たないのか？　“教える側”が疲弊していた</p>
+                    <p>チームのリーダーを務めるのは入社8年目の佐久間さん。<br>
+                        知識も経験も豊富だが、最近は明らかに疲れていた。</p>
+                    <p>ある日の社内ミーティング。<br>
+                        新人の石井くんが、商品バナーの修正で悩んでいた。</p>
+                    <p>「佐久間さん、これってこのまま出しても大丈夫ですか？」</p>
+                    <p>「……ごめん、あとにしてくれる？今、緊急の出荷対応してるから」</p>
+                    <p>石井くんは黙ってうなずいた。</p>
+                    <div class="hide-txt">
+                        <p>でもその後、バナーはそのまま掲載され、<br>
+                            クレームにつながってしまった。</p>
+                        <p>“教える側が忙しすぎて、教える時間がない”<br>
+                            “教わる側も、何が正解かわからず手が止まる”</p>
+                        <p>この悪循環が、組織全体のスピードを奪っていた。</p>
+                        <p class="blue">■ その流れを変えたのが「ECモンスターAIコンサル」だった</p>
+                        <p>田島部長は、知人の紹介でこのサービスを知った。<br>
+                            「ECの質問を、AIに聞ける？」「しかも24時間対応？」</p>
+                        <p>半信半疑ながら申し込んでみた。</p>
+                        <p>初日に石井くんがAIにこう聞いた。</p>
+                        <p>「新商品バナーを作ってるんですが、訴求文の方向性が不安です」</p>
+                        <p>すると、AIから3パターンの文案が返ってきた。<br>
+                            しかも、それぞれに「おすすめ対象」「強調キーワード」「使用タイミング」まで書かれている。</p>
+                        <p>石井くんは言った。</p>
+                        <p>「……これ、先輩に聞く前に、ここで確認できるのって、すごい楽です」</p>
+                        <p class="blue">■ 「指示待ち社員」から「自走するチーム」へ</p>
+                        <p>その後、AIを活用する場面が急速に増えた。</p>
+                        <p>・新入社員が企画案を考えるとき、まずAIに壁打ち<br>
+                            ・投稿文の確認をAIに依頼してから上司に回す<br>
+                            ・広告施策も「今月の優先度は？」とAIに確認してから実行</p>
+                        <p>自然と、「聞いてから動く」から「AIに相談して自分で動く」という流れに変わっていった。</p>
+                        <p>そして、佐久間さんがある日こう言った。</p>
+                        <p>「僕、教えるストレスが明らかに減りました」<br>
+                            「でも不思議と、メンバーのクオリティは落ちてない。むしろ…良くなってる」</p>
+                        <p class="blue">■ 売上にも、評価にも“波”が立ちはじめた</p>
+                        <p>導入から3ヶ月。チームの実行数は1.7倍に。<br>
+                            売上も前年比112％を記録。<br>
+                            「教える・指導する」ことに費やしていた時間が、<br>
+                            「戦略を考える・数字を分析する」時間へと変わった。</p>
+                        <p class="blue">■ 田島部長の声</p>
+                        <p>「正直、“AIに教わるなんて…”という先入観が最初はありました。<br>
+                            でも今では、“これがなかったら、もう戻れない”というのが正直な感想です。<br>
+                            人が人を育てるって、時間も精神力も要ります。<br>
+                            このAIが、その“前段階”を担ってくれてるんです。」</p>
+                    </div>
+                    <p class="readmore"><span class="open">続きを読む</span><span class="close">閉じる</span></p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="message">
+        <h2 class="sec-ttl">「AIなんて使いこなせるかな…」<br>と思われる方へ</h2>
+        <div class="l_inner">
+            <div class="box">
+                <div class="txt">
+                    <img src="/wp-assets/img/ai-lp/img_10.jpg" alt="AIなんて使いこなせるかな…と思われる方へ">
+                    <p>使いこなすには多少のコツがありますが、難しいものではありません。
+                        ポイントは「ご自身の状況を具体的に伝える」こと。</p>
+                    <p>それさえできれば、AIは驚くほど実践的な答えを返してくれます。<br>
+                        慣れるまでは少し時間がかかるかもしれませんが、 AIは決して怒りません。<br>
+                        何度でも、あなたが納得するまで、誠実に返答してくれます。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <section class="profile">
+        <div class="l_inner">
+            <h2 class="sec-ttl">AIの後ろには私がついています</h2>
+            <div class="box01">
+                <p><strong>ECモンスター代表の江藤です。<br>
+                        AIが答えられないご質問には、<br>
+                        私が責任を持ってアナログで対応いたしますので<br>
+                        ご安心ください。<br>
+                        私はECコンサルの草分けとして、<br>
+                        年商億超えを達成したショップを<br>
+                        立ち上げから200社以上支援してまいりました。<br>
+                        その経験を活かし、皆さまのビジネスを<br>
+                        全力でサポートいたします。</strong></p>
+            </div>
+        </div>
+    </section>
+    <section class="mv">
+        <h2 class="mv-ttl">
+            <img src="/wp-assets/img/ai-lp/img_29.png" alt="楽天市場対応AIコンサルが月額5,000円～">
+        </h2>
+    </section>
+    <section class="plan">
+        <div class="l_inner">
+            <h2 class="sec-ttl">AIコンサル料金プラン</h2>
+            <h3 class="sec-sub-ttl">必要に応じて選べるプラン</h3>
+            <img src="/wp-assets/img/ai-lp/img_31.png" alt="今から24時間以内のお申し込みに限り初期費用無料！">
+            <div class=" plan-full">
+                <h3 class="plan-ttl">コンプリートプラン（税別）</h3>
+                <p class="txt">楽天市場編・Amazon編・自社EC編・<br class="sp">DtoC：商品企画販売戦略編全て使い放題</p>
+                <div class="box-wrap">
+                    <div class="p-box"><img
+                            src="/wp-assets/img/ai-lp/plan_all-y-trial2.jpg"
+                            alt="コンプリートプラン：年額払い：24時間以内契約料金"></div>
+                    <div class="p-box"><img
+                            src="/wp-assets/img/ai-lp/plan_all-m-trial2.jpg"
+                            alt="コンプリートプラン：月額払い：24時間以内契約料金"></div>
+                    <div class="p-box"><img
+                            src="/wp-assets/img/ai-lp/plan_all-y2.jpg"
+                            alt="コンプリートプラン：年額払い：24時間以後契約料金"></div>
+                    <div class="p-box"><img
+                            src="/wp-assets/img/ai-lp/plan_all-m2.jpg"
+                            alt="コンプリートプラン：月額払い：24時間以後契約料金"></div>
+                </div>
+            </div>
+            <div class="plan-1">
+                <h3 class="plan-ttl">選べる単体プラン（税別）</h3>
+                <p class="txt">楽天市場編・Amazon編・自社EC編・<br class="sp">DtoC：商品企画販売戦略編の中から1つを選択</p>
+                <div class="box-wrap">
+                    <div class="p-box"><img
+                            src="/wp-assets/img/ai-lp/plan_single-y-trial2.jpg"
+                            alt="単体プラン：年額払い：24時間以内契約料金"></div>
+                    <div class="p-box"><img
+                            src="/wp-assets/img/ai-lp/plan_single-m-trial2.jpg"
+                            alt="単体プラン：月額払い：24時間以内契約料金"></div>
+                </div>
+            </div>
+            <div class="atten red">※プランはいつでも解約OK<br class="sp">（返金には応じられません）</div>
+            <div class="summary-box">
+                <p><strong>コンサル1回分の費用で1年間使えると<br>
+                        90%のユーザーがコストパフォーマンスを<br>
+                        評価しています。</strong></p>
+            </div>
+        </div>
+    </section>
+    <section class="flow">
+        <div class="l_inner">
+            <h2 class="sec-ttl">導入の流れ</h2>
+            <ul class="list">
+                <li><span class="num">1</span>
+                    <p>ご契約（24時間以内は初期費用無料）</p>
+                </li>
+                <li><span class="num">2</span>
+                    <p>ご案内メール受信（3営業日以内）</p>
+                </li>
+                <li><span class="num">3</span>
+                    <p>Gmailで専用アカウント制作（5分程度）</p>
+                </li>
+                <li><span class="num">4</span>
+                    <p>ご利用開始（月額5,000円〜）</p>
+                </li>
+                <li><span class="num">5</span>
+                    <p>いつでも解約可能・縛りなし</p>
+                </li>
+            </ul>
+        </div>
+    </section>
+    <div class="cta">
+        <div class="l_inner">
+            <img src="/wp-assets/img/ai-lp/img_32.png" alt="楽天市場運営対応AIコンサル初期費用無料＋3大特典
+">
+            <div class="txt center">
+                <p>今このページをご覧いただいた方限定！<br>
+                    今から24時間以内にお申し込みいただくと、<br>
+                    初期費用30,000円が【無料】になります！</p>
+                <p>また、お申し込み特典として<br>
+                    「AIコンサルスタートガイド」<br>
+                    「失敗しないECスタートガイド」<br>
+                    「商品開発→ファン獲得完全攻略ガイド」<br>
+                    をプレゼントいたします！</p>
+                <p>このチャンスをお見逃しなく、<br>
+                    ぜひお早めにお申し込みください！</p>
+                <a href="https://lms.ecmonster.jp/p/ai-consulting-cart" class="cta-btn">今すぐ申し込む</a>
+            </div>
+        </div>
+        <div class="present">
+            <img src="/wp-assets/img/ai-lp/img_33.png" alt="3大特典プレゼント">
+        </div>
+</main>
 
-</LPLayout>
+</BaseLayout>

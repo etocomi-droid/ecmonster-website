@@ -1,28 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="出店プランの選び方"
-  section="2. 出店の準備"
-  sectionHref="/movie/"
-  prevArticle={{ title: '出店までのスケジュール感', href: '/guide-rakuten/2/schedule/' }}
-  nextArticle={{ title: 'ショップ開設の流れ', href: '/guide-rakuten/3/shop-opening/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>楽天市場の出店プラン</h2>
-
-<h3>ライトプラン</h3>
-<p>月額出店料が最も安く、初期費用を抑えたい方向けです。ただし月間売上に対する手数料率は高めに設定されています。</p>
-
-<h3>スタンダードプラン</h3>
-<p>中規模の店舗に適したプランです。バランスの取れた料金設定で、多くの店舗が選択しています。</p>
-
-<h3>メガショッププラン</h3>
-<p>大規模店舗向けのプランです。商品登録数や画像容量が大幅に増加します。</p>
-
-<p>自社の事業規模と成長計画に合わせて適切なプランを選択しましょう。</p>
-
-
-</GuideLayout>
+</BaseLayout>

@@ -1,24 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="差別化とブランディングの工夫"
-  section="7. 成功のヒント"
-  sectionHref="/movie/"
-  prevArticle={{ title: '成功事例', href: '/guide-rakuten/7/success-cases/' }}
-  nextArticle={{ title: '長期的な売上向上', href: '/guide-rakuten/7/long-term-growth/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>差別化の方法</h2>
-<ul>
-  <li><strong>商品の独自性</strong>：オリジナル商品やセット商品の開発</li>
-  <li><strong>サービスの差別化</strong>：ギフト対応、即日発送</li>
-  <li><strong>ストーリー</strong>：商品への想いや製造過程の発信</li>
-</ul>
-<h2>ブランディングのポイント</h2>
-<p>一貫したビジュアルアイデンティティ、顧客との信頼関係構築、リピーターの育成が重要です。</p>
-
-
-</GuideLayout>
+</BaseLayout>

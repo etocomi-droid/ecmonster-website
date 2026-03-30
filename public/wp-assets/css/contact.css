@@ -1,0 +1,55 @@
+.contact-wrap .txt-c {
+  margin: -20px auto 20px;
+}
+.contact-wrap .form-wrap .item {
+  width: 100%;
+}
+.contact-wrap .form-wrap input[type=text], .contact-wrap .form-wrap input[type=email], .contact-wrap .form-wrap input[type=tel], .contact-wrap .form-wrap textarea {
+  padding: 10px 20px;
+  width: 100%;
+}
+.contact-wrap .form-wrap input[type=submit] {
+  padding: 10px 20px;
+  margin-top: 40px;
+  width: 124px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.contact-wrap .form-wrap input[type=submit]:hover {
+  opacity: 0.8;
+}
+.contact-wrap .thanks .btn-top {
+  display: block;
+  padding: 10px 20px;
+  margin: 30px auto 0;
+  width: 124px;
+  background: #000;
+  color: #fff;
+  cursor: pointer;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+@media (min-width: 768px) {
+  .contact-wrap .page-ttl.ls {
+    letter-spacing: -2px;
+  }
+  .contact-wrap .form-wrap {
+    margin-top: -10px;
+  }
+  .contact-wrap .form-wrap .item.col {
+    width: 48%;
+  }
+  .contact-wrap .form-wrap .item.col:nth-of-type(2) {
+    margin-left: 4%;
+  }
+}
+@media (max-width: 767px) {
+  .contact-wrap .form-wrap {
+    margin-top: -20px;
+  }
+  .contact-wrap .form-wrap input[type=submit] {
+    margin-top: 20px;
+  }
+}

@@ -1,25 +1,24 @@
 ---
-import GuideLayout from '../../../layouts/GuideLayout.astro'
+import BaseLayout from '../../../layouts/BaseLayout.astro'
 ---
 
-<GuideLayout
-  title="楽天市場出店までのスケジュール感"
-  section="2. 出店の準備"
-  sectionHref="/movie/"
-  prevArticle={{ title: '出店の準備：必要な書類', href: '/guide-rakuten/2/preparation/' }}
-  nextArticle={{ title: '出店プランの選び方', href: '/guide-rakuten/2/plan-selection/' }}
+<BaseLayout
+  title="ページが見つかりませんでした - EC モンスター"
+  bodyClass="error404 wp-theme-ecmonster"
 >
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
 
+<div class="page-wrap not-found">
+    <div class="l_inner">
+        <section>
+            <h1 class="page-ttl">404 NOT FOUND</h1>
+            <div class="txt-c">
+                <p>お探しのページは見つかりませんでした</p>
+                <a href="/" class="btn">TOPに戻る</a>
+            </div>
+        </section>
+    </div>
+</div>
+<!--page-wrap -->
 
-<h2>一般的なスケジュール</h2>
-<ol>
-  <li><strong>申し込み〜審査</strong>：約2〜4週間</li>
-  <li><strong>店舗構築</strong>：約2〜4週間</li>
-  <li><strong>商品登録</strong>：商品数により変動</li>
-  <li><strong>開店準備・テスト</strong>：約1週間</li>
-</ol>
-
-<p>トータルで1〜2ヶ月程度を見込んでおくと良いでしょう。繁忙期前に出店する場合は、余裕を持ったスケジュール設定が重要です。</p>
-
-
-</GuideLayout>
+</BaseLayout>
