@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const rawHtml = `
+<div id="sub_contents" class="wrap950 padding50">
+<div class="ec-heroes trial-form restaurant-camp">
+<div class="form-ttl">
+<p class="p60">販売戦略サポートシステム</p>
+<p><img src="/wp-assets/img/eccc/uploads/2020_08_ecsystem_01.jpg" alt="" width="950" height="1203" class="alignnone size-full wp-image-5277" usemap="#ecsys-mapping" srcset="/wp-assets/img/eccc/uploads/2020_08_ecsystem_01.jpg 950w, /wp-assets/img/eccc/uploads/2020_08_ecsystem_01-237x300.jpg 237w, /wp-assets/img/eccc/uploads/2020_08_ecsystem_01-768x973.jpg 768w, /wp-assets/img/eccc/uploads/2020_08_ecsystem_01-809x1024.jpg 809w, /wp-assets/img/eccc/uploads/2020_08_ecsystem_01-600x760.jpg 600w" sizes="(max-width: 950px) 100vw, 950px" />
+<map name="ecsys-mapping">
+    <area target="" alt="" title="" href="/wp-assets/img/eccc/uploads/2020_08_ecsystem_02.jpg" coords="941,585,9,183" shape="rect" rel="lightbox">
+    <area target="" alt="" title="" href="/wp-assets/img/eccc/uploads/2020_08_ecsystem_03.jpg" coords="145,643,568,854" shape="rect" rel="lightbox">
+    <area target="" alt="" title="" href="/wp-assets/img/eccc/uploads/2020_08_ecsystem_05.jpg" coords="145,915,569,1124" shape="rect" rel="lightbox">
+    <area target="" alt="" title="" href="/wp-assets/img/eccc/uploads/2020_08_ecsystem_06.jpg" coords="623,642,802,1122" shape="rect" rel="lightbox">
+</map></p>
+<div class="cv-common-tel">
+                <p><strong>お問い合わせ・お申し込み</strong></p>
+                <a href="tel:0351668000" class="tel"><img src="/wp-assets/img/eccc/top_tel.png" alt="03-5166-8000"></a>
+            </div>
+<!--
+<div class="txt">
+<p>必要事項に入力の上、お問い合わせ・お申し込みボタンを押してください。</p>
+</div>
+</div>
+[mwform_formkey key="5283"]
+</div></div>
+<script type="text/javascript">
+      $(function () {
+        $('.privacy-box').bind('scroll', function () {
+          scrollHeight = $('.privacy-box').get(0).scrollHeight;
+          scrollPosition = $('.privacy-box').height() + $('.privacy-box').scrollTop();
+          if ((scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+            $('.check').fadeIn();
+          }
+        });
+      });
+    </script>`;
+---
+
+<BaseLayout title="販売戦略サポートシステムお問い合わせ・お申し込みフォーム | 株式会社ECコンサルカンパニー">
+<link rel="stylesheet" href="/wp-assets/css/eccc-pages.css" slot="css" />
+<Fragment set:html={rawHtml} />
+</BaseLayout>

@@ -1,0 +1,39 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+const rawHtml = `
+<div id="sub_contents" class="wrap950 padding50" style="padding-top:0;">
+<div class="ec-heroes trial-form restaurant-camp">
+<div class="form-ttl">
+<img src="/wp-assets/img/eccc/uploads/2020_10_backyard.jpg" alt="" width="950" height="918" class="alignnone size-full wp-image-5356" alt="ECバックヤード自動化システム" srcset="/wp-assets/img/eccc/uploads/2020_10_backyard.jpg 950w, /wp-assets/img/eccc/uploads/2020_10_backyard-300x290.jpg 300w, /wp-assets/img/eccc/uploads/2020_10_backyard-768x742.jpg 768w, /wp-assets/img/eccc/uploads/2020_10_backyard-600x580.jpg 600w" sizes="(max-width: 950px) 100vw, 950px" />
+<p class="link"><a href="/wp-assets/img/eccc/uploads/2020_10_ec_backyard.pdf" target="_blank">詳しい資料をダウンロード</a></p>
+<img src="/wp-assets/img/eccc/uploads/2020_10_backyard_02.jpg" alt="" width="950" height="80" class="alignnone size-full wp-image-5367" alt="詳細はお問い合わせください。" />
+<!--<div class="txt">
+<p>必要事項に入力の上、お問い合わせ・お申し込みボタンを押してください。</p>
+</div>-->
+</div>
+<div class="cv-common-tel">
+                <p><strong>お問い合わせ・お申し込み</strong></p>
+                <a href="tel:0351668000" class="tel"><img src="/wp-assets/img/eccc/top_tel.png" alt="03-5166-8000"></a>
+            </div>
+<!--
+[mwform_formkey key="5359"]
+-->
+</div></div>
+<script type="text/javascript">
+      $(function () {
+        $('.privacy-box').bind('scroll', function () {
+          scrollHeight = $('.privacy-box').get(0).scrollHeight;
+          scrollPosition = $('.privacy-box').height() + $('.privacy-box').scrollTop();
+          if ((scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+            $('.check').fadeIn();
+          }
+        });
+      });
+    </script>`;
+---
+
+<BaseLayout title="ECバックヤード自動化システムお問い合わせ・お申し込みフォーム | 株式会社ECコンサルカンパニー">
+<link rel="stylesheet" href="/wp-assets/css/eccc-pages.css" slot="css" />
+<Fragment set:html={rawHtml} />
+</BaseLayout>

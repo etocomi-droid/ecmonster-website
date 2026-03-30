@@ -1,0 +1,282 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const rawHtml = `
+<a class="etocomi_btn_fix" href="#form">今すぐ<br> お申し込み</a>
+<section id="sub_contents" class="padding50">
+  <section class="ec-heroes trial-course-3m">
+    <div class="wrap950">
+      <div class="sec01">
+        <h1 class="p30 bld">これからネットショップを始める方へ</h1>
+        <img src="/wp-assets/img/eccc/ec-heroes/trial_01.png" alt="初回限定お試しコーチング3ヶ月コース【質問し放題】ECコンサルカンパニー">
+        <div class="txt-wrap">
+          <h2 class="p36">あなたの迷いが一瞬で消える！</h2>
+          <p>弊社にいただくお問い合わせの約80％が、これからネットショップを始めようと考えている人達です。そのような方のために、わからないこと、不安なこと、ありとあらゆる内容に対応したコンサルの<span
+              class="p20"><strong>3ヶ月お試しサービス</strong></span>を開始しました。<br> 3ヶ月間、<span
+              class="p20"><strong>質問し放題です！</strong></span><br> 人間の脳は知ってることや経験したことしか判断できません。<br> 実績があるわかってる人に聞けば<span
+              class="p20"><strong>決断するスピードが圧倒的な早さに変わります！</strong></span></p>
+        </div>
+        <div class="box-wrap box01">
+          <div class="image"><img src="/wp-assets/img/eccc/ec-heroes/trial_04.jpg"
+              alt="ちょっと待ってください！その外注頼んで大丈夫ですか？【お試しコーチング3ヶ月コース】ECコンサルカンパニー">
+          </div>
+          <div class="txt"><img src="/wp-assets/img/eccc/ec-heroes/trial_07.png"
+              alt="ちょっと待ってください！適正な価格ですか？第三者の評価を知りたくないですか？【お試しコーチング3ヶ月コース】ECコンサルカンパニー"></div>
+        </div>
+        <div class="box-wrap box02">
+          <div class="image"><img src="/wp-assets/img/eccc/ec-heroes/trial_05.jpg"
+              alt="ネットショップのことなら、どんなことでもご相談ください【お試しコーチング3ヶ月コース】ECコンサルカンパニー">
+          </div>
+          <div class="txt"><img src="/wp-assets/img/eccc/ec-heroes/trial_08.png"
+              alt="その商品を売るのに適正なモールやカートがあります【お試しコーチング3ヶ月コース】ECコンサルカンパニー"></div>
+        </div>
+        <div class="box-wrap box03">
+          <div class="image"><img src="/wp-assets/img/eccc/ec-heroes/trial_06.jpg"
+              alt="商品開発もご提案できます【お試しコーチング3ヶ月コース】ECコンサルカンパニー">
+          </div>
+          <div class="txt"><img src="/wp-assets/img/eccc/ec-heroes/trial_09.png"
+              alt="売れる商品があります【お試しコーチング3ヶ月コース】ECコンサルカンパニー">
+          </div>
+        </div>
+      </div>
+      <div class="sec02">
+        <div class="bg">
+          <img src="/wp-assets/img/eccc/ec-heroes/trial_02.jpg" alt="コンサル内容の一部をご紹介します【お試しコーチング3ヶ月コース】ECコンサルカンパニー">
+          <div class="txt">
+            <h2 class="p36">コンサル内容の一部</h2>
+            <h3 class="p20">独自ドメインECコンサルティングの場合</h3>
+            <ul>
+              <li>商材や戦略にあったカート/サーバー選定</li>
+              <li> 商品に最適なキーワード策定</li>
+              <li> SEOに強いサイト構造策定</li>
+              <li> コンセプト＆ターゲット選定</li>
+              <li> 商品データの最適な登録情報のアドバイス</li>
+              <li> 市場規模、競合リサーチ</li>
+              <li> 売れやすい商材リサーチ</li>
+              <li> 競合サイトチェック</li>
+            </ul>
+            <h3 class="p20">モールECコンサルティングの場合</h3>
+            <ul>
+              <li>商材や戦略にあったモール選び</li>
+              <li> 各モールの検索上位にでやすい商品のキーワード選定</li>
+              <li> 商品データの登録アドバイス</li>
+              <li> サイトやLPのデザインアドバイス</li>
+              <li> 市場規模、競合リサーチ</li>
+              <li> 売れやすい商材リサーチ</li>
+              <li> 競合サイトチェック</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="sec03">
+        <h2 class="p36">補助金各種相談</h2>
+        <div class="txt-wrap">
+          <p>補助金等の各種相談も承ります。<br> ※作業業務は外注として15,000円～承ります。</p>
+        </div>
+      </div>
+      <div class="sec04">
+        <h2 class="p36">コンサル対象者</h2>
+        <div class="txt-wrap">
+          <p>■まだネットショップをやってない方<br> ■または月商100万円未満<br> ■初めてのお申込み（リピート不可）<br> ■対象：楽天、yahoo、Amazon、独自ドメイン</p>
+        </div>
+      </div>
+    </div>
+    <div class="sec05">
+      <div class="ttl">
+        <img src="/wp-assets/img/eccc/ec-heroes/trial_10.jpg" alt="豊富な経験と実績でサポートいたします【お試しコーチング3ヶ月コース】ECコンサルカンパニー">
+        <h2 class="p36">私たちにお任せください！</h2>
+      </div>
+      <div class="wrap950">
+        <div class="box-wrap box01">
+          <div class="txt">
+            <h3 class="p50 fnt-m">飛び抜けた実績</h3>
+            <p>■<span class="p20"><strong>楽天市場3年連続総合3位</strong></span>運営会社<br> ■指導した<span
+                class="p20"><strong>200社が年商1億円以上</strong></span>へ成長</p>
+          </div>
+          <div class="image">
+            <img src="/wp-assets/img/eccc/ec-heroes/heroes2_08.jpg" alt="ECコンサルカンパニーの実績【お試しコーチング3ヶ月コース】ECコンサルカンパニー">
+          </div>
+        </div>
+        <div class="box-wrap box02">
+          <div class="txt">
+            <h3 class="p50 fnt-m">EC業界の先端を行く</h3>
+            <p>常にEC最新情報が入ってくる環境です。<br> ２つの協会を設立しました。 <br><br>
+              <span class="p20"><strong>一般社団法人ジャパンEコマースコンサルタント協会</strong></span><br> 日本の海外の最新事例の情報が集約 <br><br>
+              <span class="p20"><strong>一般社団法人日本イーコマース学会</strong></span><br> 中小企業と産学連携のエビデンス付き商品開発するプラットフォーム</p>
+          </div>
+          <div class="image">
+            <img src="/wp-assets/img/eccc/ec-heroes/heroes2_10.jpg"
+              alt="一般社団法人ジャパンEコマースコンサルタント協会専務理事・一般社団法人日本イーコマース学会専務理事【お試しコーチング3ヶ月コース】ECコンサルカンパニー">
+          </div>
+        </div>
+        <div class="box-wrap box03">
+          <div class="txt">
+            <h3 class="p50 fnt-m">多岐にわたる支援幅</h3>
+            <p>サポート領域は商品開発、webマーケティング、制作、経営と多岐にわたり支援してきました。単なるノウハウの伝授ではありません。メンタル、ビジネススキルにも及ぶサポートを実施しています。</p>
+          </div>
+          <div class="image">
+            <img src="/wp-assets/img/eccc/ec-heroes/heroes2_12.jpg" alt="広い支援範囲【お試しコーチング3ヶ月コース】ECコンサルカンパニー">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="wrap950">
+      <div class="sec06">
+        <h2 class="p50 fnt-m">実績の一例</h2>
+        <ul class="box-wrap">
+          <li> <img src="/wp-assets/img/eccc/ec-heroes/trial_14.png"
+              alt="実績｜コンサル期間2・3ヶ月売上253万円アップ【お試しコーチング3ヶ月コース】ECコンサルカンパニー"></li>
+          <li> <img src="/wp-assets/img/eccc/ec-heroes/trial_15.png"
+              alt="⑭実績｜コンサル期間36ヶ月売上3,441万円アップ【お試しコーチング3ヶ月コース】ECコンサルカンパニー"></li>
+        </ul>
+        <p>※これらの数値は標準偏差で求めています</p>
+      </div>
+      <div class="sec07">
+        <div class="bg">
+          <h2 class="p50 fnt-m">メディア掲載履歴</h2>
+          <div class="box-wrap">
+            <div class="txt">
+              <p>■新聞：日経新聞/日経MJ/読売新聞/各地方新聞<br>■テレビ：NHK　首都圏ネットワーク/テレビ東京　WBS<br>■ラジオ：J-WAVE/TBSラジオ<br>
+                ■雑誌：THE21/東洋経済/プレジデント<br>■専門誌：日本ネット経済新聞/通販新聞/月刊ネット販売<br>他WEBメディア多数</p> <a id="69ca10687bb84" rel="wp-video-lightbox" href="https://www.youtube.com/watch?v=QxCVgxCdG4M&width=950&height=547" title=""><img src="/wp-assets/img/eccc/ec-heroes/heroes2_18.jpg" class="video_lightbox_anchor_image" alt="動画｜これからのECで実績を上げるには【お試しコーチング3ヶ月コース】ECコンサルカンパニー" /></a>    <script>
+    /* <![CDATA[ */
+    jQuery(document).ready(function($){
+        $(function(){
+            var width = $(window).innerWidth();
+            var setwidth = 950;
+            var ratio = 0.57578947368421;
+            var height = 547;
+            var link = 'https://www.youtube.com/watch?v=QxCVgxCdG4M&width=950&height=547';
+            if(width < setwidth)
+            {
+                height = Math.floor(width * 0.57578947368421);
+                //console.log("device width "+width+", set width "+950+", ratio "+0.57578947368421+", new height "+ height);
+                var new_url = wpvl_paramReplace('width', link, width);
+                var new_url = wpvl_paramReplace('height', new_url, height);
+                $("a#69ca10687bb84").attr('href', new_url);
+                //console.log(new_url);
+            }    
+        });
+    });
+    /* ]]&gt; */
+    </script>        
+            </div>
+            <div class="image"><img src="/wp-assets/img/eccc/ec-heroes/heroes2_19.jpg"
+                alt="各種メディア掲載【お試しコーチング3ヶ月コース】ECコンサルカンパニー">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sec08">
+        <div class="bg">
+          <h2 class="p50 fnt-m">代表の著書</h2>
+          <div class="box-wrap">
+            <div class="txt">
+              <p>■Shopで1億円儲ける!<br>■プロが教える! 売上が大幅アップするメールマガジンの法則<br>■億稼ぐ脳のつくり方 <br>■他ムック本共著多数</p>
+            </div>
+            <div class="image">
+              <img src="/wp-assets/img/eccc/ec-heroes/heroes2_20.jpg" alt="代表著書｜ムックなど多数【お試しコーチング3ヶ月コース】ECコンサルカンパニー"><img
+                src="/wp-assets/img/eccc/ec-heroes/heroes2_21.jpg" alt="代表著書｜億稼ぐ脳の作り方【お試しコーチング3ヶ月コース】ECコンサルカンパニー"><img
+                src="/wp-assets/img/eccc/ec-heroes/heroes2_22.jpg"
+                alt="代表著書｜売上が大幅アップするメールマガジンの法則【お試しコーチング3ヶ月コース】ECコンサルカンパニー"><img
+                src="/wp-assets/img/eccc/ec-heroes/heroes2_23.jpg" alt="代表著書｜E・Shopで1億円設ける【お試しコーチング3ヶ月コース】ECコンサルカンパニー">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sec09">
+        <div class="profile">
+          <h2 class="p36"><span>江藤正親プロフィール</span></h2>
+          <div class="box-wrap">
+            <div class="txt">
+              <p>明治大学卒業後、送電線建設会社、コンサル会社、メーカーと転職の後に独立。独立系ECコンサルタントとしては日本最古。<br>
+                1999年よりネットショップ運営に携わり、立ち上げ1年半で月商4500万円を達成。3年連続楽天総合3位。サポート実績企業は1000超え17名のEC関連本の著者を輩出。自ら著書3冊を持ち、新聞、雑誌など各メディアに寄稿。<br>
+                2013年設立した一般社団法人ジャパンEコマースコンサルタント協会は最新の日本と海外事例をECコンサルタントにアップデートしていく協会で、2017年設立の一般社団法人日本イーコマース学会は大学にイーコマース学部設立と中小零細向け産学連携商品エビデンスを出す仕組みを構築中。
+              </p>
+              <a href="/echeroes2/" class="btn-link">どうして<span class="sp">、</span>ECの支援<br
+                  class="sp">事業をやっているのか</a>
+            </div>
+            <div class="image">
+              <img src="/wp-assets/img/eccc/ec-heroes/support_15.jpg" alt="ECコンサルカンパニー代表江藤正親【お試しコーチング3ヶ月コース】"
+                srcset="/wp-assets/img/eccc/ec-heroes/support_15_sp.jpg 767w,/wp-assets/img/eccc/ec-heroes/support_15.jpg">
+            </div>
+          </div>
+        </div>
+        <div class="txt-wrap">
+          <p class="p20">ネットショップは実は始める前が一番重要です。<br> 勝つためには勝てる戦略が必要で、それを持っているかが勝敗を決めてしまうことがほとんどです。<br>
+            一緒に市場を見ながら戦略をつくり、勝てる市場に勝てる商品を販売していきましょう。</p>
+        </div>
+      </div>
+      <div class="sec10">
+        <div class="box">
+          <h2 class="p36">スポット1ヶ月コース料金</h2>
+          <img src="/wp-assets/img/eccc/ec-heroes/trial_18.png" alt="5万円（税別）/1ヶ月【スポット1ヶ月コース料金】ECコンサルカンパニー">
+        </div>
+      </div>
+<div class="sec10">
+        <div class="box">
+          <h2 class="p36">お試しコーチング3ヶ月コース料金</h2>
+          <img src="/wp-assets/img/eccc/ec-heroes/trial_16.png" alt="15万円（税別）/3ヶ月【お試しコーチング3ヶ月コース】ECコンサルカンパニー">
+        </div>
+      </div>
+      <div class="sec11" id="form">
+<a href="/contact/" class="btn-next p40 mb70" style="height:auto;">お問い合わせ・お申し込みはこちら</a>
+        <!--<h2 class="p36">お申し込み</h2>
+        <p class="p32">必要事項に入力の上、申し込むボタンを押してください。</p> [contact-form-7 id="5374" title="お試しコーチング3ヶ月コース"] <a href="/contact/"
+          class="link">お問い合わせ・ご質問はこちらからお気軽にどうぞ</a>-->
+<!--<div class="cv-common-tel">
+                <p><strong>お問い合わせ・お申し込み</strong></p>
+                <a href="tel:0351668000" class="tel"><img src="/wp-assets/img/eccc/top_tel.png" alt="03-5166-8000"></a>
+            </div>-->
+      </div>
+      <div class="sec12">
+        <h2 class="p36">それでもお悩みのあなたへ</h2>
+        <a href="/echeroes/" class="btn-link">あなたは、なぜ売れないのか？<br> のジレンマ</a>
+      </div>
+    </div>
+    <div class="sns">
+      <ul>
+        <li>シェアする</li>
+        <li><a href="https://social-plugins.line.me/lineit/share?url=/echeroes3/" target="_blank"
+            rel="noopener noreferrer"><img src="/wp-assets/img/eccc/ec-heroes/sns_line.jpg" alt="line"></a></li>
+        <li><a href="https://twitter.com/intent/tweet?text=ECヒーローズonline&amp;url=/echeroes3/"
+            target="_blank" rel="noopener noreferrer"><img src="/wp-assets/img/eccc/ec-heroes/sns_twitter.jpg"
+              alt="twitter"></a></li>
+        <li><a href="https://www.facebook.com/sharer.php?src=bm&#038;u=/echeroes3/&#038;t=ECヒーローズonline"
+            target="_blank" rel="noopener noreferrer"><img src="/wp-assets/img/eccc/ec-heroes/sns_facebook.jpg"
+              alt="facebook"></a></li>
+      </ul>
+    </div>
+  </section>
+</section>
+<!-- #container -->
+<link href="/wp-assets/css/colorbox/colorbox.css" rel="stylesheet">
+<script src="/wp-assets/js/jquery.colorbox.js"></script>
+<script>
+  $(function () {
+    $(".colorbox").colorbox({
+      maxWidth: "90%",
+      maxHeight: "90%",
+      opacity: 0.7,
+      preloading: false,
+      loop: false
+    });
+  });
+</script>
+<script type="text/javascript">
+  $(function () {
+    $('.privacy-box').bind('scroll', function () {
+      scrollHeight = $('.privacy-box').get(0).scrollHeight;
+      scrollPosition = $('.privacy-box').height() + $('.privacy-box').scrollTop();
+      if ((scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+        $('.check').fadeIn();
+      }
+    });
+  });
+</script>`;
+---
+
+<BaseLayout title="これからネットショップを始める方へ【質問し放題 お試しコンサル】 | 株式会社ECコンサルカンパニー"
+  description="ネットショップの勝負は始める前から決まっています。勝つための戦略を持っているかが勝敗を左右するのです。一緒に市場を見ながら戦略をつくり勝てる市場に勝てる商品を販売していきましょう。">
+<link rel="stylesheet" href="/wp-assets/css/eccc-pages.css" slot="css" />
+<Fragment set:html={rawHtml} />
+</BaseLayout>

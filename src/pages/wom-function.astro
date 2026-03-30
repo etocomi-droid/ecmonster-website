@@ -1,0 +1,547 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const rawHtml = `
+    <div id="sub_contents" class="wrap950">
+<style>
+.pc_none{display: none!important;}
+.sp_none{display: block!important;}
+#wom_commerce {width: 100%;}
+#wom_commerce .section{
+	position: relative;
+	text-align:center;
+	margin:20px auto 30px;
+}
+#wom_commerce .section h2 {
+    text-align: center;
+    font-weight: bold;
+    color: #1d0f6c;
+	margin:0 auto 20px;
+}
+#wom_commerce .section ul{
+	display: flex;
+    flex-wrap: wrap;
+    	margin:0 auto 50px;
+}
+#wom_commerce .section ul li {
+    width: 33.3333%;
+    padding: 0 15px;
+}
+#wom_commerce .section ul li a{
+    text-decoration: none;
+}
+#wom_commerce .section ul li a .box{
+    position: relative;
+    display: block;
+}
+#wom_commerce .section ul li a .box:after{
+	content:" ";
+    position: absolute;
+    top: 50%;
+    right: 7px;
+    background: url(/wp-assets/img/eccc/wom_commerce/icon_example.png) no-repeat;
+    display: inline-block;
+    width: 29px;
+    height: 13px;
+    margin: -8px 0 0;
+}
+#wom_commerce .section ul li a:hover .box{
+	opacity: 0.7;
+}
+#wom_commerce .section ul li h3 {
+    text-align: left;
+    font-weight: bold;
+    color: #0075c2;
+    font-size:18px;
+}
+#wom_commerce .section ul li .txt {
+    text-align: left;
+    font-size: 14px;
+    line-height: 2rem;
+    margin: 0 0 15px;
+}
+#wom_commerce .section ul li .txt h4 {
+    text-align: left;
+    font-weight: bold;
+    color: #000000;
+    font-size:14px;
+    padding: 0;
+    margin: 0;
+}
+#wom_commerce .section ul li .border_red {
+    margin: 10px auto 20px;
+    padding: 10px;
+    border: solid red 1px;
+}
+#wom_commerce .section ul li .box  {
+    padding: 5px 25px 5px 5px;
+}
+/*薄い灰色*/
+#wom_commerce .section ul li .box.lightgray {
+	background: #efefef;
+}
+/*灰色*/
+#wom_commerce .section ul li .box.gray {
+	background: #c9caca;
+}
+#wom_commerce .section ul li .box h4 {
+    text-align: left;
+    font-weight: bold;
+    color: #000000;
+    font-size:14px;
+    text-decoration: underline;
+}
+#wom_commerce .section ul li .box p {
+    text-align: left;
+    color: #000000;
+    font-size: 14px;
+    line-height: 1.8rem;
+    padding:0 20px 0 10px;
+}
+.bnr {
+    margin: 0 auto 70px;
+}
+.side_bn {
+    position: relative;
+    justify-content: center;
+    margin: 0 0 30px;
+    position: fixed;
+    top: 300px;
+    right: 0;
+}
+#form_block{
+	margin-top:-134px;
+	padding-top:134px;
+}
+.videowrap {
+    position: relative;
+    padding-bottom: 56.25%; /* 16:9 */
+    padding-top: 25px;
+    height: 0;
+    margin: 0 0 50px;
+    width:100%;
+}
+.videowrap video{
+    width:100%;
+}
+.videowrap iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+#loader-bg {
+  display: block;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  background: #fff;
+  z-index: 1;
+}
+#loader {
+  display: block;
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 200px;
+  height: 200px;
+  margin-top: -100px;
+  margin-left: -100px;
+  text-align: center;
+  color: #fff;
+  z-index: 2;
+}
+.faq{
+    margin: 0 auto 50px;
+}
+.faq .faq_title{
+	text-align: center;
+	font-weight: bold;
+	color: #1d0f6c;
+	font-size: 30px;
+}
+.faq .faq_title01{
+	position: relative;
+    padding: 0 32px 0 0;
+	font-size: 20px;
+	line-height: 150%;
+    font-weight: bold;
+}
+.faq .faq_title01:after {
+    content: '+';
+	line-height: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: block;
+    width: 3em;
+    height: 3em;
+    text-align: center;
+}
+.faq .faq_title01.active:after {
+    content: '+';
+    right: -17px;
+    transform: rotate(315deg);
+}
+.faq .faq_title01 span{
+	color: #1d0f6c;
+	padding:0 5px 0 0;
+}
+.faq .txt_wrap{
+	font-size: 16px;
+	display: none;
+}
+.faq .block {
+    border-bottom: 1px solid #ccc;
+}
+
+@media(min-width: 1px) and (max-width: 640px){
+.pc_none{display: block!important;}
+.sp_none{display: none!important;}
+#wom_commerce .section {
+    font-size: 14px;
+}
+#wom_commerce .section ul{
+display: block;
+}
+#wom_commerce .section ul li {
+    width: 100%;
+	padding: 0;
+}
+
+#form_block{
+	margin-top:0;
+	padding-top:0;
+}
+.side_bn {
+    top: 140px;
+    right: 0;
+}
+.side_bn img{
+    width: 70px;
+}
+.faq .faq_title{
+	font-size: 15px;
+}
+.faq .faq_title01{
+	font-size: 14px;
+	position: relative;
+    padding: 0 32px 0 0;
+    line-height: 150%;
+}
+.faq .txt_wrap {
+    font-size: 14px;
+}
+.faq .txt_wrap .txt {
+    line-height: 16px;
+}
+}
+
+</style>
+
+		<main id="main" class="site-main" role="main">
+
+<div id="wom_commerce">
+
+
+<div class="section">
+	<h2><img src="/wp-assets/img/eccc/wom_commerce/ttl01.png"></h2>
+	<ul>
+						<li class="btnArea">
+																						<h3>■コミュニティ機能</h3>
+																																											<a class="modalBtn" href="/wom-commerce/dummy_sp#link_1"><div class="box lightgray">
+											<h4>①ブログ内検索</h4>
+											<p><p>すべてのブログ記事からキーワードで検索できます。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/dummy_sp#link_2"><div class="box gray">
+											<h4>②お知らせ機能</h4>
+											<p><p>運営者からの告知を表示します。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/dummy_sp#link_3"><div class="box lightgray">
+											<h4>③ブログ表示</h4>
+											<p><p>表示数は自由に変えられます。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/dummy_sp#link_4"><div class="box gray">
+											<h4>④ハッシュタグ検索機能</h4>
+											<p><p>人気のハッシュタグがつけられたブログが表示されます。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/dummy_sp#link_5"><div class="box lightgray">
+											<h4>⑤アンバサダーランキング</h4>
+											<p><p>アンバサダーポイントの上位者を表示することでユーザーの参加意欲を上昇させます。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/dummy_sp#link_6"><div class="box gray">
+											<h4>⑥SNSランキング</h4>
+											<p><p>シェア・いいね・ツイート・フォロワーされた数の上位を表示し拡散を促します。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/dummy_sp#link_7"><div class="box lightgray">
+											<h4>⑦アフィリエイトブログ表示</h4>
+											<p><p>アフィリエイトタグが設置されたブログのみを一覧表示します。</p>
+</p>							    		</div></a>
+							    																									<h3>■コミュニティ機能：ブログ投稿</h3>
+																																											<a class="modalBtn" href="/wom-commerce/blog_post#link_8"><div class="box gray">
+											<h4>⑧ブログ投稿フォーム</h4>
+											<p><p>自由度の高いブログを投稿することができます。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/blog_post#link_9"><div class="box lightgray">
+											<h4>⑨アフィリエイトタグ機能</h4>
+											<p><p>アフィリエイト対象商品のバナーを貼り付けることで簡単にサイト内でアフィリエイト機能を実現することが可能です。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/hashtag"><div class="box gray">
+											<h4>⑩ハッシュタグ設定機能</h4>
+											<p><p>公開時にハッシュタグの設定ができます。ハッシュタグでのブログ検索も可能です。</p>
+</p>							    		</div></a>
+							    																									<h3>■コミュニティ機能：ブログ閲覧</h3>
+							<div class="txt"><p>ブログを評価することでポイントにもなるため積極的に他者のブログを見て評価が進みます。ブログが評価されることで励みにもなるのでブログ投稿が促進されます。</p>
+</div>																																				<a class="modalBtn" href="/wom-commerce/blog_browsing#link_11"><div class="box lightgray">
+											<h4>⑪フォロー機能</h4>
+											<p><p>記事が気に入ったら、その人をフォローできます。フォローするとその人の新着記事のお知らせを受け取れます。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/blog_browsing#link_12"><div class="box gray">
+											<h4>⑫ブログ評価機能</h4>
+											<p><p>ブログに対して、「いいね」「いまいち」という評価ができます。評価者にはアンバサダーポイントが加算され被評価者もアンバサダーポイントの増減が発生します。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/blog_browsing#link_12"><div class="box lightgray">
+											<h4>⑬SNS評価機能</h4>
+											<p><p>SNSへのシェアができます。シェアをした人、された人にアンバサダーポイントがはいります。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/blog_browsing#link_12"><div class="box gray">
+											<h4>⑭通報機能</h4>
+											<p><p>公序良俗に反する内容などのブログはユーザーに通報され非表示となります。自浄作用によってサイトの健全性を保つしくみです。<br />
+通報されたブログは運営者による確認で再公開が可能です。また、通報された場合には保有のアンバサダーポイントからマイナスされます。</p>
+</p>							    		</div></a>
+							    																									<h3>■コミュニティ機能：マイページ</h3>
+																																											<a class="modalBtn" href="/wom-commerce/mypage#link_15"><div class="box lightgray">
+											<h4>⑮メール送信機能</h4>
+											<p><p>フォローした人、フォローしてくれた人へのメール送信ができる機能です。個別に配信と一斉配信ができます。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/mypage#link_16"><div class="box gray">
+											<h4>⑯リアルでつながるQRコード機能</h4>
+											<p><p>マイページのQRコード読み込みで友人・知人のマイページへ即移動でき「フォローする」を押せばその人のフォロワーになれます。</p>
+</p>							    		</div></a>
+							    																			</li>
+						<li class="btnArea">
+																						<h3>■EC機能</h3>
+																																											<a class="modalBtn" href="/wom-commerce/dummy_sp#link_17"><div class="box lightgray">
+											<h4>⑰商品カテゴリー検索</h4>
+											<p><p>欲しい商品を大カテゴリー・少カテゴリー別に検索できます。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/dummy_sp#link_18"><div class="box gray">
+											<h4>⑱新商品 </h4>
+											<p><p>新発売の商品を自動表示します。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/dummy_sp#link_19"><div class="box lightgray">
+											<h4>⑲お試し商品</h4>
+											<p><p>お試し商品を自動表示します。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/dummy_sp#link_20"><div class="box gray">
+											<h4>⑳人気商品ランキング </h4>
+											<p><p>売上件数上位商品を表示します。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/dummy_sp#link_21"><div class="box lightgray">
+											<h4>㉑人気メーカーランキング</h4>
+											<p><p>売上件数上位メーカーを表示します。</p>
+</p>							    		</div></a>
+							    																									<h3>■EC機能：トップページ</h3>
+																																											<a class="modalBtn" href="/wom-commerce/ectop#link_22"><div class="box lightgray">
+											<h4>㉒商品種別自動表示</h4>
+											<p><p>新商品、定期、予約などの商品種別を自動表示します。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/ectop#link_23"><div class="box gray">
+											<h4>㉓ギフト対応自動表示</h4>
+											<p><p>ギフトラッピングの対応などの場合に自動表示します。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/ectop#link_24"><div class="box lightgray">
+											<h4>㉔お気に入り登録ボタン</h4>
+											<p><p>気になる商品をお気に入りに登録することでいつでも簡単にお気に入りメニューからアクセスすることが可能になります。</p>
+</p>							    		</div></a>
+							    																									<h3>■EC機能：商品ページ</h3>
+																																											<a class="modalBtn" href="/wom-commerce/product#link_25"><div class="box lightgray">
+											<h4>㉕お気に入り登録ボタン</h4>
+											<p><p>気になる商品をお気に入りに登録することでいつでも簡単にお気に入りメニューからアクセスすることが可能になります。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/product#link_25"><div class="box gray">
+											<h4>㉖SNS共有</h4>
+											<p><p>ブログ・Facebook・Twitterへシェアできます。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/product#link_27"><div class="box lightgray">
+											<h4>㉗いいね等登録数表示</h4>
+											<p><p>いいね・レビュー・お気に入りに登録された数を表示します。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/product#link_28"><div class="box gray">
+											<h4>㉘メールでのシェア機能</h4>
+											<p><p>ユーザーのメーラーにより商品を拡散できます。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/product#link_28"><div class="box lightgray">
+											<h4>㉙レコメンドメール機能</h4>
+											<p><p>アンバサダーはこの商品をお気に入りに登録した人にレコメンドメールを送ることができます。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/product#link_30"><div class="box gray">
+											<h4>㉚いいね</h4>
+																		    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/product#link_31"><div class="box lightgray">
+											<h4>㉛レビュー</h4>
+																		    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/product#link_32"><div class="box gray">
+											<h4>㉜関連商品</h4>
+																		    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/product#link_33"><div class="box lightgray">
+											<h4>㉝最近見た商品</h4>
+																		    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/product#link_34"><div class="box gray">
+											<h4>㉞同じメーカーの商品</h4>
+																		    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/product#link_35"><div class="box lightgray">
+											<h4>㉟その商品について書かれたブログ</h4>
+																		    		</div></a>
+							    																									<h3>■EC機能：レビューページ</h3>
+																																											<a class="modalBtn" href="/wom-commerce/review#link_36"><div class="box gray">
+											<h4>㊱レビューシェア機能</h4>
+											<p><p>レビューをシェアする、シェアされるとアンバサダーポイントが加算されます。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/review#link_37"><div class="box lightgray">
+											<h4>㊲レビューからの商品購入</h4>
+											<p><p>レビューから商品購入が発生するとレビュー筆者にアフィリエイトポイントが入ります。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/review#link_38"><div class="box gray">
+											<h4>㊳レビュー評価</h4>
+											<p><p>押されたボタンによってレビュー筆者のアンバサダーポイントが増減します。<br />
+●役に立った：ポイント加算<br />
+●役に立たない：ポイント減少<br />
+●通報する：レビューは非表示、ポイント減少（運営によって再公開可能）</p>
+</p>							    		</div></a>
+							    																									<h3>■EC機能：カートページ</h3>
+																																											<a class="modalBtn" href="/wom-commerce/cart#link_39"><div class="box lightgray">
+											<h4>㊴購入するとポイントバック</h4>
+											<p><p>付与率は全体、商品毎で設定可能です。ポイントで購入への充当も可能です。</p>
+</p>							    		</div></a>
+							    																			</li>
+						<li class="btnArea">
+																						<h3>■通知機能</h3>
+																																											<a class="modalBtn" href="/wom-commerce/mypage#link_40"><div class="box gray">
+											<h4>㊵お知らせ機能</h4>
+											<p><p>サイトにおける様々な通知を表示します。<br />
+●コンシェルジュにユーザーから質問が届いた場合<br />
+●レコメンドメールが届いた場合<br />
+●メーカー/フォローユーザーからのメール</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/mypage#link_40"><div class="box lightgray">
+											<h4>㊶重要なお知らせ機能</h4>
+											<p><p>お客様へ重要な連絡事項の通知を表示します。<br />
+●発送完了通知など<br />
+●問合せへの返信<br />
+●その他事務局からの重要なお知らせ</p>
+</p>							    		</div></a>
+							    																									<h3>■ファンクラブ機能</h3>
+							<div class="txt"><p>一定条件をクリアすると、商品毎のファンクラブが自動的に立ち上がります。</p>
+</div>																																				<a class="modalBtn" href="/wom-commerce/fan_club#link_42"><div class="box gray">
+											<h4>㊷質問投稿・回答機能</h4>
+											<p><p>ファンクラブで商品への質問などを投稿すると、サイト内の詳しい人たち（アンバサダー）の方が答えてくれます。<br />
+事務局が答えなくても疑問が解決することも多数あります。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/fan_club#link_43"><div class="box lightgray">
+											<h4>㊸レビュー人気ランキング</h4>
+											<p><p>投稿した商品レビューに対して、「役に立った」という評価の集計結果が多いものから表示する機能です。レビューに人気があるユーザーはインフルエンサーとなってくれます。</p>
+</p>							    		</div></a>
+							    											<a class="modalBtn" href="/wom-commerce/fan_club#link_44"><div class="box gray">
+											<h4>㊹総合ランキング</h4>
+											<p><p>アンバサダーポイントが多いユーザー順に表示したランキングです。ランキング上位を目指すユーザーのモチベーションを上げる効果があります。</p>
+</p>							    		</div></a>
+							    																									<h3>■管理画面機能</h3>
+							<div class="txt"><p>管理画面には以下の機能があります。</p>
+<h4>●基本情報設定</h4>
+<p>注文情報受信メールアドレスの設定、定休日設定、ポイント付与率設定、消費税率設定</p>
+<h4>●商品管理機能</h4>
+<p>商品検索、商品登録、バリエーション管理、カテゴリ登録、レビュー管理、キャンペーン商品設定管理</p>
+<h4>●会員管理機能</h4>
+<p>会員検索、会員登録</p>
+<h4>●受注管理機能</h4>
+<p>受注情報検索、受注情報編集、対応状況管理、（オプション：定期注文受注管理、予約販売予定管理）</p>
+<div class="border_red">現在多店舗運営している、もしくは将来的にモール出店も考えている、などの発展性を鑑みて、「ネクストエンジン」など受注一括管理ソフトを使うことを推奨しています。<br />
+そのため、初期設定では「ネクストエンジン」向けのCSVダウンロード機能を実装しています。<br />
+お客様の利用環境に合わせたCSVの書き出しフォーマットのカスタマイズに対応致します。</div>
+<h4>●売上集計機能</h4>
+<p>期間集計、メーカー別集計</p>
+<h4>●メール配信管理機能</h4>
+<p>登録者へのメール配信管理、（オプション：ABテスト実施用管理機能）</p>
+<div class="border_red">2種類のメールテンプレートを選択して送信する場合、配信リストに対してランダムに選択して、2種類いずれかのメールを送るようにするABテストが行えるメール配信ツールです。</div>
+</div>																		</li>
+				</ul>
+	
+</div>
+
+
+
+
+
+
+
+</div>
+
+</main><!-- #main -->
+
+
+<script type="text/javascript">
+jQuery(function(){
+  $('a[href^="#"]').click(function(){
+    var speed = 500;
+    var href= $(this).attr("href");
+    var target = $(href == "#" || href == "" ? 'html' : href);
+    var position = target.offset().top;
+    $("html, body").animate({scrollTop:position}, speed, "swing");
+    return false;
+  });
+});
+
+jQuery(window).load(function(){
+	var lochref = window.location.href;
+	if ( lochref.indexOf('#') > -1 ) {
+		var anchor = lochref.slice( lochref.indexOf('#') );
+		window.setTimeout(function(){
+			jQuery('body, html').animate({ scrollTop: $(anchor).offset().top }, 1);
+		}, 1);
+	}
+});
+jQuery(function(){
+	var mdwBtn = $('.modalBtn'),
+	overlayOpacity = 0.7,
+	fadeTime = 500;
+
+	mdwBtn.on('click',function(e){
+		e.preventDefault();
+
+		var setMdw = $(this),
+		setHref = setMdw.attr('href'),
+		wdHeight = $(window).height();
+		$('body').append('<div id="mdOverlay"></div><div id="mdWindow"><div id="loader-bg"><div id="loader"><img src="/wp-assets/img/eccc/wom_commerce/img-loading.gif" width="80" height="80" alt="Now Loading..." /></div></div><div class="mdClose">&#215;</div><div class="wrap"><iframe id="contWrap"></iframe></div></div>');
+
+		$('#contWrap').attr('src',setHref);
+		$('#mdOverlay,#mdWindow').css({display:'block',opacity:'0'});
+		$('#mdOverlay').css({height:wdHeight}).stop().animate({opacity:overlayOpacity},fadeTime);
+		$('#mdWindow').stop().animate({opacity:'1'},fadeTime);
+
+		$(window).on('resize',function(){
+			var adjHeight = $(window).height();
+			$('#mdOverlay').css({height:adjHeight});
+		});
+
+		$('#mdOverlay,.mdClose').on('click',function(){
+			$('#mdWindow,#mdOverlay').stop().animate({opacity:'0'},fadeTime,function(){
+				$('#mdOverlay,#mdWindow').remove();
+			});
+		});
+			  $('#loader-bg').delay(2700).fadeOut(800);
+
+	});
+
+
+});
+</script>`;
+---
+
+<BaseLayout title="WOMコマース | 株式会社ECコンサルカンパニー">
+<link rel="stylesheet" href="/wp-assets/css/eccc-pages.css" slot="css" />
+<Fragment set:html={rawHtml} />
+</BaseLayout>

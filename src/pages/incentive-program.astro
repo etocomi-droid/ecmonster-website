@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const rawHtml = `
+<div id="sub_contents" class="wrap950 padding50" style="padding-top:0;">
+<div class="ec-heroes trial-form restaurant-camp">
+<div class="form-ttl">
+<img src="/wp-assets/img/eccc/uploads/2020_10_PC.jpg" alt="" width="950" height="3300" class="alignnone size-full wp-image-5335" alt="営業支援インセンティブプログラム" srcset="/wp-assets/img/eccc/uploads/2020_10_PC.jpg 950w, /wp-assets/img/eccc/uploads/2020_10_PC-86x300.jpg 86w, /wp-assets/img/eccc/uploads/2020_10_PC-768x2668.jpg 768w, /wp-assets/img/eccc/uploads/2020_10_PC-295x1024.jpg 295w, /wp-assets/img/eccc/uploads/2020_10_PC-600x2084.jpg 600w" sizes="(max-width: 950px) 100vw, 950px" />
+<div class="txt">
+<p style="margin-bottom:70px;text-align:center;">このプログラムの詳細仕様は<a href="/wp-assets/img/eccc/uploads/2020_10_siyou01.pdf" target="_blank">こちら</a><br>～PDF資料になります～</p>
+<!--<p>必要事項に入力の上、お問い合わせ・お申し込みボタンを押してください。</p>-->
+</div>
+</div>
+<div class="cv-common-tel">
+                <p><strong>お問い合わせ・お申し込み</strong></p>
+                <a href="tel:0351668000" class="tel"><img src="/wp-assets/img/eccc/top_tel.png" alt="03-5166-8000"></a>
+            </div>
+
+<!--[mwform_formkey key="5337"]-->
+</div></div>
+<script type="text/javascript">
+      $(function () {
+        $('.privacy-box').bind('scroll', function () {
+          scrollHeight = $('.privacy-box').get(0).scrollHeight;
+          scrollPosition = $('.privacy-box').height() + $('.privacy-box').scrollTop();
+          if ((scrollHeight - scrollPosition) / scrollHeight <= 0.05) {
+            $('.check').fadeIn();
+          }
+        });
+      });
+    </script>`;
+---
+
+<BaseLayout title="営業支援インセンティブプログラムお問い合わせ・お申し込みフォーム | 株式会社ECコンサルカンパニー">
+<link rel="stylesheet" href="/wp-assets/css/eccc-pages.css" slot="css" />
+<Fragment set:html={rawHtml} />
+</BaseLayout>

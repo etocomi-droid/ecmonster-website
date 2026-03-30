@@ -1,0 +1,481 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+const rawHtml = `
+    <div id="sub_contents" class="wrap950">
+<style>
+	.pc_none {
+		display: none !important;
+	}
+
+	.sp_none {
+		display: block !important;
+	}
+
+	#wom_commerce {
+		width: 100%;
+	}
+
+	.page-ttl {
+		margin-top: 20px;
+		margin-bottom: 80px;
+	}
+
+	div.section {
+		text-align: center;
+		margin-bottom: 80px;
+	}
+
+	div.section p {
+		font-size: 18px;
+	}
+
+	div.section figure {
+		margin-bottom: 40px;
+	}
+
+	div.section .ttl-01 {
+		font-size: 36px;
+		font-weight: bold;
+		margin-bottom: 30px;
+		margin-top: 30px;
+	}
+
+	div.section .ttl-01 .fnt-l {
+		display: block;
+		font-size: 60px;
+	}
+
+	div.section .ttl-01.lh1 {
+		line-height: 1.1;
+	}
+
+	div.section .ttl-02 {
+		font-size: 30px;
+		font-weight: bold;
+		margin-bottom: 20px;
+		margin-top: 30px;
+	}
+
+
+
+
+	div.section p.read {
+		font-size: 20px;
+		font-weight: bold;
+		line-height: 1.4;
+	}
+
+
+	div#section2 ul {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 30px;
+	}
+
+	div#section2 ul li {
+		width: 30%;
+		font-weight: bold;
+		font-size: 18px;
+	}
+
+	div#section2 ul li img {
+		width: 100%;
+	}
+
+	div#section4 div.flex-area {
+		display: flex;
+		justify-content: space-between;
+		margin-top: 40px;
+		width: 100%;
+	}
+
+	div#section4 div.flex-area figure {
+		width: 45%;
+	}
+
+	div#section4 div.flex-area p {
+		width: 50%;
+		text-align: left;
+	}
+
+	div#section4 div.flex-area figure img {
+		width: 100%;
+	}
+
+
+	div#section4 p.max660 {
+		max-width: 660px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: left;
+	}
+
+	div#section6 ul {
+		margin-bottom: 50px;
+	}
+
+	div#section6 ul li {
+		text-align: left;
+		font-size: 18px;
+		font-weight: bold;
+		max-width: 370px;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	div#section6 ul li:before {
+		content: url(/wp-assets/img/eccc/wom_commerce/icon_01.png);
+		vertical-align: middle;
+		margin-right: 10px;
+	}
+
+	#sub_contents div.btn-area {
+		margin-top: 70px;
+	}
+
+	#sub_contents div.btn-area a {
+		display: block;
+		background-color: #101033;
+		line-height: 150px;
+		width: 80%;
+		font-size: 40px;
+		font-weight: bold;
+		color: #fff;
+		text-align: center;
+		text-decoration: none;
+		position: relative;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+	#sub_contents div.btn-area a:after {
+		content: url(/wp-assets/img/eccc/wom_commerce/icon_02.png);
+		position: absolute;
+		right: 20px;
+		top: 5px;
+	}
+
+
+	.main-form {
+		padding: 50px 0;
+	}
+
+	.side_bn {
+		position: relative;
+		justify-content: center;
+		margin: 0 0 30px;
+		position: fixed;
+		top: 300px;
+		right: 0;
+	}
+
+	#form_block {
+		margin-top: -134px;
+		padding-top: 134px;
+		margin-bottom: 50px;
+	}
+
+	#form_block .p60 {
+		font-size: 60px;
+		color: #101034;
+		font-weight: bold;
+		text-align: center;
+		margin-bottom: 20px;
+		line-height: 1.1;
+	}
+
+	#form_block .p32 {
+		font-size: 32px;
+		text-align: center;
+		line-height: 1.4;
+	}
+
+	#form_block input[type="text"],
+	#form_block input[type="email"] {
+		height: 45px;
+	}
+
+	#form_block .heroes-form table {
+		margin: 20px 0 0;
+	}
+
+	@media(min-width: 1px) and (max-width: 640px) {
+		.pc_none {
+			display: block !important;
+		}
+
+		.sp_none {
+			display: none !important;
+		}
+
+		#wom_commerce .section {
+			font-size: 14px;
+		}
+
+		div.section {
+			margin-bottom: 20px;
+		}
+
+		div.section .ttl-01 img {
+			width: 70%;
+		}
+
+		div.section p.read {
+			font-size: 5.5vw;
+		}
+
+		div.section p {
+			font-size: 5.1vw;
+		}
+
+		div.section .ttl-01 {
+			font-size: 10vw;
+		}
+
+		div#section2 ul {
+			display: block;
+		}
+
+		div#section2 ul li {
+			width: 95%;
+			margin-left: auto;
+			margin-right: auto;
+			margin-bottom: 40px;
+			font-size: 5.1vw;
+		}
+
+		div#section2 ul li img {
+			margin-bottom: 10px;
+		}
+
+		div#section4 div.flex-area {
+			display: block;
+			width: 100%;
+		}
+
+		div#section4 div.flex-area figure,
+		div#section4 div.flex-area p {
+			width: 100%;
+		}
+
+		div#section6 ul li {
+			font-size: 5vw;
+		}
+
+		div.section .ttl-01 .fnt-l {
+			font-size: 19vw;
+		}
+
+		#sub_contents div.btn-area a {
+			line-height: 20vw;
+			width: 90%;
+			font-size: 5vw;
+		}
+
+		#sub_contents div.btn-area a:after {
+			top: 10px;
+		}
+
+		#sub_contents div.btn-area {
+			margin-top: 20px;
+		}
+
+		.title-field {
+			text-align: left;
+		}
+
+		.main-form {
+			padding: 10px 0;
+		}
+
+		#form_block {
+			margin-top: 0;
+			padding-top: 0;
+			margin-bottom: 50px;
+		}
+
+		#form_block .p60 {
+			font-size: 28px;
+		}
+
+		#form_block .p32 {
+			font-size: 18px;
+		}
+
+		.heroes-form input[type="submit"] {
+			font-size: 20px;
+		}
+
+		.heroes-form .textarea-wrap p {
+			text-align: left;
+		}
+
+		.side_bn {
+			top: 140px;
+			right: 0;
+		}
+
+		.side_bn img {
+			width: 70px;
+		}
+	}
+</style>
+
+<main id="main" class="site-main" role="main">
+
+	<div id="wom_commerce">
+		<div class="page-ttl"><img src="/wp-assets/img/eccc/wom_commerce/img_01.png" alt="WOMコマース"></div>
+		<div class="section" id="section2">
+			<h1 class="ttl-01"><img src="/wp-assets/img/eccc/wom_commerce/img_02.png" alt="womコマースとは"></h1>
+			<p class="read">コニュニティに集まる人々の力で商品を売っていく<br>ECコンサルカンパニーが独自に開発した<br>全く新しいインターネット販売システムです。</p>
+			<figure>
+				<img src="/wp-assets/img/eccc/wom_commerce/img_03.png" alt="全く新しいインターネット販売システムです">
+			</figure>
+			<p>コミュニティとカートが融合されて販売促進するシステムです。<br>既存のカートにコミュニティシステムを融合させることもできます。
+			</p>
+			<ul>
+				<li><img src="/wp-assets/img/eccc/wom_commerce/img_04.png" alt="コミュニティとカートが融合されて販売促進するシステム">
+					カートとコミュニティが融合</li>
+				<li><img src="/wp-assets/img/eccc/wom_commerce/img_05.png" alt="コミュニティとカートが融合されて販売促進するシステム">
+					既存カートにコミュニティを追加</li>
+				<li><img src="/wp-assets/img/eccc/wom_commerce/img_06.png" alt="コミュニティとカートが融合されて販売促進するシステム">
+					モールではありません</li>
+			</ul>
+		</div>
+		<div class="section" id="section3">
+			<h2 class="ttl-01">商品レビューと何が<br class="pc_none">違うの？</h2>
+			<h3 class="ttl-02">商品レビューは</h3>
+			<p>商品ページのレビューは<br>お客様が購入する際に判断するためのものです。</p>
+			<figure><img src="/wp-assets/img/eccc/wom_commerce/img_07.png" alt="商品レビュー"></figure>
+
+			<h3 class="ttl-02">WOMコマースは</h3>
+			<p>WOMコマースは、広告の費用対効果が悪くなった中で<br><strong>お客様がアンバサダーとなり<br>自分の知り合いを紹介してくれる</strong>システムです。</p>
+			<figure><img src="/wp-assets/img/eccc/wom_commerce/img_08.png" alt="WOMコマース"></figure>
+		</div>
+		<div class="section" id="section4">
+			<h2 class="ttl-01">どうして必要なの？</h2>
+			<h3 class="ttl-02">価格争いに負けないため</h4>
+				<div class="flex-area">
+					<figure><img src="/wp-assets/img/eccc/wom_commerce/img_09.png" alt="売上高順位"></figure>
+					<p>現在ECはAmazon一極に売上が集中し、そして安いものだけが売れている現状です。この状況を打破するためにWOMコマースは誕生しました。<br>WOMコマースには既存顧客を商品のファン化・アンバサダー化して、口コミを拡散する仕組みがたくさん用意されています。</p>
+				</div>
+				<h3 class="ttl-02">広告マーケティングに代わる<br>唯一の次世代型集客手段</h3>
+				<p class="max660">これまでの「広告で集客してコンバージョンにつなげるマーケティング」は近年では費用対効果の悪化が顕著で、かけた広告費の割にコンバージョンが得られない傾向にあります。<br>WOMコマースは<strong>広告費を使わずに顧客が増えていく</strong>という、今までにない全く新しい販売戦略を仕掛けることが可能な、広告マーケティングに取って代わる唯一の集客方法です。</p>
+				<div class="flex-area">
+					<figure><img src="/wp-assets/img/eccc/wom_commerce/img_10.png" alt="これまでのマーケティング"></figure>
+					<figure><img src="/wp-assets/img/eccc/wom_commerce/img_11.png" alt="WOMコマースマーケティング"></figure>
+				</div>
+		</div>
+		<div class="section" id="section5">
+			<p class="ttl-01 lh1"><strong>つまり、WOMコマースは<span class="fnt-l">価格争いに負けない<br>次世代型の</span>ECプラットフォームです</strong></p>
+			<figure><img src="/wp-assets/img/eccc/wom_commerce/img_12.png" alt="価格争いに負けない次世代型のECプラットフォームです"></figure>
+		</div>
+		<div class="section" id="section6">
+			<h2 class="ttl-01">こんな方におすすめです</h2>
+			<ul>
+				<li>既存客が1万人以上いる企業</li>
+				<li>広告費の費用対効果が悪い</li>
+				<li>将来に向けてお店を改善したい</li>
+			</ul>
+			<iframe width="950" height="535" src="https://www.youtube.com/embed/MzzFd2orNdw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<div class="btn-area">
+				<a href="/wom-function/">機能一覧を見る</a>
+			</div>
+		</div>
+	</div>
+	<div id="form_block">
+	<div class="cv-common-tel">
+                <p><strong>お問い合わせ・お申し込み</strong></p>
+                <a href="tel:0351668000" class="tel"><img src="/wp-assets/img/eccc/top_tel.png" alt="03-5166-8000"></a>
+            </div>
+		<!--<div class="ec-heroes">
+			<p class="p60">WOMコマース<br>お問い合わせ・お申し込み</p>
+			<p class="p32">必要事項に入力の上、<br>お問い合わせ・お申し込みボタンを押してください。</p>
+						</div>-->
+	</div>
+</main><!-- #main -->
+
+<ul class="side_bn">
+	<li><a href="#form_block"><img src="/wp-assets/img/eccc/wom_commerce/btn.jpg"></a></li>
+</ul>
+<script type="text/javascript">
+	jQuery(function() {
+		$('a[href^="#"]').click(function() {
+			var speed = 500;
+			var href = $(this).attr("href");
+			var target = $(href == "#" || href == "" ? 'html' : href);
+			var position = target.offset().top;
+			$("html, body").animate({
+				scrollTop: position
+			}, speed, "swing");
+			return false;
+		});
+	});
+
+	jQuery(window).load(function() {
+		var lochref = window.location.href;
+		if (lochref.indexOf('#') > -1) {
+			var anchor = lochref.slice(lochref.indexOf('#'));
+			window.setTimeout(function() {
+				jQuery('body, html').animate({
+					scrollTop: $(anchor).offset().top
+				}, 1);
+			}, 1);
+		}
+	});
+	jQuery(function() {
+		var mdwBtn = $('.modalBtn'),
+			overlayOpacity = 0.7,
+			fadeTime = 500;
+
+		mdwBtn.on('click', function(e) {
+			e.preventDefault();
+
+			var setMdw = $(this),
+				setHref = setMdw.attr('href'),
+				wdHeight = $(window).height();
+			$('body').append('<div id="mdOverlay"></div><div id="mdWindow"><div id="loader-bg"><div id="loader"><img src="/wp-assets/img/eccc/wom_commerce/img-loading.gif" width="80" height="80" alt="Now Loading..." /></div></div><div class="mdClose">&#215;</div><div class="wrap"><iframe id="contWrap"></iframe></div></div>');
+
+			$('#contWrap').attr('src', setHref);
+			$('#mdOverlay,#mdWindow').css({
+				display: 'block',
+				opacity: '0'
+			});
+			$('#mdOverlay').css({
+				height: wdHeight
+			}).stop().animate({
+				opacity: overlayOpacity
+			}, fadeTime);
+			$('#mdWindow').stop().animate({
+				opacity: '1'
+			}, fadeTime);
+
+			$(window).on('resize', function() {
+				var adjHeight = $(window).height();
+				$('#mdOverlay').css({
+					height: adjHeight
+				});
+			});
+
+			$('#mdOverlay,.mdClose').on('click', function() {
+				$('#mdWindow,#mdOverlay').stop().animate({
+					opacity: '0'
+				}, fadeTime, function() {
+					$('#mdOverlay,#mdWindow').remove();
+				});
+			});
+			$('#loader-bg').delay(2700).fadeOut(800);
+
+		});
+
+
+	});
+</script>`;
+---
+
+<BaseLayout title="価格争いに巻き込まれないWOMコマース | 株式会社ECコンサルカンパニー"
+  description="価格争いに巻き込まれない戦略。ファンコミュニティ、アンバサダーマーケティングを展開。コトラー教授が提唱するマーケティング4.0を実装。ニュニティに集まる人々の力で商品を売っていくECコンサルカンパニーが独自に開発した全く新しいインターネット販売システムです。">
+<link rel="stylesheet" href="/wp-assets/css/eccc-pages.css" slot="css" />
+<Fragment set:html={rawHtml} />
+</BaseLayout>

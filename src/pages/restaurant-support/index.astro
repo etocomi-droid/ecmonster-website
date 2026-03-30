@@ -1,0 +1,281 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+const rawHtml = `
+<div class="ec-shop-service">
+    <div class="l_inner">
+        <h1><img src="/wp-assets/img/eccc/ec-shop-service/img_01.jpg" alt="コロナ禍に負けない！飲食店向けECショップ立ち上げ支援サービス"></h1>
+        <div class="cv">
+            <p><strong>電話でお問い合わせ・お申し込み</strong></p>
+            <a href="tel:0351668000" class="tel">03-5166-8000</a>
+        </div>
+        <img src="/wp-assets/img/eccc/ec-shop-service/img_02.jpg" alt="おうちご飯の時代、今こそECショップを立ち上げるべきです！">
+        <section class="example">
+            <h2>こんなことが可能です</h2>
+            <img src="/wp-assets/img/eccc/ec-shop-service/img_03.jpg" alt="メニューを通販向けに商品化してネットショップで販売｜飲食店向けECショップで出来ること">
+            <div class="bg">
+                <h3>実店舗メニューを商品化、通販開始</h3>
+                <p>実店舗の既存メニューから通販に向いている商品をセレクト、また通販用に改良してECショップで販売を開始します。<br>
+                    栄養表示や個装・ラッピングなど通販に必要な事項は都度レクチャーいたします。</p>
+            </div>
+            <div class="l_box-wrap">
+                <div class="box"><img src="/wp-assets/img/eccc/ec-shop-service/img_04.jpg"
+                        alt="テイクアウトで商品を販売｜飲食店向けECショップで出来ること">
+                    <div class="bg">
+                        <h3>テイクアウトに対応</h3>
+                        <p>テイクアウトサービスが簡単に導入できます</p>
+                    </div>
+                </div>
+                <div class="box"><img src="/wp-assets/img/eccc/ec-shop-service/img_05.jpg"
+                        alt="SNSに連携して効果的な集客を開始｜飲食店向けECショップで出来ること">
+                    <div class="bg">
+                        <h3>SNSへの連携</h3>
+                        <p>現在のEC告知の主流、SNSへの連携も容易です</p>
+                    </div>
+                </div>
+            </div>
+            <div class="option">
+                <h3>オプションでさらに！</h3>
+                <ul>
+                    <li><img src="/wp-assets/img/eccc/ec-shop-service/img_06.png"
+                            alt="デリバリーへの対応 | 飲食店向けECショップで出来ること（オプション）">
+                        <p>近隣地域へのデリバリー対応</p>
+                    </li>
+                    <li><img src="/wp-assets/img/eccc/ec-shop-service/img_07.png" alt="予約注文・事前決済｜飲食店向けECショップで出来ること（オプション）">
+                        <p>実店舗での予約注文・事前決済</p>
+                    </li>
+                    <li><img src="/wp-assets/img/eccc/ec-shop-service/img_08.png"
+                            alt="タブレットによる非接触注文｜飲食店向けECショップで出来ること（オプション）">
+                        <p>実店舗でタブレットによる非接触注文</p>
+                    </li>
+                    <li><img src="/wp-assets/img/eccc/ec-shop-service/img_09.png"
+                            alt="POSシステムで売上一元化｜飲食店向けECショップで出来ること（オプション）">
+                        <p>POSシステムによる売上一元化</p>
+                    </li>
+                    <li><img src="/wp-assets/img/eccc/ec-shop-service/img_10.png" alt="顧客一元化・会員特典｜飲食店向けECショップで出来ること（オプション）">
+                        <p>顧客一元化による会員特典</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="sales">
+            <div class="bg">
+                <h2>導入されたA店様の<br class="sp">売上推移</h2>
+                <img src="/wp-assets/img/eccc/ec-shop-service/img_11.png" alt="コロナ禍下での売上推移">
+            </div>
+            <div class="cv">
+                <p><strong>電話でお問い合わせ・お申し込み</strong></p>
+                <a href="tel:0351668000" class="tel">03-5166-8000</a>
+            </div>
+        </section>
+    </div>
+    <section class="feature">
+        <div class="bg">
+            <div class="l_inner">
+                <h2>無料・格安の<br>
+                    ネットショップサービスとは<br>
+                    ここが違います！</h2>
+                <div class="l_box-wrap">
+                    <div class="num"><img src="/wp-assets/img/eccc/ec-shop-service/img_12.png"
+                            alt="制作おまかせ | 無料・格安ネットショップサービスとの違い"></div>
+                    <div class="txt">
+                        <p>広告などでよく見かけるのは「誰でもカンタン！」とか「デザイン思いのまま」などと謳われているネットショップ開設サービスです。しかし実際に始めてみると初心者にはハードルが高かったり、思い通りのデザインどころか決められたパターンの中からデザインを選ぶことしかできなかったりします。<br>
+                            ECコンサルカンパニーの立ち上げ支援サービスでは、お客様の意向をヒアリングした後、プロのデザイナーがデザインし、プロのコーダーがショップを構築します。つまり<strong>難しいことはすべてお任せ</strong>です。<br>
+                            ※撮影等ご依頼の場合は別途お見積りいたします。
+                        </p>
+                        <img src="/wp-assets/img/eccc/ec-shop-service/img_13.png" alt="制作はプロにまるごとおまかせ｜無料・格安ネットショップサービスとの違い">
+                    </div>
+                </div>
+                <div class="l_box-wrap">
+                    <div class="num"><img src="/wp-assets/img/eccc/ec-shop-service/img_14.png"
+                            alt="3カ月無料コンサル｜無料・格安ネットショップサービスとの違い"></div>
+                    <div class="txt">
+                        <p>制作会社に依頼した場合にありがちなのが「作って渡されたらそれで終わり」というパターンです。ECショップは芸術作品ではありません。<strong>運営して売上を作って利益を上げてナンボのサイト</strong>です。<br>
+                            ECコンサルカンパニーでは、テクニカル的なレクチャーはもちろん、運営のアドバイスや売上アップのためのコンサルを、サイト開設後3カ月無料でご提供します。軌道に乗るまで責任持ってお付き合いさせていただきます。<br>
+                            ※3カ月以降コンサルを引き続きご希望の場合は別途コンサル契約となります。
+                        </p>
+                        <img src="/wp-assets/img/eccc/ec-shop-service/img_15.png"
+                            alt="運営技術指導や売上げアップのための3カ月無料コンサル付き｜無料・格安ネットショップサービスとの違い">
+                    </div>
+                </div>
+                <div class="l_box-wrap">
+                    <div class="num"><img src="/wp-assets/img/eccc/ec-shop-service/img_16.png"
+                            alt="Shopifyエキスパート｜無料・格安ネットショップサービスとの違い"></div>
+                    <div class="txt">
+                        <p>世界的にはECショップの主流となっているShopify。あらゆるニーズに応えられる多様なアプリシステムによって日本でも評価が高まりだいぶ浸透してきました。近い将来日本でもECショップといえばShopifyという時代が訪れることは間違いないでしょう。そのShopifyから<strong>公認の制作会社Shopify
+                                Experts（エキスパート）として認定されている数少ない日本の会社の1つ</strong>かECコンサルカンパニーです。<br>
+                            豊富な経験とShopifyに精通したスタッフが全力であなたのお店を構築します。
+                        </p>
+                        <img src="/wp-assets/img/eccc/ec-shop-service/img_17.png" alt="Shopifyエキスパートに認定されています｜無料・格安ネットショップサービスとの違い
+                            ">
+                    </div>
+                </div>
+                <div class="l_box-wrap">
+                    <div class="num"><img src="/wp-assets/img/eccc/ec-shop-service/img_18.png"
+                            alt="豊富な実績｜無料・格安ネットショップサービスとの違い">
+                    </div>
+                    <div class="txt">
+                        <p>ECコンサルカンパニーはその社名が現すとおり、ECショップ専門のコンサルティング会社として業界の黎明期からたくさんのショップを支えてきました。<strong>その数20年間で1000社以上。楽天市場3年連続総合3位運営会社。</strong>これらの経験が培ったノウハウが弊社の根底にあります。<br>
+                            また弊社代表は「一般社団法人ジャパンEコマースコンサルタント協会」「一般社団法人日本イーコマース学会」の専務理事を努め、ECの最新情報を常に把握し、業界の発展に寄与しています。その知識の還元も教授いただけます。
+                        </p>
+                        <img src="/wp-assets/img/eccc/ec-shop-service/img_19.png"
+                            alt="ネットショップ黎明期から培った実績｜無料・格安ネットショップサービスとの違い">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="l_inner">
+            <div class="profile">
+                <h3>代表 江藤正親のご紹介</h3>
+                <div class="l_box-wrap">
+                    <div class="photo"><img src="/wp-assets/img/eccc/ec-shop-service/img_20.jpg" alt="ECコンサルカンパニー代表　江藤正親">
+                    </div>
+                    <div class="txt">
+                        <p>明治大学卒業後、送電線建設会社、コンサル会社、メーカーと転職の後に独立。独立系ECコンサルタントとしては日本最古。<br>
+                            ECサイト運営事業者の経営面「資金繰り、採用、研修、マネジメント、売るノウハウ、仕入れ、商品開発、物流」あらゆるノウハウに精通。億単位の売上を目指す支援のスペシャリスト。<br>
+                            1999年よりネットショップ運営に携わり、自身3年間、ネットショップを運営に携わり立ち上げから1年半で月商4500万を達成。3年連続楽天総合3位。<br>
+                            サポート実績企業は1000超え指導店舗200社以上が年商1億円1以上の実績を持つ。17名のEC関連本の著者を輩出。自ら著書3冊を持ち、新聞、雑誌など各メディアに寄稿。<br>
+                            全国47都道府県に講演をし、EC業界のさらなる発展のために活動。<br>
+                            2013年設立した一般社団法人ジャパンEコマースコンサルタント協会は最新の日本と海外事例をECコンサルタントにアップデートしていく協会で、2017年設立の一般社団法人日本イーコマース学会は大学にイーコマース学部設立と中小零細向け産学連携商品エビデンスを出す仕組みを構築中。
+                        </p>
+                        <img src="/wp-assets/img/eccc/ec-shop-service/img_21.jpg" alt="江藤正親執筆の書籍
+                            ">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <div class="l_inner">
+        <section class="illustration">
+            <h2>実例のご紹介</h2>
+            <div class="l_box-wrap">
+                <div class="box">
+                    <div class="box-inner">
+                        <h3>●鶏匠様</h3><img src="/wp-assets/img/eccc/ec-shop-service/img_22.jpg" alt="鶏匠様サイト｜実例のご紹介">
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-inner">
+                        <h3>●山将様</h3><img src="/wp-assets/img/eccc/ec-shop-service/img_23.jpg" alt="山将様サイト｜実例のご紹介">
+                    </div>
+
+                </div>
+        </section>
+        <section class="voice">
+            <h2>お客様の声</h2>
+            <p class="atten">※一部表現を編集させていただいています。</p>
+            <div class="l_box-wrap">
+                <div class="box">
+                    <div class="box-inner">
+                        <h3>●T様（居酒屋）</h3>
+                        <p>コロナの影響だと、どこの飲食店も同じ悩みを抱えていると分かってはいるものの
+                            やっぱり居酒屋にとって「お酒が出せない」というのは致命的ですよね。</p>
+                        <p class="btn">続きを読む</p>
+                        <div class="hide">
+                            <p>せめてとランチ営業もはじめてみましたが、それだけじゃ家賃払うのがやっと。<br>
+                                いっそ店をたたもうかとも思いつめましたが、店員にも家族はいるし、アルバイトだって生活があるわけじゃないですか。<br>
+                                どうにかできないかといろいろ調べていく中でこちらを知り、藁にもすがる思いで通販を始めてみたんですよね。<br>
+                                最初はなかなか大変でしたが、丁寧なサポートをいただけているおかげで、最近は少しずつ慣れてきました。<br>
+                                曲がりなりにもこなせるようになってきて、ゆとりが生まれてきたので、新しくテイクアウトをやってみたところ、これが思った以上にヒットしまして。<br>
+                                ありがたい限りです。<br>
+                                時々お店の常連さんが買いに来てくれて「頑張ってね」と声をかけてくださるのが、凄く励みになっていますね。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-inner">
+                        <h3>●K様（ラーメン店）</h3>
+                        <p>コロナ以前からネット通販には興味がありました。<br>
+                            いつかはやってみたいと思っていたのですが、必要な専門知識や設備など、</p>
+                        <p class="btn">続きを読む</p>
+                        <div class="hide">
+                            <p>勉強しないといけないことがたくさんあるのだろう、と二の足を踏み<br>なかなか思いきれずにいました。<br>
+                                そういう意味では、このコロナ禍がいいきっかけになった面はあると思います。知り合いからこちらを教えてもらい、初めてネット通販に足を踏み入れましたがやって良かったと心から思っています。<br>
+                                ショップの運営方法だけではなく、それに伴う通販向きの商品開発、梱包の仕方、同梱チラシ、ラベルの作り方など必要なことは全て手取り足取り教えていただきました。本当に感謝しています。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-inner">
+                        <h3>●S様（洋食レストラン）</h3>
+                        <p>実は、ネットショップは以前やってみたことがあったのですが、かかる手間ほどの売上には繋がらず、撤退したという経緯があります。</p>
+                        <p class="btn">続きを読む</p>
+                        <div class="hide">
+                            <p>しかしこのご時世、飲食店として生き残っていくためには、できることはなんでもやらなければならない。<br>
+                                そんな思いで。こちらのサービスに申し込んでみた次第です。<br>
+                                結果、なぜ以前のネットショップでは売り上げを取れなかったのか、ということがよくわかりました。<br>
+                                「インターネットで売るためには、インターネットの売り方がある」んですね。<br>
+                                それを知れて本当に良かった。お金を払ってサイトを作って公開して終わり、では意味がない。<br>
+                                先へ進むには、先のことを熟知している方に付いていただく、教えていただくのに勝るものはない、と実感しましたね。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-inner">
+                        <h3>●A様（ステーキ）</h3>
+                        <p>うちはステーキの専門店なんですが、通販やテイクアウトでは、店舗にはないオリジナルのメニューもあった方がいい、とアドバイスをいただきました。</p>
+                        <p class="btn">続きを読む</p>
+                        <div class="hide">
+                            <p>そうして作ってみたハンバーグや唐揚げが、おかげさまで大好評をいただいています。<br>
+                                今までお店に来てくださっていたお客様が、そのメニュー目当てにテイクアウトに流れてしまっているほどで、それはそれでどうしたものかと複雑な気分ですが(笑)。<br>
+                                それでも、変わらずうちの味を選んでくださっていること、ありがたいですね。<br>
+                                こんな世の中ですが、通販とテイクアウト、それにウチはデリバリーも始めたので、なんとか以前の売上を確保できています。<br>
+                                もしやっていなかったらと思うとゾッとしますね。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-inner">
+                        <h3>●E様（和食）</h3>
+                        <p>もともとは2店舗経営していたのですが、そのうちの1店舗を閉店しました。
+                            正直、苦渋の決断でしたが、現在その閉めた店舗は、通販用の調理場兼事務所に</p>
+                        <p class="btn">続きを読む</p>
+                        <div class="hide">
+                            <p>なっています。<br>最初こそ複雑な思いもありました。でも今は、こんな活かし方もあったのかと、前向きに考えられています。<br>
+                                幸い、閉めた店舗の店員にパソコンに強い人間がおり、彼を中心に効率よく通販作業が回っています。<br>
+                                インターネットで商品を売るのは、店舗と違いお客様の顔が直接見えないという側面がありますが、それは決してマイナスではないと<br>
+                                必要なノウハウやコツなど、細かなところまでキチンとアドバイスをいただいていると報告を受け、安心しています。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="box">
+                    <div class="box-inner">
+                        <h3>●H様（多国籍料理）</h3>
+                        <p>もともとインスタ映えすると評判をいただいてはいましたが、それを自ら発信することで、こんなにも集客につながるということを教えていただきました。</p>
+                        <p class="btn">続きを読む</p>
+                        <div class="hide">
+                            <p>これが本当に大きかったです。<br>
+                                Shopifyの優位性も教えていただきました。自分に欲しい機能だけをチョイスして組み込めるところが凄いなと感じています。<br>
+                                店舗ではどうしても近隣のお客様が中心ですが、インターネットなら日本中の人にお客様になっていただけます。<br>
+                                そう思うとワクワクしますし、より一層のやる気にもつながりますね！</p>
+                        </div>
+                    </div>
+                </div>
+        </section>
+    </div>
+    <div class="service-bg">
+        <img src="/wp-assets/img/eccc/ec-shop-service/img_24.png" alt="飲食店向けECショップ立ち上げ支援サービス価格110万円（税込）">
+    </div>
+    <div class="cv">
+        <p><strong>電話でお問い合わせ・お申し込み</strong></p>
+        <a href="tel:0351668000" class="tel">03-5166-8000</a>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+    $(function () {
+        $('.voice .btn').click(function () {
+            $(this).next('.voice .hide').slideToggle();
+            $('.voice .btn').not($(this)).next('.voice .hide').slideUp();
+        });
+    });
+</script>`;
+---
+
+<BaseLayout title="飲食店向けECショップ立ち上げ支援サービス | ECコンサルカンパニー"
+  description="飲食店様へ通販やテイクアウトで、このコロナ危機を乗り越えるECサイト構築のご提案です。サイト制作はまるっとお任せください。さらに3カ月間の無料コンサル付きです。">
+<link rel="stylesheet" href="/wp-assets/css/eccc-pages.css" slot="css" />
+<Fragment set:html={rawHtml} />
+</BaseLayout>

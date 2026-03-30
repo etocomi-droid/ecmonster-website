@@ -1,0 +1,24 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro'
+
+const rawHtml = `
+<p style="text-align:center; font-size:20px; padding:50px;">お支払いを確認致しました。引き続きどうぞよろしくお願い致します。</p>
+<!-- Event snippet for コンサルお申し込み決済完了 conversion page -->
+<script>
+  gtag('event', 'conversion', {
+      'send_to': 'AW-1003850219/HSolCK3an7cBEOuT1t4D',
+      'value': 180000.0,
+      'currency': 'JPY',
+      'transaction_id': ''
+  });
+</script>
+
+<script>
+setTimeout("location.href='/consulting/'",1000*10);
+</script>`;
+---
+
+<BaseLayout title="お支払い確認完了ページ | 株式会社ECコンサルカンパニー">
+<link rel="stylesheet" href="/wp-assets/css/eccc-pages.css" slot="css" />
+<Fragment set:html={rawHtml} />
+</BaseLayout>

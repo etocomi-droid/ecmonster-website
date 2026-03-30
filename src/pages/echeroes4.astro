@@ -1,0 +1,367 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+
+const rawHtml = `
+<section id="sub_contents" class="wrap950 padding50">
+  <section class="ec-heroes heroes-support">
+    <div class="txt_center">
+      <ul class="anchor">
+        <li><a href="#personal">個別コンサル＆レッスン</a>｜</li>
+        <li><a href="#advisor">顧問契約</a>｜</li>
+        <li><a href="#director">社外取締役</a>｜</li>
+        <li><a href="#etocomi">令和えとコミ</a>｜</li>
+        <li><a href="#wom">WOMコマース</a></li>
+      </ul>
+      <h1 class="p36">ECコンサルカンパニーのEC支援サービス</h1>
+    </div>
+    <div id="personal">
+      <h2><img src="/wp-assets/img/eccc/ec-heroes/support_01.png" alt="年商1億円を突破する【個別コンサル＆レッスン6ヶ月コース】ECコンサルカンパニー"></h2>
+      <img src="/wp-assets/img/eccc/ec-heroes/support_02.jpg" alt="個別コンサル＆レッスン6ヶ月コース｜ECコンサルカンパニー">
+      <div class="bg-box">
+        <table>
+          <tr>
+            <th>対象：</th>
+            <td>年商1億円を目指す人<br>アドバスを素直に実行できる人</td>
+          </tr>
+          <tr>
+            <th>期間：</th>
+            <td>申し込み→着金→初回ネット面談の日時よりスタート　180日</td>
+          </tr>
+          <tr>
+            <th>方法：</th>
+            <td>時間にカウントされる内容 <br>ネットワークリサーチ、ミーティング、移動時間、メールする時間 </td>
+          </tr>
+          <tr>
+            <th>手法：</th>
+            <td>ネット会議で行えるものは、すべて。<br>スタッフ研修、サイトチェック、外注推薦、チェック、自主勉強の課題、問題解決などなど</td>
+          </tr>
+          <tr>
+            <th><span class="pc">費用：</span></th>
+            <td><span class="bld"><span class="p36">【月15万円</span>（税別）<span class="p36">】</span></span><br>
+              ※10時間/月まで　超過時間1万5000円/時間</td>
+          </tr>
+        </table>
+      </div>
+      <div class="personal-anchor txt_center">
+        <p class="p36"><strong>ECコンサルサービスは<br class="sp"><span class="marker">ここまで対応して15万円</span></strong></p>
+        <p class="p20 bld">リサーチ及びネットミーティング、メールなど（月間約10時間程度） <br>資料作成は含まれません。</p>
+        <ul>
+          <li><a href="#sec01"><img
+                src="/wp-assets/img/eccc/ec-heroes/support_03.png"
+                alt="スタートアップ戦略策定"></a></li>
+          <li><a href="#sec02"><img
+                src="/wp-assets/img/eccc/ec-heroes/support_04.png"
+                alt="販売/集客戦略"></a></li>
+          <li><a href="#sec03"><img
+                src="/wp-assets/img/eccc/ec-heroes/support_05.png"
+                alt="コンバーションレートアップ戦略"></a></li>
+          <li><a href="#sec04"><img
+                src="/wp-assets/img/eccc/ec-heroes/support_06.png"
+                alt="ファン戦略、単価・リピートアップ"></a></li>
+        </ul>
+      </div>
+      <div id="sec01" class="section sec01">
+        <img src="/wp-assets/img/eccc/ec-heroes/support_07.jpg" alt="【コンサル内容01】まだネットショップをやっていない方・戦略策定｜個別コンサル＆レッスン">
+        <h3 class="p36"><span>まだネットショップをやってない方・戦略策定</span></h3>
+        <div class="txt-wrap">
+          <p>ネットショップをやる前から勝負が決まっています。 <br>これが戦略です。<br>一緒に市場を見ながら戦略をつくり、 <br>勝てる市場に勝てる商品を販売していきましょう。</p>
+        </div>
+        <div class="box-wrap">
+          <div class="box-l">
+            <p class="p20">■独自ドメインECコンサルティングの場合</p>
+            <div class="list">
+              <ul>
+                <li><strong>商材や戦略にあったカート/サーバー選定</strong></li>
+                <li><strong>商品に最適なキーワード策定</strong></li>
+                <li><strong>SEOに強いサイト構造策定</strong></li>
+                <li><strong>コンセプト＆ターゲット選定</strong></li>
+                <li><strong>商品データの最適な登録情報のアドバイス</strong></li>
+                <li><strong>市場規模、競合リサーチ </strong></li>
+                <li><strong>売れやすい商材リサーチ </strong></li>
+                <li><strong>競合サイトチェック</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="box-r">
+            <p class="p20">■モールECコンサルティングの場合</p>
+            <div class="list">
+              <ul>
+                <li><strong>商材や戦略にあったモール選び</strong></li>
+                <li><strong>各モールの検索上位にでやすい商品のキーワード選定</strong></li>
+                <li><strong>商品データの登録アドバイス</strong></li>
+                <li><strong>サイトやLPのデザインアドバイス</strong></li>
+                <li><strong>市場規模、競合リサーチ</strong></li>
+                <li><strong>売れやすい商材リサーチ</strong></li>
+                <li><strong>競合サイトチェック</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="txt_center">※作業業務は外注として15,000円～承ります</p>
+      </div>
+      <div id="sec02" class="section sec02">
+        <img src="/wp-assets/img/eccc/ec-heroes/support_10.jpg" alt="【コンサル内容02】販売/集客戦略｜個別コンサル＆レッスン">
+        <h3 class="p36"><span>販売/集客戦略</span></h3>
+        <div class="txt-wrap">
+          <p>自社ECと楽天、ヤフーでは販売戦略が変わってきます。<br>ECサイトの集客方法はSEOからリスティング、SNSなどの各種プロモーションは多岐にわたります。商品や会社の事情にそった集客戦略必要です。<br>
+            また、集客からのランディングページ対策はセットになって考えるべきですので、<br class="pc">このコーナーに入れてあります。</p>
+        </div>
+        <div class="box-wrap">
+          <div class="box-l">
+            <p class="p20">■独自ドメインECコンサルティングの場合</p>
+            <div class="list">
+              <ul>
+                <li><strong>アクセス解析からの販売戦略</strong></li>
+                <li><strong>広告費用対効果分析</strong></li>
+                <li><strong>SEO対策</strong></li>
+                <li><strong>リスティング/リターゲティング広告</strong></li>
+                <li><strong>GDN/YDN</strong></li>
+                <li><strong>Googleショッピングリスト広告</strong></li>
+                <li><strong>SNSマーケティング/広告</strong></li>
+                <li><strong>コンテンツマーケティング</strong></li>
+                <li><strong>ランディングページアドバイス</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="box-r">
+            <p class="p20">■モールECコンサルティングの場合</p>
+            <div class="list">
+              <ul>
+                <li><strong>アクセス解析からの販売戦略</strong></li>
+                <li><strong>広告費用対効果分析</strong></li>
+                <li><strong>モール企画/広告</strong></li>
+                <li><strong>楽天SEO（検索結果上位表示）などのモールSEO</strong></li>
+                <li><strong>楽天RPP広告設定・チューニングアドバイス</strong></li>
+                <li><strong>YahooPRオプション設定・チューニングアドバイス</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="txt_center">※作業業務は外注として15,000円～承ります</p>
+      </div>
+      <div id="sec03" class="section sec03">
+        <img src="/wp-assets/img/eccc/ec-heroes/support_11.jpg" alt="【コンサル内容03】コンバージョンレートアップ戦略｜個別コンサル＆レッスン">
+        <h3 class="p36"><span>コンバーションレート（転換率/CVR）アップ戦略</span></h3>
+        <div class="txt-wrap">
+          <p>CVRが低い場合の課題はデザイン・画面設計だけではありません。<br>
+            競合の価格、サービス、キャンペーンが大きく影響を及ぼしていたり、そのそも競争力のある商品でなかったり、関連性の高いコンテンツリンクによって集客とのマッチングが出来てなかったり、多くの要素があります。<br>
+            企業の状況に合わせて一つ一つ優先順位の高いところから改善していきく戦略を立てていきます。</p>
+        </div>
+        <div class="box-wrap">
+          <div class="box-l">
+            <p class="p20">■独自ドメインECコンサルティングの場合</p>
+            <div class="list">
+              <ul>
+                <li><strong>デザイン/レイアウト構造設計アドバイス</strong></li>
+                <li><strong>商品データのキーワードチェック</strong></li>
+                <li><strong>ブランディングコンテンツアドバイス</strong></li>
+                <li><strong>回遊施策</strong></li>
+                <li><strong>かご落ち施策</strong></li>
+                <li><strong>競合サイトチェック</strong></li>
+                <li><strong>商品/キャンペーンアドバイス</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="box-r">
+            <p class="p20">■モールECコンサルティングの場合</p>
+            <div class="list">
+              <ul>
+                <li><strong>アクセス分析/CVR分析からページ改善戦略</strong></li>
+                <li><strong>デザイン/レイアウト構造設計アドバイス</strong></li>
+                <li><strong>商品データのキーワードチェック</strong></li>
+                <li><strong>各種ツール提案</strong></li>
+                <li><strong>回遊施策</strong></li>
+                <li><strong>競合サイトチェック</strong></li>
+                <li><strong>商品/キャンペーンアドバイス</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="txt_center">※作業業務は外注として15,000円～承ります</p>
+      </div>
+      <div id="sec04" class="section sec04">
+        <img src="/wp-assets/img/eccc/ec-heroes/support_12.jpg" alt="【コンサル内容04】ファン戦略　単価・リピートアップ｜個別コンサル＆レッスン">
+        <h3 class="p36"><span>ファン戦略（既存客対策）単価・リピートアップ</span></h3>
+        <div class="txt-wrap">
+          <p>普通の受注処理＋梱包/発送業務＋発送完了だけの業務ではファン出来た上がりません。 <br>お客様の期待＋1％を心がけるだけで、ファンが何倍も膨れ上がります。
+            <br>またファン戦略は、メルマガ、ステップメール、オフ会、ファン用のキャンペーン などワクワクする企画を行うことにより、醸造していきます。<br><br> メルマガだけではリピートしません！
+            <br>多くのECサイトにおいてリピートユーザーの積み上げは成功のカギとなります。まずは自社のリピート率やLTVを把握することから始めましょう。</p>
+        </div>
+        <div class="box-wrap">
+          <div class="box-l">
+            <p class="p20">■独自ドメインECコンサルティングの場合</p>
+            <div class="list">
+              <ul>
+                <li><strong>顧客/現状分析によるファン戦略</strong></li>
+                <li><strong>バックヤード業務改善アドバイス</strong></li>
+                <li><strong>フォローメールアドバイス</strong></li>
+                <li><strong>メルマガチェック/改善アドバイス</strong></li>
+                <li><strong>ステップメール/シナリオアドバイス</strong></li>
+                <li><strong>既存客用キャンペーンアドバイス</strong></li>
+                <li><strong>同梱ツールアドバイス</strong></li>
+                <li><strong>モールクーポン施策アドバイス</strong></li>
+                <li><strong>モール企画/販促キャンペーンアドバイス</strong></li>
+              </ul>
+            </div>
+          </div>
+          <div class="box-r">
+            <p class="p20">■モールECコンサルティングの場合</p>
+            <div class="list">
+              <ul>
+                <li><strong>顧客/現状分析によるファン戦略</strong></li>
+                <li><strong>バックヤード業務改善アドバイス</strong></li>
+                <li><strong>フォローメールアドバイス</strong></li>
+                <li><strong>メルマガチェック/改善アドバイス</strong></li>
+                <li><strong>ステップメール/シナリオアドバイス</strong></li>
+                <li><strong>既存客用キャンペーンアドバイス</strong></li>
+                <li><strong>同梱ツールアドバイス</strong></li>
+                <li><strong>モールクーポン施策アドバイス</strong></li>
+                <li><strong>モール企画/販促キャンペーンアドバイス</strong></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <p class="txt_center mb80">※作業業務は外注として15,000円～承ります</p>
+      </div>
+      <div class="ex">
+        <h3 class="p36 mb40"><span>実　績</span></h3>
+        <img src="/wp-assets/img/eccc/ec-heroes/support_13.png" alt="2・3ヶ月：売上月商約253万円アップ/36ヶ月売上月商約3,441万円アップ">
+        <p class="txt_center mb0">※これらの数値は標準偏差で求めています。</p>
+        <div class="img-wrap">
+          <img src="/wp-assets/img/eccc/ec-heroes/support_14-3.png" alt="売上標準偏差グラフ"
+            srcset="/wp-assets/img/eccc/ec-heroes/support_14_sp.png 767w,/wp-assets/img/eccc/ec-heroes/support_14-3.png">
+          <p>コンサルティング実績で売上げは月商ギネス売上げです。<br>数字は便宜上わかりやすい数字に修正してあります。</p>
+        </div>
+        <div class="txt-wrap mb80">
+          <p>この実績の秘訣は……。<br><br>単純なノウハウや情報の提供、アドバイスだけではなく、メンタル、仕事術、
+            経営手法まで入り込んで時にはメンターとなり、時にはコーチとなり、時には師匠として一緒に売上げの数字を追っかけた結果です。<br><br> 今回のオンライン講座ではこのメソッドが様々な講座の中に散りばめられています。
+          </p>
+        </div>
+      </div>
+      <div class="profile">
+        <h3 class="p36"><span>江藤正親プロフィール</span></h3>
+        <div class="box-wrap">
+          <div class="txt">
+            <p>明治大学卒業後、送電線建設会社、コンサル会社、メーカーと転職の後に独立。独立系ECコンサルタントとしては日本最古。<br>
+              1999年よりネットショップ運営に携わり、立ち上げ1年半で月商4500万円を達成。3年連続楽天総合3位。サポート実績企業は1000超え17名のEC関連本の著者を輩出。自ら著書3冊を持ち、新聞、雑誌など各メディアに寄稿。<br>
+              2013年設立した一般社団法人ジャパンEコマースコンサルタント協会は最新の日本と海外事例をECコンサルタントにアップデートしていく協会で、2017年設立の一般社団法人日本イーコマース学会は大学にイーコマース学部設立と中小零細向け産学連携商品エビデンスを出す仕組みを構築中。
+            </p>
+            <a href="/echeroes2/" class="btn-link">どうして<span class="sp">、</span>ECの支援<br
+                class="sp">事業をやっているのか</a>
+          </div>
+          <div class="image">
+            <img src="/wp-assets/img/eccc/ec-heroes/support_15.jpg" alt="江藤正親"
+              srcset="/wp-assets/img/eccc/ec-heroes/support_15_sp.jpg 767w,/wp-assets/img/eccc/ec-heroes/support_15.jpg">
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="interview-movie">
+      <p class="mb20">ECの未来インタビュー：これからのECで実績を上げるには？【 ECの未来 episode 1 】</p>
+      <div class="movie"> <a id="69ca10559dcb5" rel="wp-video-lightbox" href="https://www.youtube.com/watch?v=QxCVgxCdG4M&width=950&height=547" title=""><img src="/wp-assets/img/eccc/ec-heroes/support_21.jpg" class="video_lightbox_anchor_image" alt="" /></a>    <script>
+    /* <![CDATA[ */
+    jQuery(document).ready(function($){
+        $(function(){
+            var width = $(window).innerWidth();
+            var setwidth = 950;
+            var ratio = 0.57578947368421;
+            var height = 547;
+            var link = 'https://www.youtube.com/watch?v=QxCVgxCdG4M&width=950&height=547';
+            if(width < setwidth)
+            {
+                height = Math.floor(width * 0.57578947368421);
+                //console.log("device width "+width+", set width "+950+", ratio "+0.57578947368421+", new height "+ height);
+                var new_url = wpvl_paramReplace('width', link, width);
+                var new_url = wpvl_paramReplace('height', new_url, height);
+                $("a#69ca10559dcb5").attr('href', new_url);
+                //console.log(new_url);
+            }    
+        });
+    });
+    /* ]]&gt; */
+    </script>         </div>
+    <!--<a href="/echeroes-personal6th-form" class="btn-next p40">個別コンサル＆レッスン<br>お申し込みはコチラ</a>
+    <div class="txt_center">
+      <a href="/contact/" class="mail p20">お問い合わせ・ご質問はこちらからお気軽にどうぞ</a></div>-->
+<p style="margin:50px 0 20px" class="p36">個別コンサル＆レッスンお申し込み</p>
+<div class="cv-common-tel" style="margin:0 auto">
+                <p><strong>お問い合わせ・お申し込み</strong></p>
+                <a href="tel:0351668000" class="tel"><img src="/wp-assets/img/eccc/top_tel.png" alt="03-5166-8000"></a>
+            </div>
+    </div>
+    <div id="advisor" class="txt_center">
+      <h2><img src="/wp-assets/img/eccc/ec-heroes/support_16.png" alt="顧問契約6ヶ月｜ECコンサルカンパニー"></h2>
+      <table>
+        <tr>
+          <th>対象：</th>
+          <td>目標と戦略、その正誤性に自信がない方</td>
+        </tr>
+        <tr>
+          <th>内容：</th>
+          <td>戦略チェックと改善アドバイス、進捗チェックと問題解決</td>
+        </tr>
+        <tr>
+          <th>手法：</th>
+          <td> 目標に対しての戦略、アクションプランの正誤性を確認と具体的なアクションプランの改善アドバイス電話やメールは随時。<br> 月1回、半日（4時間以内）のMTG</td>
+        </tr>
+        <tr>
+          <th><span class="pc">費用：</span></th>
+          <td class="bld"><span class="p36">【月15万円</span>（税別）<span class="p36">】</span></td>
+        </tr>
+      </table>
+<div class="cv-common-tel">
+                <p><strong>お問い合わせ・お申し込み</strong></p>
+                <a href="tel:0351668000" class="tel"><img src="/wp-assets/img/eccc/top_tel.png" alt="03-5166-8000"></a>
+            </div>
+      <!--<a href="/echeroes-adviser-form" class="btn-next p40">顧問契約　お申し込みはコチラ</a>
+      <a href="/contact/" class="mail p20">お問い合わせ・ご質問はこちらからお気軽にどうぞ</a>-->
+    </div>
+    <div id="director" class="txt_center">
+      <h2><img src="/wp-assets/img/eccc/ec-heroes/support_17.png" alt="社外取締役1年間｜ECコンサルカンパニー"></h2>
+      <table>
+        <tr>
+          <th>対象：</th>
+          <td>目標、戦略、戦術、アクションプランの経営計画立案のアドバイス<br> 実際の経営プランの進捗チェックと実施の改善アドバイス</td>
+        </tr>
+        <tr>
+          <th>内容：</th>
+          <td>経営者管理</td>
+        </tr>
+        <tr>
+          <th>手法：</th>
+          <td> 月1回の取締役会の出席<br> 取締役会議題の内容のMTG<br> 電話やメールは随時 </td>
+        </tr>
+        <tr>
+          <th><span class="pc">費用：</span></th>
+          <td class="bld"><span class="p36">【月60万円</span>（税別）<span class="p36">】</span></td>
+        </tr>
+      </table>
+      <!--<a href="/echeroes-director-form/" class="btn-next p40">社外取締役　お申し込みはコチラ</a><a href="/contact/"
+        class="mail p20">お問い合わせ・ご質問はこちらからお気軽にどうぞ</a>-->
+<div class="cv-common-tel">
+                <p><strong>お問い合わせ・お申し込み</strong></p>
+                <a href="tel:0351668000" class="tel"><img src="/wp-assets/img/eccc/top_tel.png" alt="03-5166-8000"></a>
+            </div>
+    </div>
+    <div id="etocomi" class="txt_center">
+      <div class="p36 mb10"><strong>みんなと一緒に<br> 売上を上げようコミュニティ</strong><br>
+        <img src="/wp-assets/img/eccc/ec-heroes/apply_18.gif" alt=""></div>
+      <h2><img src="/wp-assets/img/eccc/etocomi_logo.jpg" alt="令和えとコミ｜ECコンサルカンパニー" class="btm_mar20"></h2>
+      <a href="/reiwa-etocomi/" class="btn-next p402">令和えとコミ<br class="sp">詳細はコチラ</a>
+    </div>
+    <div id="wom" class="txt_center">
+      <div class="p36 mb10"><strong>価格争いに負けない<br> ファンコミュニティづくりの<br> 決定版システム<br> WOMコマースシステムもございます。</strong><br>
+        <img src="/wp-assets/img/eccc/ec-heroes/apply_18.gif" alt=""></div>
+      <h2><img src="/wp-assets/img/eccc/ec-heroes/apply_19.gif" alt="WOMコマース｜ECコンサルカンパニー" class="btm_mar20"></h2> <a
+        href="/wom-commerce/" class="btn-next p402 mb80">WOMコマース<br class="sp">詳細はコチラ</a>
+    </div>
+  </section>
+</section>
+<!-- #container -->`;
+---
+
+<BaseLayout title="ECヒーローズ　お申し込み | 株式会社ECコンサルカンパニー"
+  description="年商1億円を突破するECコンサルカンパニーの個別コンサル＆レッスンコース。標準偏差で3ヶ月売上月商約253万円アップ、36ヶ月売上月商約3,441万円アップの実績！　ここまで対応して月額15万円から。他にも顧問契約・社外取締役などEC支援サービスを多種ご用意。">
+<link rel="stylesheet" href="/wp-assets/css/eccc-pages.css" slot="css" />
+<Fragment set:html={rawHtml} />
+</BaseLayout>
