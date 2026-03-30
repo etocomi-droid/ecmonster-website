@@ -135,22 +135,7 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString()
     </div>
   </footer>
 
-  <!-- Floating CTA -->
-  <div id="floating-cta" class="floating-cta">
-    <div class="bg-primary/95 backdrop-blur-sm shadow-[0_-4px_16px_rgba(0,0,0,0.15)]">
-      <div class="max-w-7xl mx-auto px-4 py-3 flex items-center justify-between">
-        <div class="hidden sm:block">
-          <p class="text-white font-bold text-sm">7日間無料トライアル実施中</p>
-        </div>
-        <a href="/ai/" class="inline-flex items-center gap-2 bg-white hover:bg-slate-light text-primary font-bold px-6 py-2.5 rounded-lg transition-colors text-sm mx-auto sm:mx-0">
-          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
-          AIコンサルを無料体験
-        </a>
-      </div>
-    </div>
-  </div>
-
-  <!-- Mobile menu + scroll animation + floating CTA script -->
+  <!-- Mobile menu script -->
   <script is:inline>
     const menuBtn = document.getElementById('mobile-menu-btn');
     const mobileMenu = document.getElementById('mobile-menu');
@@ -165,25 +150,6 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString()
         header.classList.toggle('shadow-lg', window.scrollY > 10);
       });
     }
-
-    // Floating CTA
-    const floatingCta = document.getElementById('floating-cta');
-    if (floatingCta) {
-      window.addEventListener('scroll', () => {
-        floatingCta.classList.toggle('is-visible', window.scrollY > 500);
-      });
-    }
-
-    // Intersection Observer for scroll animations
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('is-visible');
-        }
-      });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-    document.querySelectorAll('.animate-on-scroll').forEach(el => observer.observe(el));
   </script>
 </body>
 </html>
