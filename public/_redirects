@@ -1,0 +1,2 @@
+# www to non-www redirect
+https://www.ecmonster.jp/* https://ecmonster.jp/:splat 301

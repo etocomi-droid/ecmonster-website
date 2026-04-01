@@ -68,6 +68,8 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString()
   <meta property="og:site_name" content={`EC モンスター - ${description}`} />
   <meta property="og:type" content="website" />
   <meta property="og:title" content={title} />
+  <meta property="og:image" content={`${siteUrl}/wp-assets/img/common/logo.png`} />
+  <meta name="twitter:card" content="summary_large_image" />
   <meta property="og:description" content={description} />
   <meta property="og:url" content={canonicalUrl} />
   <meta name="twitter:card" content="summary" />
