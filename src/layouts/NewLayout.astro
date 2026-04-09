@@ -1,0 +1,244 @@
+---
+interface Props {
+  title: string;
+  description?: string;
+  bodyClass?: string;
+}
+
+const {
+  title,
+  description = 'ECモンスターは、ECの勝ち筋を明確にし、別格の成長につながる道筋をつくる総合ブランドです。',
+  bodyClass = '',
+} = Astro.props;
+
+const siteUrl = 'https://ecmonster.jp';
+const canonicalUrl = new URL(Astro.url.pathname, siteUrl).href;
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content={description}>
+<title>{title}</title>
+<link rel="canonical" href={canonicalUrl} />
+
+<!-- OGP -->
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:type" content="website" />
+<meta property="og:url" content={canonicalUrl} />
+<meta property="og:image" content={`${siteUrl}/ecmonsterlogo3.png`} />
+<meta property="og:site_name" content="ECモンスター" />
+<meta name="twitter:card" content="summary_large_image" />
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- Google Analytics -->
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-53F0YCGQDS"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-53F0YCGQDS');
+</script>
+
+<!-- Google Ads -->
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-1003850219"></script>
+<script is:inline>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('config', 'AW-1003850219');
+</script>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --white:#FFF;--off:#FAFAFA;--gray:#F5F5F5;--border:#E8E8E8;
+  --dark:#1A1A1A;--body:#3D3D3D;--light:#595959;--muted:#767676;
+  --red:#C8272E;--red-pale:rgba(200,39,46,.05);
+  --r:4px;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP','Inter',sans-serif;background:var(--white);color:var(--body);line-height:1.9;letter-spacing:.03em;font-size:15px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+a:focus-visible,button:focus-visible{outline:2px solid var(--red);outline-offset:2px}
+strong{font-weight:700;color:var(--dark)}
+
+/* SKIP LINK */
+.skip{position:absolute;top:-100px;left:16px;background:var(--dark);color:var(--white);padding:8px 16px;border-radius:var(--r);font-size:13px;z-index:200;transition:.2s}
+.skip:focus{top:16px}
+
+/* HEADER */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:120px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid transparent;transition:.3s}
+.hdr.scrolled{border-color:var(--border)}
+.hdr-logo{max-width:280px}
+.nav{display:flex;align-items:center;gap:32px}
+.nav a{font-size:13px;color:var(--light);font-weight:500;transition:.2s}
+.nav a:hover{color:var(--dark)}
+.nav .nav-cta{background:var(--dark);color:var(--white);padding:10px 24px;border-radius:var(--r);font-weight:600;transition:all .3s}
+.nav .nav-cta:hover{background:var(--red)}
+.m-toggle{display:none;background:none;border:none;cursor:pointer;width:32px;height:32px;position:relative}
+.m-toggle span{display:block;width:22px;height:1.5px;background:var(--dark);position:absolute;left:5px;transition:.3s}
+.m-toggle span:nth-child(1){top:9px}.m-toggle span:nth-child(2){top:15px}.m-toggle span:nth-child(3){top:21px}
+
+/* COMMON */
+.sec{padding:120px 60px}
+.sec-in{max-width:1080px;margin:0 auto}
+.sec-ey{font-size:12px;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.15em;margin-bottom:16px}
+.spacer{height:40px}
+.btn-d{display:inline-flex;align-items:center;gap:8px;background:var(--dark);color:var(--white);padding:15px 32px;border-radius:var(--r);font-size:14px;font-weight:600;transition:.3s;border:none;cursor:pointer}
+.btn-d:hover{background:var(--red)}
+.btn-g{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--dark);padding:15px 32px;border-radius:var(--r);font-size:14px;font-weight:600;transition:.3s;border:1px solid var(--muted)}
+.btn-g:hover{border-color:var(--dark)}
+
+/* FOOTER */
+.ftr{background:#111;color:rgba(255,255,255,.65);padding:64px 60px 32px}
+.ftr-in{max-width:1080px;margin:0 auto}
+.ftr-top{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:40px;padding-bottom:40px;border-bottom:1px solid rgba(255,255,255,.1)}
+.ftr-brand{max-width:320px}
+.ftr-brand p{font-size:13px;line-height:1.9;margin-top:16px;color:rgba(255,255,255,.55)}
+.ftr-logo{max-width:280px;background:#fff;padding:16px 20px;border-radius:var(--r)}
+.ftr-links{display:flex;gap:56px}
+.ftr-col h4{font-size:11px;font-weight:700;color:rgba(255,255,255,.6);text-transform:uppercase;letter-spacing:1.5px;margin-bottom:14px}
+.ftr-col a{display:block;font-size:13px;color:rgba(255,255,255,.55);padding:3px 0;transition:.2s}
+.ftr-col a:hover{color:rgba(255,255,255,.9)}
+.ftr-btm{display:flex;justify-content:space-between;align-items:center}
+.ftr-btm p{font-size:11px;color:rgba(255,255,255,.35)}
+.ftr-legal{display:flex;gap:20px}
+.ftr-legal a{font-size:11px;color:rgba(255,255,255,.35);transition:.2s}
+.ftr-legal a:hover{color:rgba(255,255,255,.65)}
+
+/* SUBPAGE CONTENT */
+.subpage-content{max-width:800px;margin:0 auto;padding:80px 60px}
+.subpage-content h1{font-size:clamp(24px,3vw,32px);font-weight:800;color:var(--dark);margin-bottom:40px}
+.subpage-content h2{font-size:18px;font-weight:700;color:var(--dark);margin-top:40px;margin-bottom:12px}
+.subpage-content h3{font-size:15px;font-weight:700;color:var(--dark);margin-top:24px;margin-bottom:8px}
+.subpage-content p{margin-bottom:16px}
+.subpage-content ul{margin-left:2em;margin-bottom:16px}
+.subpage-content li{margin-bottom:4px}
+.subpage-content a{color:var(--red);text-decoration:underline}
+
+/* RESPONSIVE */
+@media(max-width:768px){
+  .hdr{padding:0 24px}.sec{padding:80px 24px}
+  .nav{display:none}.m-toggle{display:block}
+  .nav.open{display:flex;flex-direction:column;position:fixed;top:120px;right:0;bottom:0;left:0;background:var(--white);padding:32px 24px;gap:20px;z-index:999}
+  .ftr{padding:40px 24px 24px}
+  .ftr-top{flex-direction:column;gap:24px}
+  .ftr-btm{flex-direction:column;gap:8px;text-align:center}
+  .ftr-logo{max-width:200px}
+  .subpage-content{padding:40px 24px}
+}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.fade.vis{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.fade{opacity:1;transform:none;transition:none}}
+</style>
+</head>
+<body class={bodyClass}>
+
+<!-- SKIP LINK -->
+<a href="#main" class="skip">メインコンテンツへ</a>
+
+<!-- HEADER -->
+<header class="hdr" id="hdr" role="banner">
+  <a href="/"><img src="/ecmonsterlogo3.png" alt="ECMONSTER - ECの勝ち筋を、明確に。" class="hdr-logo"></a>
+  <nav class="nav" id="nav" aria-label="メインナビゲーション">
+    <a href="/#services">サービス</a>
+    <a href="/achievement/">実績</a>
+    <a href="/faq/">よくある質問</a>
+    <a href="/login/">ログイン</a>
+    <a href="/contact/" class="nav-cta">個別相談</a>
+  </nav>
+  <button class="m-toggle" aria-label="メニューを開く" aria-expanded="false" id="menuBtn"><span></span><span></span><span></span></button>
+</header>
+
+<!-- MAIN -->
+<main id="main" style="padding-top:120px">
+  <slot />
+</main>
+
+<!-- FOOTER -->
+<footer class="ftr" role="contentinfo">
+  <div class="ftr-in">
+    <div class="ftr-top">
+      <div class="ftr-brand">
+        <a href="/"><img src="/ecmonsterlogo3.png" alt="ECMONSTER" class="ftr-logo"></a>
+        <p>ECの勝ち筋を、明確に。戦略、運営、判断、実行をつなぎ、別格の成長につながる道筋をつくるブランドです。</p>
+      </div>
+      <div class="ftr-links">
+        <div class="ftr-col">
+          <h4>サービス</h4>
+          <a href="/contact/">通常コンサル</a>
+          <a href="/ai/">AIコンサル</a>
+          <a href="/web/">WEBシステム開発</a>
+          <a href="/ec/">越境ECサイト</a>
+          <a href="/movie/">ライブコマーサー育成</a>
+          <a href="/ec-backyard/">バックヤード自動化</a>
+          <a href="/echeroes3/">ECヒーローズ</a>
+        </div>
+        <div class="ftr-col">
+          <h4>会社情報</h4>
+          <a href="/company/">会社概要</a>
+          <a href="/contact/">お問い合わせ</a>
+          <a href="/login/">ログイン</a>
+        </div>
+      </div>
+    </div>
+    <div class="ftr-btm">
+      <p>&copy; 2025 ECMONSTER. All rights reserved.</p>
+      <div class="ftr-legal">
+        <a href="/legal-notice/">特定商取引法</a>
+        <a href="/privacy-policy/">プライバシーポリシー</a>
+        <a href="/terms/">利用規約</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script is:inline>
+// Header scroll
+window.addEventListener('scroll',()=>{document.getElementById('hdr').classList.toggle('scrolled',window.scrollY>20)});
+
+// Mobile menu
+const menuBtn=document.getElementById('menuBtn');
+const nav=document.getElementById('nav');
+menuBtn.addEventListener('click',()=>{
+  const open=nav.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded',open);
+  menuBtn.setAttribute('aria-label',open?'メニューを閉じる':'メニューを開く');
+});
+// Close menu on link click
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
+  nav.classList.remove('open');
+  menuBtn.setAttribute('aria-expanded','false');
+  menuBtn.setAttribute('aria-label','メニューを開く');
+}));
+// Close on Escape
+document.addEventListener('keydown',e=>{
+  if(e.key==='Escape'&&nav.classList.contains('open')){
+    nav.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded','false');
+    menuBtn.setAttribute('aria-label','メニューを開く');
+    menuBtn.focus();
+  }
+});
+
+// Intersection Observer with unobserve
+const obs=new IntersectionObserver((entries,observer)=>{
+  entries.forEach(entry=>{
+    if(entry.isIntersecting){
+      entry.target.classList.add('vis');
+      observer.unobserve(entry.target);
+    }
+  });
+},{threshold:.1});
+document.querySelectorAll('.fade').forEach(el=>obs.observe(el));
+</script>
+</body>
+</html>
