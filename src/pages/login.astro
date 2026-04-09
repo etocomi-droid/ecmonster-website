@@ -1,0 +1,133 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro'
+---
+
+<BaseLayout
+  title="ログイン - EC モンスター"
+  bodyClass="wp-singular page-template-default page wp-theme-ecmonster page-login"
+>
+  <link slot="css" rel="stylesheet" href="/wp-assets/css/privacy-policy.css" />
+  <style slot="head" is:inline>
+    .login-wrap {
+      max-width: 480px;
+      margin: 0 auto;
+      padding: 60px 20px 80px;
+    }
+    .login-form {
+      background: #fff;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 40px 30px;
+      margin-top: 30px;
+    }
+    .login-form .form-group {
+      margin-bottom: 20px;
+    }
+    .login-form label {
+      display: block;
+      font-weight: bold;
+      margin-bottom: 6px;
+      font-size: 14px;
+      color: #333;
+    }
+    .login-form input[type="email"],
+    .login-form input[type="password"] {
+      width: 100%;
+      padding: 12px 14px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+    .login-form input[type="email"]:focus,
+    .login-form input[type="password"]:focus {
+      outline: none;
+      border-color: #D92C2C;
+      box-shadow: 0 0 0 2px rgba(217, 44, 44, 0.15);
+    }
+    .login-btn {
+      display: block;
+      width: 100%;
+      padding: 14px;
+      background: #D92C2C;
+      color: #fff;
+      border: none;
+      border-radius: 4px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      margin-top: 10px;
+      transition: background 0.2s;
+    }
+    .login-btn:hover {
+      background: #b82525;
+    }
+    .login-links {
+      text-align: center;
+      margin-top: 20px;
+      font-size: 14px;
+    }
+    .login-links a {
+      color: #D92C2C;
+      text-decoration: none;
+    }
+    .login-links a:hover {
+      text-decoration: underline;
+    }
+    .login-desc {
+      text-align: center;
+      color: #666;
+      font-size: 14px;
+      margin-top: 16px;
+      line-height: 1.6;
+    }
+    .login-error {
+      background: #fef2f2;
+      border: 1px solid #fca5a5;
+      color: #991b1b;
+      padding: 12px;
+      border-radius: 4px;
+      margin-bottom: 16px;
+      font-size: 14px;
+      display: none;
+    }
+  </style>
+
+<div class="page-wrap">
+  <div class="login-wrap">
+    <h1 class="page-ttl uline" style="text-align: center;">ログイン</h1>
+    <div class="login-form">
+      <div class="login-error" id="loginError">
+        メールアドレスまたはパスワードが正しくありません。
+      </div>
+      <form id="loginForm" action="https://elearnig.vercel.app/accounts/login/" method="GET">
+        <div class="form-group">
+          <label for="email">メールアドレス</label>
+          <input type="email" id="email" name="email" required placeholder="example@email.com" />
+        </div>
+        <div class="form-group">
+          <label for="password">パスワード</label>
+          <input type="password" id="password" name="password" required placeholder="パスワードを入力" />
+        </div>
+        <button type="submit" class="login-btn">ログイン</button>
+      </form>
+      <div class="login-links">
+        <a href="/contact/">パスワードをお忘れの方</a>
+      </div>
+    </div>
+    <p class="login-desc">
+      ECモンスターの各種サービス（AIコンサル、楽天市場動画講座等）を<br>ご利用中のお客様専用ログインページです。<br>
+      <a href="/ai/">新規のお客様はこちら</a>
+    </p>
+  </div>
+</div>
+
+<script is:inline>
+  document.getElementById('loginForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    // eラーニングプラットフォームのログインページへリダイレクト
+    window.location.href = 'https://elearnig.vercel.app/accounts/login/';
+  });
+</script>
+
+</BaseLayout>
