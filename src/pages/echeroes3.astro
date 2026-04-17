@@ -1,6 +1,19 @@
 ---
 import NewLayout from '../layouts/NewLayout.astro'
 
+const IMG_BASE = '/wp-assets/img/eccc/ec-heroes'
+
+const lessonImages: Record<number, string> = {
+  1: 'etou_02', 2: 'etou_03', 3: 'etou_04', 4: 'etou_05',
+  5: 'etou_06', 6: 'etou_07', 7: 'etou_08', 8: 'etou_01',
+  9: 'etou_02', 10: 'etou_03', 11: 'etou_04', 12: 'etou_05',
+  13: 'etou_06', 14: 'etou_07',
+  15: 'etou_08', 16: 'etou_01', 17: 'etou_02', 18: 'etou_03',
+  19: 'etou_04', 20: 'etou_05', 21: 'etou_06',
+  22: 'etou_07', 23: 'etou_08', 24: 'etou_01', 25: 'etou_02',
+  26: 'etou_03', 27: 'etou_04',
+}
+
 const blueOceanLessons = [
   {
     num: 1,
@@ -605,6 +618,12 @@ const grandOceanLessons = [
 <!-- HERO -->
 <section class="eh-hero">
   <div class="eh-hero-in">
+    <div class="eh-hero-logo fade">
+      <picture>
+        <source srcset={`${IMG_BASE}/heroes2_06.webp`} type="image/webp" />
+        <img src={`${IMG_BASE}/heroes2_06.png`} alt="27STEPロゴ" width="200" height="auto" />
+      </picture>
+    </div>
     <p class="sec-ey fade">EC Heroes 27 STEP</p>
     <h1 class="fade">価格争いに巻き込まれないで<br>月商1,000万円を<br>ゼロからつくる</h1>
     <p class="eh-hero-sub fade">ECヒーローズ 27STEP</p>
@@ -620,9 +639,93 @@ const grandOceanLessons = [
   </div>
 </section>
 
-<!-- OVERVIEW BADGES -->
+<!-- CREDENTIALS -->
+<section class="eh-credentials sec fade">
+  <div class="sec-in">
+    <div class="eh-credentials-grid">
+      <div class="eh-credential-card fade">
+        <picture>
+          <source srcset={`${IMG_BASE}/heroes2_08.webp`} type="image/webp" />
+          <img src={`${IMG_BASE}/heroes2_08.jpg`} alt="楽天総合3位" loading="lazy" width="400" height="auto" />
+        </picture>
+      </div>
+      <div class="eh-credential-card fade">
+        <picture>
+          <source srcset={`${IMG_BASE}/heroes2_09.webp`} type="image/webp" />
+          <img src={`${IMG_BASE}/heroes2_09.jpg`} alt="圧倒的な実績" loading="lazy" width="400" height="auto" />
+        </picture>
+      </div>
+      <div class="eh-credential-card fade">
+        <picture>
+          <source srcset={`${IMG_BASE}/heroes2_10.webp`} type="image/webp" />
+          <img src={`${IMG_BASE}/heroes2_10.jpg`} alt="協会設立" loading="lazy" width="400" height="auto" />
+        </picture>
+      </div>
+      <div class="eh-credential-card fade">
+        <picture>
+          <source srcset={`${IMG_BASE}/heroes2_11.webp`} type="image/webp" />
+          <img src={`${IMG_BASE}/heroes2_11.jpg`} alt="圧倒的な信頼" loading="lazy" width="400" height="auto" />
+        </picture>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT / REPRESENTATIVE -->
+<section class="eh-about sec fade">
+  <div class="sec-in">
+    <div class="eh-about-inner">
+      <div class="eh-about-photo fade">
+        <picture>
+          <source srcset={`${IMG_BASE}/etou_01.webp`} type="image/webp" />
+          <img src={`${IMG_BASE}/etou_01.jpg`} alt="江藤正親 代表" loading="lazy" width="400" height="auto" />
+        </picture>
+      </div>
+      <div class="eh-about-text fade">
+        <p class="sec-ey">About the Instructor</p>
+        <h2>EC歴25年 / 1,000社以上を支援</h2>
+        <p class="eh-about-desc">
+          ECコンサルカンパニー代表・江藤正親が、25年間のEC現場で培った実践ノウハウを27講座に凝縮。<br>
+          100社100通りの戦略を組み上げてきた経験から、あなたのECに最適な勝ち筋を見つけます。
+        </p>
+        <div class="eh-about-badges">
+          <picture>
+            <source srcset={`${IMG_BASE}/heroes2_12.webp`} type="image/webp" />
+            <img src={`${IMG_BASE}/heroes2_12.jpg`} alt="サポート領域" loading="lazy" width="280" height="auto" />
+          </picture>
+          <picture>
+            <source srcset={`${IMG_BASE}/heroes2_13.webp`} type="image/webp" />
+            <img src={`${IMG_BASE}/heroes2_13.jpg`} alt="圧倒的な支援幅" loading="lazy" width="280" height="auto" />
+          </picture>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO SHOULD JOIN -->
+<section class="eh-who sec fade">
+  <div class="sec-in">
+    <div class="eh-who-inner">
+      <picture>
+        <source srcset={`${IMG_BASE}/heroes2_07.webp`} type="image/webp" />
+        <img src={`${IMG_BASE}/heroes2_07.png`} alt="こんな人は参加すべき" loading="lazy" width="800" height="auto" class="eh-who-img" />
+      </picture>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW -->
 <section class="eh-overview sec fade">
   <div class="sec-in">
+    <div class="eh-overview-img fade">
+      <picture>
+        <source srcset={`${IMG_BASE}/heroes2_02_pc.webp`} type="image/webp" media="(min-width:768px)" />
+        <source srcset={`${IMG_BASE}/heroes2_02_sp.webp`} type="image/webp" />
+        <source srcset={`${IMG_BASE}/heroes2_02_pc.jpg`} media="(min-width:768px)" />
+        <img src={`${IMG_BASE}/heroes2_02_sp.jpg`} alt="100社100通り" loading="lazy" width="960" height="auto" />
+      </picture>
+    </div>
     <div class="eh-badges">
       <div class="eh-badge eh-badge--blue">
         <span class="eh-badge-num">14</span>
@@ -645,100 +748,162 @@ const grandOceanLessons = [
   </div>
 </section>
 
-<!-- BLUE OCEAN -->
+<!-- BLUE OCEAN BANNER -->
+<section class="eh-banner eh-banner--blue sec fade">
+  <div class="eh-banner-in">
+    <p class="sec-ey">Blue Ocean &mdash; 14 Lessons</p>
+    <h2>ブルーオーシャン編</h2>
+    <p class="eh-banner-sub">出航前に、旗・海図・航路・武器・船を整える14講座</p>
+  </div>
+</section>
+
+<!-- BLUE OCEAN LESSONS -->
 <section class="eh-section eh-section--blue sec" id="blue-ocean">
   <div class="sec-in">
-    <div class="eh-section-hdr fade">
-      <p class="sec-ey">Blue Ocean &mdash; 14 Lessons</p>
-      <h2>ブルーオーシャン編</h2>
-      <p class="eh-section-sub">出航前に、旗・海図・航路・武器・船を整える14講座</p>
-    </div>
-
     <div class="eh-grid">
-      {blueOceanLessons.map((lesson) => (
-        <article class="eh-card fade">
-          <div class="eh-card-head">
-            <span class="eh-card-num">{String(lesson.num).padStart(2, '0')}</span>
-            <h3 class="eh-card-title">{lesson.title}</h3>
-          </div>
-          <p class="eh-card-aim"><strong>ねらい:</strong> {lesson.aim}</p>
-          <details class="eh-details">
-            <summary>学ぶ内容</summary>
-            <ul>
-              {lesson.learn.map((item) => <li>{item}</li>)}
-            </ul>
-          </details>
-          <details class="eh-details">
-            <summary>実践ワーク</summary>
-            <ul>
-              {lesson.work.map((item) => <li>{item}</li>)}
-            </ul>
-          </details>
-          <details class="eh-details">
-            <summary>できあがるもの</summary>
-            <ul>
-              {lesson.output.map((item) => <li>{item}</li>)}
-            </ul>
-          </details>
-        </article>
-      ))}
+      {blueOceanLessons.map((lesson) => {
+        const imgKey = lessonImages[lesson.num]
+        return (
+          <article class="eh-card fade">
+            <div class="eh-card-img">
+              <picture>
+                <source srcset={`${IMG_BASE}/${imgKey}.webp`} type="image/webp" />
+                <img src={`${IMG_BASE}/${imgKey}.jpg`} alt={lesson.title} loading="lazy" width="400" height="auto" />
+              </picture>
+            </div>
+            <div class="eh-card-body">
+              <div class="eh-card-head">
+                <span class="eh-card-num">{String(lesson.num).padStart(2, '0')}</span>
+                <h3 class="eh-card-title">{lesson.title}</h3>
+              </div>
+              <p class="eh-card-aim"><strong>ねらい:</strong> {lesson.aim}</p>
+              <details class="eh-details">
+                <summary>学ぶ内容</summary>
+                <ul>
+                  {lesson.learn.map((item) => <li>{item}</li>)}
+                </ul>
+              </details>
+              <details class="eh-details">
+                <summary>実践ワーク</summary>
+                <ul>
+                  {lesson.work.map((item) => <li>{item}</li>)}
+                </ul>
+              </details>
+              <details class="eh-details">
+                <summary>できあがるもの</summary>
+                <ul>
+                  {lesson.output.map((item) => <li>{item}</li>)}
+                </ul>
+              </details>
+            </div>
+          </article>
+        )
+      })}
     </div>
   </div>
 </section>
 
-<!-- GRAND OCEAN -->
+<!-- GRAND OCEAN BANNER -->
+<section class="eh-banner eh-banner--gold sec fade">
+  <div class="eh-banner-in">
+    <p class="sec-ey">Grand Ocean &mdash; 13 Lessons</p>
+    <h2>グランドオーシャン編</h2>
+    <p class="eh-banner-sub">海に出てから、勝ち続ける13講座</p>
+  </div>
+</section>
+
+<!-- GRAND OCEAN LESSONS -->
 <section class="eh-section eh-section--gold sec" id="grand-ocean">
   <div class="sec-in">
-    <div class="eh-section-hdr fade">
-      <p class="sec-ey">Grand Ocean &mdash; 13 Lessons</p>
-      <h2>グランドオーシャン編</h2>
-      <p class="eh-section-sub">海に出てから、勝ち続ける13講座</p>
-    </div>
-
     <div class="eh-grid">
-      {grandOceanLessons.map((lesson) => (
-        <article class="eh-card fade">
-          <div class="eh-card-head">
-            <span class="eh-card-num">{String(lesson.num).padStart(2, '0')}</span>
-            <h3 class="eh-card-title">{lesson.title}</h3>
-          </div>
-          <p class="eh-card-aim"><strong>ねらい:</strong> {lesson.aim}</p>
-          <details class="eh-details">
-            <summary>学ぶ内容</summary>
-            <ul>
-              {lesson.learn.map((item) => <li>{item}</li>)}
-            </ul>
-          </details>
-          <details class="eh-details">
-            <summary>実践ワーク</summary>
-            <ul>
-              {lesson.work.map((item) => <li>{item}</li>)}
-            </ul>
-          </details>
-          <details class="eh-details">
-            <summary>できあがるもの</summary>
-            <ul>
-              {lesson.output.map((item) => <li>{item}</li>)}
-            </ul>
-          </details>
-        </article>
-      ))}
+      {grandOceanLessons.map((lesson) => {
+        const imgKey = lessonImages[lesson.num]
+        return (
+          <article class="eh-card fade">
+            <div class="eh-card-img">
+              <picture>
+                <source srcset={`${IMG_BASE}/${imgKey}.webp`} type="image/webp" />
+                <img src={`${IMG_BASE}/${imgKey}.jpg`} alt={lesson.title} loading="lazy" width="400" height="auto" />
+              </picture>
+            </div>
+            <div class="eh-card-body">
+              <div class="eh-card-head">
+                <span class="eh-card-num">{String(lesson.num).padStart(2, '0')}</span>
+                <h3 class="eh-card-title">{lesson.title}</h3>
+              </div>
+              <p class="eh-card-aim"><strong>ねらい:</strong> {lesson.aim}</p>
+              <details class="eh-details">
+                <summary>学ぶ内容</summary>
+                <ul>
+                  {lesson.learn.map((item) => <li>{item}</li>)}
+                </ul>
+              </details>
+              <details class="eh-details">
+                <summary>実践ワーク</summary>
+                <ul>
+                  {lesson.work.map((item) => <li>{item}</li>)}
+                </ul>
+              </details>
+              <details class="eh-details">
+                <summary>できあがるもの</summary>
+                <ul>
+                  {lesson.output.map((item) => <li>{item}</li>)}
+                </ul>
+              </details>
+            </div>
+          </article>
+        )
+      })}
+    </div>
+  </div>
+</section>
+
+<!-- STRENGTH SECTION -->
+<section class="eh-strength sec fade">
+  <div class="sec-in">
+    <div class="eh-strength-inner">
+      <div class="eh-strength-img fade">
+        <picture>
+          <source srcset={`${IMG_BASE}/heroes2_03_pc.webp`} type="image/webp" media="(min-width:768px)" />
+          <source srcset={`${IMG_BASE}/heroes2_03_sp.webp`} type="image/webp" />
+          <source srcset={`${IMG_BASE}/heroes2_03_pc.jpg`} media="(min-width:768px)" />
+          <img src={`${IMG_BASE}/heroes2_03_sp.jpg`} alt="ECコンサルカンパニーの圧倒的な強み" loading="lazy" width="560" height="auto" />
+        </picture>
+      </div>
+      <div class="eh-strength-text fade">
+        <p class="sec-ey">Our Strength</p>
+        <h2>ECコンサルカンパニーの強み</h2>
+        <p class="eh-strength-desc">
+          楽天市場総合ランキング3位の実績。EC協会設立。1,000社以上の支援実績。<br>
+          戦略から実行まで、EC経営に必要な全領域をカバーします。
+        </p>
+      </div>
     </div>
   </div>
 </section>
 
 <!-- FINAL CTA -->
 <section class="eh-cta sec fade">
-  <div class="sec-in" style="text-align:center">
-    <p class="sec-ey">Start Your Journey</p>
-    <h2 class="eh-cta-title">ECヒーローズで、ECの勝ち筋を掴む</h2>
-    <p class="eh-cta-desc">
-      27講座を通じて、価格争いから抜け出し、<br>
-      自分だけの勝ち筋を見つけてください。
-    </p>
-    <div class="eh-cta-acts">
-      <a href="https://elearnig.vercel.app/p/rakuten/rakuten1/" class="btn-d">無料で始める</a>
-      <a href="/contact/" class="btn-g">個別相談を申し込む</a>
+  <div class="sec-in">
+    <div class="eh-cta-inner">
+      <div class="eh-cta-img fade">
+        <picture>
+          <source srcset={`${IMG_BASE}/apply_02.webp`} type="image/webp" />
+          <img src={`${IMG_BASE}/apply_02.png`} alt="お申し込み" loading="lazy" width="480" height="auto" />
+        </picture>
+      </div>
+      <div class="eh-cta-content fade">
+        <p class="sec-ey">Start Your Journey</p>
+        <h2 class="eh-cta-title">ECヒーローズで、ECの勝ち筋を掴む</h2>
+        <p class="eh-cta-desc">
+          27講座を通じて、価格争いから抜け出し、<br>
+          自分だけの勝ち筋を見つけてください。
+        </p>
+        <div class="eh-cta-acts">
+          <a href="https://elearnig.vercel.app/p/rakuten/rakuten1/" class="btn-d">無料で始める</a>
+          <a href="/contact/" class="btn-g">個別相談を申し込む</a>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -748,12 +913,14 @@ const grandOceanLessons = [
 <style>
 /* ===== HERO ===== */
 .eh-hero{
-  background:linear-gradient(135deg,#0d1b2a 0%,#1b2838 50%,#162230 100%);
+  background:linear-gradient(rgba(13,27,42,.75),rgba(13,27,42,.8)),url('/wp-assets/img/eccc/ec-heroes/heroes2_01_pc.jpg') center/cover no-repeat;
   color:var(--white);
   padding:160px 60px 100px;
   text-align:center;
 }
 .eh-hero-in{max-width:800px;margin:0 auto}
+.eh-hero-logo{margin-bottom:24px}
+.eh-hero-logo img{max-width:200px;height:auto;margin:0 auto}
 .eh-hero h1{
   font-size:clamp(28px,4vw,44px);
   font-weight:900;
@@ -777,8 +944,82 @@ const grandOceanLessons = [
 .eh-hero-desc strong{color:var(--white);font-weight:700}
 .eh-hero-acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
+/* ===== CREDENTIALS ===== */
+.eh-credentials{background:var(--dark);padding-top:60px;padding-bottom:60px}
+.eh-credentials-grid{
+  display:grid;
+  grid-template-columns:repeat(4,1fr);
+  gap:16px;
+}
+.eh-credential-card{
+  border-radius:var(--r);
+  overflow:hidden;
+}
+.eh-credential-card img{
+  width:100%;
+  height:auto;
+  display:block;
+  border-radius:var(--r);
+}
+
+/* ===== ABOUT ===== */
+.eh-about{background:var(--white)}
+.eh-about-inner{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:48px;
+  align-items:center;
+}
+.eh-about-photo img{
+  width:100%;
+  height:auto;
+  border-radius:var(--r);
+  box-shadow:0 8px 32px rgba(0,0,0,.1);
+}
+.eh-about-text h2{
+  font-size:clamp(22px,3vw,32px);
+  font-weight:800;
+  color:var(--dark);
+  line-height:1.4;
+  margin-bottom:16px;
+}
+.eh-about-desc{
+  font-size:15px;
+  color:var(--body);
+  line-height:2.2;
+  margin-bottom:24px;
+}
+.eh-about-badges{
+  display:flex;
+  gap:12px;
+}
+.eh-about-badges img{
+  width:48%;
+  height:auto;
+  border-radius:var(--r);
+}
+
+/* ===== WHO SHOULD JOIN ===== */
+.eh-who{background:linear-gradient(180deg,#f8f8f8 0%,#fff 100%)}
+.eh-who-inner{text-align:center}
+.eh-who-img{
+  max-width:800px;
+  width:100%;
+  height:auto;
+  margin:0 auto;
+  display:block;
+  border-radius:var(--r);
+}
+
 /* ===== OVERVIEW BADGES ===== */
 .eh-overview{background:var(--white);padding-top:80px;padding-bottom:80px}
+.eh-overview-img{text-align:center;margin-bottom:48px}
+.eh-overview-img img{
+  max-width:960px;
+  width:100%;
+  height:auto;
+  border-radius:var(--r);
+}
 .eh-badges{
   display:flex;
   align-items:center;
@@ -832,18 +1073,28 @@ const grandOceanLessons = [
   color:var(--muted);
 }
 
-/* ===== SECTION HEADERS ===== */
-.eh-section-hdr{text-align:center;margin-bottom:56px}
-.eh-section-hdr h2{
+/* ===== SECTION BANNERS (with background images) ===== */
+.eh-banner{
+  padding:80px 60px;
+  text-align:center;
+  color:var(--white);
+}
+.eh-banner--blue{
+  background:linear-gradient(rgba(26,90,184,.8),rgba(13,27,42,.85)),url('/wp-assets/img/eccc/ec-heroes/heroes2_04_pc.jpg') center/cover no-repeat;
+}
+.eh-banner--gold{
+  background:linear-gradient(rgba(179,120,0,.75),rgba(42,30,10,.85)),url('/wp-assets/img/eccc/ec-heroes/heroes2_05_pc.jpg') center/cover no-repeat;
+}
+.eh-banner-in{max-width:700px;margin:0 auto}
+.eh-banner h2{
   font-size:clamp(24px,3.5vw,36px);
   font-weight:800;
-  color:var(--dark);
   line-height:1.4;
   margin-bottom:12px;
 }
-.eh-section-sub{
+.eh-banner-sub{
   font-size:15px;
-  color:var(--light);
+  color:rgba(255,255,255,.85);
   line-height:1.8;
 }
 
@@ -864,12 +1115,26 @@ const grandOceanLessons = [
   background:var(--white);
   border:1px solid var(--border);
   border-radius:var(--r);
-  padding:28px 24px;
+  overflow:hidden;
   transition:border-color .3s,box-shadow .3s;
 }
 .eh-card:hover{
   border-color:var(--red);
   box-shadow:0 4px 20px rgba(0,0,0,.06);
+}
+.eh-card-img{
+  width:100%;
+  height:180px;
+  overflow:hidden;
+}
+.eh-card-img img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+.eh-card-body{
+  padding:24px;
 }
 .eh-card-head{
   display:flex;
@@ -969,8 +1234,47 @@ const grandOceanLessons = [
   opacity:.5;
 }
 
+/* ===== STRENGTH ===== */
+.eh-strength{background:linear-gradient(180deg,#f8fbff 0%,#fff 100%)}
+.eh-strength-inner{
+  display:grid;
+  grid-template-columns:1.2fr 1fr;
+  gap:48px;
+  align-items:center;
+}
+.eh-strength-img img{
+  width:100%;
+  height:auto;
+  border-radius:var(--r);
+  box-shadow:0 8px 32px rgba(0,0,0,.1);
+}
+.eh-strength-text h2{
+  font-size:clamp(22px,3vw,32px);
+  font-weight:800;
+  color:var(--dark);
+  line-height:1.4;
+  margin-bottom:16px;
+}
+.eh-strength-desc{
+  font-size:15px;
+  color:var(--body);
+  line-height:2.2;
+}
+
 /* ===== FINAL CTA ===== */
 .eh-cta{background:var(--white)}
+.eh-cta-inner{
+  display:grid;
+  grid-template-columns:1fr 1.2fr;
+  gap:48px;
+  align-items:center;
+}
+.eh-cta-img img{
+  width:100%;
+  height:auto;
+  border-radius:var(--r);
+}
+.eh-cta-content{text-align:left}
 .eh-cta-title{
   font-size:clamp(24px,3vw,32px);
   font-weight:800;
@@ -987,16 +1291,28 @@ const grandOceanLessons = [
 .eh-cta-acts{
   display:flex;
   gap:12px;
-  justify-content:center;
   flex-wrap:wrap;
 }
 
 /* ===== RESPONSIVE ===== */
 @media(max-width:768px){
-  .eh-hero{padding:140px 24px 80px}
+  .eh-hero{
+    padding:140px 24px 80px;
+    background:linear-gradient(rgba(13,27,42,.8),rgba(13,27,42,.85)),url('/wp-assets/img/eccc/ec-heroes/heroes2_01_sp.jpg') center/cover no-repeat;
+  }
   .eh-grid{grid-template-columns:1fr}
   .eh-badges{flex-direction:column;gap:16px}
   .eh-badge-plus,.eh-badge-eq{font-size:22px}
   .eh-badge{min-width:auto;width:100%;max-width:280px}
+  .eh-credentials-grid{grid-template-columns:repeat(2,1fr)}
+  .eh-about-inner{grid-template-columns:1fr;gap:24px}
+  .eh-about-badges{flex-direction:column}
+  .eh-about-badges img{width:100%}
+  .eh-strength-inner{grid-template-columns:1fr;gap:24px}
+  .eh-cta-inner{grid-template-columns:1fr;gap:24px}
+  .eh-cta-content{text-align:center}
+  .eh-cta-acts{justify-content:center}
+  .eh-banner{padding:60px 24px}
+  .eh-card-img{height:140px}
 }
 </style>
