@@ -2,9 +2,10 @@
 import NewLayout from '../layouts/NewLayout.astro'
 
 const IMG_BASE = '/wp-assets/img/eccc/ec-heroes'
+const CACHE_BUST = '?v=20260417'
 
 const lessonImage = (num: number) =>
-  `${IMG_BASE}/curriculum/lesson_${String(num).padStart(2, '0')}.png`
+  `${IMG_BASE}/curriculum/lesson_${String(num).padStart(2, '0')}.png${CACHE_BUST}`
 
 const blueOceanLessons = [
   {
@@ -1065,10 +1066,10 @@ const grandOceanLessons = [
   color:var(--white);
 }
 .eh-banner--blue{
-  background:linear-gradient(rgba(26,90,184,.8),rgba(13,27,42,.85)),url('/wp-assets/img/eccc/ec-heroes/curriculum/banner_blue_ocean.png') center/cover no-repeat;
+  background:linear-gradient(rgba(26,90,184,.8),rgba(13,27,42,.85)),url('/wp-assets/img/eccc/ec-heroes/curriculum/banner_blue_ocean.png?v=20260417') center/cover no-repeat;
 }
 .eh-banner--gold{
-  background:linear-gradient(rgba(179,120,0,.75),rgba(42,30,10,.85)),url('/wp-assets/img/eccc/ec-heroes/curriculum/banner_grand_ocean.png') center/cover no-repeat;
+  background:linear-gradient(rgba(179,120,0,.75),rgba(42,30,10,.85)),url('/wp-assets/img/eccc/ec-heroes/curriculum/banner_grand_ocean.png?v=20260417') center/cover no-repeat;
 }
 .eh-banner-in{max-width:700px;margin:0 auto}
 .eh-banner h2{
