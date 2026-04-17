@@ -1,745 +1,1002 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
+import NewLayout from '../layouts/NewLayout.astro'
 
-const rawHtml = `
-<link href="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.css" rel="stylesheet">
-<code><script src="https://cdn.rawgit.com/michalsnik/aos/2.1.1/dist/aos.js"></script></code>
-<script>
-  AOS.init({
-    easing: 'ease-in-out-sine'
-  });
-</script>
-<section id="sub_contents">
-  <section class="ec-heroes heroes-online2">
-    <div class="sec01">
-      <h1><img src="/wp-assets/img/eccc/ec-heroes/heroes2_01_pc.jpg" alt="月商1,000万円を突破する｜オンライン講座＆ネットグループコンサル【ECヒーローズonline】"
-          srcset="/wp-assets/img/eccc/ec-heroes/heroes2_01_sp.jpg 767w,/wp-assets/img/eccc/ec-heroes/heroes2_01_pc.jpg">
-      </h1>
-      <div class="box-rltv">
-        <img src="/wp-assets/img/eccc/ec-heroes/heroes2_06.png" alt="価格争いに巻き込まれないで月商1,000万円をゼロからつくる27STEP【ECヒーローズ】"
-          class="image01">
-        <img src="/wp-assets/img/eccc/ec-heroes/heroes2_02_pc.jpg" alt="100社あるなら100通りの成功方法がある！【ECヒーローズ】ECコンサルカンパニー"
-          srcset="/wp-assets/img/eccc/ec-heroes/heroes2_02_sp.jpg 767w,/wp-assets/img/eccc/ec-heroes/heroes2_02_pc.jpg">
-        <div class="wrap950">
-          <p class="p50 fnt-m"><strong>100社あるなら<br>100通りの成功方法がある!</strong></p>
-        </div>
-      </div>
-      <h2><img src="/wp-assets/img/eccc/ec-heroes/heroes2_07.png" alt="こんな人は必ず参加すべき！【ECヒーローズ】ECコンサルカンパニー"></h2>
-    </div>
-    <div class="sec02">
-      <div class="ttl-wrap">
-        <img src="/wp-assets/img/eccc/ec-heroes/heroes2_03_pc.jpg" alt="ECヒーローズの運営会社【ECコンサルカンパニーの圧倒的な強み】"
-          srcset="/wp-assets/img/eccc/ec-heroes/heroes2_03_sp.jpg 767w,/wp-assets/img/eccc/ec-heroes/heroes2_03_pc.jpg">
-        <div class="wrap950">
-          <p class="p30" data-aos="fade-right">ECヒーローズの運営会社</p>
-          <h2 class="p50 fnt-m" data-aos="fade-left">ECコンサルカンパニーの圧倒的な強み</h2>
-        </div>
-      </div>
-      <div class="wrap950">
-        <div class="box-wrap">
-          <div class="left">
-            <img src="/wp-assets/img/eccc/ec-heroes/heroes2_08.jpg" alt="楽天市場3年連続総合3位【ECヒーローズ】ECコンサルカンパニー">
-          </div>
-          <div class="right">
-            <h3><img src="/wp-assets/img/eccc/ec-heroes/heroes2_09.jpg" alt="圧倒的な実績【ECヒーローズ】ECコンサルカンパニー"></h3>
-            <p>
-              ■<strong>楽天市場3年連続総合3位</strong>運営会社<br>■<strong>200社が年商1億円以上</strong>へ成長<br>■代表がECノウハウ本、<strong>三冊の著者</strong>
-            </p>
-          </div>
-        </div>
-        <div class="box-wrap">
-          <div class="right">
-            <img src="/wp-assets/img/eccc/ec-heroes/heroes2_10.jpg" alt="一般社団法人ジャパンEコマースコンサルタント協会・
-                    一般社団法人日本イーコマース学会【ECヒーローズ】"></div>
-          <div class="left">
-            <h3><img src="/wp-assets/img/eccc/ec-heroes/heroes2_11.jpg" alt="圧倒的な信頼【ECヒーローズ】ECコンサルカンパニー"></h3>
-            <table>
-              <tr>
-                <th>■2013年</th>
-                <td>一般社団法人ジャパンEコマースコンサルタント協会設立、代表が専務理事<br>日本の海外の最新事例の情報が集約、ECコンサルタントのネタ元</td>
-              </tr>
-              <tr>
-                <th>■2017年</th>
-                <td>一般社団法人日本イーコマース学会設立、代表が専務理事<br> 中小企業と産学連携のエビデンス付き商品開発するプラットフォーム</td>
-              </tr>
-            </table>
-          </div>
-        </div>
-        <div class="box-wrap">
-          <div class="left">
-            <img src="/wp-assets/img/eccc/ec-heroes/heroes2_12.jpg" alt="幅広いサポート領域【ECヒーローズ】ECコンサルカンパニー">
-          </div>
-          <div class="right">
-            <h3><img src="/wp-assets/img/eccc/ec-heroes/heroes2_13.jpg" alt="圧倒的な支援幅【ECヒーローズ】ECコンサルカンパニー"></h3>
-            <p>
-              商品開発、webマーケティング、制作、経営まで<strong>1000社をフルカスタマイズで支援してきた会社だからできるサポート領域。</strong>ネットのマーケティングやノウハウだけに収まらない。講座の内容はメンタル、ビジネススキルにも及びます。
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sec03">
-      <div class="wrap950">
-        <h2 class="p60">実績の一例</h2>
-        <p class="p36"><strong>このノウハウが凝縮されたオンライン講座です</strong></p>
-        <img src="/wp-assets/img/eccc/ec-heroes/heroes2_14.png" alt="売上約253万円アップ【ECヒーローズ】ECコンサルカンパニー">
-        <p>※これらの数値は標準偏差で求めています。</p>
-        <img src="/wp-assets/img/eccc/ec-heroes/heroes2_15_pc.png" alt="売上標準偏差グラフ【ECヒーローズ】ECコンサルカンパニー"
-          srcset="/wp-assets/img/eccc/ec-heroes/heroes2_15_sp.png 767w,/wp-assets/img/eccc/ec-heroes/heroes2_15_pc.png">
-        <a href="/wp-assets/img/eccc/ec-heroes/heroes2_05_pc.jpg" class="btn colorbox pc" rel="image-pc" rel="lightbox[5120]">業種別売上・アップ率を見る</a>
-<a href="/wp-assets/img/eccc/ec-heroes/heroes2_05_sp.jpg" class="btn colorbox sp"  rel="image-sp" rel="lightbox[5120]">業種別売上・アップ率を見る</a>
-      </div>
-    </div>
-    <div class="sec04">
-      <div class="wrap950">
-        <div class="bg">
-          <h2 class="p50 fnt-m" data-aos="fade-up">過去のメディア掲載履歴</h2>
-          <div class="box-wrap">
-            <div class="txt">
-              <p>■新聞：日経新聞/日経MJ/読売新聞/各地方新聞<br>■テレビ：NHK　首都圏ネットワーク/テレビ東京　WBS<br>■ラジオ：J-WAVE/TBSラジオ<br>
-                ■雑誌：THE21/東洋経済/プレジデント<br>■専門誌：日本ネット経済新聞/通販新聞/月刊ネット販売<br>他WEBメディア多数</p> <a id="69ca105247036" rel="wp-video-lightbox" href="https://www.youtube.com/watch?v=QxCVgxCdG4M&width=950&height=547" title=""><img src="/wp-assets/img/eccc/ec-heroes/heroes2_18.jpg" class="video_lightbox_anchor_image" alt="ECの未来インタビュー：これからのECで実績を上げるには？【ECヒーローズ】ECコンサルカンパニー" /></a>    <script>
-    /* <![CDATA[ */
-    jQuery(document).ready(function($){
-        $(function(){
-            var width = $(window).innerWidth();
-            var setwidth = 950;
-            var ratio = 0.57578947368421;
-            var height = 547;
-            var link = 'https://www.youtube.com/watch?v=QxCVgxCdG4M&width=950&height=547';
-            if(width < setwidth)
-            {
-                height = Math.floor(width * 0.57578947368421);
-                //console.log("device width "+width+", set width "+950+", ratio "+0.57578947368421+", new height "+ height);
-                var new_url = wpvl_paramReplace('width', link, width);
-                var new_url = wpvl_paramReplace('height', new_url, height);
-                $("a#69ca105247036").attr('href', new_url);
-                //console.log(new_url);
-            }    
-        });
-    });
-    /* ]]&gt; */
-    </script>        
-            </div>
-            <div class="image"><img src="/wp-assets/img/eccc/ec-heroes/heroes2_19.jpg" alt="メディア掲載履歴【ECヒーローズ】ECコンサルカンパニー">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sec05">
-      <div class="wrap950">
-        <div class="bg">
-          <h2 class="p50 fnt-m" data-aos="fade-up">著　書</h2>
-          <div class="box-wrap">
-            <div class="txt">
-              <p>■Shopで1億円儲ける!<br>■プロが教える! 売上が大幅アップするメールマガジンの法則<br>■億稼ぐ脳のつくり方 <br>■他ムック本共著多数</p>
-            </div>
-            <div class="image">
-              <img src="/wp-assets/img/eccc/ec-heroes/heroes2_20.jpg" alt="著書【ECヒーローズ】ECコンサルカンパニー"><img
-                src="/wp-assets/img/eccc/ec-heroes/heroes2_21.jpg" alt="著書：億稼ぐ脳のつくり方【ECヒーローズ】ECコンサルカンパニー"><img
-                src="/wp-assets/img/eccc/ec-heroes/heroes2_22.jpg"
-                alt="著書：プロが教える！売上が大幅アップするメールマガジンの法則【ECヒーローズ】ECコンサルカンパニー"><img
-                src="/wp-assets/img/eccc/ec-heroes/heroes2_23.jpg" alt="著書：E・Shopで1億円設ける！【ECヒーローズ】ECコンサルカンパニー">
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sec06">
-      <div class="wrap950">
-        <h2><img src="/wp-assets/img/eccc/ec-heroes/heroes2_24.png" alt="ECヒーローズとは｜ECコンサルカンパニー"></h2>
-        <p class="p36"><strong>メールによるオンライン講座と<br>ネット会議によるグループコンサルがセットになった<br><span
-              class="marker">月商1000万円をガチで目指す講座です。</span></strong></p>
-        <div class="box-wrap">
-          <div class="image"><img src="/wp-assets/img/eccc/ec-heroes/heroes2_25.jpg"
-              alt="月商1,000万円をガチで目指す講座【ECヒーローズ】ECコンサルカンパニー"></div>
-          <div class="txt">
-            <p>この講座は月商100万円を確実に達成するための基礎講座ブルーオーシャン編と月商1000万円を突破するための実践講座グランドオープン編の2部構成になっております。<br>
-              もうすでに月商100万円を超えている方も、<span
-                class="bld">土台がしっかりできていないと月商1000万円には届きません。</span><br>中途半端で継ぎ足し継ぎ足しで拡大した屋台骨はもろく崩れます。
-              <br>取り返しがつかなくなる前にしっかり基礎を勉強し、土台を組み替えてください。</p>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sec07">
-      <div class="ttl-wrap">
-        <h2 class="p60" data-aos="fade-right">講座内容</h2>
-        <p class="bld" data-aos="fade-left">すべてのカリキュラムが1000行を超えるボリューム講座になっています。</p>
-      </div>
-      <div class="wrap950">
-        <h3 class="p36">基礎講座　ブルーオーシャン編</h3>
-        <div class="point-wrap p1">
-          <div class="icon"><img src="/wp-assets/img/eccc/ec-heroes/heroes2_26.png"
-              alt="ブルーオーシャン編POINT【ECヒーローズ】ECコンサルカンパニー">
-          </div>
-          <div class="txt">
-            <p>講座の課題を埋めるだけでもどうすればいいのか？<br> 自ずとわかるような自己感知システムを採用。<br>
-              もしわからないことがあれば、毎週のグループコンサルでしっかり学べるようにしていきますので、ご安心ください。<br> 課題をクリアしてレベルアップしていかないと次のステージに進みませんので、<br>
-              頑張ってください。<br> 基礎編といえど、完全理解している人はほとんどいないはずです。<br> 大いなる気づきを保証します。</p>
-          </div>
-        </div>
-        <div class="course-wrap p1">
-          <div class="num">
-            <p>第0回</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>ECヒーローズの進め方</strong></p>
-            <p>世界観の説明、講座の特徴、講座の進め方、ルール、モチベーションアップを前半戦、後半戦で実際どのような運営をしているのかヒアリングします。</p>
-          </div>
-        </div>
-        <div class="course-wrap p1">
-          <div class="num">
-            <p>第1講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>あなたのビジネスに焦点を当てる　～まずは己を知ろう～</strong></p>
-            <p>分析の必要性を知り、7パターンの自社分析と4パターンの競合比較の手法を学び自社に落とし込んでいく。</p>
-          </div>
-        </div>
-        <div class="course-wrap p1">
-          <div class="num">
-            <p>第2講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>竜骨をつくる　～選ばれるお店になるために～</strong></p>
-            <p>コンセプトとは何か？定義をきっちり理解した上で、第1週で導き出した差別化、優位性だけではなく、競合をきっちり分析して、お客様に選ばれるコンセプトを構築する。</p>
-          </div>
-        </div>
-        <div class="course-wrap p1">
-          <div class="num">
-            <p>第3講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>刃を研ぐ　～商品に共感してもらう～</strong></p>
-            <p>商品の分析をまた再び7つの切り口で行う。<br>コストに関しても考え方を学ぶ。 </p>
-          </div>
-        </div>
-        <div class="course-wrap p1">
-          <div class="num">
-            <p>第4講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>スキルアップ・キャッチ＆ライティング　～感動してもらおう～</strong></p>
-            <p>5つキャッチコピーのパターンを学び心理学を応用した書き方、セールスレターの基礎、参考資料など文章に関して一通りの知識を習得し実践する。</p>
-          </div>
-        </div>
-        <div class="course-wrap p1">
-          <div class="num">
-            <p>第5講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>圧倒的な情報量、そしてお客様の視点　～いい感じのデザイン～</strong></p>
-            <p> 売れるホームページの3要素、UXの概念など組み込んだサイトづくり、色でお客様の印象を変え、ECサイト必要な基本情報、商品情報、かご落ち率、ベンチマークテクニック</p>
-          </div>
-        </div>
-        <div class="course-wrap p1">
-          <div class="num">
-            <p>第6講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>簡単スマホ撮影・徹底SEO　～人間とコンピュータの間で～</strong></p>
-            <p>売れる写真の撮り方、SEOを意識したページ作り、内部、外部対策、構造、キーワードマップ。 Amazon、楽天、yahoo！</p>
-          </div>
-        </div>
-        <div class="course-wrap p1">
-          <div class="num">
-            <p>第7講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>費用対効果が悪いリスティングはやり方が悪い　～広告でちゃんと売る～</strong></p>
-            <p> リスティング広告の種類と攻め方、キーワード選定とランディングページ（LP）の考え方、作り込み方</p>
-          </div>
-        </div>
-        <div class="course-wrap p1">
-          <div class="num">
-            <p>第8講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>お客様と商売の概論　～お客様からファン、アンバサダーへ～</strong></p>
-            <p>問い合わせ、接客、アフターフォロー、同梱物、ＤＭ、ポイントプログラム、オフ会、コミュニティなどを使ってファン、アンバサダーマーケティングまで</p>
-          </div>
-        </div>
-        <div class="course-wrap p1">
-          <div class="num">
-            <p>第9講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>最も効果的な販促活動　～なぜ、メルマガを発行しない？読まれない？～</strong></p>
-            <p>基本ルールとレイアウト、継続して読まれる、売るメルマガのテクニック</p>
-          </div>
-        </div>
-        <div class="course-wrap p1">
-          <div class="num">
-            <p>第10講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>究極の想像シナリオ　～ステップメールでお客様の心を開かせる～</strong></p>
-            <p> 商品ごとにシナリオをつくりファンになってもらうための考え方とフレームテクニック </p>
-          </div>
-        </div>
-        <div class="course-wrap p1">
-          <div class="num">
-            <p>第11講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>ブルーオーシャン編　まとめ</strong></p>
-            <p>学んだスキルをどう使うのか</p>
-          </div>
-        </div>
-        <div class="note"><img src="/wp-assets/img/eccc/ec-heroes/heroes2_30.png" alt="エキスパートの称号【ECヒーローズ】ECコンサルカンパニー">
-          <p class="p24 bld">ECヒーローズ　エキスパートの称号をもらえます</p>
-          <img src="/wp-assets/img/eccc/ec-heroes/heroes2_31.png" alt="エキスパートの称号【ECヒーローズ】ECコンサルカンパニー">
-        </div>
-        <h3 class="p36">実践講座　グランドオーシャン編</h3>
-        <div class="point-wrap p2">
-          <div class="icon"><img src="/wp-assets/img/eccc/ec-heroes/heroes2_28.png"
-              alt="グランドオーシャン編POINT【ECヒーローズ】ECコンサルカンパニー">
-          </div>
-          <div class="txt">
-            <p>成功の方程式はある。<br><br> その方程式に自分をはめ込んでいく習慣を身につける。<br><br> 自分なりのやり方では成功確率はものすごく低いです。<br> 自己流方程式は推奨しません。<br><br>
-              ただし、成功の方程式にのっとった自己流、自己表現は必須です！<br> 100人いたら100通りあります。<br><br>
-              実際、学んだことを仕事に取り込みながら毎日運営し、毎週売上げ報告を行っていきます。<br><br> すべては数字が物語る。<br> 行動は数字が物語る。<br> 思いは数字が物語る。<br><br>
-              あなたのオリジナルストーリーで月商1000万円突破しましょう！</p>
-          </div>
-        </div>
-        <div class="course-wrap p2">
-          <div class="num">
-            <p>第12講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>コンサルタントに聞くな　～UU×CVR×AVEの方程式じゃ売れない～</strong></p>
-            <p>なぜ？売上げの方程式が崩壊しているのか？ <br>きっちり、売上げを上げるメカニズムを解説し実行スキルをあげるためのノウハウを学びます。 </p>
-          </div>
-        </div>
-        <div class="course-wrap p2">
-          <div class="num">
-            <p>第13講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>なぜ長期目標が達成されないか？　～効果的な目標管理～</strong></p>
-            <p>左脳（スケジュール）＋右脳（ビジュアル化） <br>得意不得意がありますが、両方できるとそれは当然いいわけです。それぞれのロジックがありますのできちんと学び実施して頂きます。</p>
-          </div>
-        </div>
-        <div class="course-wrap p2">
-          <div class="num">
-            <p>第14講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>問題解決のための因数分解　～サイト、顧客、商品分析で自社分析と改善施策～</strong></p>
-            <p>現状を分析　左脳（アクセス分析、顧客管理、他）＋右脳（ゲットザフューチャー）<br>
-              きちんと左脳と右脳の現状分析を行いつつ、顧客視点、原点立ち戻り、離脱買わない理由、商品から戦略、戦術などゼロベースの見直しも視野に入れた分析を行います。</p>
-          </div>
-        </div>
-        <div class="course-wrap p2">
-          <div class="num">
-            <p>第15講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>お金や人材がそろっていれば月商1000万円突破するのか？　～努力の仕方、不安の乗り越え方、未来の向き方を知る～</strong></p>
-            <p>月商1000万円の道のりをECヒーローズの仲間が達成したその日々の行動と心理状態を赤裸々に伝えます。 <br>メールラッシュ実践編　1</p>
-          </div>
-        </div>
-        <div class="course-wrap p2">
-          <div class="num">
-            <p>第16講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>あなたは未来を信じるか？　～コミットメントの仕事仕方を学ぶ～</strong></p>
-            <p> 第15講座のメールラッシュの振り返りと解説を行います。 <br>ここから毎月の毎週の売上げ報告を行っていただきます。 <br>実際自分と他の仲間とはどう違うのかしっかり考えて頂きます。</p>
-          </div>
-        </div>
-        <div class="course-wrap p2">
-          <div class="num">
-            <p>第17講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>悪魔との契約か？　～集客チャネル拡大、越境、モールノウハウ～</strong></p>
-            <p>販路拡大＝業務増大＝業務煩雑にならないためにどう合理的に進めていくのか？ 実際の成功事例とともに、自社はどうやっているのか？<br>引き続き売上げ報告実践会</p>
-          </div>
-        </div>
-        <div class="course-wrap p2">
-          <div class="num">
-            <p>第18講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>一人では目標は達成しない　～レバレッジの効くマネジメント～</strong></p>
-            <p> ディレクション、プロデュースの手法をきっちり理解してマインドセット、及び今までの考え方のマインドセット。<br>業務のやり方を改善。<br>
-              今自分のレベルをみるための他社のケース別コンサル状況を見てみる。<br>引き続き売上げ報告実践会。</p>
-          </div>
-        </div>
-        <div class="course-wrap p2">
-          <div class="num">
-            <p>第19講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>効率的ではなく効果的な仕事術　～省力化、タスクマネジメント～ </strong></p>
-            <p>売上げ100万円と1000万円はエネルギー量を対応するため7つの習慣、おすすめツールを駆使してエネルギーとお客様の関係をエンゲージメントさせていく。<br>引き続き売上げ報告実践会</p>
-          </div>
-        </div>
-        <div class="course-wrap p2">
-          <div class="num">
-            <p>第20講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>人間の持つ能力を最大限に活かす　～脳、潜在意識、目に見えない力を操る～ </strong></p>
-            <p>人間の活用されていない脳を20％活用するだけで、一気に目標達成が近づいてきます。奥義中の奥義の習得をこれから初めていきます。<br>売上げ＋行動報告</p>
-          </div>
-        </div>
-        <div class="course-wrap p2">
-          <div class="num">
-            <p>第21講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>点と点を線で結ぶ　～究極のメンタルマネジメント～ </strong></p>
-            <p>実践できていない様々なことをどうやったら実践できるのか？　未来軸にコミットし不安と恐怖に押しつぶされないためには。 <br>次から次と起きてくるトラブルにどう押しつぶされないで進めるのか？
-              <br>メールラッシュ実践編2 <br>売上げ＋行動報告</p>
-          </div>
-        </div>
-        <div class="course-wrap p2">
-          <div class="num">
-            <p>第22講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>お客様のアイデンティティーに気づけ　～ファンコミュニティへの進化～ </strong></p>
-            <p>人間とは……。哲学が人間の本質に気づきを与え、尊厳を与える。 <br>売上げ目標に果敢に挑戦してる生の行動と心を見て解説します。 <br>メールラッシュ解説2 <br>売上げ行動報告</p>
-          </div>
-        </div>
-        <div class="course-wrap p2">
-          <div class="num">
-            <p>第23講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>最後、達成するのか？月末期日のその先に……　～成し遂げた人とそうでないものの違い～ </strong></p>
-            <p>資金繰りも同じ、ページ制作も同じ。目標に期限があるものはすべて同じ。ゴールから逆算とはリアル体験をもとに自身の経験と捉えてください。 <br>メールラッシュ実践編3 <br>売上げ行動報告</p>
-          </div>
-        </div>
-        <div class="course-wrap p2">
-          <div class="num">
-            <p>第24講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>達成した勇者たちの数々の瞬間　～ECヒーローズの誕生～ </strong></p>
-            <p>自分の熱い思いがすべて叶ったとき……。 <br>自分の切望した夢がすべて叶ったとき……。 <br>人は感謝で涙が溢れてきます。ぜひ自身の体験としてシンクロしていただきます。 <br>メールラッシュ解説3<br>
-              忘れてはいけない、資金繰りの数字、売上げとコストと利益の話</p>
-          </div>
-        </div>
-        <div class="course-wrap p2">
-          <div class="num">
-            <p>第25講座</p>
-          </div>
-          <div class="txt">
-            <p class="ttl"><strong>グランドオーシャン編　まとめ </strong></p>
-            <p>人生を幸せにするスキル</p>
-          </div>
-        </div>
-        <div class="note"><img src="/wp-assets/img/eccc/ec-heroes/heroes2_30.png" alt="マスターの称号【ECヒーローズ】ECコンサルカンパニー">
-          <p class="p24 bld">ECヒーローズ　マスターの称号をもらえます</p>
-          <img src="/wp-assets/img/eccc/ec-heroes/heroes2_31.png" alt="マスターの称号【ECヒーローズ】ECコンサルカンパニー">
-        </div>
-      </div>
-    </div>
-    <div class="sec08">
-      <div class="txt-wrap">
-        <h2 class="p60">講座の流れ及びルール</h2>
-        <h3 class="p36">■講座の流れ</h3>
-        <p>講座の内容は全25回のメールによるオンライン講座と週１回のオンライングループコンサルです。</p>
-        <h3 class="p36">■オンライン講座</h3>
-        <p>
-          ゲーム感覚で楽しく学べる全26回のオンライン講座です。穴埋め式の問題集をメールにてお送りしますので解答を自分で調べて返信ください。自分で調べることで早く知識が身につきます。返信いただいたメールは添削して再送付しますので確認しましょう。そして、それを自分のショップに反映してください。回を重ねるごとに自然に自分とショップがレベルアップしていく仕組みになっています。
-        </p>
-        <h3 class="p36">■グループコンサル</h3>
-        <p>
-          講座でどうしてもわからない、なぜそうなのか詳しく聞きたい等、疑問などは週１回のネット上での講習会で質問や相談ができます。他の人が抱く疑問点などはいずれ自分にも当てはまるケースも多いので、質問・相談がない場合でも参加いただくことを推奨しています。
-        </p>
-        <h3 class="p36">■ルール</h3>
-        <p>各講座ごとに課題があります。<br> 課題を1つ回答する度に経験値1あがります。<br> 経験値が一定量を超えるとレベルが上がります。<br>
-          きちんと課題をクリアするとレベルがあがり次の講座にステップアップしていきます。<br> 進捗目標は、2週間に１講座のペースが無理なく進めておすすめで、約５ヶ月で基礎編がマスターできるようになっています。</p>
-      </div>
-    </div>
-    <div class="sec09">
-      <div class="wrap950">
-        <h2 class="p60">受講生の声</h2>
-        <div class="box-wrap box01">
-          <div class="image"><img src="/wp-assets/img/eccc/ec-heroes/heroes2_32.jpg" alt="受講生の声：D様【ECヒーローズ】ECコンサルカンパニー">
-            <p class="p24"><span class="p36">D</span>様　飲料販売</p>
-          </div>
-          <div class="txt">
-            <div class="txt-inner">
-              <h3 class="p36">2ヶ月で100万円を達成してしまいました！</h3>
-              <p>えとコミ塾の受講3ヶ月目になります。 <br>僕は100万が目標だったのですが、なんと2ヶ月目で100万になってしまいました。</p>
-              <span class="btn">続きを読む</span>
-              <p class="hide">あと2ヶ月あるのですが、次の目標をどうしようかな、と思っているところです。（笑）<br>この即効性は凄いなぁとびっくりしています。このまま、どこまで伸ばせるか楽しみです。</p>
-            </div>
-            <img src="/wp-assets/img/eccc/ec-heroes/heroes2_33.png" alt="受講後の売上推移：D様【ECヒーローズ】ECコンサルカンパニー">
-          </div>
-        </div>
-        <div class="box-wrap box02">
-          <div class="image"><img src="/wp-assets/img/eccc/ec-heroes/heroes2_34.jpg" alt="受講生の声：S様【ECヒーローズ】ECコンサルカンパニー">
-            <p class="p24"><span class="p36">S</span>様　車用品販売</p>
-          </div>
-          <div class="txt">
-            <div class="txt-inner">
-              <h3 class="p36">全然売れなかった商品が売れるように！</h3>
-              <p>入社した当初は、売上のことは何も考えていなくて、いっぱいいっぱいだったのですが、社長と一緒に具体的な目標を決めていくうちに、「やらなくちゃ」という、すごい</p>
-              <span class="btn">続きを読む</span>
-              <p class="hide">
-                責任感みたいなものが出てきて、やはり、漠然とものごとを進めるよりも、目標を設定して、それに向かって計画を立ててやるほうが目標を達成できるということを、身をもって実感しました。<br><br>
-                最初は、自分一人で自社サイトの構築を試みたのですが、うまくいきませんでした。楽天市場のの初日、知り合いが何人か買い物をしてくれただけで、その後はずっとゼロ行進、売上が全くない状態がずっと続いていて、半年運営しても月商は20万円くらい。何度もやめようと思いました。<br><br>
-                その頃えとコミ塾に出会いました。当時の売上は一部の単価の高い商品がヒット商品となってできたことだったのですが、今回の100万達成というのは、その、一部のヒット商品だけではなくて、いろいろな種類の商品が売れて、結果として100万円という売上を達成することができたのです。<br><br>
-                ホームページの中で、少しのことを書いただけでも一気に注文が増えたりして、たくさんの種類の商品を、少しずつですが増やしていって、最初は全然売れなかった商品も不思議と売れるようになってきました。<br><br>
-                何も売れなくて落ち込んだ時期、それでもめげずに何がいけないのか、どうしたら売れるようになるのかを、常にプラス思考で、がんばって心がけてきました。 </p>
-            </div>
-            <img src="/wp-assets/img/eccc/ec-heroes/heroes2_34.png" alt="受講後の売上推移：S様【ECヒーローズ】ECコンサルカンパニー">
-          </div>
-        </div>
-        <ul class="accordion2">
-          <li>
-            <div class="box-brdr"> <img src="/wp-assets/img/eccc/ec-heroes/heroes2_35.png"
-                alt="受講生の声：N様【ECヒーローズ】ECコンサルカンパニー">
-              <p class="name"><span class="p35">N</span><span class="p25">様（酒類販売） </span></p>
-              <p>「おかげさまで今月のネットでの売上が初めて100万円を越えました。100万を超えたことに</p>
-              <p class="btn">続きを読む</p>
-              <div class="hide">
-                <p>より、見えてくる問題点がありましたので非常に勉強になりましたね。<br> 瞬間風速的に超えたのではなく、恒久的に上昇させていきたいと思いますので、これからも頑張っていきたいと思います。<br>
-                  どうぞ、よろしくお願いいたします。</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="box-brdr"> <img src="/wp-assets/img/eccc/ec-heroes/heroes2_36.png"
-                alt="受講生の声：A様（革製品）【ECヒーローズ】ECコンサルカンパニー">
-              <p class="name"><span class="p35">A</span><span class="p25">様（革製品） </span></p>
-              <p>この、通信講座は本当に、満足度100％ですよ。 講座は、より上をめざしているので、私</p>
-              <p class="btn">続きを読む</p>
-              <div class="hide">は気に入っていますし、レザーハウスの方向性も前よりハッキリしてきたと思います。<br>
-                通信講座のおかげで、数字を把握して、計画をたて、やらなければ、と思う方向性もでてきたし、やっていなかったことだらけなので、感謝しています。</div>
-            </div>
-          </li>
-          <li>
-            <div class="box-brdr"> <img src="/wp-assets/img/eccc/ec-heroes/heroes2_37.png"
-                alt="受講生の声：T様（アパレル）【ECヒーローズ】ECコンサルカンパニー">
-              <p class="name"><span class="p35">T</span><span class="p25">様（アパレル） </span></p>
-              <p>「丁寧な指摘ありがとうございました。」<br> 「具体的でポイントが分かりやすく、何をすれ</p>
-              <p class="btn">続きを読む</p>
-              <div class="hide">
-                <p>ばいいのか分かりました」<br> 「自分のビジネスをこんなに多くの面から見つめなおしたことはありませんでした。<br> 頑張ってついてゆきます」</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="box-brdr"> <img src="/wp-assets/img/eccc/ec-heroes/heroes2_38.png"
-                alt="受講生の声：K様（食肉加工品） 【ECヒーローズ】ECコンサルカンパニー">
-              <p class="name"><span class="p35">K</span><span class="p25">様（食肉加工品） </span></p>
-              <p>受講するまで、商品のことを知っている「つもり」でした。</p>
-              <p class="btn">続きを読む</p>
-              <div class="hide">
-                <p> 直接商品を作った人に伺ったわけでもなく。確かな情報を目で確認したわけでもなく、こうだろう・・・・どいう想像で、解釈していたことが非常に多かったことを身をもって感じました。<br>
-                  また、商品に関する情報を得ても、それを自分のショップで公開していなかった。<br> 反省すべき点、今後、改善すべき点が沢山見えてきました。</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="box-brdr"> <img src="/wp-assets/img/eccc/ec-heroes/heroes2_39.png"
-                alt="受講生の声：S様（スポーツ）【ECヒーローズ】ECコンサルカンパニー">
-              <p class="name"><span class="p35">S</span><span class="p25">様（スポーツ） </span></p>
-              <p>まさに受講中に売り上げが3倍になりました。（あまり、まじめな生徒じゃないのに……）</p>
-              <p class="btn">続きを読む</p>
-              <div class="hide">
-                <p> これを機にどんどん売り上げを伸ばせるようがんばります。</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="box-brdr"> <img src="/wp-assets/img/eccc/ec-heroes/heroes2_40.png"
-                alt="受講生の声：W様（文房具）【ECヒーローズ】ECコンサルカンパニー">
-              <p class="name"><span class="p35">W</span><span class="p25">様（文房具） </span></p>
-              <p>私はここで独りの世界に入り込んでいて、地域的、俗世間と違うことで孤独でした(;_;)</p>
-              <p class="btn">続きを読む</p>
-              <div class="hide">
-                <p> どうしても田舎で孤立しているとだんだん不安になってきます。どうしても地域アナログに生活の基盤が出来てしまっていて、ネットビジネスの自覚が遠ざかって行くことが多々あります。<br>
-                  読んでいてネットビジネスの交流というか、自分がそこの空気を吸えたような感覚で、ネットビジネスを実感しました。<br> ありがとうございます。<br> 何度も読み返し、自分のものにします(^.^) </p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="box-brdr"> <img src="/wp-assets/img/eccc/ec-heroes/heroes2_41.png"
-                alt="受講生の声：Y様（シューズ）【ECヒーローズ】ECコンサルカンパニー">
-              <p class="name"><span class="p35">Y</span><span class="p25">様（シューズ） </span></p>
-              <p>ネット通販を始めたばっかりなので、送られてきた講座内容は知らなかったことが満載で、読</p>
-              <p class="btn">続きを読む</p>
-              <div class="hide">
-                <p>むだけでものすごく勉強になりました。<br> 事務所のみんなで課題の勉強会をし、内容の深さに感心しながらまじめにやってました。<br>
-                  これまでとりあえずネット通販を始めては見たものの、自分自身でも何がしたいのか良く分からなかったのですが、おかげでこれから何をやるべきかが見えてきました。<br>
-                  その方針に進むように、いま徐々にページを作り変えています。ネット通販始めたばっかりのこの時期に、お世話になれて本当にラッキーだと感謝致しております。　</p>
-              </div>
-            </div>
-          </li>
-          <li>
-            <div class="box-brdr"> <img src="/wp-assets/img/eccc/ec-heroes/heroes2_42.png"
-                alt="受講生の声：K様（雑貨）【ECヒーローズ】ECコンサルカンパニー">
-              <p class="name"><span class="p35">K</span><span class="p25">様（雑貨） </span></p>
-              <p>自分では、それなりにがんばっているつもりだったのですが、ほんとに「それなり」と云</p>
-              <p class="btn">続きを読む</p>
-              <div class="hide">
-                <p>うことがわかりました。<br> ひとつひとつの課題を、半分も消化できないことにはがゆさを覚えながらも、少しは成長できたかもといううれしい気持ちも味わっています。<br>
-                  また、最初から読み直して取り組んでいくつもりです。<br> いえ、取り組みます！<br> それも「できるだけ早く」(^^)　本当にありがとうございました。</p>
-              </div>
-            </div>
-          </li>
-        </ul>
-      </div>
-    </div>
-    <div class="sec10">
-      <div class="ttl-wrap">
-        <img src="/wp-assets/img/eccc/ec-heroes/heroes2_04_pc.jpg" alt="成功を目指すあなたがやるべき理由｜メリットまとめ【ECヒーローズ】ECコンサルカンパニー"
-          srcset="/wp-assets/img/eccc/ec-heroes/heroes2_04_sp.jpg 767w,/wp-assets/img/eccc/ec-heroes/heroes2_04_pc.jpg">
-        <div class="wrap950">
-          <h2 class="p50 fnt-m" data-aos="fade-right">成功を目指すあなたがやるべき理由</h2>
-          <p class="p30" data-aos="fade-left">メリットまとめ</p>
-        </div>
-      </div>
-      <div class="txt-wrap">
-        <img src="/wp-assets/img/eccc/ec-heroes/heroes2_44.png" alt="やるべき理由01【ECヒーローズ】ECコンサルカンパニー">
-        <h3 class="p36">月商1000万円→年商1億円<br>行きたくないですか？</h3>
-        <p>ここまで実績があり丁寧に指導してくれる講座はどこにもありません。<br><span class="bld">自力でいく自信がないならば、参加すべき</span>です。</p>
-        <img src="/wp-assets/img/eccc/ec-heroes/heroes2_45.png" alt="やるべき理由02【ECヒーローズ】ECコンサルカンパニー">
-        <h3 class="p36">月商100万円大変です。と思ってる人の指導は受けてはいけません。</h3>
-        <p>月商1000万円はかなりヤバイです。という人には近づいてはだめです。ネットショップ大変だと思ってる人とつるんじゃダメです。 <br>この講座は<span
-            class="bld">月商1000万円突破する講座です。</span></p>
-        <img src="/wp-assets/img/eccc/ec-heroes/heroes2_46.png" alt="やるべき理由03【ECヒーローズ】ECコンサルカンパニー">
-        <h3 class="p36">1年たってるあなたの売上げを想像してください。</h3>
-        <p>月商1000万円達成してますか？ <br>この講座を受講して月商1000万円達成してる確率は受講してない1年後より高いですか？</p>
-        <img src="/wp-assets/img/eccc/ec-heroes/heroes2_47.png" alt="やるべき理由04【ECヒーローズ】ECコンサルカンパニー">
-        <h3 class="p36">あなたは今のお金を何に投資しますか？</h3>
-        <p><span class="bld">広告に投資しますか？</span><br> メディアと代理店にとられておしまいです。ずっとドブにお金を流し続けています。<br> <span
-            class="bld">ホームページのリニューアルに投資しますか？</span><br> 制作会社にとられておしまいです。<br><br> 売上げが上がりますか？<br> なぜ<span
-            class="bld">自分に投資しないのですか？</span><br> この講座で得た知識とスキルはあなたの一生の財産になります。<br>
-          物やお金は奪えますし無くなりますし壊れます。でもあなたの経験や知識は何人たりとも奪えない。一生あなたのものです。<br> この講座には<span
-            class="bld">一生の財産になる素晴らしい知識と経験が詰め込まれています。</span></p>
-      </div>
-    </div>
-    <div class="sec11">
-      <div class="wrap950">
-        <div class="txt_center">
-          <img src="/wp-assets/img/eccc/ec-heroes/heroes_04.gif" alt="無料体験入学【ECヒーローズ】ECコンサルカンパニー"
-            class="btm_mar20 icon">
-          <h2 class="p36">無料体験入学</h2>
-        </div>
-        <div class="txt-wrap">
-          <p>本気で取り組みたいがどうしようか悩んでいる方のために、第0回ガイダンス、第1回講座とオンライングループ講習（質疑応答大会）の無料体験をご用意しました。</p>
-        </div>
-        <a href="/echeroes-trial-form/" class="btn-next p40 mb140">無料体験入学を<br class="sp">申し込む</a>
-      </div>
-    </div>
-    <div class="sec12">
-      <div class="wrap950">
-        <h2 class="p60">よくある質問</h2>
-        <div class="faq-wrap">
-          <div class="q"><span class="icon">Q</span>
-            <h3>自分の実力でついて行けますか？</h3>
-          </div>
-          <div class="a-wrap">
-            <div class="a"><span class="icon">A</span>
-              <p>講座の内容や単語、やり方がわからない場合は、メール、電話、ネット会議などマンツーマンで対応させていただきます。<br> やる気がある人を絶対見放しません。<br> よきメンターになりたい。<br>
-                いつも寄り添う気持ちでサポートさせて頂きます。 </p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-wrap">
-          <div class="q"><span class="icon">Q</span>
-            <h3>時間はどれくらいかかりますか？</h3>
-          </div>
-          <div class="a-wrap">
-            <div class="a"><span class="icon">A</span>
-              <p>設定では、ネットショップを運営しながら、勉強していただくために、2週間に1講座をすすめる難易度で設定しております。つまり、13ヶ月で卒業ということになります。<br> 課題の進捗は人それぞれです。<br>
-                2年かかっても3年かかっても問題ありませんが、毎週、ネット会議しながらそれでも進捗しないのは本人のやる気の問題になります。<br> ご病気ではない限り最大3年の期限を切らせて頂きます。<br>
-                13ヶ月以降、事務局から連絡をしても3ヶ月間、無回答の場合は、ご病気では停止、退学の処置をさせていただきます。</p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-wrap">
-          <div class="q"><span class="icon">Q</span>
-            <h3>費用はどれくらいですか？ </h3>
-          </div>
-          <div class="a-wrap">
-            <div class="a"><span class="icon">A</span>
-              <p>諸般の事情で費用はこのサイトでは公開しておりません。<br> ぜひ、体験受講していただいた後で、お伝えいたします。</p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-wrap">
-          <div class="q"><span class="icon">Q</span>
-            <h3>途中でやめられますか？ </h3>
-          </div>
-          <div class="a-wrap">
-            <div class="a"><span class="icon">A</span>
-              <p>辞めたい時にやめられますが、それまでお支払い頂いた費用は返金できません。 </p>
-            </div>
-          </div>
-        </div>
-        <div class="faq-wrap">
-          <div class="q"><span class="icon">Q</span>
-            <h3>どんな雰囲気ですか？ </h3>
-          </div>
-          <div class="a-wrap">
-            <div class="a"><span class="icon">A</span>
-              <p>講座を監修した江藤の動画をご覧ください。雰囲気が伝わってきませんか？</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="sns">
-      <ul>
-        <li>シェアする</li>
-        <li><a href="https://social-plugins.line.me/lineit/share?url=/echeroes3/" target="_blank"
-            rel="noopener noreferrer"><img src="/wp-assets/img/eccc/ec-heroes/sns_line.jpg" alt="line"></a></li>
-        <li><a href="https://twitter.com/intent/tweet?text=ECヒーローズonline&amp;url=/echeroes3/"
-            target="_blank" rel="noopener noreferrer"><img src="/wp-assets/img/eccc/ec-heroes/sns_twitter.jpg"
-              alt="twitter"></a></li>
-        <li><a href="https://www.facebook.com/sharer.php?src=bm&#038;u=/echeroes3/&#038;t=ECヒーローズonline"
-            target="_blank" rel="noopener noreferrer"><img src="/wp-assets/img/eccc/ec-heroes/sns_facebook.jpg"
-              alt="facebook"></a></li>
-      </ul>
-    </div>
-  </section>
-</section>
-<!-- #container -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script type="text/javascript">
-  $(function () {
-    $('.sec09 .btn').click(function () {
-      $(this).next('.sec09 .hide').slideToggle();
-      $('.sec09 .btn').not($(this)).next('.sec09 .hide').slideUp();
-    });
-    $('.course-wrap .ttl').click(function () {
-      $(this).next('.course-wrap p').slideToggle();
-      $('.course-wrap .ttl').not($(this)).next('.course-wrap p').slideUp();
-    });
-    $('.faq-wrap .q').click(function () {
-      $(this).next('.faq-wrap .a-wrap').slideToggle();
-      $('.faq-wrap .q').not($(this)).next('.faq-wrap .a-wrap').slideUp();
-    });
-  });
-</script>
-<link href="/wp-assets/css/colorbox/colorbox.css" rel="stylesheet">
-<script src="/wp-assets/js/jquery.colorbox.js"></script>
-<script>
-  $(function () {
-    $(".colorbox").colorbox({
-      maxWidth: "90%",
-      maxHeight: "90%",
-      opacity: 0.7,
-      preloading:false,
-     loop:false
-    });
-  });
-</script>`;
+const blueOceanLessons = [
+  {
+    num: 1,
+    title: 'ECの大海賊時代を知る',
+    aim: '今のECが「商品を置けば売れる世界」ではなく、競争が激しく、利益が残りにくい世界だと理解する。',
+    learn: [
+      'なぜ今のECは苦しいのか',
+      '同じような商品が増えると何が起きるか',
+      '売上があっても利益が残らない理由',
+      '人手・広告費・外注費が経営を圧迫する仕組み',
+      'AI時代で何が変わるのか',
+      'ECを「作業」ではなく「経営」で見る必要性',
+    ],
+    work: [
+      '自社の今の悩みを棚卸しする',
+      '売上・利益・集客・在庫・人手の課題を書き出す',
+      '「なぜ苦しいのか」を構造で整理する',
+    ],
+    output: [
+      '自社ECの課題一覧',
+      '苦しさの原因整理シート',
+      '受講目的の明文化',
+    ],
+  },
+  {
+    num: 2,
+    title: '誰を助けるのかを決める',
+    aim: 'お客さんを属性ではなく、「何をかなえたい人か」で理解する。',
+    learn: [
+      '顧客の本当の願いの見つけ方',
+      '表面的な悩みと、本音の違い',
+      '商品を買う理由ではなく、人生や仕事の中で解決したいこと',
+      '機能的な願い、感情的な願い、社会的な願い',
+    ],
+    work: [
+      '顧客の悩みを書き出す',
+      '顧客が欲しい未来を書く',
+      '「うちの商品は何を助けるのか」を商品ごとに整理する',
+    ],
+    output: [
+      '顧客理解シート',
+      '顧客の願い一覧',
+      '商品ごとの役割メモ',
+    ],
+  },
+  {
+    num: 3,
+    title: '敵を知る',
+    aim: '競合を「同じ商品を売る店」だけでなく、「同じ願いを奪う存在」として捉える。',
+    learn: [
+      '商品競合、価格競合、想起競合の違い',
+      '検索で強い競合',
+      'SNS動画で強い競合',
+      'YouTubeで信頼を取っている競合',
+      'ライブで売っている競合',
+      '競合がどの土俵で勝っているか',
+    ],
+    work: [
+      '競合を5〜10社洗い出す',
+      '競合ごとの強み・弱みを整理する',
+      '自社がぶつかっている競争の型を分類する',
+    ],
+    output: [
+      '競合マップ',
+      '競合比較表',
+      '勝負すべき領域の仮説',
+    ],
+  },
+  {
+    num: 4,
+    title: '勝てる海を見つける',
+    aim: '顧客の願いが立ち上がる場面を見つけ、そこで思い出される設計をする。',
+    learn: [
+      'CEPの考え方',
+      'お客さんが「必要だ」と感じる瞬間の見つけ方',
+      '悩み、失敗、比較、緊急、憧れなどの場面整理',
+      'どの場面で自社が強くなれるか',
+    ],
+    work: [
+      '思い出し場面を20個以上出す',
+      '重要なCEPを5つに絞る',
+      '優先順位を決める',
+    ],
+    output: [
+      'CEP一覧',
+      '重点CEPマップ',
+      '狙う場面の優先順位表',
+    ],
+  },
+  {
+    num: 5,
+    title: '旗を掲げる',
+    aim: '自社ブランドの立ち位置を、一言で言える状態にする。',
+    learn: [
+      'ブランドとは何か',
+      '違いではなく「約束」で考える',
+      '何者として記憶されたいか',
+      'どんな相手に、どんな価値を約束するか',
+      'やらないこと、言わないことの決め方',
+    ],
+    work: [
+      'ブランド一言定義を作る',
+      'ブランドの約束を3つ決める',
+      'NG表現を整理する',
+    ],
+    output: [
+      'ブランド定義書',
+      'ブランド約束シート',
+      'NG表現リスト',
+    ],
+  },
+  {
+    num: 6,
+    title: '羅針盤を作る',
+    aim: 'ブランドの中心メッセージと、営業の中心メッセージをそろえる。',
+    learn: [
+      'コンセプトの作り方',
+      '第一想起される言葉の条件',
+      'LP、広告、動画、商品ページ、メールで一貫する言葉',
+      '言葉は見た目ではなく、相手を前に進める営業の軸であること',
+      'CVRにつながる言葉の設計',
+    ],
+    work: [
+      'コアメッセージを作る',
+      '3秒版、30秒版、3分版に言い換える',
+      '伝わりにくい表現を削る',
+    ],
+    output: [
+      'コアメッセージ集',
+      '第一想起キーワード',
+      '営業メッセージの骨子',
+    ],
+  },
+  {
+    num: 7,
+    title: '宝を磨く',
+    aim: '商品を「ただのSKU」ではなく、経営上の役割で整理する。',
+    learn: [
+      '集客商品、利益商品、象徴商品、継続商品',
+      '商品ごとの役割と見せ方の違い',
+      '売れ筋・死に筋・育成商品',
+      '顧客の願いと商品のつながり',
+      '商品数ではなく、役割の設計が大事であること',
+    ],
+    work: [
+      '商品の役割を分類する',
+      '売れ筋・利益商品・不良在庫候補を整理する',
+      '商品改善案を出す',
+    ],
+    output: [
+      '商品役割表',
+      '商品ポートフォリオ',
+      '商品改善優先順位表',
+    ],
+  },
+  {
+    num: 8,
+    title: '見つかる航路を引く',
+    aim: '検索と生成AIの両方で見つかるための情報設計を行う。',
+    learn: [
+      'SEOの基本',
+      'AISEOの考え方',
+      'FAQ、比較、選び方、使い方、失敗回避の整理',
+      'AIが拾いやすい構造',
+      '顧客の願いやCEPと検索テーマのつなぎ方',
+    ],
+    work: [
+      'FAQを作る',
+      '主要検索テーマを整理する',
+      '比較表・選び方記事の骨子を作る',
+    ],
+    output: [
+      'AISEOテーマ表',
+      'FAQ一覧',
+      '比較・選び方コンテンツ骨子',
+    ],
+  },
+  {
+    num: 9,
+    title: '本船を造る',
+    aim: 'YouTubeを深い理解と信頼を取る母艦として設計する。',
+    learn: [
+      'YouTubeの役割',
+      '長尺動画で伝えるべき内容',
+      '顧客理解を深める企画',
+      '商品理解、比較、選び方、失敗防止、思想の伝え方',
+      '検索との相性',
+      'Shortsや他媒体への展開元としての使い方',
+    ],
+    work: [
+      'YouTubeテーマを出す',
+      '5本分の企画を作る',
+      '1本分の台本構成を作る',
+    ],
+    output: [
+      'YouTube戦略シート',
+      'YouTube企画一覧',
+      '代表動画の構成案',
+    ],
+  },
+  {
+    num: 10,
+    title: '高速艇を走らせる',
+    aim: 'Shorts、TikTok、Reelsを認知・想起・販売トリガーの装置として運用できるようにする。',
+    learn: [
+      'ショート動画の役割',
+      '冒頭3秒の重要性',
+      'どんな切り口で止めるか',
+      'どのCEPに対してどの動画を出すか',
+      '長尺から短尺への切り出し',
+      'AIで企画と台本を量産する方法',
+    ],
+    work: [
+      '30本分のショート動画ネタ出し',
+      '冒頭フック作成',
+      '投稿カレンダー作成',
+    ],
+    output: [
+      '短尺動画企画一覧',
+      '冒頭フック集',
+      '投稿計画表',
+    ],
+  },
+  {
+    num: 11,
+    title: '武器を持つ',
+    aim: '広告をクリック獲得ではなく、認知・想起・決定を動かす営業武器として使う。',
+    learn: [
+      '検索広告、SNS広告、動画広告、リターゲティング',
+      '認知広告、想起広告、決定広告の違い',
+      '広告から次の接点につなぐ考え方',
+      '広告は営業の入口であること',
+      'どこに予算を使うべきか',
+    ],
+    work: [
+      '認知向け訴求案作成',
+      '想起向け訴求案作成',
+      '決定向け訴求案作成',
+    ],
+    output: [
+      '広告設計表',
+      '訴求軸一覧',
+      '広告役割分担表',
+    ],
+  },
+  {
+    num: 12,
+    title: '港で会い、船上で売る',
+    aim: 'ライブ販売と動画販売を実戦の売場として使いこなす。',
+    learn: [
+      'TikTokライブの活用',
+      'ライブで売れる理由',
+      '不安を減らし、比較負けを防ぐ進行',
+      '外部ライブコマーサー活用',
+      '動画販売とのつなぎ',
+      'CRMは自動化でやり切り、その先をリアル接点につなぐ考え方',
+    ],
+    work: [
+      'ライブ構成を作る',
+      'ライブ台本を作る',
+      '想定質問と返答を整理する',
+    ],
+    output: [
+      'ライブ販売設計書',
+      'ライブ台本',
+      '外部販売者活用メモ',
+    ],
+  },
+  {
+    num: 13,
+    title: '売場を港町に変える',
+    aim: 'LP、商品ページ、HP、メール、レビュー、動画、CTAを全部「営業」として設計する。',
+    learn: [
+      'CVRは見た目ではなく営業設計',
+      '不安の先回り',
+      '比較軸の提示',
+      '納得の作り方',
+      '止まる理由を消す方法',
+      'CTAの役割',
+      'LP / 商品ページ / メール / HPのつなぎ方',
+    ],
+    work: [
+      '既存ページを営業視点で診断',
+      'CTA改善案を作る',
+      'LPの営業フローを書き直す',
+    ],
+    output: [
+      'CVR改善シート',
+      'LP営業設計図',
+      'CTA改善案',
+    ],
+  },
+  {
+    num: 14,
+    title: '出航準備を終える',
+    aim: '前半で作ったすべての要素を一本につなぎ、実行できる状態にする。',
+    learn: [
+      '顧客理解 / CEP / 第一想起 / ブランド / 商品',
+      'AISEO / YouTube / SNS動画 / 広告',
+      'ライブ / CVR / CRM自動化導線の統合',
+    ],
+    work: [
+      '自社の全体設計を1枚にまとめる',
+      '不足要素を洗い出す',
+    ],
+    output: [
+      'ブルーオーシャン戦略書',
+      '出航準備完了シート',
+    ],
+  },
+]
+
+const grandOceanLessons = [
+  {
+    num: 15,
+    title: '航海計画を立てる',
+    aim: '売上だけでなく、利益・在庫・資金まで見た計画を立てる。',
+    learn: [
+      '90日計画',
+      '売上目標、粗利目標、利益目標',
+      'チャネル別目標',
+      'KPI設定',
+      'WBS化',
+      'タスク分解',
+    ],
+    work: [
+      '90日計画作成',
+      'KPI設定',
+      '月次・週次行動計画作成',
+    ],
+    output: [
+      '90日航海計画書',
+      'KPI',
+      'WBS表',
+    ],
+  },
+  {
+    num: 16,
+    title: '毎日の海を読む',
+    aim: 'AIレポートを使って、毎日経営判断ができるようにする。',
+    learn: [
+      '日次で見るべき数字',
+      '売上、利益、広告、動画、AISEO、ライブ、CRM反応',
+      'CVRがどこで止まっているかを見る',
+      'AI提案の読み方',
+      '人間が何を足すか',
+    ],
+    work: [
+      '仮レポートの読み解き',
+      'AI提案への追加判断',
+      '次アクション決定',
+    ],
+    output: [
+      '日次レポート確認表',
+      '日次判断テンプレート',
+    ],
+  },
+  {
+    num: 17,
+    title: '波を味方につける',
+    aim: '問題を感覚でなく、要素ごとに分解して改善する。',
+    learn: [
+      'どこが弱いかを分ける方法',
+      'AISEO、動画、広告、ライブ、LP、商品ページ、価格、在庫の見方',
+      '並列改善の考え方',
+      '何から手をつけるかの決め方',
+    ],
+    work: [
+      '問題分解',
+      '改善案作成',
+      '優先順位付け',
+    ],
+    output: [
+      '問題分解シート',
+      '改善マップ',
+    ],
+  },
+  {
+    num: 18,
+    title: '船を沈ませない',
+    aim: '利益が残る構造を作る。',
+    learn: [
+      '人件費、外注費、広告費、固定費の見方',
+      '高粗利経営の考え方',
+      'CRMを人力でやり込みすぎない考え方',
+      '自動化とリアル接点の役割分担',
+    ],
+    work: [
+      '利益構造の整理',
+      '固定費の見直し',
+      'CRM自動化範囲の整理',
+    ],
+    output: [
+      '利益改善シート',
+      '固定費見直し表',
+      'CRM自動化方針',
+    ],
+  },
+  {
+    num: 19,
+    title: '艦隊を率いる',
+    aim: 'AIを役割ごとに使い分け、人間一人＋AIで経営を回す。',
+    learn: [
+      'AIの役割分担',
+      'AISEO担当、動画担当、広告担当、分析担当、価格分析担当、CRM担当',
+      '人間が握るべき判断',
+      'AIへの指示の出し方',
+    ],
+    work: [
+      'AI艦隊設計',
+      '自分の業務の振り分け',
+      '指示テンプレ作成',
+    ],
+    output: [
+      'AI艦隊運用図',
+      'AI分担表',
+      '指示文テンプレート集',
+    ],
+  },
+  {
+    num: 20,
+    title: '船の値付けを操る',
+    aim: '価格を固定ではなく戦略として扱う。',
+    learn: [
+      'ダイナミックプライシング',
+      '価格変更の考え方',
+      '低粗利でも絶対利益を作る設計',
+      '集客商品と利益商品の役割',
+      '競合状況と価格調整',
+      'AIによる価格シミュレーション',
+    ],
+    work: [
+      '商品ごとの値付け戦略を整理',
+      '価格変更パターンを設計',
+      '値下げ / 値上げ判断基準を決める',
+    ],
+    output: [
+      '価格戦略表',
+      'ダイナミックプライシング方針',
+      '商品別値付けルール',
+    ],
+  },
+  {
+    num: 21,
+    title: '船を倒産させない',
+    aim: '在庫・粗利・利益・財務を同時に見る力をつける。',
+    learn: [
+      '売れ筋 / 死に筋 / 不良在庫の見分け方',
+      '不良在庫を赤字でも吐き出す判断',
+      '資金繰りの考え方',
+      '現金を残すことの重要性',
+      '絶対利益を守る戦略',
+      'AIによる在庫分析と警戒アラート',
+    ],
+    work: [
+      '在庫の分類',
+      '在庫処分方針作成',
+      '資金繰りの危険ポイント整理',
+    ],
+    output: [
+      '在庫戦略表',
+      '不良在庫処理方針',
+      '財務警戒シート',
+    ],
+  },
+  {
+    num: 22,
+    title: '戦う前に勝つ',
+    aim: 'AIが作ったものを、人間が見て勝てる品質に仕上げる。',
+    learn: [
+      '広告レビュー / サムネレビュー / 動画レビュー',
+      'ライブ台本レビュー / LPレビュー / AISEO文面レビュー',
+      'この接点は営業として前に進めているか、という視点',
+    ],
+    work: [
+      '複数案の比較',
+      '修正指示文の作成',
+      '品質基準の言語化',
+    ],
+    output: [
+      'クリエイティブ品質基準表',
+      '修正指示テンプレ',
+      '営業チェックリスト',
+    ],
+  },
+  {
+    num: 23,
+    title: '海図を広げる',
+    aim: 'うまくいったやり方を複数チャネルに広げる。',
+    learn: [
+      '1つのテーマを複数チャネルで使う考え方',
+      'YouTube → Shorts → TikTok → Reels → ライブ → メール → LPの展開',
+      '再利用と使い回しの違い',
+      '拡張時の品質維持',
+    ],
+    work: [
+      '再利用フロー作成',
+      '1テーマ多展開設計',
+      'チャネル別役割整理',
+    ],
+    output: [
+      'チャネル拡張設計書',
+      'コンテンツ再利用フロー',
+    ],
+  },
+  {
+    num: 24,
+    title: '海賊ではなく英雄になる',
+    aim: '自動化の先にある、強い信頼関係の作り方を理解する。',
+    learn: [
+      'CRMは自動化でやる',
+      'その先の強い関係づくり',
+      'オフ会、勉強会、リアルコミュニティ',
+      '先生と生徒の関係の強さ',
+      '購買の決定権に影響できる関係づくり',
+    ],
+    work: [
+      'リアル接点の設計',
+      'コミュニティ案作成',
+      '教える / 学ぶ関係の入り口設計',
+    ],
+    output: [
+      'リアルコミュニティ設計案',
+      'オフ会 / 勉強会案',
+      '師弟関係導線の仮説',
+    ],
+  },
+  {
+    num: 25,
+    title: '伝説の航海日誌をつける',
+    aim: '成功と失敗を残し、自分だけの勝ち筋を育てる。',
+    learn: [
+      '勝ちパターンの見つけ方',
+      '失敗の残し方',
+      'AIでの要約と整理',
+      '再現可能な型の作り方',
+    ],
+    work: [
+      '成功事例整理',
+      '失敗事例整理',
+      '勝ち筋の抽出',
+    ],
+    output: [
+      '航海日誌テンプレート',
+      '勝ち筋辞典',
+    ],
+  },
+  {
+    num: 26,
+    title: '制海権を取る',
+    aim: 'CEPごとに第一想起を取る状態を作る。',
+    learn: [
+      'AISEOで見つかる',
+      'SNS動画で思い出される',
+      'YouTubeで深く理解される',
+      '広告で前に進む',
+      'ライブで決断する',
+      'CRMで自動フォローされる',
+      'リアルで信頼に変わる',
+      'この全体が回ると何が起きるか',
+    ],
+    work: [
+      '全体の流れを可視化',
+      'CEPごとの制海権マップ作成',
+      '不足箇所の洗い出し',
+    ],
+    output: [
+      '第一想起制海権設計図',
+      '全体連動マップ',
+    ],
+  },
+  {
+    num: 27,
+    title: 'ECヒーローになる',
+    aim: 'すべてを統合して、自分の1年の経営設計を完成させる。',
+    learn: [
+      '顧客理解 / CEP / 第一想起 / ブランド / AISEO',
+      'SNS動画 / YouTube / 広告 / CVR営業設計',
+      'ライブ / CRM自動化 / リアルコミュニティ',
+      '価格 / 在庫 / 粗利 / 利益 / 財務',
+      'AI艦隊 / 人間の役割 / 日次運用',
+    ],
+    work: [
+      '1年計画作成',
+      '経営原則の明文化',
+      'AI運用体制の最終整理',
+    ],
+    output: [
+      'ECヒーロー経営設計書',
+      '1年航海ロードマップ',
+      '船長宣言書',
+    ],
+  },
+]
 ---
 
-<BaseLayout title="月商1,000万円を目指すECオンライン基礎講座| ECヒーローズonline | 株式会社ECコンサルカンパニー"
-  description="ECヒーローズとは、メールによるオンライン講座とグループコンサルがセットになった売上アップ講座で、月商1,000万円をガチで目指す講座です。全25回の講座があり、各ステップを合格しないと次の講座へ進めない課題提出型講座です。きっちりできるようになるまで面倒見ます。これでお客様に選ばれ、様々な施策が効くようになってきます。">
-<link rel="stylesheet" href="/wp-assets/css/eccc-pages.css" slot="css" />
-<Fragment set:html={rawHtml} />
-</BaseLayout>
+<NewLayout
+  title="ECヒーローズ | 月商1,000万円を突破する27講座"
+  description="価格争いに巻き込まれないで月商1,000万円をゼロからつくる。ブルーオーシャン編14講座+グランドオーシャン編13講座で、ECの勝ち筋を体系的に学ぶ。"
+>
+
+<!-- HERO -->
+<section class="eh-hero">
+  <div class="eh-hero-in">
+    <p class="sec-ey fade">EC Heroes 27 STEP</p>
+    <h1 class="fade">価格争いに巻き込まれないで<br>月商1,000万円を<br>ゼロからつくる</h1>
+    <p class="eh-hero-sub fade">ECヒーローズ 27STEP</p>
+    <p class="eh-hero-desc fade">
+      前半14講座<strong>「ブルーオーシャン編」</strong>で戦略・ブランド・武器を整え、<br>
+      後半13講座<strong>「グランドオーシャン編」</strong>で実行・改善・拡大を回す。<br>
+      EC経営に必要なすべてを、ゼロから体系的に学べるカリキュラムです。
+    </p>
+    <div class="eh-hero-acts fade">
+      <a href="https://elearnig.vercel.app/p/rakuten/rakuten1/" class="btn-d">無料で始める</a>
+      <a href="/contact/" class="btn-g">個別相談を申し込む</a>
+    </div>
+  </div>
+</section>
+
+<!-- OVERVIEW BADGES -->
+<section class="eh-overview sec fade">
+  <div class="sec-in">
+    <div class="eh-badges">
+      <div class="eh-badge eh-badge--blue">
+        <span class="eh-badge-num">14</span>
+        <span class="eh-badge-label">ブルーオーシャン編</span>
+        <span class="eh-badge-desc">出航前に整える講座</span>
+      </div>
+      <span class="eh-badge-plus">+</span>
+      <div class="eh-badge eh-badge--gold">
+        <span class="eh-badge-num">13</span>
+        <span class="eh-badge-label">グランドオーシャン編</span>
+        <span class="eh-badge-desc">海で勝ち続ける講座</span>
+      </div>
+      <span class="eh-badge-eq">=</span>
+      <div class="eh-badge eh-badge--dark">
+        <span class="eh-badge-num">27</span>
+        <span class="eh-badge-label">STEP</span>
+        <span class="eh-badge-desc">EC経営の全体設計</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- BLUE OCEAN -->
+<section class="eh-section eh-section--blue sec" id="blue-ocean">
+  <div class="sec-in">
+    <div class="eh-section-hdr fade">
+      <p class="sec-ey">Blue Ocean &mdash; 14 Lessons</p>
+      <h2>ブルーオーシャン編</h2>
+      <p class="eh-section-sub">出航前に、旗・海図・航路・武器・船を整える14講座</p>
+    </div>
+
+    <div class="eh-grid">
+      {blueOceanLessons.map((lesson) => (
+        <article class="eh-card fade">
+          <div class="eh-card-head">
+            <span class="eh-card-num">{String(lesson.num).padStart(2, '0')}</span>
+            <h3 class="eh-card-title">{lesson.title}</h3>
+          </div>
+          <p class="eh-card-aim"><strong>ねらい:</strong> {lesson.aim}</p>
+          <details class="eh-details">
+            <summary>学ぶ内容</summary>
+            <ul>
+              {lesson.learn.map((item) => <li>{item}</li>)}
+            </ul>
+          </details>
+          <details class="eh-details">
+            <summary>実践ワーク</summary>
+            <ul>
+              {lesson.work.map((item) => <li>{item}</li>)}
+            </ul>
+          </details>
+          <details class="eh-details">
+            <summary>できあがるもの</summary>
+            <ul>
+              {lesson.output.map((item) => <li>{item}</li>)}
+            </ul>
+          </details>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- GRAND OCEAN -->
+<section class="eh-section eh-section--gold sec" id="grand-ocean">
+  <div class="sec-in">
+    <div class="eh-section-hdr fade">
+      <p class="sec-ey">Grand Ocean &mdash; 13 Lessons</p>
+      <h2>グランドオーシャン編</h2>
+      <p class="eh-section-sub">海に出てから、勝ち続ける13講座</p>
+    </div>
+
+    <div class="eh-grid">
+      {grandOceanLessons.map((lesson) => (
+        <article class="eh-card fade">
+          <div class="eh-card-head">
+            <span class="eh-card-num">{String(lesson.num).padStart(2, '0')}</span>
+            <h3 class="eh-card-title">{lesson.title}</h3>
+          </div>
+          <p class="eh-card-aim"><strong>ねらい:</strong> {lesson.aim}</p>
+          <details class="eh-details">
+            <summary>学ぶ内容</summary>
+            <ul>
+              {lesson.learn.map((item) => <li>{item}</li>)}
+            </ul>
+          </details>
+          <details class="eh-details">
+            <summary>実践ワーク</summary>
+            <ul>
+              {lesson.work.map((item) => <li>{item}</li>)}
+            </ul>
+          </details>
+          <details class="eh-details">
+            <summary>できあがるもの</summary>
+            <ul>
+              {lesson.output.map((item) => <li>{item}</li>)}
+            </ul>
+          </details>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>
+
+<!-- FINAL CTA -->
+<section class="eh-cta sec fade">
+  <div class="sec-in" style="text-align:center">
+    <p class="sec-ey">Start Your Journey</p>
+    <h2 class="eh-cta-title">ECヒーローズで、ECの勝ち筋を掴む</h2>
+    <p class="eh-cta-desc">
+      27講座を通じて、価格争いから抜け出し、<br>
+      自分だけの勝ち筋を見つけてください。
+    </p>
+    <div class="eh-cta-acts">
+      <a href="https://elearnig.vercel.app/p/rakuten/rakuten1/" class="btn-d">無料で始める</a>
+      <a href="/contact/" class="btn-g">個別相談を申し込む</a>
+    </div>
+  </div>
+</section>
+
+</NewLayout>
+
+<style>
+/* ===== HERO ===== */
+.eh-hero{
+  background:linear-gradient(135deg,#0d1b2a 0%,#1b2838 50%,#162230 100%);
+  color:var(--white);
+  padding:160px 60px 100px;
+  text-align:center;
+}
+.eh-hero-in{max-width:800px;margin:0 auto}
+.eh-hero h1{
+  font-size:clamp(28px,4vw,44px);
+  font-weight:900;
+  line-height:1.4;
+  letter-spacing:-.01em;
+  margin-bottom:16px;
+}
+.eh-hero-sub{
+  font-size:clamp(18px,2.5vw,24px);
+  font-weight:700;
+  color:var(--red);
+  margin-bottom:32px;
+  letter-spacing:.1em;
+}
+.eh-hero-desc{
+  font-size:15px;
+  line-height:2.2;
+  color:rgba(255,255,255,.8);
+  margin-bottom:40px;
+}
+.eh-hero-desc strong{color:var(--white);font-weight:700}
+.eh-hero-acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* ===== OVERVIEW BADGES ===== */
+.eh-overview{background:var(--white);padding-top:80px;padding-bottom:80px}
+.eh-badges{
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  gap:24px;
+  flex-wrap:wrap;
+}
+.eh-badge{
+  text-align:center;
+  padding:28px 32px;
+  border-radius:var(--r);
+  min-width:180px;
+}
+.eh-badge--blue{
+  background:linear-gradient(135deg,#e8f0fe 0%,#d0e4ff 100%);
+  border:1px solid #b3d1ff;
+}
+.eh-badge--gold{
+  background:linear-gradient(135deg,#fff8e8 0%,#ffe8b8 100%);
+  border:1px solid #ffd580;
+}
+.eh-badge--dark{
+  background:var(--dark);
+  color:var(--white);
+}
+.eh-badge-num{
+  display:block;
+  font-size:40px;
+  font-weight:900;
+  line-height:1;
+  margin-bottom:6px;
+}
+.eh-badge--blue .eh-badge-num{color:#1a5ab8}
+.eh-badge--gold .eh-badge-num{color:#b37800}
+.eh-badge--dark .eh-badge-num{color:var(--red)}
+.eh-badge-label{
+  display:block;
+  font-size:14px;
+  font-weight:700;
+  margin-bottom:4px;
+}
+.eh-badge-desc{
+  display:block;
+  font-size:12px;
+  color:var(--muted);
+}
+.eh-badge--dark .eh-badge-desc{color:rgba(255,255,255,.6)}
+.eh-badge-plus,.eh-badge-eq{
+  font-size:28px;
+  font-weight:700;
+  color:var(--muted);
+}
+
+/* ===== SECTION HEADERS ===== */
+.eh-section-hdr{text-align:center;margin-bottom:56px}
+.eh-section-hdr h2{
+  font-size:clamp(24px,3.5vw,36px);
+  font-weight:800;
+  color:var(--dark);
+  line-height:1.4;
+  margin-bottom:12px;
+}
+.eh-section-sub{
+  font-size:15px;
+  color:var(--light);
+  line-height:1.8;
+}
+
+/* Blue Ocean section background */
+.eh-section--blue{background:linear-gradient(180deg,#f0f6ff 0%,#f8fbff 100%)}
+/* Grand Ocean section background */
+.eh-section--gold{background:linear-gradient(180deg,#fffaf0 0%,#fffdf8 100%)}
+
+/* ===== CARD GRID ===== */
+.eh-grid{
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:20px;
+}
+
+/* ===== LESSON CARD ===== */
+.eh-card{
+  background:var(--white);
+  border:1px solid var(--border);
+  border-radius:var(--r);
+  padding:28px 24px;
+  transition:border-color .3s,box-shadow .3s;
+}
+.eh-card:hover{
+  border-color:var(--red);
+  box-shadow:0 4px 20px rgba(0,0,0,.06);
+}
+.eh-card-head{
+  display:flex;
+  align-items:baseline;
+  gap:14px;
+  margin-bottom:14px;
+}
+.eh-card-num{
+  font-size:32px;
+  font-weight:900;
+  color:var(--red);
+  line-height:1;
+  letter-spacing:-.02em;
+  flex-shrink:0;
+}
+.eh-card-title{
+  font-size:17px;
+  font-weight:700;
+  color:var(--dark);
+  line-height:1.4;
+}
+.eh-card-aim{
+  font-size:14px;
+  color:var(--body);
+  line-height:1.9;
+  margin-bottom:16px;
+  padding-bottom:16px;
+  border-bottom:1px solid var(--border);
+}
+.eh-card-aim strong{
+  color:var(--red);
+  font-weight:600;
+  font-size:12px;
+}
+
+/* ===== DETAILS / ACCORDION ===== */
+.eh-details{
+  border-top:1px solid var(--border);
+}
+.eh-details:first-of-type{
+  border-top:none;
+}
+.eh-details summary{
+  font-size:13px;
+  font-weight:600;
+  color:var(--dark);
+  padding:12px 0;
+  cursor:pointer;
+  list-style:none;
+  display:flex;
+  align-items:center;
+  gap:8px;
+  user-select:none;
+}
+.eh-details summary::-webkit-details-marker{display:none}
+.eh-details summary::before{
+  content:'+';
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  width:20px;
+  height:20px;
+  border-radius:50%;
+  background:var(--red);
+  color:var(--white);
+  font-size:14px;
+  font-weight:700;
+  line-height:1;
+  flex-shrink:0;
+  transition:transform .2s;
+}
+.eh-details[open] summary::before{
+  content:'\2212';
+}
+.eh-details ul{
+  margin:0 0 12px 28px;
+  padding:0;
+  list-style:none;
+}
+.eh-details li{
+  font-size:13px;
+  color:var(--body);
+  line-height:1.9;
+  padding:2px 0;
+  position:relative;
+  padding-left:14px;
+}
+.eh-details li::before{
+  content:'';
+  position:absolute;
+  left:0;
+  top:10px;
+  width:5px;
+  height:5px;
+  border-radius:50%;
+  background:var(--red);
+  opacity:.5;
+}
+
+/* ===== FINAL CTA ===== */
+.eh-cta{background:var(--white)}
+.eh-cta-title{
+  font-size:clamp(24px,3vw,32px);
+  font-weight:800;
+  color:var(--dark);
+  line-height:1.5;
+  margin-bottom:16px;
+}
+.eh-cta-desc{
+  font-size:15px;
+  color:var(--light);
+  line-height:2.2;
+  margin-bottom:36px;
+}
+.eh-cta-acts{
+  display:flex;
+  gap:12px;
+  justify-content:center;
+  flex-wrap:wrap;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:768px){
+  .eh-hero{padding:140px 24px 80px}
+  .eh-grid{grid-template-columns:1fr}
+  .eh-badges{flex-direction:column;gap:16px}
+  .eh-badge-plus,.eh-badge-eq{font-size:22px}
+  .eh-badge{min-width:auto;width:100%;max-width:280px}
+}
+</style>
