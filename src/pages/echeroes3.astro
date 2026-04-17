@@ -3,16 +3,8 @@ import NewLayout from '../layouts/NewLayout.astro'
 
 const IMG_BASE = '/wp-assets/img/eccc/ec-heroes'
 
-const lessonImages: Record<number, string> = {
-  1: 'etou_02', 2: 'etou_03', 3: 'etou_04', 4: 'etou_05',
-  5: 'etou_06', 6: 'etou_07', 7: 'etou_08', 8: 'etou_01',
-  9: 'etou_02', 10: 'etou_03', 11: 'etou_04', 12: 'etou_05',
-  13: 'etou_06', 14: 'etou_07',
-  15: 'etou_08', 16: 'etou_01', 17: 'etou_02', 18: 'etou_03',
-  19: 'etou_04', 20: 'etou_05', 21: 'etou_06',
-  22: 'etou_07', 23: 'etou_08', 24: 'etou_01', 25: 'etou_02',
-  26: 'etou_03', 27: 'etou_04',
-}
+const lessonImage = (num: number) =>
+  `${IMG_BASE}/curriculum/lesson_${String(num).padStart(2, '0')}.png`
 
 const blueOceanLessons = [
   {
@@ -762,14 +754,10 @@ const grandOceanLessons = [
   <div class="sec-in">
     <div class="eh-grid">
       {blueOceanLessons.map((lesson) => {
-        const imgKey = lessonImages[lesson.num]
         return (
           <article class="eh-card fade">
             <div class="eh-card-img">
-              <picture>
-                <source srcset={`${IMG_BASE}/${imgKey}.webp`} type="image/webp" />
-                <img src={`${IMG_BASE}/${imgKey}.jpg`} alt={lesson.title} loading="lazy" width="400" height="auto" />
-              </picture>
+              <img src={lessonImage(lesson.num)} alt={lesson.title} loading="lazy" width="400" height="200" />
             </div>
             <div class="eh-card-body">
               <div class="eh-card-head">
@@ -817,14 +805,10 @@ const grandOceanLessons = [
   <div class="sec-in">
     <div class="eh-grid">
       {grandOceanLessons.map((lesson) => {
-        const imgKey = lessonImages[lesson.num]
         return (
           <article class="eh-card fade">
             <div class="eh-card-img">
-              <picture>
-                <source srcset={`${IMG_BASE}/${imgKey}.webp`} type="image/webp" />
-                <img src={`${IMG_BASE}/${imgKey}.jpg`} alt={lesson.title} loading="lazy" width="400" height="auto" />
-              </picture>
+              <img src={lessonImage(lesson.num)} alt={lesson.title} loading="lazy" width="400" height="200" />
             </div>
             <div class="eh-card-body">
               <div class="eh-card-head">
@@ -948,7 +932,7 @@ const grandOceanLessons = [
 .eh-credentials{background:var(--dark);padding-top:60px;padding-bottom:60px}
 .eh-credentials-grid{
   display:grid;
-  grid-template-columns:repeat(4,1fr);
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
   gap:16px;
 }
 .eh-credential-card{
@@ -960,6 +944,7 @@ const grandOceanLessons = [
   height:auto;
   display:block;
   border-radius:var(--r);
+  max-width:100%;
 }
 
 /* ===== ABOUT ===== */
@@ -1080,10 +1065,10 @@ const grandOceanLessons = [
   color:var(--white);
 }
 .eh-banner--blue{
-  background:linear-gradient(rgba(26,90,184,.8),rgba(13,27,42,.85)),url('/wp-assets/img/eccc/ec-heroes/heroes2_04_pc.jpg') center/cover no-repeat;
+  background:linear-gradient(rgba(26,90,184,.8),rgba(13,27,42,.85)),url('/wp-assets/img/eccc/ec-heroes/curriculum/banner_blue_ocean.png') center/cover no-repeat;
 }
 .eh-banner--gold{
-  background:linear-gradient(rgba(179,120,0,.75),rgba(42,30,10,.85)),url('/wp-assets/img/eccc/ec-heroes/heroes2_05_pc.jpg') center/cover no-repeat;
+  background:linear-gradient(rgba(179,120,0,.75),rgba(42,30,10,.85)),url('/wp-assets/img/eccc/ec-heroes/curriculum/banner_grand_ocean.png') center/cover no-repeat;
 }
 .eh-banner-in{max-width:700px;margin:0 auto}
 .eh-banner h2{
@@ -1124,14 +1109,16 @@ const grandOceanLessons = [
 }
 .eh-card-img{
   width:100%;
-  height:180px;
+  height:200px;
   overflow:hidden;
 }
 .eh-card-img img{
   width:100%;
-  height:100%;
+  height:200px;
   object-fit:cover;
   display:block;
+  border-radius:8px 8px 0 0;
+  max-width:100%;
 }
 .eh-card-body{
   padding:24px;
@@ -1307,12 +1294,13 @@ const grandOceanLessons = [
   .eh-credentials-grid{grid-template-columns:repeat(2,1fr)}
   .eh-about-inner{grid-template-columns:1fr;gap:24px}
   .eh-about-badges{flex-direction:column}
-  .eh-about-badges img{width:100%}
+  .eh-about-badges img{width:100%;max-width:100%}
   .eh-strength-inner{grid-template-columns:1fr;gap:24px}
   .eh-cta-inner{grid-template-columns:1fr;gap:24px}
   .eh-cta-content{text-align:center}
   .eh-cta-acts{justify-content:center}
   .eh-banner{padding:60px 24px}
-  .eh-card-img{height:140px}
+  .eh-card-img{height:160px}
+  .eh-card-img img{height:160px;max-width:100%}
 }
 </style>
