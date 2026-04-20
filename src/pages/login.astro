@@ -108,7 +108,7 @@ import NewLayout from '../layouts/NewLayout.astro'
     <div class="login-error" id="loginError">
       メールアドレスまたはパスワードが正しくありません。
     </div>
-    <form id="loginForm" action="https://ecmonster.jp/accounts/login/" method="GET">
+    <form id="loginForm" action="https://elearnig.vercel.app/accounts/login/" method="GET">
       <div class="form-group">
         <label for="email">メールアドレス</label>
         <input type="email" id="email" name="email" required placeholder="example@email.com" />
@@ -132,7 +132,7 @@ import NewLayout from '../layouts/NewLayout.astro'
 <script is:inline>
   document.getElementById('loginForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    window.location.href = 'https://ecmonster.jp/accounts/login/';
+    window.location.href = 'https://elearnig.vercel.app/accounts/login/';
   });
 </script>
 
