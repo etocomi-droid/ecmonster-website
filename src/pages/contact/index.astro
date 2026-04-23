@@ -1,68 +1,94 @@
 ---
-import BaseLayout from '../../layouts/BaseLayout.astro'
+import NewLayout from '../../layouts/NewLayout.astro'
 ---
 
-<BaseLayout
-  title="お問い合わせ - EC モンスター"
-  bodyClass="wp-singular page-template-default page page-id-2 page-parent wp-theme-ecmonster page-contact"
->
-  <link slot="css" rel="stylesheet" href="/wp-assets/css/contact.css" />
-  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
+<NewLayout
+  title="お問い合わせ | ECモンスター"
+  description="ECモンスターへのお問い合わせ。ご質問・ご相談はこちらからお気軽にどうぞ。">
 
-<div class="page-wrap contact-wrap">
-    <div class="l_inner">
-        <section>
-            <h1 class="page-ttl uline">お問い合わせ</h1>
-            <p class="txt-c">ご質問等ございましたら<br class="sp">お気軽にお問い合わせください。<br>
-                お問い合わせは、当社営業時間に<br class="sp">順次対応させていただきます。<br>
-                内容によっては返信に時間を要する<br class="sp">場合がございます。<br>あらかじめご了承ください。</p>
-            <div class="form-wrap">
-                
-<form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="wpcf7-form" aria-label="お問い合わせフォーム">
-<input type="hidden" name="access_key" value="ed53efba-9f1e-4bf3-aa00-7d68b21d8464" />
-<input type="hidden" name="redirect" value="/contact/thanks/" />
-<input type="hidden" name="subject" value="ecmonster.jp お問い合わせ" />
-<input type="checkbox" name="botcheck" class="hidden" style="display:none" />
-<div class="l_box-wrap">
-	<div class="item col">
-		<p><label>
-<input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text" autocomplete="name" aria-required="true" placeholder="名前*" type="text" name="your-name" required /></label>
-		</p>
-	</div>
-	<div class="item col">
-		<p><label>
-<input size="40" maxlength="400" class="wpcf7-form-control wpcf7-email wpcf7-text" autocomplete="email" aria-required="true" placeholder="メール*" type="email" name="your-email" required /></label>
-		</p>
-	</div>
-	<div class="item">
-		<p><label>
-<input size="40" maxlength="400" class="wpcf7-form-control wpcf7-text" placeholder="電話番号" type="tel" name="your-tel" /></label>
-		</p>
-	</div>
-	<div class="item">
-		<p><label>
-<textarea cols="40" rows="4" maxlength="2000" class="wpcf7-form-control wpcf7-textarea" placeholder="コメント*" name="your-message" required></textarea></label>
-		</p>
-	</div>
-	<div class="item">
-		<p><input class="wpcf7-form-control wpcf7-submit has-spinner" type="submit" value="送信する" id="submit-btn" />
-		</p>
-	</div>
-</div>
-</form>
-<script is:inline>
-document.getElementById('contact-form').addEventListener('submit', function(e) {
-  var btn = document.getElementById('submit-btn');
-  if (btn.disabled) { e.preventDefault(); return; }
-  btn.disabled = true;
-  btn.value = '送信中...';
-  setTimeout(function() { btn.disabled = false; btn.value = '送信する'; }, 5000);
-});
-</script>
-            </div>
-        </section>
+<style>
+.ct-hero{background:#111;padding:120px 60px 80px;text-align:center}
+.ct-hero-ey{font-size:12px;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.15em;margin-bottom:20px}
+.ct-hero h1{font-size:clamp(28px,4vw,44px);font-weight:900;color:#fff;line-height:1.35}
+
+.ct-body{max-width:680px;margin:0 auto;padding:80px 60px}
+.ct-lead{font-size:15px;color:var(--light);line-height:2;text-align:center;margin-bottom:48px}
+
+.ct-form{display:flex;flex-direction:column;gap:16px}
+.ct-row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ct-field input,.ct-field textarea{width:100%;padding:14px 16px;border:1px solid var(--border);border-radius:var(--r);font-size:15px;font-family:inherit;color:var(--dark);background:var(--white);transition:.2s;outline:none}
+.ct-field input:focus,.ct-field textarea:focus{border-color:var(--dark)}
+.ct-field textarea{resize:vertical;min-height:140px;line-height:1.8}
+.ct-field input::placeholder,.ct-field textarea::placeholder{color:var(--muted)}
+.ct-submit{background:var(--dark);color:var(--white);border:none;padding:16px 40px;border-radius:var(--r);font-size:15px;font-weight:700;font-family:inherit;cursor:pointer;transition:.3s;width:100%}
+.ct-submit:hover{background:var(--red)}
+.ct-submit:disabled{opacity:.6;cursor:not-allowed}
+
+.ct-alt{background:var(--off);padding:64px 60px;text-align:center;border-top:1px solid var(--border)}
+.ct-alt h2{font-size:18px;font-weight:700;color:var(--dark);margin-bottom:12px}
+.ct-alt p{font-size:14px;color:var(--light);margin-bottom:24px}
+.ct-alt a{display:inline-flex;align-items:center;gap:8px;background:var(--dark);color:var(--white);padding:14px 32px;border-radius:var(--r);font-size:14px;font-weight:600;transition:.3s}
+.ct-alt a:hover{background:var(--red)}
+
+@media(max-width:768px){
+  .ct-hero{padding:100px 24px 60px}
+  .ct-body{padding:48px 24px}
+  .ct-row{grid-template-columns:1fr}
+  .ct-alt{padding:48px 24px}
+}
+</style>
+
+<!-- HERO -->
+<section class="ct-hero">
+  <div class="ct-hero-ey fade">Contact</div>
+  <h1 class="fade">お問い合わせ</h1>
+</section>
+
+<!-- FORM -->
+<section class="ct-body">
+  <p class="ct-lead fade">ご質問等ございましたらお気軽にお問い合わせください。<br>お問い合わせは、当社営業時間に順次対応させていただきます。<br>内容によっては返信に時間を要する場合がございます。</p>
+
+  <form action="https://api.web3forms.com/submit" method="POST" id="contact-form" class="ct-form fade">
+    <input type="hidden" name="access_key" value="ed53efba-9f1e-4bf3-aa00-7d68b21d8464" />
+    <input type="hidden" name="redirect" value="/contact/thanks/" />
+    <input type="hidden" name="subject" value="ecmonster.jp お問い合わせ" />
+    <input type="checkbox" name="botcheck" style="display:none" />
+
+    <div class="ct-row">
+      <div class="ct-field">
+        <input type="text" name="your-name" placeholder="名前*" required autocomplete="name" maxlength="400" />
+      </div>
+      <div class="ct-field">
+        <input type="email" name="your-email" placeholder="メール*" required autocomplete="email" maxlength="400" />
+      </div>
     </div>
-</div>
-<!--page-wrap -->
+    <div class="ct-field">
+      <input type="tel" name="your-tel" placeholder="電話番号" autocomplete="tel" maxlength="400" />
+    </div>
+    <div class="ct-field">
+      <textarea name="your-message" placeholder="コメント*" required maxlength="2000"></textarea>
+    </div>
+    <div class="ct-field">
+      <button type="submit" class="ct-submit" id="submit-btn">送信する</button>
+    </div>
+  </form>
 
-</BaseLayout>
+  <script is:inline>
+  document.getElementById('contact-form').addEventListener('submit', function(e) {
+    var btn = document.getElementById('submit-btn');
+    if (btn.disabled) { e.preventDefault(); return; }
+    btn.disabled = true;
+    btn.textContent = '送信中...';
+    setTimeout(function() { btn.disabled = false; btn.textContent = '送信する'; }, 5000);
+  });
+  </script>
+</section>
+
+<!-- ALT CTA -->
+<section class="ct-alt">
+  <h2>個別面談で直接ご相談もできます</h2>
+  <p>オンラインで30〜60分、御社の状況に合わせてご提案します。</p>
+  <a href="https://learn.ecmonster.jp/b/page/3/" target="_blank">個別面談を予約する →</a>
+</section>
+
+</NewLayout>
