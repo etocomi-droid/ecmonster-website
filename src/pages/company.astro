@@ -1,131 +1,178 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
+import NewLayout from '../layouts/NewLayout.astro'
 ---
 
-<BaseLayout
-  title="会社概要 - EC モンスター"
-  bodyClass="wp-singular page-template-default page page-id-96 wp-theme-ecmonster page-company"
->
-  <link slot="css" rel="stylesheet" href="/wp-assets/css/company.css" />
-  <link slot="css" rel="stylesheet" href="/wp-assets/css/cf7.css" />
+<NewLayout
+  title="会社概要 | ECモンスター"
+  description="アンリミテッドアム株式会社の会社概要。EC歴25年、1,000社以上の支援実績。代表・江藤正親のプロフィール。">
 
-<div class="page-wrap company-wrap">
-    <div class="l_inner">
-        <section>
-            <div class="company-logo">
-                <img title="アンリミテッドアム株式会社" data-popupalt-original-title="null" alt="アンリミテッドアム株式会社" src="/wp-assets/img/company/company_logo.png">
-            </div>
-            <h1 class="page-ttl">会社概要</h1>
-            <h2 class="media-sec-ttl">■会社概要</h2>
-            <table>
-                <tbody>
-                    <tr>
-                        <th>会社名</th>
-                        <td>アンリミテッドアム株式会社</td>
-                    </tr>
-                    <tr>
-                        <th>住　所</th>
-                        <td>103-0025 東京都中央区日本橋茅場町２丁目１４−１ 第一井上ビル 301</td>
-                    </tr>
-                    <tr>
-                        <th>連絡先</th>
-                        <td>03-4400-8628<br><span class="note">※FC加盟にご興味ある方のみご利用ください。営業目的はご遠慮ください。</span></td>
-                    </tr>
-                    <tr>
-                        <th>設　立</th>
-                        <td>2010年3月</td>
-                    </tr>
-                    <tr>
-                        <th>CEO</th>
-                        <td>江藤正親</td>
-                    </tr>
-                    <tr>
-                        <th>従業員数</th>
-                        <td>6名（アルバイト含む）</td>
-                    </tr>
-                    <tr>
-                        <th>事業内容</th>
-                        <td>
-                            <p>製造、卸、販売、OEM<br> EC支援事業<br> ファンチャイズ本部</p>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section>
-            <h2 class="media-sec-ttl">■沿　革</h2>
-            <table>
-                <tbody>
-                    <tr>
-                        <th>2012年</th>
-                        <td>ECサイトのM&amp;A事業を目的に設立</td>
-                    </tr>
-                    <tr>
-                        <th>2014年</th>
-                        <td>事業休眠</td>
-                    </tr>
-                    <tr>
-                        <th>2021年</th>
-                        <td>アパレル製造事業を営業譲渡</td>
-                    </tr>
-                    <tr>
-                        <th>2021年</th>
-                        <td>EC支援事業を営業譲渡</td>
-                    </tr>
-                    <tr>
-                        <th>2021年</th>
-                        <td>CEOに江藤正親就任</td>
-                    </tr>
-                    <tr>
-                        <th>2022年</th>
-                        <td>フランチャイズ本部業務を立ち上げ</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-        <section class="profile">
-            <h2 class="media-sec-ttl">■江藤正親のプロフィール</h2>
-            <div class="box-wrap l_box-wrap">
-                <div class="txt">
-                    <p>大学卒業後、送電線建設会社、コンサル会社、メーカーと転職の後に独立。<br>1998年よりECスタートし、独立系ECコンサルタントとしては日本最古。<br> 1999年よりネットショップ運営に携わり、立ち上げ1年半で月商4500万円を達成。3年連続楽天総合3位。200社を立ち上げから年商1億円以上に導く。<br> 最高年商10億円。商品開発からシステム開発、広告プロモーションとEC経営にまつわる業務に精通し、運営も行う。<br> サポート企業は延べ1000社を超え17名のEC関連本の著者を輩出。<br> 自ら著書3冊を持ち、新聞、雑誌など各メディアに寄稿。<br> 2013年設立した一般社団法人ジャパンEコマースコンサルタント協会は、最新の日本と海外最新事例をECコンサルタントにアップデートしてる。<br> 2017年には、早稲田大学主幹の一般社団法人日本イーコマース学会を設立、大学にECのカリキュラムを提供している。</p>
-                </div>
-                <div class="image"><img alt="江藤正親" src="/wp-assets/img/company/company_img_02.jpg"> <img class="book" alt="江藤正親著書" src="/wp-assets/img/company/company_img_03.png"></div>
-                <div class="achievement">
-                    <p class="fnt-l red"><strong>他業種における高い実績</strong></p>
-                    <p class="line">様々なジャンルのネットショップにおいて、<strong class="red">月商1000万以上を達成！</strong></p>
-                    <p>■立ち上げ期からコンサル期間3ヶ月</p>
-                    <p class="fnt-m"><strong>平均月商売上　約<span class="fnt-l red">253万円up</span></strong></p>
-                    <p>■立ち上げ期からコンサル期間36ヶ月</p>
-                    <p class="fnt-m"><strong>平均月商売上　約<span class="fnt-l red">3,441万円up</span></strong></p>
-                </div>
-            </div>
-            <div class="media-wrap">
-                <p class="media-ttl">過去のメディア掲載履歴</p>
-                <ul>
-                    <li>■新聞：日経新聞/日経MJ/読売新聞/各地方新聞</li>
-                    <li>■テレビ：NHK　首都圏ネットワーク/テレビ東京　WBS</li>
-                    <li>■ラジオ：J-WAVE/TBSラジオ</li>
-                    <li>■雑誌：THE21/東洋経済/プレジデント</li>
-                    <li>■専門誌：日本ネット経済新聞/通販新聞/月刊ネット販売</li>
-                    <li>他WEBメディア多数</li>
-                </ul>
-                <div class="youtube-wrap"><iframe title="YouTube video player" src="https://www.youtube.com/embed/QxCVgxCdG4M?controls=0" height="315" width="560" allowfullscreen="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0"></iframe></div>
-                <p>■ECの未来インタビュー：これからのECで実績を上げるには？【 ECの未来 episode 1 】<br> フランチャイズの考え方がよくわかる動画です。</p>
-            </div>
-        </section>
-        <section class="suppliers">
-            <h2 class="media-sec-ttl">■今までのお取引先</h2>
-            <p>47都道府県の地方新聞社<br> 株式会社電通<br> コスモ石油株式会社<br> 株式会社オンワード樫山<br> 大建工業株式会社<br> 全国の商工会各支部<br> 全国役所の商業観光課<br> 他多数</p>
-        </section>
-        <section class="group">
-            <h2 class="media-sec-ttl">■江藤が設立に関わった団体</h2>
-            <h3>一般社団法人ジャパンEコマースコンサルタント協会</h3>
-            <p>（2013年設立）<br> 日本の海外の最新事例の情報が集約、ECコンサルタントのネタ元<br> 江藤：専務理事</p>
-            <h3>一般社団法人日本イーコマース学会</h3>
-            <p>（2017年設立）<br> 中小企業と産学連携のエビデンス付き商品開発するプラットフォーム<br> 江藤：専務理事 <img alt="一般社団法人ジャパンEコマースコンサルタント協会｜一般社団法人日本イーコマース学会" src="/wp-assets/img/company/company_01-2.jpg"></p>
-        </section>
+<style>
+.co-hero{background:#111;padding:120px 60px 80px;text-align:center}
+.co-hero-ey{font-size:12px;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.15em;margin-bottom:20px}
+.co-hero h1{font-size:clamp(28px,4vw,44px);font-weight:900;color:#fff;line-height:1.35}
+
+.co-body{max-width:900px;margin:0 auto;padding:80px 60px}
+.co-logo{margin-bottom:48px;text-align:center}
+.co-logo img{max-width:280px;margin:0 auto}
+
+.co-sec{margin-bottom:56px}
+.co-sec-title{font-size:13px;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:20px;padding-bottom:10px;border-bottom:1px solid var(--border)}
+.co-table{width:100%;border-collapse:collapse}
+.co-table th,.co-table td{padding:14px 16px;border-bottom:1px solid var(--border);vertical-align:top;font-size:14px;line-height:1.8;text-align:left}
+.co-table th{width:140px;color:var(--muted);font-weight:600;white-space:nowrap}
+.co-table td{color:var(--body)}
+.co-table .note{font-size:12px;color:var(--muted);margin-top:4px;display:block}
+
+.co-profile{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:start;margin-bottom:32px}
+.co-profile-text{font-size:14px;color:var(--body);line-height:2}
+.co-profile-imgs{display:flex;flex-direction:column;gap:12px;flex-shrink:0}
+.co-profile-imgs img{width:180px;border-radius:4px}
+
+.co-achievement{background:var(--off);border:1px solid var(--border);border-radius:4px;padding:24px 28px;margin:24px 0}
+.co-achievement p{font-size:14px;color:var(--body);line-height:1.9;margin-bottom:6px}
+.co-achievement p:last-child{margin-bottom:0}
+.co-achievement .highlight{color:var(--red);font-weight:700}
+
+.co-media ul{list-style:none;display:flex;flex-direction:column;gap:8px;margin-bottom:28px}
+.co-media li{font-size:14px;color:var(--body);padding:10px 16px;background:var(--off);border-radius:4px}
+.co-youtube{margin:24px 0}
+.co-youtube iframe{width:100%;max-width:560px;height:315px;border-radius:4px}
+.co-youtube p{font-size:13px;color:var(--muted);margin-top:12px;line-height:1.7}
+
+.co-list{font-size:14px;color:var(--body);line-height:2.2}
+
+.co-org{margin-bottom:20px}
+.co-org h3{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:8px}
+.co-org p{font-size:14px;color:var(--body);line-height:1.9}
+.co-org img{margin-top:16px;max-width:100%;border-radius:4px}
+
+.co-cta{background:var(--off);padding:80px 60px;text-align:center}
+.co-cta h2{font-size:clamp(20px,3vw,28px);font-weight:800;color:var(--dark);margin-bottom:16px}
+.co-cta p{font-size:15px;color:var(--light);margin-bottom:32px}
+.co-cta-acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+@media(max-width:768px){
+  .co-hero{padding:100px 24px 60px}
+  .co-body{padding:48px 24px}
+  .co-table th{width:100px}
+  .co-profile{grid-template-columns:1fr}
+  .co-profile-imgs{flex-direction:row}
+  .co-profile-imgs img{width:120px}
+  .co-cta{padding:60px 24px}
+  .co-youtube iframe{height:200px}
+}
+</style>
+
+<!-- HERO -->
+<section class="co-hero">
+  <div class="co-hero-ey fade">Company</div>
+  <h1 class="fade">会社概要</h1>
+</section>
+
+<div class="co-body">
+
+  <!-- LOGO -->
+  <div class="co-logo fade">
+    <img src="/wp-assets/img/company/company_logo.png" alt="アンリミテッドアム株式会社">
+  </div>
+
+  <!-- 会社概要 -->
+  <section class="co-sec fade">
+    <div class="co-sec-title">Overview</div>
+    <table class="co-table">
+      <tbody>
+        <tr><th>会社名</th><td>アンリミテッドアム株式会社</td></tr>
+        <tr><th>住　所</th><td>103-0025 東京都中央区日本橋茅場町２丁目１４−１ 第一井上ビル 301</td></tr>
+        <tr><th>連絡先</th><td>03-4400-8628<span class="note">※FC加盟にご興味ある方のみご利用ください。営業目的はご遠慮ください。</span></td></tr>
+        <tr><th>設　立</th><td>2010年3月</td></tr>
+        <tr><th>CEO</th><td>江藤正親</td></tr>
+        <tr><th>従業員数</th><td>6名（アルバイト含む）</td></tr>
+        <tr><th>事業内容</th><td>製造、卸、販売、OEM<br>EC支援事業<br>フランチャイズ本部</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- 沿革 -->
+  <section class="co-sec fade">
+    <div class="co-sec-title">History</div>
+    <table class="co-table">
+      <tbody>
+        <tr><th>2012年</th><td>ECサイトのM&A事業を目的に設立</td></tr>
+        <tr><th>2014年</th><td>事業休眠</td></tr>
+        <tr><th>2021年</th><td>アパレル製造事業を営業譲渡</td></tr>
+        <tr><th>2021年</th><td>EC支援事業を営業譲渡</td></tr>
+        <tr><th>2021年</th><td>CEOに江藤正親就任</td></tr>
+        <tr><th>2022年</th><td>フランチャイズ本部業務を立ち上げ</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <!-- プロフィール -->
+  <section class="co-sec fade">
+    <div class="co-sec-title">CEO Profile</div>
+    <div class="co-profile">
+      <div class="co-profile-text">
+        <p>大学卒業後、送電線建設会社、コンサル会社、メーカーと転職の後に独立。1998年よりECスタートし、独立系ECコンサルタントとしては日本最古。1999年よりネットショップ運営に携わり、立ち上げ1年半で月商4500万円を達成。3年連続楽天総合3位。200社を立ち上げから年商1億円以上に導く。最高年商10億円。商品開発からシステム開発、広告プロモーションとEC経営にまつわる業務に精通し、運営も行う。サポート企業は延べ1000社を超え17名のEC関連本の著者を輩出。自ら著書3冊を持ち、新聞、雑誌など各メディアに寄稿。2013年設立した一般社団法人ジャパンEコマースコンサルタント協会は、最新の日本と海外最新事例をECコンサルタントにアップデートしている。2017年には、早稲田大学主幹の一般社団法人日本イーコマース学会を設立、大学にECのカリキュラムを提供している。</p>
+      </div>
+      <div class="co-profile-imgs">
+        <img src="/wp-assets/img/company/company_img_02.jpg" alt="江藤正親">
+        <img src="/wp-assets/img/company/company_img_03.png" alt="江藤正親著書" class="book">
+      </div>
     </div>
-</div>
-<!--page-wrap -->
+    <div class="co-achievement">
+      <p><span class="highlight">他業種における高い実績</span></p>
+      <p>様々なジャンルのネットショップにおいて、<span class="highlight">月商1000万以上を達成！</span></p>
+      <p>■立ち上げ期からコンサル期間3ヶ月 → 平均月商売上 約<span class="highlight">253万円up</span></p>
+      <p>■立ち上げ期からコンサル期間36ヶ月 → 平均月商売上 約<span class="highlight">3,441万円up</span></p>
+    </div>
+  </section>
 
-</BaseLayout>
+  <!-- メディア掲載 -->
+  <section class="co-sec co-media fade">
+    <div class="co-sec-title">Media</div>
+    <ul>
+      <li>■新聞：日経新聞 / 日経MJ / 読売新聞 / 各地方新聞</li>
+      <li>■テレビ：NHK 首都圏ネットワーク / テレビ東京 WBS</li>
+      <li>■ラジオ：J-WAVE / TBSラジオ</li>
+      <li>■雑誌：THE21 / 東洋経済 / プレジデント</li>
+      <li>■専門誌：日本ネット経済新聞 / 通販新聞 / 月刊ネット販売 他WEBメディア多数</li>
+    </ul>
+    <div class="co-youtube">
+      <iframe title="YouTube video player" src="https://www.youtube.com/embed/QxCVgxCdG4M?controls=0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" frameborder="0"></iframe>
+      <p>■ECの未来インタビュー：これからのECで実績を上げるには？【 ECの未来 episode 1 】<br>フランチャイズの考え方がよくわかる動画です。</p>
+    </div>
+  </section>
+
+  <!-- お取引先 -->
+  <section class="co-sec fade">
+    <div class="co-sec-title">Clients</div>
+    <p class="co-list">47都道府県の地方新聞社 / 株式会社電通 / コスモ石油株式会社 / 株式会社オンワード樫山 / 大建工業株式会社 / 全国の商工会各支部 / 全国役所の商業観光課 / 他多数</p>
+  </section>
+
+  <!-- 関連団体 -->
+  <section class="co-sec fade">
+    <div class="co-sec-title">Organizations</div>
+    <div class="co-org">
+      <h3>一般社団法人ジャパンEコマースコンサルタント協会</h3>
+      <p>（2013年設立）日本と海外の最新事例の情報が集約、ECコンサルタントのネタ元。江藤：専務理事</p>
+    </div>
+    <div class="co-org">
+      <h3>一般社団法人日本イーコマース学会</h3>
+      <p>（2017年設立）中小企業と産学連携のエビデンス付き商品開発するプラットフォーム。江藤：専務理事</p>
+      <img src="/wp-assets/img/company/company_01-2.jpg" alt="一般社団法人ジャパンEコマースコンサルタント協会｜一般社団法人日本イーコマース学会">
+    </div>
+  </section>
+
+</div>
+
+<!-- CTA -->
+<section class="co-cta">
+  <h2 class="fade">まずはご相談ください。</h2>
+  <p class="fade">EC歴25年、1,000社以上の支援実績から、あなたのショップに最適な戦略をご提案します。</p>
+  <div class="co-cta-acts fade">
+    <a href="https://learn.ecmonster.jp/b/page/3/" target="_blank" class="btn-d">個別面談を予約する →</a>
+    <a href="/#services" class="btn-g">サービス一覧を見る</a>
+  </div>
+</section>
+
+</NewLayout>
