@@ -1,87 +1,103 @@
 ---
-import BaseLayout from '../layouts/BaseLayout.astro'
+import NewLayout from '../layouts/NewLayout.astro'
 ---
 
-<BaseLayout title="FAQよくある質問-株式会社ECコンサルカンパニー"
-  description="FAQよくある質問。Q.本当に売上は上がりますか？A.EC事業者様の一番の悩みは「売上」だと思います。弊社は運営のプロとして、緊密にヒアリングを行った上で、お客様の商材、競合との違い、ターゲット属性や市場調査、アクセスの情況、広告投下量を分析し、初めて売上の向上に向けての戦略を具体的に立案します。">
-<link rel="stylesheet" href="/wp-assets/css/eccc-pages.css" slot="css" />
+<NewLayout
+  title="よくある質問 | ECモンスター"
+  description="ECモンスターへのよくある質問。売上は上がりますか？運営代行は？越境ECは？などご疑問にお答えします。">
 
-<nav id="sub_nav" class="cf">
-  <ul class="cf">
-	  <li><a href="/eccc-company/philosophy/"><img src="/wp-assets/img/eccc/company_btn01.png" alt="企業理念"></a></li>
-	  <li><a href="/eccc-company/message/"><img src="/wp-assets/img/eccc/company_btn02.png" alt="トップメッセージ"></a></li>
-	  <li><a href="/eccc-company/recruit/"><img src="/wp-assets/img/eccc/company_btn03.png" alt="求人情報"></a></li>	  
-  </ul>
- </nav>
- 
- 
-<div id="sub_contents" class="wrap950 padding100">
- 
+<style>
+.faq-hero{background:#111;padding:120px 60px 80px;text-align:center}
+.faq-hero-ey{font-size:12px;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.15em;margin-bottom:20px}
+.faq-hero h1{font-size:clamp(28px,4vw,44px);font-weight:900;color:#fff;line-height:1.35}
 
- 
- 
-  <section class="faq">
-	  <h2 class="h2_sub btm_mar40">よくある質問</h2>
-	  <dl>
-		  <dt><p>本当に売上は上がりますか？</p></dt>
-		    <dd><p>
-		    EC事業者様の一番の悩みは「売上」だと思います。弊社は運営のプロとして、緊密にヒアリングを行った上で、お客様の商材、競合との違い、ターゲット属性や市場調査、アクセスの情況、広告投下量を分析し、初めて売上の向上に向けての戦略を具体的に立案します。<br>多くのEC事業者様の商材は、正直申し上げて売りにくいと思います。<br>ただ、差別化できる商品開発をお手伝いいたしますので、柔軟な対応をし、本気で売り上げを上げたいと思っている事業者様には寄り添い高い確率で成功に導いていきます。
-		    </p></dd>
-		  <dt><p>他の会社に依頼しているけど、途中でお願いすることはできますか？</p></dt>
-		    <dd><p>
-		    このような場合、率直にヒアリングを行った上で、ご不満に思われている事や、現実の目標に対してアプローチが運用体制とマッチしていたのかを含め、業務改善、または弊社の基準に合わせた戦術と新規の戦略を立案させていただきまのでご安心ください。
-		    </p></dd>		  
-		  <dt><p>運営している複数のサイトをまとめて見てもらえますか？</p></dt>
-		    <dd><p>
-		    同ブランドで複数のモールに出店している場合は、その中の一つをご依頼されるより、まとめてご依頼されたほうが、店舗ごとの情況もつかみやすく、お客様にとって、より最適な戦術や戦略立案をご提案できます。その場合は是非、まとめてご依頼下さい。
-		    </p></dd>	  
-		  <dt><p>出店を考えています。初期構築からお願いできますか？</p></dt>
-		    <dd><p>
-		    扱う商品や販売目標に応じて、カートシステムが変わります。詳しくヒアリングをさせていただいたのち、販売戦略、および、ECサイト構築のお見積りを提出させていただきますので、一概には言えませんが、最低でも3か月以上かかると思います。<br>詳しくはお問い合わせください。
-		    </p></dd>	  		  
-		  <dt><p>サイト運営の担当者が辞めてしまった。運営代行を頼めますか？</p></dt>
-		    <dd><p>
-		    可能です。まずはご相談ください。御社の「EC事業部」として運営致します。サイトの分析、ページ改善、戦略立案・実行まで、弊社にお任せ頂けます。<br><a href="/service_providedoperations/">詳しくはこちらをご覧下さい。</a>
-		    </p></dd>	  		  		  
-		  <dt><p>使っているWebシステムが今の業務に合わないので、改善をお願いできますか？</p></dt>
-		    <dd><p>
-		    現在の業務の内容やご不満点をヒアリングのうえ、ご使用のWebシステムの改善点を洗い出します。お客様のニーズにあったWebシステムの改善案をご提案させて頂きます。運営とメンテナンスまで合わせてご依頼が可能です。
-		    </p></dd>	  
-		  <dt><p>外国人に向けて販売をしたい。どこまでお願いできますか？</p></dt>
-		    <dd><p>
-		    越境ECは弊社でも取り組んでおります。越境ECサイトの構築から、運営管理、受注、発送まで英語がわからない方でも、安心してお任せ頂けます。<br>まずはご相談ください。
-		    </p></dd>
-		  <dt><p>Web広告だけのご依頼は可能でしょうか？</p></dt>
-		    <dd><p>
-		    Web広告のみの運用代行はお受けいたしておりません。弊社のサービスでは、PR代行、クロス・マーケティングも含め、広告の運用代行も「ECサイト運営代行」の一環業務に含まれております。是非、運営代行も含めご検討ください。
-		    </p></dd>
-		  <dt><p>ECサイトの一部のページやLPの改善をしたい。</p></dt>
-		    <dd><p>
-		    商品の販売戦略を考えた上で、弊社所有のスタジオにて、モデルを活用した商品撮影やLPを作成する事も可能ですが、LPのみの制作はお受け致しておりません。<br>弊社のサービスでは、PR代行、クロス・マーケティングも含め、広告の運用代行も「ECサイト運営代行」の一環業務に含まれております。是非、運営代行も含めご検討ください。
-		    </p></dd>
-		  <dt><p>GoogleAnalytics等のアクセス解析ツールの設定をお願いしたい。</p></dt>
-		    <dd><p>
-		    GoogleAnalytics等の分析ツールは設定しただけでは何も意味はありません。プロモーション等の活動して初めて設定の意味がでてきます。<br>弊社のサービスでは、PR代行、クロス・マーケティングも含め、広告の運用代行も「ECサイト運営代行」の一環業務に含まれております。是非、運営代行も含めご検討ください。
-		    </p></dd>
-		  <dt><p>アダルトサイトの運営代行もお任せできますか？</p></dt>
-		    <dd><p>
-		    申し訳ありませんが、弊社では、アダルトサイトや公序良俗に反するサイトの運営代行はお断りさせていただいております。
-		    </p></dd>
-		  <dt><p>御社は敷居が高そうですが、経験の少ない素人同然でも相談に乗って頂けますか？</p></dt>
-		    <dd><p>
-		    まったく問題がありません。専門用語をなるべく使わずにご説明しながら、弊社のスタッフがあなたに代わり、ECサイトの運営を代行致します。<br>お持ちのECサイトに対しコンセプトが無い、ビジョンが無い、思い入れが無い方はお断りしています。一緒に育て成長を喜びあいましょう。
-		    </p></dd>
-		  <dt><p>ECサイト以外でも作れますか？</p></dt>
-		    <dd><p>
-		    基本的には、サイトを構築する目的があり、目的を達成するための戦略があり、運用があるサイトは構築致します。会員を増やしたい、資料請求を増やしたい等、売上以外のKPI・目標があれば、サイトの立上げ後の運用代行は是非お任せください。
-		    </p></dd>
-		  <dt><p>運営しているECサイトがありますが、伸び悩んでいます。<br>コンサルタントをお願いできますか？</p></dt>
-		    <dd><p>
-		    ECサイトの状況と目標の売り上げに応じてサービス内容が変わります。詳しくはお問合せください。
-		    </p></dd>
-	  </dl>
-  </section>
+.faq-body{padding:80px 60px;max-width:800px;margin:0 auto}
+.faq-list{display:flex;flex-direction:column;gap:0}
+.faq-item{border-bottom:1px solid var(--border);padding:32px 0}
+.faq-item:first-child{border-top:1px solid var(--border)}
+.faq-q{font-size:16px;font-weight:700;color:var(--dark);margin-bottom:16px;display:flex;gap:16px;align-items:flex-start;line-height:1.6}
+.faq-q-mark{font-size:18px;font-weight:900;color:var(--red);flex-shrink:0;width:24px}
+.faq-a{font-size:14px;color:var(--light);line-height:2;padding-left:40px}
+.faq-a a{color:var(--red);text-decoration:underline}
 
+.faq-cta{background:var(--off);padding:80px 60px;text-align:center}
+.faq-cta h2{font-size:clamp(22px,3vw,30px);font-weight:800;color:var(--dark);margin-bottom:16px}
+.faq-cta p{font-size:15px;color:var(--light);margin-bottom:36px}
+.faq-cta-acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
 
-<!-- #sub_contents -->
-</BaseLayout>
+@media(max-width:768px){
+  .faq-hero{padding:100px 24px 60px}
+  .faq-body{padding:48px 24px}
+  .faq-cta{padding:60px 24px}
+}
+</style>
+
+<!-- HERO -->
+<section class="faq-hero">
+  <div class="faq-hero-ey fade">FAQ</div>
+  <h1 class="fade">よくある質問</h1>
+</section>
+
+<!-- FAQ LIST -->
+<section class="faq-body">
+  <div class="faq-list">
+
+    <div class="faq-item fade">
+      <div class="faq-q"><span class="faq-q-mark">Q</span>本当に売上は上がりますか？</div>
+      <div class="faq-a">EC事業者様の一番の悩みは「売上」だと思います。弊社は運営のプロとして、緊密にヒアリングを行った上で、お客様の商材、競合との違い、ターゲット属性や市場調査、アクセスの情況、広告投下量を分析し、初めて売上の向上に向けての戦略を具体的に立案します。多くのEC事業者様の商材は、正直申し上げて売りにくいと思います。ただ、差別化できる商品開発をお手伝いいたしますので、柔軟な対応をし、本気で売り上げを上げたいと思っている事業者様には寄り添い高い確率で成功に導いていきます。</div>
+    </div>
+
+    <div class="faq-item fade">
+      <div class="faq-q"><span class="faq-q-mark">Q</span>他の会社に依頼しているけど、途中でお願いすることはできますか？</div>
+      <div class="faq-a">このような場合、率直にヒアリングを行った上で、ご不満に思われている事や、現実の目標に対してアプローチが運用体制とマッチしていたのかを含め、業務改善、または弊社の基準に合わせた戦術と新規の戦略を立案させていただきますのでご安心ください。</div>
+    </div>
+
+    <div class="faq-item fade">
+      <div class="faq-q"><span class="faq-q-mark">Q</span>運営している複数のサイトをまとめて見てもらえますか？</div>
+      <div class="faq-a">同ブランドで複数のモールに出店している場合は、その中の一つをご依頼されるより、まとめてご依頼されたほうが、店舗ごとの情況もつかみやすく、お客様にとって、より最適な戦術や戦略立案をご提案できます。その場合は是非、まとめてご依頼下さい。</div>
+    </div>
+
+    <div class="faq-item fade">
+      <div class="faq-q"><span class="faq-q-mark">Q</span>出店を考えています。初期構築からお願いできますか？</div>
+      <div class="faq-a">扱う商品や販売目標に応じて、カートシステムが変わります。詳しくヒアリングをさせていただいたのち、販売戦略、および、ECサイト構築のお見積りを提出させていただきますので、一概には言えませんが、最低でも3か月以上かかると思います。詳しくはお問い合わせください。</div>
+    </div>
+
+    <div class="faq-item fade">
+      <div class="faq-q"><span class="faq-q-mark">Q</span>サイト運営の担当者が辞めてしまった。運営代行を頼めますか？</div>
+      <div class="faq-a">可能です。まずはご相談ください。御社の「EC事業部」として運営致します。サイトの分析、ページ改善、戦略立案・実行まで、弊社にお任せ頂けます。</div>
+    </div>
+
+    <div class="faq-item fade">
+      <div class="faq-q"><span class="faq-q-mark">Q</span>使っているWebシステムが今の業務に合わないので、改善をお願いできますか？</div>
+      <div class="faq-a">現在の業務の内容やご不満点をヒアリングのうえ、ご使用のWebシステムの改善点を洗い出します。お客様のニーズにあったWebシステムの改善案をご提案させて頂きます。運営とメンテナンスまで合わせてご依頼が可能です。</div>
+    </div>
+
+    <div class="faq-item fade">
+      <div class="faq-q"><span class="faq-q-mark">Q</span>外国人に向けて販売をしたい。どこまでお願いできますか？</div>
+      <div class="faq-a">越境ECは弊社でも取り組んでおります。越境ECサイトの構築から、運営管理、受注、発送まで英語がわからない方でも、安心してお任せ頂けます。まずはご相談ください。</div>
+    </div>
+
+    <div class="faq-item fade">
+      <div class="faq-q"><span class="faq-q-mark">Q</span>御社は敷居が高そうですが、経験の少ない素人同然でも相談に乗って頂けますか？</div>
+      <div class="faq-a">まったく問題がありません。専門用語をなるべく使わずにご説明しながら、弊社のスタッフがあなたに代わり、ECサイトの運営を代行致します。お持ちのECサイトに対しコンセプトが無い、ビジョンが無い、思い入れが無い方はお断りしています。一緒に育て成長を喜びあいましょう。</div>
+    </div>
+
+    <div class="faq-item fade">
+      <div class="faq-q"><span class="faq-q-mark">Q</span>運営しているECサイトがありますが、伸び悩んでいます。コンサルタントをお願いできますか？</div>
+      <div class="faq-a">ECサイトの状況と目標の売り上げに応じてサービス内容が変わります。詳しくはお問合せください。</div>
+    </div>
+
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="faq-cta">
+  <h2 class="fade">他にご不明な点はございますか？</h2>
+  <p class="fade">お気軽に個別面談でご相談ください。</p>
+  <div class="faq-cta-acts fade">
+    <a href="/contact/" class="btn-d">個別面談を予約する →</a>
+    <a href="/#services" class="btn-g">サービス一覧を見る</a>
+  </div>
+</section>
+
+</NewLayout>
