@@ -1,0 +1,493 @@
+---
+// 飲食店OMO戦略パッケージ LP
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="予約・来店・テイクアウト・デリバリー・ECをひとつにつなぐ、飲食店OMO戦略パッケージ。来店前から来店後の再購入まで一気通貫で設計します。">
+<title>飲食店OMO戦略パッケージ | ECモンスター</title>
+<link rel="canonical" href="https://ecmonster.jp/omo-food/" />
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:title" content="飲食店OMO戦略パッケージ | ECモンスター" />
+<meta property="og:description" content="予約・来店・テイクアウト・デリバリー・ECをひとつにつなぐ飲食店OMO戦略パッケージ。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ecmonster.jp/omo-food/" />
+<meta property="og:image" content="https://ecmonster.jp/ecmonsterlogo3.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-53F0YCGQDS"></script>
+<script is:inline>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-53F0YCGQDS');</script>
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-1003850219"></script>
+<script is:inline>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('config','AW-1003850219');</script>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--white:#FFF;--off:#FAFAFA;--border:#E8E8E8;--dark:#1A1A1A;--body:#3D3D3D;--light:#595959;--muted:#767676;--red:#C8272E;--red-pale:rgba(200,39,46,.05);--r:4px}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP','Inter',sans-serif;background:var(--white);color:var(--body);line-height:1.9;letter-spacing:.03em;font-size:15px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+strong{font-weight:700;color:var(--dark)}
+
+/* HEADER */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:80px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.hdr-logo{max-width:220px}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{font-size:13px;color:var(--light);font-weight:500;transition:.2s}
+.nav a:hover{color:var(--dark)}
+.nav .nav-cta{background:var(--dark);color:var(--white);padding:10px 22px;border-radius:var(--r);font-weight:600;transition:all .3s}
+.nav .nav-cta:hover{background:var(--red)}
+.m-toggle{display:none;background:none;border:none;cursor:pointer;width:32px;height:32px;position:relative}
+.m-toggle span{display:block;width:22px;height:1.5px;background:var(--dark);position:absolute;left:5px;transition:.3s}
+.m-toggle span:nth-child(1){top:9px}.m-toggle span:nth-child(2){top:15px}.m-toggle span:nth-child(3){top:21px}
+
+/* COMMON */
+.sec{padding:100px 60px}
+.sec-in{max-width:1080px;margin:0 auto}
+.sec-ey{font-size:12px;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.15em;margin-bottom:16px}
+.sec-h2{font-size:clamp(22px,3vw,32px);font-weight:800;color:var(--dark);line-height:1.5;margin-bottom:20px}
+.sec-lead{font-size:15px;color:var(--light);line-height:2;max-width:720px;margin-bottom:40px}
+.btn-red{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:var(--white);padding:16px 36px;border-radius:var(--r);font-size:15px;font-weight:700;transition:.3s}
+.btn-red:hover{opacity:.85}
+.btn-dark{display:inline-flex;align-items:center;gap:8px;background:var(--dark);color:var(--white);padding:16px 36px;border-radius:var(--r);font-size:15px;font-weight:700;transition:.3s}
+.btn-dark:hover{background:var(--red)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--dark);padding:15px 32px;border-radius:var(--r);font-size:14px;font-weight:600;border:1px solid var(--muted);transition:.3s}
+.btn-outline:hover{border-color:var(--dark)}
+
+/* HERO */
+.hero{background:#111;padding:160px 60px 100px;text-align:center}
+.hero-ey{font-size:12px;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.15em;margin-bottom:24px}
+.hero h1{font-size:clamp(24px,4vw,44px);font-weight:900;color:#fff;line-height:1.35;margin-bottom:24px}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.65);line-height:2.1;max-width:700px;margin:0 auto 48px}
+.hero-acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* WORRIES */
+.worries{background:var(--off)}
+.worry-list{display:flex;flex-direction:column;gap:10px;max-width:720px;margin-bottom:32px}
+.worry-item{display:flex;align-items:flex-start;gap:14px;padding:16px 22px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);font-size:14px;color:var(--body);line-height:1.8}
+.worry-item::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--red);margin-top:9px;flex-shrink:0}
+.worry-close{font-size:16px;color:var(--dark);font-weight:500;line-height:2;max-width:720px}
+.worry-close em{font-style:normal;color:var(--red);font-weight:700}
+
+/* CONCEPT */
+.concept-flow{display:flex;align-items:center;flex-wrap:wrap;gap:0;margin:32px 0}
+.flow-step{padding:16px 20px;background:var(--off);border:1px solid var(--border);border-radius:var(--r);font-size:13px;color:var(--dark);font-weight:600;text-align:center;min-width:100px}
+.flow-arrow{font-size:20px;color:var(--muted);padding:0 8px;flex-shrink:0}
+
+/* FEATURES */
+.feat-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;margin-bottom:40px}
+.feat-area{border:1px solid var(--border);border-radius:var(--r);padding:28px 24px;background:var(--white)}
+.feat-area-title{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.feat-items{display:flex;flex-direction:column;gap:8px}
+.feat-item{font-size:13px;color:var(--body);line-height:1.7;display:flex;align-items:flex-start;gap:8px}
+.feat-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--red);margin-top:9px;flex-shrink:0}
+
+/* BENEFITS */
+.benefit-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.benefit-card{padding:28px 24px;background:var(--white);border:1px solid var(--border);border-radius:var(--r)}
+.benefit-num{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.1em;margin-bottom:10px}
+.benefit-title{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:8px;line-height:1.5}
+.benefit-desc{font-size:13px;color:var(--light);line-height:1.9}
+
+/* CHANGE */
+.change-strong{font-size:18px;font-weight:800;color:var(--dark);line-height:1.6;padding:28px 32px;border-left:3px solid var(--red);background:var(--off);margin-top:32px}
+.change-list{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.change-item{display:flex;align-items:center;gap:14px;padding:16px 22px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);font-size:14px;color:var(--dark);font-weight:500}
+.change-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0}
+
+/* PLANS */
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.plan-card{padding:32px 24px;border:1px solid var(--border);border-radius:var(--r);background:var(--white)}
+.plan-card.featured{border-color:var(--red);background:var(--red-pale)}
+.plan-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.plan-card.featured .plan-label{color:var(--red)}
+.plan-name{font-size:18px;font-weight:800;color:var(--dark);margin-bottom:16px}
+.plan-desc{font-size:12px;color:var(--light);margin-bottom:16px;line-height:1.8}
+.plan-features{display:flex;flex-direction:column;gap:7px}
+.plan-feature{font-size:12px;color:var(--body);display:flex;align-items:flex-start;gap:6px;line-height:1.6}
+.plan-feature::before{content:'·';color:var(--red);font-weight:700;flex-shrink:0}
+
+/* FLOW */
+.flow-steps{display:flex;flex-direction:column;gap:0;max-width:680px}
+.flow-step-item{display:flex;align-items:flex-start;gap:20px;padding:20px 0;border-bottom:1px solid var(--border)}
+.flow-step-item:last-child{border-bottom:none}
+.flow-num{width:36px;height:36px;border-radius:50%;background:var(--dark);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px}
+.flow-text h4{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:4px}
+.flow-text p{font-size:13px;color:var(--light);line-height:1.7}
+
+/* FAQ */
+.faq-list{display:flex;flex-direction:column;gap:16px;max-width:720px}
+.faq-item{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--white)}
+.faq-q{padding:20px 24px;font-size:14px;font-weight:700;color:var(--dark);display:flex;align-items:flex-start;gap:12px}
+.faq-q-mark{color:var(--red);font-weight:800;font-size:16px;flex-shrink:0}
+.faq-a{padding:0 24px 20px 48px;font-size:13px;color:var(--light);line-height:1.9}
+
+/* CLOSING */
+.closing{background:#111;text-align:center;padding:120px 60px}
+.closing h2{font-size:clamp(20px,3vw,32px);font-weight:900;color:#fff;line-height:1.5;margin-bottom:24px}
+.closing-body{font-size:15px;color:rgba(255,255,255,.65);line-height:2.3;max-width:640px;margin:0 auto 48px}
+.closing-acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+/* FOOTER */
+.ftr{background:#111;color:rgba(255,255,255,.65);padding:48px 60px 28px}
+.ftr-in{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:20px}
+.ftr-brand img{max-width:200px;background:#fff;padding:12px 16px;border-radius:var(--r)}
+.ftr-brand p{font-size:12px;color:rgba(255,255,255,.4);margin-top:12px}
+.ftr-links{display:flex;gap:48px}
+.ftr-col h4{font-size:11px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:1.5px;margin-bottom:12px}
+.ftr-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);padding:3px 0;transition:.2s}
+.ftr-col a:hover{color:rgba(255,255,255,.9)}
+.ftr-btm{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.ftr-btm p{font-size:11px;color:rgba(255,255,255,.3)}
+.ftr-legal{display:flex;gap:16px}
+.ftr-legal a{font-size:11px;color:rgba(255,255,255,.3);transition:.2s}
+.ftr-legal a:hover{color:rgba(255,255,255,.65)}
+
+@media(max-width:1024px){.feat-grid,.benefit-cards{grid-template-columns:1fr}.plan-grid{grid-template-columns:1fr}}
+@media(max-width:768px){
+  .hdr{padding:0 24px}.sec{padding:72px 24px}.hero{padding:120px 24px 80px}.closing{padding:80px 24px}
+  .nav{display:none}.m-toggle{display:block}
+  .nav.open{display:flex;flex-direction:column;position:fixed;top:80px;right:0;bottom:0;left:0;background:var(--white);padding:32px 24px;gap:20px;z-index:999}
+  .ftr{padding:40px 24px 24px}.ftr-in{flex-direction:column}.ftr-links{flex-direction:column;gap:24px}
+  .ftr-btm{flex-direction:column;text-align:center}
+}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.fade.vis{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <a href="/"><img src="/ecmonsterlogo3.png" alt="ECMONSTER" class="hdr-logo"></a>
+  <nav class="nav" id="nav">
+    <a href="/">トップ</a>
+    <a href="/omo/">OMO戦略</a>
+    <a href="/faq/">よくある質問</a>
+    <a href="/contact/" class="nav-cta">無料相談</a>
+  </nav>
+  <button class="m-toggle" id="menuBtn"><span></span><span></span><span></span></button>
+</header>
+
+<main>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="hero-ey fade">飲食店OMO戦略パッケージ</div>
+  <h1 class="fade">予約・来店・店内注文・テイクアウト・<br>デリバリー・ECを、ひとつにつなぐ。</h1>
+  <p class="hero-sub fade">飲食店の売上を、もう「店内売上だけ」で終わらせない。来店前の予約から、来店中の注文、来店後の再来店・再購入まで一気通貫でつなぎ、<strong style="color:#fff">売上機会を取りこぼさない飲食店OMO</strong>を設計します。</p>
+  <div class="hero-acts fade">
+    <a href="/contact/" class="btn-red">無料相談を申し込む</a>
+    <a href="/contact/" class="btn-outline" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.3)">資料請求をする</a>
+  </div>
+</section>
+
+<!-- 2. WORRIES -->
+<section class="sec worries">
+  <div class="sec-in">
+    <div class="sec-ey fade">Worries</div>
+    <h2 class="sec-h2 fade">飲食店の売上が伸びにくいのは、料理の問題だけではありません。</h2>
+    <p class="sec-lead fade">こんな状態に、心当たりはないでしょうか。</p>
+    <div class="worry-list">
+      <div class="worry-item fade">予約が電話や複数媒体に分散していて管理が面倒</div>
+      <div class="worry-item fade">事前注文・テイクアウト・デリバリーがバラバラで現場が混乱する</div>
+      <div class="worry-item fade">店内オーダーや会計に時間がかかり、回転率が上がらない</div>
+      <div class="worry-item fade">一度来店してくれたお客様に、次の来店や再購入を促せていない</div>
+      <div class="worry-item fade">常連客づくりが属人的で、仕組みになっていない</div>
+      <div class="worry-item fade">来店客をギフトやEC購入につなげられていない</div>
+      <div class="worry-item fade">POSデータはあるが、経営判断に十分活かせていない</div>
+    </div>
+    <p class="worry-close fade">これらは、来店・注文・会計・販促・再来店施策が<em>分断されている</em>ことで起きています。</p>
+  </div>
+</section>
+
+<!-- 3. CONCEPT -->
+<section class="sec" style="background:var(--white)">
+  <div class="sec-in">
+    <div class="sec-ey fade">Concept</div>
+    <h2 class="sec-h2 fade">飲食店経営を、"点"ではなく"流れ"で最適化する。</h2>
+    <p class="sec-lead fade">お客様の行動は、ひとつの流れです。この流れが自然につながっていれば、売上は積み上がります。</p>
+    <div class="concept-flow fade">
+      <div class="flow-step">SNSで<br>発見</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">予約</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">来店・<br>注文</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">会計</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">再来店/<br>テイクアウト</div>
+      <div class="flow-arrow">→</div>
+      <div class="flow-step">EC購入/<br>ギフト</div>
+    </div>
+    <p class="fade" style="font-size:15px;color:var(--body);line-height:2;max-width:680px">飲食店OMO戦略パッケージは、この分断をなくし、<strong>来店前・来店中・来店後を一つにまとめるための仕組み</strong>です。</p>
+  </div>
+</section>
+
+<!-- 4. FEATURES -->
+<section class="sec" style="background:var(--off)">
+  <div class="sec-in">
+    <div class="sec-ey fade">Features</div>
+    <h2 class="sec-h2 fade">来店売上だけでなく、店外売上・再購入売上まで設計するパッケージです。</h2>
+    <p class="sec-lead fade">単なるシステム導入ではなく、売上導線の設計としてまとめています。</p>
+    <div class="feat-grid">
+      <div class="feat-area fade">
+        <div class="feat-area-title">来店前</div>
+        <div class="feat-items">
+          <div class="feat-item">来店予約</div>
+          <div class="feat-item">事前予約注文</div>
+          <div class="feat-item">受取日時指定</div>
+          <div class="feat-item">クーポン付与</div>
+        </div>
+      </div>
+      <div class="feat-area fade">
+        <div class="feat-area-title">来店中</div>
+        <div class="feat-items">
+          <div class="feat-item">テーブル管理</div>
+          <div class="feat-item">店内注文・セルフオーダー</div>
+          <div class="feat-item">キッチン伝票発行</div>
+          <div class="feat-item">スムーズな会計・POS連携</div>
+        </div>
+      </div>
+      <div class="feat-area fade">
+        <div class="feat-area-title">店外売上</div>
+        <div class="feat-items">
+          <div class="feat-item">テイクアウト</div>
+          <div class="feat-item">デリバリー</div>
+          <div class="feat-item">デリバリーEC連動</div>
+          <div class="feat-item">店舗商品とEC商品の出し分け</div>
+        </div>
+      </div>
+      <div class="feat-area fade">
+        <div class="feat-area-title">来店後</div>
+        <div class="feat-items">
+          <div class="feat-item">Thanksメール・ステップメール</div>
+          <div class="feat-item">クーポン配布・ポイント施策</div>
+          <div class="feat-item">メルマガ・SMS施策</div>
+          <div class="feat-item">アンケート回収・ギフトEC</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. WHY NOW -->
+<section class="sec" style="background:var(--white)">
+  <div class="sec-in">
+    <div class="sec-ey fade">Why Now</div>
+    <h2 class="sec-h2 fade">"席数"だけで伸ばす経営には、限界があります。</h2>
+    <p class="fade" style="font-size:15px;color:var(--body);line-height:2.2;max-width:680px;margin-bottom:24px">お客様の購買行動はすでに変わっています。来店前にスマホで比較し、空き時間に予約し、忙しい日はテイクアウト、家ではデリバリー、気に入った店の商品はギフトで送る。</p>
+    <p class="fade" style="font-size:15px;color:var(--body);line-height:2.2;max-width:680px;margin-bottom:32px">この行動変化に対して、<strong>「来店時しか売れない構造」</strong>のままだと、売上機会を取りこぼします。</p>
+    <div class="change-strong fade">だからこそ必要なのが、来店前・来店中・来店後をつなぐOMO設計です。</div>
+  </div>
+</section>
+
+<!-- 6. BENEFITS -->
+<section class="sec" style="background:var(--off)">
+  <div class="sec-in">
+    <div class="sec-ey fade">Benefits</div>
+    <h2 class="sec-h2 fade">飲食店OMO戦略パッケージで実現できること</h2>
+    <div class="benefit-cards">
+      <div class="benefit-card fade">
+        <div class="benefit-num">01</div>
+        <div class="benefit-title">来店前の売上を取りにいく</div>
+        <p class="benefit-desc">来店予約や事前予約注文を導入することで、当日の来店を待つだけでなく、来店前の時点で売上を確定させる動きができます。受取日時指定でテイクアウトを効率化し、事前決済で当日オペレーションを軽くします。</p>
+      </div>
+      <div class="benefit-card fade">
+        <div class="benefit-num">02</div>
+        <div class="benefit-title">店内オペレーションを整え回転率を上げる</div>
+        <p class="benefit-desc">テーブル管理、オーダー確認、キッチン/フロア別伝票出力、会計の効率化、POSとの連携により、現場の混乱を減らし、回転率を高める基盤をつくります。</p>
+      </div>
+      <div class="benefit-card fade">
+        <div class="benefit-num">03</div>
+        <div class="benefit-title">テイクアウト・デリバリーを売上の柱にする</div>
+        <p class="benefit-desc">テイクアウト導線の整備、デリバリー注文連携、商品ごとの販売チャネル設計を行い、店外売上をきちんと収益化する設計をつくります。ピーク時間外の売上も作れます。</p>
+      </div>
+      <div class="benefit-card fade">
+        <div class="benefit-num">04</div>
+        <div class="benefit-title">来店客を"その場限り"で終わらせない</div>
+        <p class="benefit-desc">Thanksメール、ステップメール、メルマガ、SMS、クーポン、ポイント、ギフトEC、紹介促進まで設計でき、再来店と再購入の導線を強化できます。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. CHANGE -->
+<section class="sec" style="background:var(--white)">
+  <div class="sec-in">
+    <div class="sec-ey fade">After</div>
+    <h2 class="sec-h2 fade">導入後に起こる変化</h2>
+    <div class="change-list">
+      <div class="change-item fade"><span class="change-dot"></span>予約が取りやすくなり、見込み客を取りこぼしにくくなる</div>
+      <div class="change-item fade"><span class="change-dot"></span>事前注文で当日のオペレーション負荷が減る</div>
+      <div class="change-item fade"><span class="change-dot"></span>店内オペレーションが整い、回転率が上がる</div>
+      <div class="change-item fade"><span class="change-dot"></span>テイクアウト・デリバリーの売上が安定しやすくなる</div>
+      <div class="change-item fade"><span class="change-dot"></span>来店客を再来店やEC購入につなげやすくなる</div>
+      <div class="change-item fade"><span class="change-dot"></span>顧客情報が蓄積され、販促がデータで打てるようになる</div>
+      <div class="change-item fade"><span class="change-dot"></span>売上が「単発」から「積み上がる構造」に変わる</div>
+    </div>
+    <div class="change-strong fade">今日の客数を追う経営から、顧客資産を積み上げる経営へ。</div>
+  </div>
+</section>
+
+<!-- 8. PLANS -->
+<section class="sec" style="background:var(--off)">
+  <div class="sec-in">
+    <div class="sec-ey fade">Plans</div>
+    <h2 class="sec-h2 fade">店舗状況に合わせて選べる3プラン</h2>
+    <div class="plan-grid">
+      <div class="plan-card fade">
+        <div class="plan-label">Starter</div>
+        <div class="plan-name">スタータープラン</div>
+        <div class="plan-desc">まずは飲食店の基本OMOを整えたい方向け。</div>
+        <div class="plan-features">
+          <div class="plan-feature">来店予約</div>
+          <div class="plan-feature">事前予約注文</div>
+          <div class="plan-feature">テイクアウト</div>
+          <div class="plan-feature">デリバリー</div>
+          <div class="plan-feature">POS連携</div>
+          <div class="plan-feature">売上分析</div>
+        </div>
+      </div>
+      <div class="plan-card featured fade">
+        <div class="plan-label">Growth</div>
+        <div class="plan-name">グロースプラン</div>
+        <div class="plan-desc">店内と店外をつなぎ、再来店導線まで強化したい方向け。</div>
+        <div class="plan-features">
+          <div class="plan-feature">スターター内容一式</div>
+          <div class="plan-feature">テーブル・キッチン伝票</div>
+          <div class="plan-feature">デリバリーEC連動</div>
+          <div class="plan-feature">会員取得導線</div>
+          <div class="plan-feature">ステップメール・クーポン</div>
+          <div class="plan-feature">SMS施策・ポイント機能</div>
+        </div>
+      </div>
+      <div class="plan-card fade">
+        <div class="plan-label">Premium</div>
+        <div class="plan-name">プレミアムプラン</div>
+        <div class="plan-desc">常連化・ギフト化・ブランド化まで進めたい方向け。</div>
+        <div class="plan-features">
+          <div class="plan-feature">グロース内容一式</div>
+          <div class="plan-feature">ギフトEC・会員ランク施策</div>
+          <div class="plan-feature">アフィリエイト施策</div>
+          <div class="plan-feature">顧客インフルエンサー化</div>
+          <div class="plan-feature">SNS自動投稿</div>
+          <div class="plan-feature">コミュニティ施策</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FLOW -->
+<section class="sec" style="background:var(--white)">
+  <div class="sec-in">
+    <div class="sec-ey fade">Process</div>
+    <h2 class="sec-h2 fade">導入までの流れ</h2>
+    <p class="sec-lead fade">単に機能を入れるだけではなく、その店舗に合った「売上導線」と「現場運用」に落とし込むことを重視します。</p>
+    <div class="flow-steps">
+      <div class="flow-step-item fade"><div class="flow-num">1</div><div class="flow-text"><h4>お問い合わせ</h4><p>まずはお気軽にご相談ください。</p></div></div>
+      <div class="flow-step-item fade"><div class="flow-num">2</div><div class="flow-text"><h4>現状ヒアリング</h4><p>課題・現状の運用・目標を整理します。</p></div></div>
+      <div class="flow-step-item fade"><div class="flow-num">3</div><div class="flow-text"><h4>店舗運営フロー確認</h4><p>注文・会計・デリバリーなど現場の流れを把握します。</p></div></div>
+      <div class="flow-step-item fade"><div class="flow-num">4</div><div class="flow-text"><h4>必要機能の選定</h4><p>状況に合った機能を絞り込みます。</p></div></div>
+      <div class="flow-step-item fade"><div class="flow-num">5</div><div class="flow-text"><h4>初期設定・導線設計</h4><p>売上導線と現場運用を設計します。</p></div></div>
+      <div class="flow-step-item fade"><div class="flow-num">6</div><div class="flow-text"><h4>テスト運用</h4><p>実際の現場で動作確認します。</p></div></div>
+      <div class="flow-step-item fade"><div class="flow-num">7</div><div class="flow-text"><h4>本番導入</h4><p>本格稼働を開始します。</p></div></div>
+      <div class="flow-step-item fade"><div class="flow-num">8</div><div class="flow-text"><h4>販促・改善運用スタート</h4><p>データを見ながら継続的に改善します。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. FAQ -->
+<section class="sec" style="background:var(--off)">
+  <div class="sec-in">
+    <div class="sec-ey fade">FAQ</div>
+    <h2 class="sec-h2 fade">よくある質問</h2>
+    <div class="faq-list">
+      <div class="faq-item fade">
+        <div class="faq-q"><span class="faq-q-mark">Q</span>小規模な店舗でも導入できますか？</div>
+        <div class="faq-a">はい。必要機能を絞ってスタートできます。まずは予約、テイクアウト、POS連携など、重要度の高いものから導入し、段階的に広げる設計が可能です。</div>
+      </div>
+      <div class="faq-item fade">
+        <div class="faq-q"><span class="faq-q-mark">Q</span>今ある運用を全部変えないといけませんか？</div>
+        <div class="faq-a">いいえ。現場に合わせて、無理なく組み込める形で設計します。大事なのは、システムを増やすことではなく、分断されている流れをつなぐことです。</div>
+      </div>
+      <div class="faq-item fade">
+        <div class="faq-q"><span class="faq-q-mark">Q</span>テイクアウトやデリバリーだけの強化も可能ですか？</div>
+        <div class="faq-a">可能です。ただし、本当に売上を伸ばすには、予約、来店、再来店施策まで含めて考えたほうが効果は高くなります。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <h2 class="fade">飲食店の売上は、席数だけでは伸びません。</h2>
+  <p class="closing-body fade">
+    予約で見込み客を取り、来店時の体験を整え、店外売上を伸ばし、来店後の再購入まで自動化する。<br><br>
+    飲食店OMO戦略パッケージは、そのための仕組みを、現場運用まで見据えて組み上げるためのサービスです。<br><br>
+    <strong style="color:#fff">「店内売上だけに依存しない飲食店経営」</strong>を目指すなら、今が見直しのタイミングです。
+  </p>
+  <div class="closing-acts fade">
+    <a href="/contact/" class="btn-red">無料相談を申し込む</a>
+    <a href="/contact/" class="btn-outline" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.3)">資料請求をする</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="ftr-in">
+    <div class="ftr-brand">
+      <img src="/ecmonsterlogo3.png" alt="ECMONSTER">
+      <p>ECの勝ち筋を、明確に。</p>
+    </div>
+    <div class="ftr-links">
+      <div class="ftr-col">
+        <h4>サービス</h4>
+        <a href="/contact/">通常コンサル</a>
+        <a href="/ai/">AIコンサル</a>
+        <a href="/web/">WEBシステム開発</a>
+        <a href="/omo/">OMO戦略パッケージ</a>
+        <a href="/movie/">ライブコマーサー育成</a>
+        <a href="/ec-backyard/">EC全自動化集客戦略</a>
+        <a href="/echeroes3/">ECヒーローズ</a>
+      </div>
+      <div class="ftr-col">
+        <h4>会社情報</h4>
+        <a href="/company/">会社概要</a>
+        <a href="/contact/">お問い合わせ</a>
+        <a href="/login/">ログイン</a>
+      </div>
+    </div>
+  </div>
+  <div class="ftr-btm">
+    <p>&copy; ECモンスター</p>
+    <div class="ftr-legal">
+      <a href="/privacy-policy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/legal-notice/">特定商取引法</a>
+    </div>
+  </div>
+</footer>
+
+<script is:inline>
+(function(){
+  var btn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+  if(btn&&nav)btn.addEventListener('click',function(){nav.classList.toggle('open');});
+  var fades=document.querySelectorAll('.fade');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:.12});
+    fades.forEach(function(el){io.observe(el);});
+  }else{fades.forEach(function(el){el.classList.add('vis');});}
+})();
+</script>
+</body>
+</html>

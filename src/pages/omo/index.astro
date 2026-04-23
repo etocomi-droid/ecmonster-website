@@ -1,0 +1,245 @@
+---
+// OMO戦略パッケージ ハブページ
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="リアルとECを融合し、売上と顧客体験を同時に高めるOMO戦略パッケージ。飲食店・実店舗向け2プランをご用意しています。">
+<title>OMO戦略パッケージ | ECモンスター</title>
+<link rel="canonical" href="https://ecmonster.jp/omo/" />
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:title" content="OMO戦略パッケージ | ECモンスター" />
+<meta property="og:description" content="リアルとECを融合し、売上と顧客体験を同時に高めるOMO戦略パッケージ。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ecmonster.jp/omo/" />
+<meta property="og:image" content="https://ecmonster.jp/ecmonsterlogo3.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-53F0YCGQDS"></script>
+<script is:inline>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-53F0YCGQDS');</script>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--white:#FFF;--off:#FAFAFA;--border:#E8E8E8;--dark:#1A1A1A;--body:#3D3D3D;--light:#595959;--muted:#767676;--red:#C8272E;--red-pale:rgba(200,39,46,.05);--r:4px}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP','Inter',sans-serif;background:var(--white);color:var(--body);line-height:1.9;letter-spacing:.03em;font-size:15px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+strong{font-weight:700;color:var(--dark)}
+
+/* HEADER */
+.hdr{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:80px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.hdr-logo{max-width:220px}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{font-size:13px;color:var(--light);font-weight:500;transition:.2s}
+.nav a:hover{color:var(--dark)}
+.nav .nav-cta{background:var(--dark);color:var(--white);padding:10px 22px;border-radius:var(--r);font-weight:600;transition:all .3s}
+.nav .nav-cta:hover{background:var(--red)}
+.m-toggle{display:none;background:none;border:none;cursor:pointer;width:32px;height:32px;position:relative}
+.m-toggle span{display:block;width:22px;height:1.5px;background:var(--dark);position:absolute;left:5px;transition:.3s}
+.m-toggle span:nth-child(1){top:9px}.m-toggle span:nth-child(2){top:15px}.m-toggle span:nth-child(3){top:21px}
+
+/* HERO */
+.hero{background:#111;padding:160px 60px 100px;text-align:center}
+.hero-ey{font-size:12px;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.15em;margin-bottom:24px}
+.hero h1{font-size:clamp(26px,4vw,44px);font-weight:900;color:#fff;line-height:1.35;margin-bottom:24px}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.65);line-height:2.1;max-width:640px;margin:0 auto}
+
+/* PACKAGES */
+.packages{padding:100px 60px;max-width:1080px;margin:0 auto}
+.sec-ey{font-size:12px;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.15em;margin-bottom:16px}
+.packages h2{font-size:clamp(22px,3vw,32px);font-weight:800;color:var(--dark);line-height:1.5;margin-bottom:12px}
+.packages-lead{font-size:15px;color:var(--light);line-height:2;margin-bottom:56px;max-width:720px}
+.pkg-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
+.pkg-card{border:1px solid var(--border);border-radius:8px;overflow:hidden;display:flex;flex-direction:column;transition:.3s}
+.pkg-card:hover{border-color:var(--red);box-shadow:0 4px 24px rgba(0,0,0,.06)}
+.pkg-head{background:#111;padding:40px 36px 32px}
+.pkg-tag{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.15em;text-transform:uppercase;margin-bottom:16px}
+.pkg-head h3{font-size:clamp(20px,2.5vw,26px);font-weight:900;color:#fff;line-height:1.4;margin-bottom:16px}
+.pkg-head p{font-size:14px;color:rgba(255,255,255,.6);line-height:1.9}
+.pkg-body{padding:32px 36px;flex:1;display:flex;flex-direction:column;gap:20px}
+.pkg-features{display:flex;flex-direction:column;gap:10px}
+.pkg-feature{display:flex;align-items:flex-start;gap:10px;font-size:13px;color:var(--body);line-height:1.7}
+.pkg-feature::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--red);margin-top:8px;flex-shrink:0}
+.pkg-cta{display:inline-flex;align-items:center;gap:6px;background:var(--dark);color:var(--white);padding:14px 28px;border-radius:var(--r);font-size:14px;font-weight:700;transition:.3s;margin-top:auto}
+.pkg-cta:hover{background:var(--red)}
+.pkg-cta-arrow{font-size:16px}
+
+/* CONCEPT */
+.concept{background:var(--off);padding:80px 60px}
+.concept-in{max-width:1080px;margin:0 auto;text-align:center}
+.concept h2{font-size:clamp(20px,2.5vw,28px);font-weight:800;color:var(--dark);line-height:1.5;margin-bottom:20px}
+.concept p{font-size:15px;color:var(--light);line-height:2.1;max-width:680px;margin:0 auto 40px}
+.concept-btn{display:inline-flex;align-items:center;gap:8px;background:var(--dark);color:var(--white);padding:15px 32px;border-radius:var(--r);font-size:14px;font-weight:600;transition:.3s}
+.concept-btn:hover{background:var(--red)}
+
+/* FOOTER */
+.ftr{background:#111;color:rgba(255,255,255,.65);padding:48px 60px 28px}
+.ftr-in{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:20px}
+.ftr-brand img{max-width:200px;background:#fff;padding:12px 16px;border-radius:var(--r)}
+.ftr-brand p{font-size:12px;color:rgba(255,255,255,.4);margin-top:12px}
+.ftr-links{display:flex;gap:48px}
+.ftr-col h4{font-size:11px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:1.5px;margin-bottom:12px}
+.ftr-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);padding:3px 0;transition:.2s}
+.ftr-col a:hover{color:rgba(255,255,255,.9)}
+.ftr-btm{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.ftr-btm p{font-size:11px;color:rgba(255,255,255,.3)}
+.ftr-legal{display:flex;gap:16px}
+.ftr-legal a{font-size:11px;color:rgba(255,255,255,.3);transition:.2s}
+.ftr-legal a:hover{color:rgba(255,255,255,.65)}
+
+@media(max-width:768px){
+  .hdr{padding:0 24px}.hero{padding:120px 24px 72px}
+  .nav{display:none}.m-toggle{display:block}
+  .nav.open{display:flex;flex-direction:column;position:fixed;top:80px;right:0;bottom:0;left:0;background:var(--white);padding:32px 24px;gap:20px;z-index:999}
+  .packages{padding:72px 24px}.concept{padding:64px 24px}
+  .pkg-grid{grid-template-columns:1fr}
+  .ftr{padding:40px 24px 24px}.ftr-in{flex-direction:column}.ftr-links{flex-direction:column;gap:24px}
+  .ftr-btm{flex-direction:column;text-align:center}
+}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.fade.vis{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <a href="/"><img src="/ecmonsterlogo3.png" alt="ECMONSTER" class="hdr-logo"></a>
+  <nav class="nav" id="nav">
+    <a href="/">トップ</a>
+    <a href="/#services">サービス</a>
+    <a href="/faq/">よくある質問</a>
+    <a href="/contact/" class="nav-cta">個別相談</a>
+  </nav>
+  <button class="m-toggle" aria-label="メニュー" id="menuBtn"><span></span><span></span><span></span></button>
+</header>
+
+<main>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-ey fade">OMO Strategy</div>
+  <h1 class="fade">リアルとECを、ひとつにつなぐ。</h1>
+  <p class="hero-sub fade">
+    店舗の接客力とECの利便性が分断されているままでは、売上も顧客体験も伸びにくくなります。<br>
+    ECモンスターのOMO戦略パッケージは、リアルとネットを融合し、<strong>どこでも売れる・どこでも買える・何度でも戻ってくる仕組み</strong>をつくります。
+  </p>
+</section>
+
+<!-- PACKAGES -->
+<section style="padding:100px 60px 120px;background:var(--white)">
+  <div style="max-width:1080px;margin:0 auto">
+    <div class="sec-ey fade">2つのOMOパッケージ</div>
+    <h2 class="fade" style="font-size:clamp(22px,3vw,32px);font-weight:800;color:var(--dark);line-height:1.5;margin-bottom:12px">業態に合ったOMO戦略を選べます。</h2>
+    <p class="fade" style="font-size:15px;color:var(--light);line-height:2;margin-bottom:56px;max-width:680px">飲食店向けと実店舗販売店向け、2種類のパッケージをご用意しています。<br>現状の課題に応じて、必要な機能から段階的に導入できます。</p>
+    <div class="pkg-grid">
+
+      <!-- 飲食店 -->
+      <div class="pkg-card fade">
+        <div class="pkg-head">
+          <div class="pkg-tag">Package 01</div>
+          <h3>飲食店OMO<br>戦略パッケージ</h3>
+          <p>予約・来店・テイクアウト・デリバリー・ECを、ひとつにつなぎ、来店前から来店後の再購入まで一気通貫で設計します。</p>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-features">
+            <div class="pkg-feature">来店予約・事前予約注文</div>
+            <div class="pkg-feature">テーブル管理・キッチン伝票・POS連携</div>
+            <div class="pkg-feature">テイクアウト・デリバリー・EC連動</div>
+            <div class="pkg-feature">Thanksメール・ステップメール・クーポン施策</div>
+            <div class="pkg-feature">来店後の再来店・再購入導線設計</div>
+          </div>
+          <a href="/omo-food/" class="pkg-cta">詳しく見る <span class="pkg-cta-arrow">→</span></a>
+        </div>
+      </div>
+
+      <!-- 実店舗 -->
+      <div class="pkg-card fade">
+        <div class="pkg-head">
+          <div class="pkg-tag">Package 02</div>
+          <h3>実店舗販売店OMO<br>戦略パッケージ</h3>
+          <p>在庫・接客・受取・返品交換・顧客情報をひとつにつなぎ、店舗とECが互いに送客し合う構造をつくります。</p>
+        </div>
+        <div class="pkg-body">
+          <div class="pkg-features">
+            <div class="pkg-feature">POS・在庫統合（マルチロケーション）</div>
+            <div class="pkg-feature">店頭接客→EC購入誘導・カートメール送信</div>
+            <div class="pkg-feature">EC購入→店舗受取・返品交換</div>
+            <div class="pkg-feature">CRM・メール/SMS・ポイント・クーポン</div>
+            <div class="pkg-feature">本部一元管理・売上分析・在庫分析</div>
+          </div>
+          <a href="/omo-retail/" class="pkg-cta">詳しく見る <span class="pkg-cta-arrow">→</span></a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- CONCEPT -->
+<section class="concept">
+  <div class="concept-in">
+    <h2 class="fade">まずは現状の課題を整理するところから。</h2>
+    <p class="fade">どちらのパッケージが合うかわからない場合も、個別面談でヒアリングしながら、御社に合った導線を一緒に設計します。</p>
+    <a href="/contact/" class="concept-btn fade">無料相談を申し込む →</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="ftr-in">
+    <div class="ftr-brand">
+      <img src="/ecmonsterlogo3.png" alt="ECMONSTER">
+      <p>ECの勝ち筋を、明確に。</p>
+    </div>
+    <div class="ftr-links">
+      <div class="ftr-col">
+        <h4>サービス</h4>
+        <a href="/contact/">通常コンサル</a>
+        <a href="/ai/">AIコンサル</a>
+        <a href="/web/">WEBシステム開発</a>
+        <a href="/omo/">OMO戦略パッケージ</a>
+        <a href="/movie/">ライブコマーサー育成</a>
+        <a href="/ec-backyard/">EC全自動化集客戦略</a>
+        <a href="/echeroes3/">ECヒーローズ</a>
+      </div>
+      <div class="ftr-col">
+        <h4>会社情報</h4>
+        <a href="/company/">会社概要</a>
+        <a href="/contact/">お問い合わせ</a>
+        <a href="/login/">ログイン</a>
+      </div>
+    </div>
+  </div>
+  <div class="ftr-btm">
+    <p>&copy; ECモンスター</p>
+    <div class="ftr-legal">
+      <a href="/privacy-policy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/legal-notice/">特定商取引法</a>
+    </div>
+  </div>
+</footer>
+
+<script is:inline>
+(function(){
+  var btn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+  if(btn&&nav)btn.addEventListener('click',function(){nav.classList.toggle('open');});
+  var fades=document.querySelectorAll('.fade');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:.15});
+    fades.forEach(function(el){io.observe(el);});
+  }else{fades.forEach(function(el){el.classList.add('vis');});}
+})();
+</script>
+</body>
+</html>

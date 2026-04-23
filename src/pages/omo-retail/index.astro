@@ -1,0 +1,490 @@
+---
+// 実店舗販売店OMO戦略パッケージ LP
+---
+
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="在庫・接客・受取・返品交換・顧客情報をひとつにつなぐ、実店舗販売店OMO戦略パッケージ。店舗とECを競合させるのではなく、相互送客させる設計を行います。">
+<title>実店舗販売店OMO戦略パッケージ | ECモンスター</title>
+<link rel="canonical" href="https://ecmonster.jp/omo-retail/" />
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<meta property="og:title" content="実店舗販売店OMO戦略パッケージ | ECモンスター" />
+<meta property="og:description" content="在庫・接客・受取・返品交換・顧客情報をひとつにつなぐ実店舗OMO戦略パッケージ。" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ecmonster.jp/omo-retail/" />
+<meta property="og:image" content="https://ecmonster.jp/ecmonsterlogo3.png" />
+<meta name="twitter:card" content="summary_large_image" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-53F0YCGQDS"></script>
+<script is:inline>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-53F0YCGQDS');</script>
+<script is:inline async src="https://www.googletagmanager.com/gtag/js?id=AW-1003850219"></script>
+<script is:inline>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('config','AW-1003850219');</script>
+
+<style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
+:root{--white:#FFF;--off:#FAFAFA;--border:#E8E8E8;--dark:#1A1A1A;--body:#3D3D3D;--light:#595959;--muted:#767676;--red:#C8272E;--red-pale:rgba(200,39,46,.05);--r:4px}
+html{scroll-behavior:smooth}
+body{font-family:'Noto Sans JP','Inter',sans-serif;background:var(--white);color:var(--body);line-height:1.9;letter-spacing:.03em;font-size:15px}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+strong{font-weight:700;color:var(--dark)}
+
+.hdr{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 60px;height:80px;display:flex;align-items:center;justify-content:space-between;background:rgba(255,255,255,.97);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--border)}
+.hdr-logo{max-width:220px}
+.nav{display:flex;align-items:center;gap:28px}
+.nav a{font-size:13px;color:var(--light);font-weight:500;transition:.2s}
+.nav a:hover{color:var(--dark)}
+.nav .nav-cta{background:var(--dark);color:var(--white);padding:10px 22px;border-radius:var(--r);font-weight:600;transition:all .3s}
+.nav .nav-cta:hover{background:var(--red)}
+.m-toggle{display:none;background:none;border:none;cursor:pointer;width:32px;height:32px;position:relative}
+.m-toggle span{display:block;width:22px;height:1.5px;background:var(--dark);position:absolute;left:5px;transition:.3s}
+.m-toggle span:nth-child(1){top:9px}.m-toggle span:nth-child(2){top:15px}.m-toggle span:nth-child(3){top:21px}
+
+.sec{padding:100px 60px}
+.sec-in{max-width:1080px;margin:0 auto}
+.sec-ey{font-size:12px;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.15em;margin-bottom:16px}
+.sec-h2{font-size:clamp(22px,3vw,32px);font-weight:800;color:var(--dark);line-height:1.5;margin-bottom:20px}
+.sec-lead{font-size:15px;color:var(--light);line-height:2;max-width:720px;margin-bottom:40px}
+.btn-red{display:inline-flex;align-items:center;gap:8px;background:var(--red);color:var(--white);padding:16px 36px;border-radius:var(--r);font-size:15px;font-weight:700;transition:.3s}
+.btn-red:hover{opacity:.85}
+.btn-dark{display:inline-flex;align-items:center;gap:8px;background:var(--dark);color:var(--white);padding:16px 36px;border-radius:var(--r);font-size:15px;font-weight:700;transition:.3s}
+.btn-dark:hover{background:var(--red)}
+.btn-outline{display:inline-flex;align-items:center;gap:8px;background:transparent;color:var(--dark);padding:15px 32px;border-radius:var(--r);font-size:14px;font-weight:600;border:1px solid var(--muted);transition:.3s}
+.btn-outline:hover{border-color:var(--dark)}
+
+.hero{background:#111;padding:160px 60px 100px;text-align:center}
+.hero-ey{font-size:12px;font-weight:600;color:var(--red);text-transform:uppercase;letter-spacing:.15em;margin-bottom:24px}
+.hero h1{font-size:clamp(24px,4vw,44px);font-weight:900;color:#fff;line-height:1.35;margin-bottom:24px}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.65);line-height:2.1;max-width:700px;margin:0 auto 48px}
+.hero-acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+.worry-list{display:flex;flex-direction:column;gap:10px;max-width:720px;margin-bottom:32px}
+.worry-item{display:flex;align-items:flex-start;gap:14px;padding:16px 22px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);font-size:14px;color:var(--body);line-height:1.8}
+.worry-item::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--red);margin-top:9px;flex-shrink:0}
+.worry-close{font-size:16px;color:var(--dark);font-weight:500;line-height:2;max-width:720px}
+.worry-close em{font-style:normal;color:var(--red);font-weight:700}
+
+.scenario{background:var(--red-pale);border:1px solid rgba(200,39,46,.15);border-radius:8px;padding:32px 36px;max-width:680px;margin:32px 0}
+.scenario h4{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:16px}
+.scenario-steps{display:flex;flex-direction:column;gap:8px}
+.scenario-step{font-size:13px;color:var(--body);display:flex;align-items:flex-start;gap:10px}
+.scenario-step-num{width:20px;height:20px;border-radius:50%;background:var(--red);color:#fff;font-size:10px;font-weight:700;display:flex;align-items:center;justify-content:center;flex-shrink:0;margin-top:2px}
+
+.feat-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px}
+.feat-area{border:1px solid var(--border);border-radius:var(--r);padding:24px 20px;background:var(--white)}
+.feat-area-title{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.1em;text-transform:uppercase;margin-bottom:12px}
+.feat-items{display:flex;flex-direction:column;gap:7px}
+.feat-item{font-size:13px;color:var(--body);line-height:1.6;display:flex;align-items:flex-start;gap:7px}
+.feat-item::before{content:'';width:4px;height:4px;border-radius:50%;background:var(--red);margin-top:9px;flex-shrink:0}
+
+.benefit-cards{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.benefit-card{padding:28px 24px;background:var(--white);border:1px solid var(--border);border-radius:var(--r)}
+.benefit-num{font-size:11px;font-weight:700;color:var(--red);letter-spacing:.1em;margin-bottom:10px}
+.benefit-title{font-size:15px;font-weight:700;color:var(--dark);margin-bottom:8px;line-height:1.5}
+.benefit-desc{font-size:13px;color:var(--light);line-height:1.9}
+
+.change-strong{font-size:18px;font-weight:800;color:var(--dark);line-height:1.6;padding:28px 32px;border-left:3px solid var(--red);background:var(--off);margin-top:32px}
+.change-list{display:flex;flex-direction:column;gap:10px;margin-bottom:32px}
+.change-item{display:flex;align-items:center;gap:14px;padding:16px 22px;background:var(--white);border:1px solid var(--border);border-radius:var(--r);font-size:14px;color:var(--dark);font-weight:500}
+.change-dot{width:8px;height:8px;border-radius:50%;background:var(--red);flex-shrink:0}
+
+.plan-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.plan-card{padding:32px 24px;border:1px solid var(--border);border-radius:var(--r);background:var(--white)}
+.plan-card.featured{border-color:var(--red);background:var(--red-pale)}
+.plan-label{font-size:11px;font-weight:700;color:var(--muted);letter-spacing:.1em;text-transform:uppercase;margin-bottom:10px}
+.plan-card.featured .plan-label{color:var(--red)}
+.plan-name{font-size:18px;font-weight:800;color:var(--dark);margin-bottom:12px}
+.plan-desc{font-size:12px;color:var(--light);margin-bottom:14px;line-height:1.8}
+.plan-features{display:flex;flex-direction:column;gap:7px}
+.plan-feature{font-size:12px;color:var(--body);display:flex;align-items:flex-start;gap:6px;line-height:1.6}
+.plan-feature::before{content:'·';color:var(--red);font-weight:700;flex-shrink:0}
+
+.flow-steps{display:flex;flex-direction:column;gap:0;max-width:680px}
+.flow-step-item{display:flex;align-items:flex-start;gap:20px;padding:20px 0;border-bottom:1px solid var(--border)}
+.flow-step-item:last-child{border-bottom:none}
+.flow-num{width:36px;height:36px;border-radius:50%;background:var(--dark);color:var(--white);display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;flex-shrink:0;margin-top:2px}
+.flow-text h4{font-size:14px;font-weight:700;color:var(--dark);margin-bottom:4px}
+.flow-text p{font-size:13px;color:var(--light);line-height:1.7}
+
+.faq-list{display:flex;flex-direction:column;gap:16px;max-width:720px}
+.faq-item{border:1px solid var(--border);border-radius:var(--r);overflow:hidden;background:var(--white)}
+.faq-q{padding:20px 24px;font-size:14px;font-weight:700;color:var(--dark);display:flex;align-items:flex-start;gap:12px}
+.faq-q-mark{color:var(--red);font-weight:800;font-size:16px;flex-shrink:0}
+.faq-a{padding:0 24px 20px 48px;font-size:13px;color:var(--light);line-height:1.9}
+
+.closing{background:#111;text-align:center;padding:120px 60px}
+.closing h2{font-size:clamp(20px,3vw,32px);font-weight:900;color:#fff;line-height:1.5;margin-bottom:24px}
+.closing-body{font-size:15px;color:rgba(255,255,255,.65);line-height:2.3;max-width:640px;margin:0 auto 48px}
+.closing-points{display:flex;flex-direction:column;gap:8px;max-width:480px;margin:0 auto 40px;text-align:left}
+.closing-point{font-size:14px;color:rgba(255,255,255,.75);display:flex;align-items:center;gap:10px}
+.closing-point::before{content:'';width:5px;height:5px;border-radius:50%;background:var(--red);flex-shrink:0}
+.closing-acts{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+
+.ftr{background:#111;color:rgba(255,255,255,.65);padding:48px 60px 28px}
+.ftr-in{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:32px;padding-bottom:28px;border-bottom:1px solid rgba(255,255,255,.1);margin-bottom:20px}
+.ftr-brand img{max-width:200px;background:#fff;padding:12px 16px;border-radius:var(--r)}
+.ftr-brand p{font-size:12px;color:rgba(255,255,255,.4);margin-top:12px}
+.ftr-links{display:flex;gap:48px}
+.ftr-col h4{font-size:11px;font-weight:700;color:rgba(255,255,255,.5);letter-spacing:1.5px;margin-bottom:12px}
+.ftr-col a{display:block;font-size:13px;color:rgba(255,255,255,.5);padding:3px 0;transition:.2s}
+.ftr-col a:hover{color:rgba(255,255,255,.9)}
+.ftr-btm{max-width:1080px;margin:0 auto;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:8px}
+.ftr-btm p{font-size:11px;color:rgba(255,255,255,.3)}
+.ftr-legal{display:flex;gap:16px}
+.ftr-legal a{font-size:11px;color:rgba(255,255,255,.3);transition:.2s}
+.ftr-legal a:hover{color:rgba(255,255,255,.65)}
+
+@media(max-width:1024px){.feat-cols{grid-template-columns:1fr 1fr}.benefit-cards{grid-template-columns:1fr}.plan-grid{grid-template-columns:1fr}}
+@media(max-width:768px){
+  .hdr{padding:0 24px}.sec{padding:72px 24px}.hero{padding:120px 24px 80px}.closing{padding:80px 24px}
+  .nav{display:none}.m-toggle{display:block}
+  .nav.open{display:flex;flex-direction:column;position:fixed;top:80px;right:0;bottom:0;left:0;background:var(--white);padding:32px 24px;gap:20px;z-index:999}
+  .feat-cols{grid-template-columns:1fr}
+  .ftr{padding:40px 24px 24px}.ftr-in{flex-direction:column}.ftr-links{flex-direction:column;gap:24px}
+  .ftr-btm{flex-direction:column;text-align:center}
+}
+.fade{opacity:0;transform:translateY(16px);transition:opacity .6s,transform .6s}
+.fade.vis{opacity:1;transform:none}
+</style>
+</head>
+<body>
+
+<header class="hdr" id="hdr">
+  <a href="/"><img src="/ecmonsterlogo3.png" alt="ECMONSTER" class="hdr-logo"></a>
+  <nav class="nav" id="nav">
+    <a href="/">トップ</a>
+    <a href="/omo/">OMO戦略</a>
+    <a href="/faq/">よくある質問</a>
+    <a href="/contact/" class="nav-cta">無料相談</a>
+  </nav>
+  <button class="m-toggle" id="menuBtn"><span></span><span></span><span></span></button>
+</header>
+
+<main>
+
+<!-- 1. HERO -->
+<section class="hero">
+  <div class="hero-ey fade">実店舗販売店OMO戦略パッケージ</div>
+  <h1 class="fade">店舗とECを、別々に運営する時代は終わりです。</h1>
+  <p class="hero-sub fade">在庫、接客、受取、返品交換、販促、顧客情報をひとつにつなぎ、<strong style="color:#fff">"どこでも売れる・どこでも受け取れる・何度でも再購入につながる"状態</strong>をつくる実店舗販売店OMO戦略パッケージ。</p>
+  <div class="hero-acts fade">
+    <a href="/contact/" class="btn-red">無料相談を申し込む</a>
+    <a href="/contact/" class="btn-outline" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.3)">導入資料を請求する</a>
+  </div>
+</section>
+
+<!-- 2. WORRIES -->
+<section class="sec" style="background:var(--off)">
+  <div class="sec-in">
+    <div class="sec-ey fade">Worries</div>
+    <h2 class="sec-h2 fade">店舗とECが分断されていると、売上も顧客体験も伸びにくくなります。</h2>
+    <p class="sec-lead fade">こんな課題はありませんか。</p>
+    <div class="worry-list">
+      <div class="worry-item fade">店舗とECで在庫が別管理になっている</div>
+      <div class="worry-item fade">店頭で欠品すると、そのまま失注してしまう</div>
+      <div class="worry-item fade">接客はしているのにEC購入につながらない</div>
+      <div class="worry-item fade">オンライン購入品の受取や返品交換が煩雑</div>
+      <div class="worry-item fade">顧客情報が分断され、再販が弱い</div>
+      <div class="worry-item fade">本部が店舗別・商品別・顧客別の実態をつかみにくい</div>
+      <div class="worry-item fade">販促がバラバラで、チャネルごとに最適化できていない</div>
+    </div>
+    <p class="worry-close fade">本部と複数店舗の売上・購買データが統合されていないと、<em>経営判断も遅くなりやすくなります。</em></p>
+  </div>
+</section>
+
+<!-- 3. CONCEPT -->
+<section class="sec" style="background:var(--white)">
+  <div class="sec-in">
+    <div class="sec-ey fade">Concept</div>
+    <h2 class="sec-h2 fade">店舗の接客力と、ECの販売力を、ひとつの売上に変える。</h2>
+    <p class="fade" style="font-size:15px;color:var(--body);line-height:2.2;max-width:680px;margin-bottom:28px">リアル店舗の強みはリアルな接客です。ECの強みはいつでも買えることです。この2つがつながっていないと、接客したのに失注する、EC購入が不便、来店客を再購入につなげられないという状態になります。</p>
+    <div class="scenario fade">
+      <h4>例：今起きていること</h4>
+      <div class="scenario-steps">
+        <div class="scenario-step"><div class="scenario-step-num">1</div>接客して、気に入ってもらえた</div>
+        <div class="scenario-step"><div class="scenario-step-num">2</div>でも店頭に在庫がない</div>
+        <div class="scenario-step"><div class="scenario-step-num">3</div>その場で購入導線を作れない</div>
+        <div class="scenario-step"><div class="scenario-step-num">4</div>顧客は後で忘れる → 失注</div>
+      </div>
+    </div>
+    <p class="fade" style="font-size:15px;color:var(--body);line-height:2;max-width:680px;margin-top:28px">本パッケージでは、<strong>接客・在庫・EC・販促・分析を一体化し、店舗とECを競合させるのではなく、相互送客させる設計</strong>を行います。</p>
+  </div>
+</section>
+
+<!-- 4. FEATURES -->
+<section class="sec" style="background:var(--off)">
+  <div class="sec-in">
+    <div class="sec-ey fade">Features</div>
+    <h2 class="sec-h2 fade">売場・在庫・顧客・販促を統合するパッケージです。</h2>
+    <p class="sec-lead fade">このパッケージの中核は以下の5領域です。</p>
+    <div class="feat-cols">
+      <div class="feat-area fade">
+        <div class="feat-area-title">POS・在庫統合</div>
+        <div class="feat-items">
+          <div class="feat-item">店舗・倉庫・EC在庫の統合</div>
+          <div class="feat-item">マルチロケーション在庫</div>
+          <div class="feat-item">在庫移動・調整</div>
+          <div class="feat-item">在庫分析・需要予測</div>
+        </div>
+      </div>
+      <div class="feat-area fade">
+        <div class="feat-area-title">店頭からEC送客</div>
+        <div class="feat-items">
+          <div class="feat-item">店舗でカート作成</div>
+          <div class="feat-item">顧客へメール送信</div>
+          <div class="feat-item">在庫切れ時のEC購入誘導</div>
+          <div class="feat-item">商品ページQRコード</div>
+        </div>
+      </div>
+      <div class="feat-area fade">
+        <div class="feat-area-title">購買導線の自由化</div>
+        <div class="feat-items">
+          <div class="feat-item">EC購入→店舗受取</div>
+          <div class="feat-item">EC購入→店舗返品交換</div>
+          <div class="feat-item">店頭購入→顧客へ発送</div>
+          <div class="feat-item">ギフトカード・デジタルレシート</div>
+        </div>
+      </div>
+      <div class="feat-area fade">
+        <div class="feat-area-title">CRM・再販強化</div>
+        <div class="feat-items">
+          <div class="feat-item">メールキャンペーン・カート落ち対策</div>
+          <div class="feat-item">SMS・クーポン・ポイント施策</div>
+          <div class="feat-item">ウィッシュリスト・顧客タグ</div>
+          <div class="feat-item">顧客インフルエンサー化</div>
+        </div>
+      </div>
+      <div class="feat-area fade">
+        <div class="feat-area-title">本部経営の見える化</div>
+        <div class="feat-items">
+          <div class="feat-item">店舗別・商品別・顧客別売上</div>
+          <div class="feat-item">日次販売・財務レポート</div>
+          <div class="feat-item">割引・在庫レポート</div>
+          <div class="feat-item">本部一元管理</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 5. WHY -->
+<section class="sec" style="background:var(--white)">
+  <div class="sec-in">
+    <div class="sec-ey fade">Why Now</div>
+    <h2 class="sec-h2 fade">「在庫がないから売れない」を、そのままにしない。</h2>
+    <p class="fade" style="font-size:15px;color:var(--body);line-height:2.2;max-width:680px;margin-bottom:24px">接客して気に入ってもらえたのに、店頭在庫がない。その場で購入導線を作れない。顧客は後で忘れ、失注する。これは本来防げる失注です。</p>
+    <p class="fade" style="font-size:15px;color:var(--body);line-height:2.2;max-width:680px;margin-bottom:32px">その場でカートを作成できる、顧客にメール送信できる、別店舗在庫や倉庫在庫から出荷できる、後日ECでスムーズに買える状態なら、<strong>売上は取りこぼしません。</strong></p>
+    <div class="change-strong fade">顧客が店内を閲覧してオンラインで購入できるようにする。それが実店舗OMOの基本です。</div>
+  </div>
+</section>
+
+<!-- 6. BENEFITS -->
+<section class="sec" style="background:var(--off)">
+  <div class="sec-in">
+    <div class="sec-ey fade">Benefits</div>
+    <h2 class="sec-h2 fade">実店舗販売店OMO戦略パッケージで実現できること</h2>
+    <div class="benefit-cards">
+      <div class="benefit-card fade">
+        <div class="benefit-num">01</div>
+        <div class="benefit-title">在庫を統合し、売れる状態を広げる</div>
+        <p class="benefit-desc">各拠点の在庫把握、店舗間移動、在庫調整、受入・発注、在庫分析、需要予測を通じて、在庫を眠らせず、売れる場所で売る設計を整えます。</p>
+      </div>
+      <div class="benefit-card fade">
+        <div class="benefit-num">02</div>
+        <div class="benefit-title">店頭接客をEC売上につなげる</div>
+        <p class="benefit-desc">店舗でカートを作り顧客へメール送信、商品ページQRからECへ送る、欠品時もEC購入につなぐことで、店頭接客を売上に変える仕組みをつくります。</p>
+      </div>
+      <div class="benefit-card fade">
+        <div class="benefit-num">03</div>
+        <div class="benefit-title">受取・返品交換を自由にする</div>
+        <p class="benefit-desc">EC購入→店舗受取、EC購入→店舗返品交換、店頭購入→自宅配送、ギフトカード活用、デジタルレシート対応により、チャネルをまたいでも不便のない購買体験を実現します。</p>
+      </div>
+      <div class="benefit-card fade">
+        <div class="benefit-num">04</div>
+        <div class="benefit-title">顧客情報を統合し、再購入につなげる</div>
+        <p class="benefit-desc">メールキャンペーン、カート落ちフォロー、SMS施策、ポイント化、顧客タグ、アップセル/クロスセル、SNS自動投稿、顧客インフルエンサー化により、接客後の再販導線をつくります。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 7. CHANGE -->
+<section class="sec" style="background:var(--white)">
+  <div class="sec-in">
+    <div class="sec-ey fade">After</div>
+    <h2 class="sec-h2 fade">店舗とECがつながると、経営はこう変わります。</h2>
+    <div class="change-list">
+      <div class="change-item fade"><span class="change-dot"></span>欠品による失注が減る</div>
+      <div class="change-item fade"><span class="change-dot"></span>店頭接客からEC売上への転換が増える</div>
+      <div class="change-item fade"><span class="change-dot"></span>店舗受取で来店機会が増える</div>
+      <div class="change-item fade"><span class="change-dot"></span>返品交換の利便性が上がり、顧客満足が高まる</div>
+      <div class="change-item fade"><span class="change-dot"></span>顧客情報が統合され、再購入促進がしやすくなる</div>
+      <div class="change-item fade"><span class="change-dot"></span>本部が店舗別・商品別・顧客別に判断しやすくなる</div>
+      <div class="change-item fade"><span class="change-dot"></span>在庫最適化により粗利改善がしやすくなる</div>
+    </div>
+    <div class="change-strong fade">店舗かECか、ではなく、店舗もECも売上源にする。</div>
+  </div>
+</section>
+
+<!-- 8. PLANS -->
+<section class="sec" style="background:var(--off)">
+  <div class="sec-in">
+    <div class="sec-ey fade">Plans</div>
+    <h2 class="sec-h2 fade">事業規模に応じて選べる3プラン</h2>
+    <div class="plan-grid">
+      <div class="plan-card fade">
+        <div class="plan-label">Starter</div>
+        <div class="plan-name">スタータープラン</div>
+        <div class="plan-desc">まずは店舗とECの基本連携を整えたい方向け。</div>
+        <div class="plan-features">
+          <div class="plan-feature">POS導入</div>
+          <div class="plan-feature">基本在庫連携</div>
+          <div class="plan-feature">店舗受取</div>
+          <div class="plan-feature">店舗返品交換</div>
+          <div class="plan-feature">基本分析</div>
+        </div>
+      </div>
+      <div class="plan-card featured fade">
+        <div class="plan-label">Growth</div>
+        <div class="plan-name">グロースプラン</div>
+        <div class="plan-desc">店頭接客を売上に変え、再販も強化したい方向け。</div>
+        <div class="plan-features">
+          <div class="plan-feature">スターター内容一式</div>
+          <div class="plan-feature">カートメール送信</div>
+          <div class="plan-feature">店頭からEC送客・商品QR</div>
+          <div class="plan-feature">ウィッシュリスト・顧客タグ</div>
+          <div class="plan-feature">クーポン・メール/SMS施策</div>
+          <div class="plan-feature">ポイント施策</div>
+        </div>
+      </div>
+      <div class="plan-card fade">
+        <div class="plan-label">Premium</div>
+        <div class="plan-name">プレミアムプラン</div>
+        <div class="plan-desc">本部主導で全体最適まで進めたい方向け。</div>
+        <div class="plan-features">
+          <div class="plan-feature">グロース内容一式</div>
+          <div class="plan-feature">本部一元管理・需要予測</div>
+          <div class="plan-feature">詳細在庫・財務分析</div>
+          <div class="plan-feature">SNS自動投稿・アフィリエイト</div>
+          <div class="plan-feature">顧客インフルエンサー化</div>
+          <div class="plan-feature">VIP施策・ロイヤリティ強化</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9. FLOW -->
+<section class="sec" style="background:var(--white)">
+  <div class="sec-in">
+    <div class="sec-ey fade">Process</div>
+    <h2 class="sec-h2 fade">導入までの流れ</h2>
+    <p class="sec-lead fade">システムの導入だけで終わらせず、売場・在庫・顧客・販促のつながりをどう作るかまで設計します。</p>
+    <div class="flow-steps">
+      <div class="flow-step-item fade"><div class="flow-num">1</div><div class="flow-text"><h4>お問い合わせ</h4><p>まずはお気軽にご相談ください。</p></div></div>
+      <div class="flow-step-item fade"><div class="flow-num">2</div><div class="flow-text"><h4>現状ヒアリング</h4><p>課題・現状の運用・目標を整理します。</p></div></div>
+      <div class="flow-step-item fade"><div class="flow-num">3</div><div class="flow-text"><h4>在庫・店舗運営フロー確認</h4><p>在庫管理・受取・返品の現状を把握します。</p></div></div>
+      <div class="flow-step-item fade"><div class="flow-num">4</div><div class="flow-text"><h4>必要機能整理</h4><p>優先度の高い機能から絞り込みます。</p></div></div>
+      <div class="flow-step-item fade"><div class="flow-num">5</div><div class="flow-text"><h4>初期設定</h4><p>POS・在庫・EC連携の基本設定を行います。</p></div></div>
+      <div class="flow-step-item fade"><div class="flow-num">6</div><div class="flow-text"><h4>テスト導入</h4><p>実際の店舗運営で動作確認します。</p></div></div>
+      <div class="flow-step-item fade"><div class="flow-num">7</div><div class="flow-text"><h4>本番運用</h4><p>全機能を本格稼働します。</p></div></div>
+      <div class="flow-step-item fade"><div class="flow-num">8</div><div class="flow-text"><h4>販促・改善運用スタート</h4><p>データを見ながら継続的に改善します。</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10. FAQ -->
+<section class="sec" style="background:var(--off)">
+  <div class="sec-in">
+    <div class="sec-ey fade">FAQ</div>
+    <h2 class="sec-h2 fade">よくある質問</h2>
+    <div class="faq-list">
+      <div class="faq-item fade">
+        <div class="faq-q"><span class="faq-q-mark">Q</span>店舗数が少なくても導入できますか？</div>
+        <div class="faq-a">はい。1店舗からでも導入可能です。まずは店舗受取や在庫連携など、インパクトの大きい機能から始める方法も取れます。</div>
+      </div>
+      <div class="faq-item fade">
+        <div class="faq-q"><span class="faq-q-mark">Q</span>今のECやPOSを全部入れ替える必要がありますか？</div>
+        <div class="faq-a">現状によりますが、全部を一度に変える前提ではありません。必要な連携ポイントを整理しながら、段階的な導入も可能です。</div>
+      </div>
+      <div class="faq-item fade">
+        <div class="faq-q"><span class="faq-q-mark">Q</span>アパレル以外でも使えますか？</div>
+        <div class="faq-a">はい。店頭接客とECが両方ある業態であれば、雑貨、ギフト、専門店など幅広く応用できます。</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CLOSING -->
+<section class="closing">
+  <h2 class="fade">これからの小売は、"どこで売るか"ではなく、"どうつなぐか"です。</h2>
+  <div class="closing-points fade">
+    <div class="closing-point">接客を、失注で終わらせない。</div>
+    <div class="closing-point">在庫を、眠らせない。</div>
+    <div class="closing-point">一度の購入を、次につなげる。</div>
+  </div>
+  <p class="closing-body fade">実店舗販売店OMO戦略パッケージは、<strong style="color:#fff">店舗とECを本当に連動させ、売上と顧客体験の両方を強くするための仕組み</strong>です。そのためのOMO設計を、今こそ始めませんか。</p>
+  <div class="closing-acts fade">
+    <a href="/contact/" class="btn-red">無料相談を申し込む</a>
+    <a href="/contact/" class="btn-outline" style="color:rgba(255,255,255,.8);border-color:rgba(255,255,255,.3)">導入資料を請求する</a>
+  </div>
+</section>
+
+</main>
+
+<footer class="ftr">
+  <div class="ftr-in">
+    <div class="ftr-brand">
+      <img src="/ecmonsterlogo3.png" alt="ECMONSTER">
+      <p>ECの勝ち筋を、明確に。</p>
+    </div>
+    <div class="ftr-links">
+      <div class="ftr-col">
+        <h4>サービス</h4>
+        <a href="/contact/">通常コンサル</a>
+        <a href="/ai/">AIコンサル</a>
+        <a href="/web/">WEBシステム開発</a>
+        <a href="/omo/">OMO戦略パッケージ</a>
+        <a href="/movie/">ライブコマーサー育成</a>
+        <a href="/ec-backyard/">EC全自動化集客戦略</a>
+        <a href="/echeroes3/">ECヒーローズ</a>
+      </div>
+      <div class="ftr-col">
+        <h4>会社情報</h4>
+        <a href="/company/">会社概要</a>
+        <a href="/contact/">お問い合わせ</a>
+        <a href="/login/">ログイン</a>
+      </div>
+    </div>
+  </div>
+  <div class="ftr-btm">
+    <p>&copy; ECモンスター</p>
+    <div class="ftr-legal">
+      <a href="/privacy-policy/">プライバシーポリシー</a>
+      <a href="/terms/">利用規約</a>
+      <a href="/legal-notice/">特定商取引法</a>
+    </div>
+  </div>
+</footer>
+
+<script is:inline>
+(function(){
+  var btn=document.getElementById('menuBtn'),nav=document.getElementById('nav');
+  if(btn&&nav)btn.addEventListener('click',function(){nav.classList.toggle('open');});
+  var fades=document.querySelectorAll('.fade');
+  if('IntersectionObserver' in window){
+    var io=new IntersectionObserver(function(entries){entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('vis');io.unobserve(e.target);}});},{threshold:.12});
+    fades.forEach(function(el){io.observe(el);});
+  }else{fades.forEach(function(el){el.classList.add('vis');});}
+})();
+</script>
+</body>
+</html>
