@@ -32,10 +32,58 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString()
     }
   </script>
 
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
   <!-- WordPress Theme CSS -->
   <link rel="stylesheet" href="/wp-assets/css/reset.css" type="text/css" />
   <link rel="stylesheet" href="/wp-assets/css/style.css" type="text/css" />
   <slot name="css" />
+
+  <!-- New Header/Footer Override -->
+  <style>
+    :root{--ecm-red:#C8272E;--ecm-dark:#1A1A1A;--ecm-border:#E8E8E8;--ecm-r:4px}
+    .ecm-hdr{position:fixed!important;top:0!important;left:0!important;right:0!important;z-index:9999!important;height:80px!important;padding:0 60px!important;display:flex!important;align-items:center!important;justify-content:space-between!important;background:rgba(255,255,255,.97)!important;backdrop-filter:blur(12px)!important;-webkit-backdrop-filter:blur(12px)!important;border-bottom:1px solid var(--ecm-border)!important;box-shadow:none!important}
+    .ecm-hdr .ecm-logo{max-width:220px!important;display:block!important}
+    .ecm-hdr nav{display:flex!important;align-items:center!important;gap:28px!important;background:none!important;padding:0!important}
+    .ecm-hdr nav a{font-size:13px!important;color:#595959!important;font-weight:500!important;text-decoration:none!important;background:none!important;padding:0!important;border:none!important;line-height:1!important;display:inline!important;white-space:nowrap}
+    .ecm-hdr nav a:hover{color:var(--ecm-dark)!important}
+    .ecm-hdr nav .ecm-cta{background:var(--ecm-dark)!important;color:#fff!important;padding:10px 22px!important;border-radius:var(--ecm-r)!important;font-weight:600!important;transition:.3s!important;display:inline-flex!important;align-items:center!important}
+    .ecm-hdr nav .ecm-cta:hover{background:var(--ecm-red)!important;color:#fff!important}
+    .ecm-menu-btn{display:none!important;background:none!important;border:none!important;cursor:pointer!important;width:32px!important;height:32px!important;position:relative!important;padding:0!important}
+    .ecm-menu-btn span{display:block!important;width:22px!important;height:1.5px!important;background:var(--ecm-dark)!important;position:absolute!important;left:5px!important;transition:.3s!important}
+    .ecm-menu-btn span:nth-child(1){top:9px!important}
+    .ecm-menu-btn span:nth-child(2){top:15px!important}
+    .ecm-menu-btn span:nth-child(3){top:21px!important}
+    body{padding-top:80px!important}
+    .ecm-ftr{background:#111!important;color:rgba(255,255,255,.65)!important;padding:48px 60px 28px!important;margin-top:0!important}
+    .ecm-ftr-in{max-width:1080px!important;margin:0 auto!important;display:flex!important;justify-content:space-between!important;align-items:flex-start!important;flex-wrap:wrap!important;gap:32px!important;padding-bottom:28px!important;border-bottom:1px solid rgba(255,255,255,.1)!important;margin-bottom:20px!important}
+    .ecm-ftr-brand img{max-width:200px!important;background:#fff!important;padding:12px 16px!important;border-radius:var(--ecm-r)!important;display:block!important}
+    .ecm-ftr-brand p{font-size:12px!important;color:rgba(255,255,255,.4)!important;margin-top:12px!important;line-height:1.8!important}
+    .ecm-ftr-links{display:flex!important;gap:48px!important}
+    .ecm-ftr-col h4{font-size:11px!important;font-weight:700!important;color:rgba(255,255,255,.5)!important;letter-spacing:1.5px!important;margin-bottom:12px!important;text-transform:uppercase!important}
+    .ecm-ftr-col a{display:block!important;font-size:13px!important;color:rgba(255,255,255,.5)!important;padding:3px 0!important;text-decoration:none!important;transition:.2s!important;background:none!important}
+    .ecm-ftr-col a:hover{color:rgba(255,255,255,.9)!important}
+    .ecm-ftr-btm{max-width:1080px!important;margin:0 auto!important;display:flex!important;justify-content:space-between!important;align-items:center!important;flex-wrap:wrap!important;gap:8px!important}
+    .ecm-ftr-btm p{font-size:11px!important;color:rgba(255,255,255,.3)!important}
+    .ecm-ftr-legal{display:flex!important;gap:16px!important}
+    .ecm-ftr-legal a{font-size:11px!important;color:rgba(255,255,255,.3)!important;text-decoration:none!important;transition:.2s!important}
+    .ecm-ftr-legal a:hover{color:rgba(255,255,255,.65)!important}
+    /* Hide old header/footer */
+    .header,.footer,.overlay,.f-navi,.copyright{display:none!important}
+    @media(max-width:768px){
+      .ecm-hdr{padding:0 24px!important}
+      .ecm-hdr nav{display:none!important}
+      .ecm-hdr nav.open{display:flex!important;flex-direction:column!important;position:fixed!important;top:80px!important;right:0!important;bottom:0!important;left:0!important;background:#fff!important;padding:32px 24px!important;gap:20px!important;z-index:9998!important;align-items:flex-start!important}
+      .ecm-menu-btn{display:block!important}
+      .ecm-ftr{padding:40px 24px 24px!important}
+      .ecm-ftr-in{flex-direction:column!important}
+      .ecm-ftr-links{flex-direction:column!important;gap:24px!important}
+      .ecm-ftr-btm{flex-direction:column!important;text-align:center!important}
+    }
+  </style>
 
   <meta name="format-detection" content="telephone=no" />
   <title>{title}</title>
@@ -85,64 +133,64 @@ const canonicalUrl = new URL(Astro.url.pathname, siteUrl).toString()
   <slot name="head" />
 </head>
 <body class={bodyClass}>
-  <header class="header">
-    <div class="header-inner">
-      <div class="logo"><a href="/"><img src="/wp-assets/img/common/logo.png" alt="EC MONSTER" /></a></div>
-      <div class="h-navi">
-        <nav>
-          <ul class="gnavi">
-            <li><a href="/">トップ</a></li>
-            <li><a href="/ai/">ECモンスターAIコンサル</a></li>
-            <li><a href="/movie/">ECモンスター楽天市場動画</a></li>
-            <li><a href="/web/">WEBシステム開発</a></li>
-            <li><a href="/ec/">越境ECサイト</a></li>
-            <li><a href="/faq/">よくある質問</a></li>
-            <li><a href="/contact/">お問い合わせ</a></li>
-            <li><a href="/login/">ログイン</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="gnavi-btn"><span></span></div>
-    </div>
+
+  <!-- NEW HEADER -->
+  <header class="ecm-hdr" id="ecmHdr">
+    <a href="/"><img src="/ecmonsterlogo3.png" alt="ECMONSTER - ECの勝ち筋を、明確に。" class="ecm-logo"></a>
+    <nav id="ecmNav">
+      <a href="/">トップ</a>
+      <a href="/#services">サービス</a>
+      <a href="/achievement/">実績</a>
+      <a href="/faq/">よくある質問</a>
+      <a href="/login/">ログイン</a>
+      <a href="https://learn.ecmonster.jp/b/page/3/" target="_blank" class="ecm-cta">個別相談</a>
+    </nav>
+    <button class="ecm-menu-btn" id="ecmMenuBtn" aria-label="メニュー"><span></span><span></span><span></span></button>
   </header>
 
   <slot />
 
-  <footer class="footer">
-    <div class="l_inner">
-      <ul class="f-navi">
-        <li><a href="/">トップ</a></li>
-        <li><a href="/ai/">ECモンスターAIコンサル</a></li>
-        <li><a href="/movie/">ECモンスター楽天市場動画</a></li>
-        <li><a href="/web/">WEBシステム開発</a></li>
-        <li><a href="/ec/">越境ECサイト</a></li>
-        <li><a href="/faq/">よくある質問</a></li>
-        <li><a href="/contact/">お問い合わせ</a></li>
-        <li><a href="/legal-notice/">特定商取引法</a></li>
-        <li><a href="/terms/">利用規約</a></li>
-        <li><a href="/privacy-policy/">プライバシーポリシー</a></li>
-      </ul>
-      <p class="copyright">(C) EC モンスター</p>
+  <!-- NEW FOOTER -->
+  <footer class="ecm-ftr">
+    <div class="ecm-ftr-in">
+      <div class="ecm-ftr-brand">
+        <img src="/ecmonsterlogo3.png" alt="ECMONSTER">
+        <p>ECの勝ち筋を、明確に。</p>
+      </div>
+      <div class="ecm-ftr-links">
+        <div class="ecm-ftr-col">
+          <h4>サービス</h4>
+          <a href="/contact/">通常コンサル</a>
+          <a href="/ai/">AIコンサル</a>
+          <a href="/dev-sub/">サブスク社内システム開発部</a>
+          <a href="/omo/">OMO戦略パッケージ</a>
+          <a href="/echeroes3/">ECヒーローズ（学習）</a>
+          <a href="https://learn.ecmonster.jp/static/livec-brand/mockup.html" target="_blank">ライブコマーサー育成講座</a>
+          <a href="/ec-backyard/">EC全自動化集客戦略</a>
+        </div>
+        <div class="ecm-ftr-col">
+          <h4>会社情報</h4>
+          <a href="/company/">会社概要</a>
+          <a href="/contact/">お問い合わせ</a>
+          <a href="/login/">ログイン</a>
+        </div>
+      </div>
+    </div>
+    <div class="ecm-ftr-btm">
+      <p>&copy; ECモンスター</p>
+      <div class="ecm-ftr-legal">
+        <a href="/privacy-policy/">プライバシーポリシー</a>
+        <a href="/terms/">利用規約</a>
+        <a href="/legal-notice/">特定商取引法</a>
+      </div>
     </div>
   </footer>
-  <div class="overlay"></div>
 
-  <!-- Mobile navigation script -->
   <script is:inline>
-    (function() {
-      var btn = document.querySelector('.gnavi-btn');
-      if (btn) {
-        btn.addEventListener('click', function() {
-          document.body.classList.toggle('naviOpen');
-        });
-      }
-      var overlay = document.querySelector('.overlay');
-      if (overlay) {
-        overlay.addEventListener('click', function() {
-          document.body.classList.remove('naviOpen');
-        });
-      }
-    })();
+  (function(){
+    var btn=document.getElementById('ecmMenuBtn'),nav=document.getElementById('ecmNav');
+    if(btn&&nav)btn.addEventListener('click',function(){nav.classList.toggle('open');});
+  })();
   </script>
 </body>
 </html>
