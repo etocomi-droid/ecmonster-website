@@ -2,196 +2,22 @@
 
 Configuration reference for wrangler.jsonc (recommended).
 
-## Config Format
+> 100行ルール準拠のため章別分散済み。子ファイル一覧:
 
-**wrangler.jsonc recommended** (v3.91.0+) - provides schema validation.
+| # | セクション | 子ファイル |
+|---|---|---|
+| 01 | Config Format | [01_config-format.md](configuration/01_config-format.md) |
+| 02 | Field Inheritance | [02_field-inheritance.md](configuration/02_field-inheritance.md) |
+| 03 | Environments | [03_environments.md](configuration/03_environments.md) |
+| 04 | Routing | [04_routing.md](configuration/04_routing.md) |
+| 05 | Bindings | [05_bindings.md](configuration/05_bindings.md) |
+| 06 | Workers Assets (Static Files) | [06_workers-assets-static-files.md](configuration/06_workers-assets-static-files.md) |
+| 07 | Placement | [07_placement.md](configuration/07_placement.md) |
+| 08 | Auto-Provisioning (Beta) | [08_auto-provisioning-beta.md](configuration/08_auto-provisioning-beta.md) |
+| 09 | Advanced | [09_advanced.md](configuration/09_advanced.md) |
+| 10 | See Also | [10_see-also.md](configuration/10_see-also.md) |
 
-```jsonc
-{
-  "$schema": "./node_modules/wrangler/config-schema.json",
-  "name": "my-worker",
-  "main": "src/index.ts",
-  "compatibility_date": "2025-01-01",  // Use current date
-  "vars": { "API_KEY": "dev-key" },
-  "kv_namespaces": [{ "binding": "MY_KV", "id": "abc123" }]
-}
-```
+## 関連
 
-## Field Inheritance
-
-Inheritable: `name`, `main`, `compatibility_date`, `routes`, `triggers`
-Non-inheritable (define per env): `vars`, bindings (KV, D1, R2, etc.)
-
-## Environments
-
-```jsonc
-{
-  "name": "my-worker",
-  "vars": { "ENV": "dev" },
-  "env": {
-    "production": {
-      "name": "my-worker-prod",
-      "vars": { "ENV": "prod" },
-      "route": { "pattern": "example.com/*", "zone_name": "example.com" }
-    }
-  }
-}
-```
-
-Deploy: `wrangler deploy --env production`
-
-## Routing
-
-```jsonc
-// Custom domain (recommended)
-{ "routes": [{ "pattern": "api.example.com", "custom_domain": true }] }
-
-// Zone-based
-{ "routes": [{ "pattern": "api.example.com/*", "zone_name": "example.com" }] }
-
-// workers.dev
-{ "workers_dev": true }
-```
-
-## Bindings
-
-```jsonc
-// Variables
-{ "vars": { "API_URL": "https://api.example.com" } }
-
-// KV
-{ "kv_namespaces": [{ "binding": "CACHE", "id": "abc123" }] }
-
-// D1
-{ "d1_databases": [{ "binding": "DB", "database_id": "abc-123" }] }
-
-// R2
-{ "r2_buckets": [{ "binding": "ASSETS", "bucket_name": "my-assets" }] }
-
-// Durable Objects
-{ "durable_objects": { 
-  "bindings": [{ 
-    "name": "COUNTER", 
-    "class_name": "Counter",
-    "script_name": "my-worker"  // Required for external DOs
-  }] 
-} }
-{ "migrations": [{ "tag": "v1", "new_sqlite_classes": ["Counter"] }] }
-
-// Service Bindings
-{ "services": [{ "binding": "AUTH", "service": "auth-worker" }] }
-
-// Queues
-{ "queues": {
-  "producers": [{ "binding": "TASKS", "queue": "task-queue" }],
-  "consumers": [{ "queue": "task-queue", "max_batch_size": 10 }]
-} }
-
-// Vectorize
-{ "vectorize": [{ "binding": "VECTORS", "index_name": "embeddings" }] }
-
-// Hyperdrive (requires nodejs_compat_v2 for pg/postgres)
-{ "hyperdrive": [{ "binding": "HYPERDRIVE", "id": "hyper-id" }] }
-{ "compatibility_flags": ["nodejs_compat_v2"] }  // For pg/postgres
-
-// Workers AI
-{ "ai": { "binding": "AI" } }
-
-// Workflows
-{ "workflows": [{ "binding": "WORKFLOW", "name": "my-workflow", "class_name": "MyWorkflow" }] }
-
-// Secrets Store (centralized secrets)
-{ "secrets_store": [{ "binding": "SECRETS", "id": "store-id" }] }
-
-// Constellation (AI inference)
-{ "constellation": [{ "binding": "MODEL", "project_id": "proj-id" }] }
-```
-
-## Workers Assets (Static Files)
-
-Recommended for serving static files (replaces old `site` config).
-
-```jsonc
-{
-  "assets": {
-    "directory": "./public",
-    "binding": "ASSETS",
-    "html_handling": "auto-trailing-slash",  // or "none", "force-trailing-slash"
-    "not_found_handling": "single-page-application"  // or "404-page", "none"
-  }
-}
-```
-
-Access in Worker:
-```typescript
-export default {
-  async fetch(request, env) {
-    // Try serving static asset first
-    const asset = await env.ASSETS.fetch(request);
-    if (asset.status !== 404) return asset;
-    
-    // Custom logic for non-assets
-    return new Response("API response");
-  }
-}
-```
-
-## Placement
-
-Control where Workers run geographically.
-
-```jsonc
-{
-  "placement": {
-    "mode": "smart"  // or "off"
-  }
-}
-```
-
-- `"smart"`: Run Worker near data sources (D1, Durable Objects) to reduce latency
-- `"off"`: Default distribution (run everywhere)
-
-## Auto-Provisioning (Beta)
-
-Omit resource IDs - Wrangler creates them and writes back to config on deploy.
-
-```jsonc
-{ "kv_namespaces": [{ "binding": "MY_KV" }] }  // No id - auto-provisioned
-```
-
-After deploy, ID is added to config automatically.
-
-## Advanced
-
-```jsonc
-// Cron Triggers
-{ "triggers": { "crons": ["0 0 * * *"] } }
-
-// Observability (tracing)
-{ "observability": { "enabled": true, "head_sampling_rate": 0.1 } }
-
-// Runtime Limits
-{ "limits": { "cpu_ms": 100 } }
-
-// Browser Rendering
-{ "browser": { "binding": "BROWSER" } }
-
-// mTLS Certificates
-{ "mtls_certificates": [{ "binding": "CERT", "certificate_id": "cert-uuid" }] }
-
-// Logpush (stream logs to R2/S3)
-{ "logpush": true }
-
-// Tail Consumers (process logs with another Worker)
-{ "tail_consumers": [{ "service": "log-worker" }] }
-
-// Unsafe bindings (access to arbitrary bindings)
-{ "unsafe": { "bindings": [{ "name": "MY_BINDING", "type": "plain_text", "text": "value" }] } }
-```
-
-## See Also
-
-- [README.md](./README.md) - Overview and commands
-- [api.md](./api.md) - Programmatic API
-- [patterns.md](./patterns.md) - Workflows
-- [gotchas.md](./gotchas.md) - Common issues
+- 元ファイル(分散前バックアップ): `configuration.md.bak_20260425`
+- 子ファイルディレクトリ: `configuration/`

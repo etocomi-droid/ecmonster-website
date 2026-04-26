@@ -1,102 +1,19 @@
 # Email Workers Patterns
 
-## Parse Email
+> 100行ルール準拠のため章別分散済み。子ファイル一覧:
 
-```typescript
-import PostalMime from 'postal-mime';
+| # | セクション | 子ファイル |
+|---|---|---|
+| 01 | Parse Email | [01_parse-email.md](patterns/01_parse-email.md) |
+| 02 | Filtering | [02_filtering.md](patterns/02_filtering.md) |
+| 03 | Auto-Reply with Threading | [03_auto-reply-with-threading.md](patterns/03_auto-reply-with-threading.md) |
+| 04 | Rate-Limited Auto-Reply | [04_rate-limited-auto-reply.md](patterns/04_rate-limited-auto-reply.md) |
+| 05 | Subject-Based Routing | [05_subject-based-routing.md](patterns/05_subject-based-routing.md) |
+| 06 | Multi-Tenant Routing | [06_multi-tenant-routing.md](patterns/06_multi-tenant-routing.md) |
+| 07 | Archive & Extract Attachments | [07_archive-extract-attachments.md](patterns/07_archive-extract-attachments.md) |
+| 08 | Webhook Integration | [08_webhook-integration.md](patterns/08_webhook-integration.md) |
 
-export default {
-  async email(message, env, ctx) {
-    const buffer = await new Response(message.raw).arrayBuffer();
-    const email = await PostalMime.parse(buffer);
-    console.log(email.from, email.subject, email.text, email.attachments.length);
-    await message.forward('inbox@example.com');
-  }
-};
-```
+## 関連
 
-## Filtering
-
-```typescript
-// Allowlist from KV
-const allowList = await env.ALLOWED_SENDERS.get('list', 'json') || [];
-if (!allowList.includes(message.from)) {
-  message.setReject('Not allowed');
-  return;
-}
-
-// Size check (avoid parsing large emails)
-if (message.rawSize > 5_000_000) {
-  await message.forward('inbox@example.com'); // Forward without parsing
-  return;
-}
-```
-
-## Auto-Reply with Threading
-
-```typescript
-import { EmailMessage } from 'cloudflare:email';
-import { createMimeMessage } from 'mimetext';
-
-const msg = createMimeMessage();
-msg.setSender({ addr: 'support@example.com' });
-msg.setRecipient(message.from);
-msg.setSubject(`Re: ${message.headers.get('Subject')}`);
-msg.setHeader('In-Reply-To', message.headers.get('Message-ID') || '');
-msg.addMessage({ contentType: 'text/plain', data: 'Thank you. We will respond.' });
-
-await message.reply(new EmailMessage('support@example.com', message.from, msg.asRaw()));
-```
-
-## Rate-Limited Auto-Reply
-
-```typescript
-const rateKey = `rate:${message.from}`;
-if (!await env.RATE_LIMIT.get(rateKey)) {
-  // Send reply...
-  ctx.waitUntil(env.RATE_LIMIT.put(rateKey, '1', { expirationTtl: 3600 }));
-}
-```
-
-## Subject-Based Routing
-
-```typescript
-const subject = (message.headers.get('Subject') || '').toLowerCase();
-if (subject.includes('billing')) await message.forward('billing@example.com');
-else if (subject.includes('support')) await message.forward('support@example.com');
-else await message.forward('general@example.com');
-```
-
-## Multi-Tenant Routing
-
-```typescript
-// support+tenant123@example.com → tenant123
-const tenantId = message.to.split('@')[0].match(/\+(.+)$/)?.[1] || 'default';
-const config = await env.TENANT_CONFIG.get(tenantId, 'json');
-config?.forwardTo ? await message.forward(config.forwardTo) : message.setReject('Unknown');
-```
-
-## Archive & Extract Attachments
-
-```typescript
-// Archive to KV
-ctx.waitUntil(env.ARCHIVE.put(`email:${Date.now()}`, JSON.stringify({
-  from: message.from, subject: email.subject
-})));
-
-// Attachments to R2
-for (const att of email.attachments) {
-  ctx.waitUntil(env.R2.put(`${Date.now()}-${att.filename}`, att.content));
-}
-```
-
-## Webhook Integration
-
-```typescript
-ctx.waitUntil(
-  fetch(env.WEBHOOK_URL, {
-    method: 'POST',
-    body: JSON.stringify({ from: message.from, subject: message.headers.get('Subject') })
-  }).catch(err => console.error(err))
-);
-```
+- 元ファイル(分散前バックアップ): `patterns.md.bak_20260425`
+- 子ファイルディレクトリ: `patterns/`

@@ -1,180 +1,24 @@
 # Patterns & Use Cases
 
-## Protect API with Schema + JWT
+> 100行ルール準拠のため章別分散済み。子ファイル一覧:
 
-```bash
-# 1. Upload OpenAPI schema
-POST /zones/{zone_id}/api_gateway/user_schemas
+| # | セクション | 子ファイル |
+|---|---|---|
+| 01 | Protect API with Schema + JWT | [01_protect-api-with-schema-jwt.md](patterns/01_protect-api-with-schema-jwt.md) |
+| 02 | Progressive Rollout | [02_progressive-rollout.md](patterns/02_progressive-rollout.md) |
+| 03 | BOLA Detection | [03_bola-detection.md](patterns/03_bola-detection.md) |
+| 04 | Authentication Posture | [04_authentication-posture.md](patterns/04_authentication-posture.md) |
+| 05 | Fallthrough Detection (Shadow APIs) | [05_fallthrough-detection-shadow-apis.md](patterns/05_fallthrough-detection-shadow-apis.md) |
+| 06 | Rate Limiting by User | [06_rate-limiting-by-user.md](patterns/06_rate-limiting-by-user.md) |
+| 07 | Volumetric Abuse Response | [07_volumetric-abuse-response.md](patterns/07_volumetric-abuse-response.md) |
+| 08 | GraphQL Protection | [08_graphql-protection.md](patterns/08_graphql-protection.md) |
+| 09 | Architecture Patterns | [09_architecture-patterns.md](patterns/09_architecture-patterns.md) |
+| 10 | OWASP API Security Top 10 Mapping (2026) | [10_owasp-api-security-top-10-mapping-2026.md](patterns/10_owasp-api-security-top-10-mapping-2026.md) |
+| 11 | Monitoring | [11_monitoring.md](patterns/11_monitoring.md) |
+| 12 | Availability (2026) | [12_availability-2026.md](patterns/12_availability-2026.md) |
+| 13 | See Also | [13_see-also.md](patterns/13_see-also.md) |
 
-# 2. Configure JWT validation
-POST /zones/{zone_id}/api_gateway/token_validation
-{
-  "name": "Auth0",
-  "location": {"header": "Authorization"},
-  "jwks": "{...}"
-}
+## 関連
 
-# 3. Create JWT rule
-POST /zones/{zone_id}/api_gateway/jwt_validation_rules
-
-# 4. Set schema validation action
-PUT /zones/{zone_id}/api_gateway/settings/schema_validation
-{"validation_default_mitigation_action": "block"}
-```
-
-## Progressive Rollout
-
-```
-1. Log mode: Observe false positives
-   - Schema: Action = Log
-   - JWT: Action = Log
-
-2. Block subset: Protect critical endpoints
-   - Change specific endpoint actions to Block
-   - Monitor firewall events
-
-3. Full enforcement: Block all violations
-   - Change default action to Block
-   - Handle fallthrough with custom rule
-```
-
-## BOLA Detection
-
-### Enumeration Detection
-Detects sequential resource access (e.g., `/users/1`, `/users/2`, `/users/3`).
-
-```javascript
-// Block BOLA enumeration attempts
-(cf.api_gateway.cf-risk-bola-enumeration and http.host eq "api.example.com")
-// Action: Block or Challenge
-```
-
-### Parameter Pollution
-Detects duplicate/excessive parameters in requests.
-
-```javascript
-// Block parameter pollution
-(cf.api_gateway.cf-risk-bola-pollution and http.host eq "api.example.com")
-// Action: Block
-```
-
-### Combined BOLA Protection
-```javascript
-// Comprehensive BOLA rule
-(cf.api_gateway.cf-risk-bola-enumeration or cf.api_gateway.cf-risk-bola-pollution)
-and http.host eq "api.example.com"
-// Action: Block
-```
-
-## Authentication Posture
-
-### Detect Missing Auth
-```javascript
-// Log endpoints lacking authentication
-(cf.api_gateway.cf-risk-missing-auth and http.host eq "api.example.com")
-// Action: Log (for audit)
-```
-
-### Detect Mixed Auth
-```javascript
-// Alert on inconsistent auth patterns
-(cf.api_gateway.cf-risk-mixed-auth and http.host eq "api.example.com")
-// Action: Log (review required)
-```
-
-## Fallthrough Detection (Shadow APIs)
-
-```javascript
-// WAF Custom Rule
-(cf.api_gateway.fallthrough_triggered and http.host eq "api.example.com")
-// Action: Log (discover unknown) or Block (strict)
-```
-
-## Rate Limiting by User
-
-```javascript
-// Rate Limiting Rule (modern syntax)
-(http.host eq "api.example.com" and
- is_jwt_valid(http.request.jwt.payload["{config_id}"][0]))
-
-// Rate: 100 req/60s
-// Counting expression: lookup_json_string(http.request.jwt.payload["{config_id}"][0], "sub")
-```
-
-## Volumetric Abuse Response
-
-```javascript
-// Detect abnormal traffic spikes
-(cf.api_gateway.volumetric_abuse_detected and http.host eq "api.example.com")
-// Action: Challenge or Rate Limit
-
-// Combined with rate limiting
-(cf.api_gateway.volumetric_abuse_detected or
- cf.threat_score gt 50) and http.host eq "api.example.com"
-// Action: JS Challenge
-```
-
-## GraphQL Protection
-
-```javascript
-// Block oversized queries
-(http.request.uri.path eq "/graphql" and
- cf.api_gateway.graphql_query_size gt 100000)
-// Action: Block
-
-// Block deep nested queries
-(http.request.uri.path eq "/graphql" and
- cf.api_gateway.graphql_query_depth gt 10)
-// Action: Block
-```
-
-## Architecture Patterns
-
-**Public API:** Discovery + Schema Validation 2.0 + JWT + Rate Limiting + Bot Management  
-**Partner API:** mTLS + Schema Validation + Sequence Mitigation  
-**Internal API:** Discovery + Schema Learning + Auth Posture
-
-## OWASP API Security Top 10 Mapping (2026)
-
-| OWASP Issue | API Shield Solutions |
-|-------------|---------------------|
-| API1:2023 Broken Object Level Authorization | **BOLA Detection** (enumeration + pollution), Sequence mitigation, Schema, JWT, Rate Limiting |
-| API2:2023 Broken Authentication | **Auth Posture**, mTLS, JWT validation, Bot Management |
-| API3:2023 Broken Object Property Auth | Schema validation, JWT validation |
-| API4:2023 Unrestricted Resource Access | Rate Limiting, **Volumetric Abuse Detection**, **GraphQL Protection**, Bot Management |
-| API5:2023 Broken Function Level Auth | Schema validation, JWT validation, Auth Posture |
-| API6:2023 Unrestricted Business Flows | Sequence mitigation, Bot Management |
-| API7:2023 SSRF | Schema validation, WAF managed rules |
-| API8:2023 Security Misconfiguration | **Schema Validation 2.0**, Auth Posture, WAF rules |
-| API9:2023 Improper Inventory Management | **API Discovery**, Schema learning, Auth Posture |
-| API10:2023 Unsafe API Consumption | JWT validation, Schema validation, WAF managed |
-
-## Monitoring
-
-**Security Events:** `Security > Events` → Filter: Action = block, Service = API Shield  
-**Firewall Analytics:** `Analytics > Security` → Filter by `cf.api_gateway.*` fields  
-**Logpush fields:** APIGatewayAuthIDPresent, APIGatewayRequestViolatesSchema, APIGatewayFallthroughDetected, JWTValidationResult
-
-## Availability (2026)
-
-| Feature | Availability | Notes |
-|---------|-------------|-------|
-| mTLS (CF-managed CA) | All plans | Self-service |
-| Endpoint Management | All plans | Limited operations |
-| Schema Validation 2.0 | All plans | Limited operations |
-| API Discovery | Enterprise | 10K+ ops |
-| JWT Validation | Enterprise add-on | Full validation |
-| BOLA Detection | Enterprise add-on | Requires session IDs |
-| Auth Posture | Enterprise add-on | Security audit |
-| Volumetric Abuse Detection | Enterprise add-on | Traffic analysis |
-| GraphQL Protection | Enterprise add-on | Query limits |
-| Sequence Mitigation | Enterprise (beta) | Contact team |
-| Full Suite | Enterprise add-on | All features |
-
-**Enterprise limits:** 10K operations (contact for higher). Preview access available for non-contract evaluation.
-
-## See Also
-
-- [configuration.md](configuration.md) - Setup all features before creating rules
-- [api.md](api.md) - Firewall field reference and API endpoints
-- [gotchas.md](gotchas.md) - Common issues and limits
+- 元ファイル(分散前バックアップ): `patterns.md.bak_20260425`
+- 子ファイルディレクトリ: `patterns/`

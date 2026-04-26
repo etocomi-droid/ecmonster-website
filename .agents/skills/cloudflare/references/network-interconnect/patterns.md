@@ -2,165 +2,20 @@
 
 See [README.md](README.md) for overview.
 
-## High Availability
+> 100行ルール準拠のため章別分散済み。子ファイル一覧:
 
-**Critical:** Design for resilience from day one.
+| # | セクション | 子ファイル |
+|---|---|---|
+| 01 | High Availability | [01_high-availability.md](patterns/01_high-availability.md) |
+| 02 | Pattern: Magic Transit + CNI v2 | [02_pattern-magic-transit-cni-v2.md](patterns/02_pattern-magic-transit-cni-v2.md) |
+| 03 | Pattern: Multi-Cloud Hybrid | [03_pattern-multi-cloud-hybrid.md](patterns/03_pattern-multi-cloud-hybrid.md) |
+| 04 | Pattern: Multi-Location HA | [04_pattern-multi-location-ha.md](patterns/04_pattern-multi-location-ha.md) |
+| 05 | Pattern: Partner Interconnect (Equinix) | [05_pattern-partner-interconnect-equinix.md](patterns/05_pattern-partner-interconnect-equinix.md) |
+| 06 | Failover & Security | [06_failover-security.md](patterns/06_failover-security.md) |
+| 07 | Decision Matrix | [07_decision-matrix.md](patterns/07_decision-matrix.md) |
+| 08 | Resources | [08_resources.md](patterns/08_resources.md) |
 
-**Requirements:**
-- Device-level diversity (separate hardware)
-- Backup Internet connectivity (no SLA on CNI)
-- Network-resilient locations preferred
-- Regular failover testing
+## 関連
 
-**Architecture:**
-```
-Your Network A ──10G CNI v2──> CF CCR Device 1
-                                     │
-Your Network B ──10G CNI v2──> CF CCR Device 2
-                                     │
-                            CF Global Network (AS13335)
-```
-
-**Capacity Planning:**
-- Plan across all links
-- Account for failover scenarios
-- Your responsibility
-
-## Pattern: Magic Transit + CNI v2
-
-**Use Case:** DDoS protection, private connectivity, no GRE overhead.
-
-```typescript
-// 1. Create interconnect
-const ic = await client.networkInterconnects.interconnects.create({
-  account_id: id,
-  type: 'direct',
-  facility: 'EWR1',
-  speed: '10G',
-  name: 'magic-transit-primary',
-});
-
-// 2. Poll until active
-const status = await pollUntilActive(id, ic.id);
-
-// 3. Configure Magic Transit tunnel via Dashboard/API
-```
-
-**Benefits:** 1500 MTU both ways, simplified routing.
-
-## Pattern: Multi-Cloud Hybrid
-
-**Use Case:** AWS/GCP workloads with Cloudflare.
-
-**AWS Direct Connect:**
-```typescript
-// 1. Order Direct Connect in AWS Console
-// 2. Get LOA + VLAN from AWS
-// 3. Send to CF account team (no API)
-// 4. Configure static routes in Magic WAN
-
-await configureStaticRoutes(id, {
-  prefix: '10.0.0.0/8',
-  nexthop: 'aws-direct-connect',
-});
-```
-
-**GCP Cloud Interconnect:**
-```
-1. Get VLAN attachment pairing key from GCP Console
-2. Create via Dashboard: Interconnects → Create → Cloud Interconnect → Google
-   - Enter pairing key, name, MTU, speed
-3. Configure static routes in Magic WAN (BGP routes from GCP ignored)
-4. Configure custom learned routes in GCP Cloud Router
-```
-
-**Note:** Dashboard-only. No API/SDK support yet.
-
-## Pattern: Multi-Location HA
-
-**Use Case:** 99.99%+ uptime.
-
-```typescript
-// Primary (NY)
-const primary = await client.networkInterconnects.interconnects.create({
-  account_id: id,
-  type: 'direct',
-  facility: 'EWR1',
-  speed: '10G',
-  name: 'primary-ewr1',
-});
-
-// Secondary (NY, different hardware)
-const secondary = await client.networkInterconnects.interconnects.create({
-  account_id: id,
-  type: 'direct',
-  facility: 'EWR2',
-  speed: '10G',
-  name: 'secondary-ewr2',
-});
-
-// Tertiary (LA, different geography)
-const tertiary = await client.networkInterconnects.interconnects.create({
-  account_id: id,
-  type: 'partner',
-  facility: 'LAX1',
-  speed: '10G',
-  name: 'tertiary-lax1',
-});
-
-// BGP local preferences:
-// Primary: 200
-// Secondary: 150
-// Tertiary: 100
-// Internet: Last resort
-```
-
-## Pattern: Partner Interconnect (Equinix)
-
-**Use Case:** Quick deployment, no colocation.
-
-**Setup:**
-1. Order virtual circuit in Equinix Fabric Portal
-2. Select Cloudflare as destination
-3. Choose facility
-4. Send details to CF account team
-5. CF accepts in portal
-6. Configure BGP
-
-**No API automation** – partner portals managed separately.
-
-## Failover & Security
-
-**Failover Best Practices:**
-- Use BGP local preferences for priority
-- Configure BFD for fast detection (v1)
-- Test regularly with traffic shift
-- Document runbooks
-
-**Security:**
-- BGP password authentication
-- BGP route filtering
-- Monitor unexpected routes
-- Magic Firewall for DDoS/threats
-- Minimum API token permissions
-- Rotate credentials periodically
-
-## Decision Matrix
-
-| Requirement | Recommended |
-|-------------|-------------|
-| Collocated with CF | Direct |
-| Not collocated | Partner |
-| AWS/GCP workloads | Cloud |
-| 1500 MTU both ways | v2 |
-| VLAN tagging | v1 |
-| Public peering | v1 |
-| Simplest config | v2 |
-| BFD fast failover | v1 |
-| LACP bundling | v1 |
-
-## Resources
-
-- [Magic Transit Docs](https://developers.cloudflare.com/magic-transit/)
-- [Magic WAN Docs](https://developers.cloudflare.com/magic-wan/)
-- [Argo Smart Routing](https://developers.cloudflare.com/argo/)
+- 元ファイル(分散前バックアップ): `patterns.md.bak_20260425`
+- 子ファイルディレクトリ: `patterns/`

@@ -1,0 +1,15 @@
+# 01_common-errors 分散索引
+
+- [01_binding-id-vs-name-mismatch.md](./01_binding-id-vs-name-mismatch.md) — "Binding ID vs name mismatch"
+- [02_environment-not-inheriting-config.md](./02_environment-not-inheriting-config.md) — "Environment not inheriting config"
+- [03_local-dev-behavior-differs-from-production.md](./03_local-dev-behavior-differs-from-production.md) — "Local dev behavior differs from production"
+- [04_startworker-doesnt-match-production.md](./04_startworker-doesnt-match-production.md) — "startWorker doesn't match production"
+- [05_unexpected-runtime-changes.md](./05_unexpected-runtime-changes.md) — "Unexpected runtime changes"
+- [06_durable-object-binding-not-working.md](./06_durable-object-binding-not-working.md) — "Durable Object binding not working"
+- [07_auto-provisioned-resources-not-appearing.md](./07_auto-provisioned-resources-not-appearing.md) — "Auto-provisioned resources not appearing"
+- [08_secrets-not-available-in-local-dev.md](./08_secrets-not-available-in-local-dev.md) — "Secrets not available in local dev"
+- [09_nodejs-compatibility-error.md](./09_nodejs-compatibility-error.md) — "Node.js compatibility error"
+- [10_workers-assets-404-errors.md](./10_workers-assets-404-errors.md) — "Workers Assets 404 errors"
+- [11_placement-not-reducing-latency.md](./11_placement-not-reducing-latency.md) — "Placement not reducing latency"
+- [12_unstablestartworker-not-found.md](./12_unstablestartworker-not-found.md) — "unstable_startWorker not found"
+- [13_outboundservice-not-mocking-fetch.md](./13_outboundservice-not-mocking-fetch.md) — "outboundService not mocking fetch"

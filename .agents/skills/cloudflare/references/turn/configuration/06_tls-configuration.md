@@ -1,0 +1,18 @@
+## TLS Configuration
+
+### Supported TLS Versions
+- TLS 1.1
+- TLS 1.2
+- TLS 1.3
+
+### Recommended Ciphers (TLS 1.3)
+- AEAD-AES128-GCM-SHA256
+- AEAD-AES256-GCM-SHA384
+- AEAD-CHACHA20-POLY1305-SHA256
+
+### Recommended Ciphers (TLS 1.2)
+- ECDHE-ECDSA-AES128-GCM-SHA256
+- ECDHE-RSA-AES128-GCM-SHA256
+- ECDHE-RSA-AES128-SHA (also TLS 1.1)
+- AES128-GCM-SHA256
+

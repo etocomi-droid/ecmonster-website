@@ -1,0 +1,12 @@
+## tsconfig.json
+
+```json
+{
+  "compilerOptions": {
+    "target": "ES2022", "module": "ES2022", "lib": ["ES2022"],
+    "types": ["@cloudflare/workers-types"],
+    "moduleResolution": "bundler", "strict": true
+  }
+}
+```
+
