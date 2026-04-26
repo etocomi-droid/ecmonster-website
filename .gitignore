@@ -6,3 +6,6 @@ dist/
 # Large video files (exceed GitHub 100MB limit)
 public/wp-assets/img/ai-lp/*.mp4
 public/wp-assets/img/movie/*.mp4
+
+# Backup files from 100-line rule wrapper migration (2026-04-25)
+*.bak_20260425
